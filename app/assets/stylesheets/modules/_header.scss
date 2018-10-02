@@ -1,0 +1,22 @@
+.header {
+  background-color: #FFFFFF;
+  height: 59px;
+  width: 100%;
+  border-bottom: #CACED0 1px solid;
+  &__box {
+    width: 928px;
+    margin: 0 auto;
+    line-height: 59px;
+  }
+  &__logo {
+    margin-top: 10px;
+    margin-right: 12px;
+    float: left;
+  }
+  &__concept {
+    color: #A1A7AC;
+    font-size: 12px;
+    letter-spacing: 1px;
+    float: left;
+  }
+}
