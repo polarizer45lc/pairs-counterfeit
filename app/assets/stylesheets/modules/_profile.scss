@@ -1,0 +1,260 @@
+.box_mypage_detail {
+  width: calc( 100% - 180px );
+  height: 1830px;
+  float: right;
+  background-color: #f3f3f3;
+  color: #8d9399;
+  font-size: 13px;
+
+
+
+  &__01 {
+    width: 720px;
+    height: 593px;
+    margin: 15px 15px 0px;
+    background-color: #e1e3e5;
+
+    .mypage_detail_inner_left {
+      width: 230px;
+      height: 563px;
+      margin: 15px 10px 0px 15px;
+      float: left;
+
+      .user_status {
+        &__title {
+          height: 44px;
+          line-height: 40px;
+          font-size: 13px;
+          background-color: #fff;
+          border-bottom: 1px solid #e1e3e5;
+          .status {
+            margin-top: 3px;
+            margin-left: 15px;
+            width: 100px;
+            display: inline-block;
+          }
+          .button_status {
+            width: 50px;
+            height: 28px;
+            display: inline-block;
+            margin: 6px 8px;
+            text-align: center;
+            line-height: 28px;
+            float: right;
+            border-radius: 25px;
+            font-size: 12px;
+            background-color: #fff;
+            border: 1px solid #cbced0;
+            box-shadow: 0 2px 0 #c9c9c9;
+          }
+        }
+
+        &__label {
+          height: 45px;
+          line-height: 45px;
+          text-align: center;
+          font-weight: 700;
+          background-color: #fff;
+        }
+      }
+
+      .user_tweet {
+        height: 163px;
+        margin-top: 10px;
+
+        &__title {
+          height: 44px;
+          background-color: #fff;
+          border-bottom: 1px solid #e1e3e5;
+          .tweet {
+            margin-top: 12px;
+            margin-left: 15px;
+            width: 100px;
+            display: inline-block;
+          }
+          .button_tweet {
+            width: 50px;
+            height: 28px;
+            display: inline-block;
+            margin: 6px 8px;
+            text-align: center;
+            line-height: 28px;
+            float: right;
+            border-radius: 25px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #00b8c0;
+            border: 0;
+            box-shadow: 0 3px 0 #00abb3;
+          }
+        }
+
+        &__inner {
+          height: calc( 100% - 44px );
+          background-color: #fff;
+        }
+      }
+
+      .visiter_summary {
+        height: 290px;
+        margin-top: 10px;
+        background-color: #fff;
+
+        .visiter_summary__title {
+          vertical-align: center;
+          height: 40px;
+          line-height: 40px;
+          border-bottom: 1px solid #e1e3e5;
+          .title {
+            margin-top: 3px;
+            margin-left: 15px;
+            width: 130px;
+            display: inline-block;
+          }
+        }
+
+        .visiter_summary__count {
+          height: 40px;
+          border-bottom: 1px solid #e1e3e5;
+          .text {
+            margin-top: 12px;
+            margin-left: 15px;
+            width: 130px;
+            display: inline-block;
+          }
+          .count {
+            margin-top: 12px;
+            margin-right: 5px;
+            width: 60px;
+            display: inline-block;
+            text-align: right;
+          }
+        }
+
+        %ul.user_list {
+          height: 160px;
+
+          %li.user_item01 {
+            height: 40px;
+            border-bottom: 1px dashed #e1e3e5;
+          }
+
+        }
+        .box_link_more {
+          position: relative;
+          top: 165px;
+          height: 40px;
+          .button_more {
+            width: 80px;
+            height: 28px;
+            display: inline-block;
+            margin: 6px 8px;
+            text-align: center;
+            line-height: 28px;
+            float: right;
+            border-radius: 25px;
+            font-size: 12px;
+            background-color: #fff;
+            border: 1px solid #cbced0;
+            box-shadow: 0 2px 0 #c9c9c9;
+
+          }
+
+        }
+      }
+    }
+
+    .mypage_detail_inner_right {
+      width: 450px;
+      height: 563px;
+      float: right;
+      margin-top: 15px;
+      margin-right: 10px;
+      background-color: #fff;
+
+      .my_display_photo {
+        height: 563px;
+        margin: 0px 10px 0px;
+        font-size: 12px;
+
+        &__title {
+          height: 40px;
+          line-height: 40px;
+          .photo {
+            margin-top: 2px;
+            margin-left: 15px;
+            width: 300px;
+            display: inline-block;
+            font-size: 13px;
+          }
+          .button_photo {
+            width: 60px;
+            height: 28px;
+            display: inline-block;
+            margin: 5px 6px;
+            text-align: center;
+            line-height: 28px;
+            float: right;
+            border-radius: 25px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #00b8c0;
+            border: 0;
+            box-shadow: 0 3px 0 #00abb3;
+
+          }
+        }
+
+        &__summary {
+          height: 380px;
+          border: 1px solid #e1e3e5;
+        }
+        &__box {
+          height: 90px;
+          margin-top: 10px;
+          background-color: gray;
+          .my_photo_list {
+            height: 90px;
+            .photo_item {
+              float: left;
+              width: 90px;
+              background-color: blue;
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &__02 {
+    margin: 0px 15px 10px;
+    width: 720px;
+    height: 1140px;
+    background-color: #e1e3e5;
+    .mypage_detail_inner_left {
+      width: 288px;
+      height: calc( 100% - 15px );
+      margin-left: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
+      float: left;
+    }
+    .mypage_detail_inner_right {
+      width: 393px;
+      height: calc( 100% - 15px );
+      margin-bottom: 15px;
+      margin-left: 14px;
+      background-color: #fff;
+      float: left;
+      .detail_item_list {
+        padding: 0 15px;
+        height: 100%;
+        background-color: blue;
+      }
+    }
+
+  }
+}

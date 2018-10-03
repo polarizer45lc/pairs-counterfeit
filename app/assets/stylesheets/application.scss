@@ -16,3 +16,11 @@
 
 @import "./reset";
 @import "./modules/header";
+@import "./modules/profile";
+
+.wrapper {
+  height: 100%;
+  width: 928px;
+  margin: 0 auto;
+  background-color: blue;
+}

@@ -1,0 +1,43 @@
+.wrapper
+  .box_mypage_detail
+
+    .box_mypage_detail__01
+      .mypage_detail_inner_left
+        .user_status
+          .user_status__title
+            %p.status 会員ステータス
+            =link_to "確認", root_path , class: "button_status"
+          %p.user_status__label 無料会員
+        .user_tweet
+          .user_tweet__title
+            %p.tweet つぶやき
+            =link_to "編集", root_path , class: "button_tweet"
+          .user_tweet__inner
+        .visiter_summary
+          .visiter_summary__title
+            %p.title 足あと
+          .visiter_summary__count
+            %p.text 過去一週間の足あと
+            %p.count 9726人
+          %ul.user_list
+            %li.user_item
+              %p.user_info
+          .box_link_more
+            =link_to "もっと見る", root_path , class: "button_more"
+      .mypage_detail_inner_right
+        .my_display_photo
+          .my_display_photo__title
+            %p.photo メイン・サブ写真
+            =link_to "写真編集", root_path , class: "button_photo"
+          .my_display_photo__summary
+            = image_tag("img03899.jpg", style: "width:100%;height:100%;")
+          .my_display_photo__box
+            %ul.my_phto_list
+              %li.photo_item
+    .box_mypage_detail__02
+      .mypage_detail_inner_left
+        %p.detail_sub_note{style: "height:40px;border-bottom: 1px solid #e1e3e5;"} 項目を選択すると編集できます
+        %p.detail_sub_title{style: "height:40px;margin-left:15px;line-height:40px;"} Pairsプロフ
+        %dl.detail_item_list{style: "height:100%;"}
+      .mypage_detail_inner_right
+
