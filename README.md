@@ -33,6 +33,8 @@ Things you may want to cover:
 - has_many :images
 - has_many :groups, through: :relationships
 - has_many :relationships
+- has_many :groups, through: :user_groups
+- has_many :user_groups
 - has_many :footprints
 - has_many :likes -->
 
@@ -45,46 +47,46 @@ Things you may want to cover:
 |message |text      |
 |image   |string    |
 |user_id |references|null: false, foreign_key: true|
-|pair_id |references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :pair
+- belongs_to :group
 - belongs_to :user
 
 
-## relationshipsテーブル
+## user_groupsテーブル
 
-|Column  |Type|Options                             |
-|------  |----|-------                             |
+|Column  |Type      |Options                       |
+|------  |----      |------                        |
 |user_id |references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
-- has_many   :images
--
+
 
 
 ## groupsテーブル
 
-|Column |Type       |Options                       |
-|------ |----       |-------                       |
-|user_id |references|null: false, foreign_key: true|
+|Column  |Type       |Options                       |
+|------  |----       |-------                       |
+|group_id|integer    |主キー                         |
 
 
 ### Association
 - has_many :users, through: :user_groups
+- has_many :user_groups
 - has_many :messages
-- has_many :user_group
-
 
 
 ## communitiesテーブル
 
-|Column |Type       |Options                       |
-|------ |----       |-------                       |
-|name   |string     |
+|Column  |Type       |Options                       |
+|------  |----       |-------                       |
+|name    |string     |null: false                   |
+|image   |string     |null: false                   |
+|category|string     |null: false                  |
 
 ### Association
 - has_many :users, through: :user_communities
@@ -94,9 +96,10 @@ Things you may want to cover:
 
 ## user_communitiesテーブル
 
-|Column |Type       |Options                             |
-|------ |----       |-------                             |
-|communities_id|references|null: false, foreign_key: true|
+|Column        |Type       |Options                       |
+|------        |----       |-------                       |
+|communities_id|references |null: false, foreign_key: true|
+|user_id       |references |null: false, foreign_key: true|
 
 ### Association
 - has_many :users, through: :user_communities
@@ -104,7 +107,7 @@ Things you may want to cover:
 
 
 
-## likesテーブル
+<!-- ## likesテーブル
 
 |Column  |Type      |Options                       |
 |------  |----      |-------                       |
@@ -112,7 +115,7 @@ Things you may want to cover:
 |liked_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :user -->
 
 
 ## imagesテーブル
@@ -128,29 +131,17 @@ Things you may want to cover:
 
 
 
-## groupsテーブル
-
-|Column  |Type      |Options                       |
-|------  |----      |-------                       |
-|user1_id|references|null: false, foreign_key: true|
-|user2_id|integer   |null: false, foreign_key: true|
-
-### Association
-- has_many :users, through: :relationships
-- has_many :relationships
-
-
 
 ## relationshipsテーブル
 
-|Column  |Type      |Options                           |
-|------  |----      |-------                           |
+|Column      |Type      |Options                       |
+|------      |----      |-------                       |
 |followed_id |references|null: false, foreign_key: true|
 |following_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
 
 
 
