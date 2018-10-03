@@ -1,0 +1,102 @@
+.side__contents
+  .profile
+    %p.profile__image
+      = link_to '#' do
+        = image_tag('no-image__man.png')
+    %p.profile__name
+      = link_to "杉野 栃木",'#'
+    %p.profile__status
+      = link_to "無料会員", '#'
+  .profile__rate
+    %p
+      プロフィール入力率
+      %span
+        100%
+    .profile__rate--graph
+      .graph100
+  .box__status
+    %ul.status__list
+      %li.item__like
+        %p.status__label
+          残りいいね数
+        %p.status__value.like__sprite
+          30
+        = link_to "追加する", '#', class: "add__btn btn--orange"
+      %li.item__point
+        %p.status__label
+          ポイント残高
+        %p.status__value.point__sprite
+          5
+        = link_to "追加する", '#', class: "add__btn btn--orange"
+  .box__store
+    .pairs__store
+      = link_to '#' do
+        = image_tag('pairs_store_icon.png')
+      = link_to "PAIRS STOREへ", '#', class: "pairs__btn btn--orange"
+
+  %navi.box__navi
+    .navi
+      %p.navi__title
+        さがす
+      %ul
+        %li.navi__item
+          = link_to "お相手を探す", '#'
+    .navi
+      %p.navi__title
+        いいね
+      %ul
+        %li.navi__item
+          = link_to "相手からのいいね！", '#'
+        %li.navi__item
+          = link_to "自分からのいいね！", '#'
+        %li.navi__item
+          = link_to "お気に入り", '#'
+    .navi
+      %p.navi__title
+        マッチング
+      %ul
+        %li.navi__item
+          = link_to "メッセージ"
+    .navi
+      %p.navi__title
+        コミュニティ
+      %ul
+        %li.navi__item
+          = link_to "コミュニティを探す", '#'
+    .navi
+      %p.navi__title
+        有料サービス
+      %ul
+        %li.navi__item
+          = link_to "有料会員とは？", '#'
+        %li.navi__item
+          = link_to "プレミアムオプション", '#'
+        %li.navi__item
+          = link_to "Pairsポイント", '#'
+    .navi
+      %p.navi__title
+        足あと
+      %ul
+        %li.navi__item
+          = link_to "足あと", '#'
+    .navi
+      %p.navi__title
+        各種設定
+      %ul
+        %li.navi__item
+          = link_to "通知/いいね上限", '#'
+        %li.navi__item
+          = link_to "Facebook友達更新", '#'
+        %li.navi__item
+          = link_to "非表示・ブロック", '#'
+        %li.navi__item
+          = link_to "オフラインモード設定", '#'
+    .navi__other
+      %ul
+        %li.other__item.item01
+          = link_to "はじめての方へ", '#'
+        %li.other__item.item02
+          = link_to "男性会員限定", '#'
+        %li.other__item.item03
+          = link_to "ヘルプ", '#'
+

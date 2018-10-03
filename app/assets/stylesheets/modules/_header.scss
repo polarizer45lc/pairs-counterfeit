@@ -3,6 +3,7 @@
   height: 59px;
   width: 100%;
   border-bottom: #CACED0 1px solid;
+  box-shadow: 0 1px 2px rgba(94, 94, 94, 0.1);
   &__box {
     width: 928px;
     margin: 0 auto;
@@ -17,6 +18,7 @@
     color: #A1A7AC;
     font-size: 12px;
     letter-spacing: 1px;
+    margin-top: 1px;
     float: left;
   }
 }
