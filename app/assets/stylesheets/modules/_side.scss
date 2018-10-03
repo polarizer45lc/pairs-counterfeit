@@ -1,0 +1,212 @@
+.side__contents {
+  background-color: #F7F7F7;
+  height: 100%;
+  width: 188px;
+  padding-top: 15px;
+  border-left: #CACED0 1px solid;
+  border-right: #CACED0 1px solid;
+  vertical-align: top;
+}
+
+.profile {
+  margin-bottom: 12px;
+  text-align: center;
+  &__image {
+    margin-bottom: 6px;
+  }
+  &__name {
+    font-size: 16px;
+    margin-bottom: 2px;
+    a:after {
+      position: relative;
+      top: 2px;
+      left: 5px;
+      display: inline-block;
+      width: 10px;
+      height: 13px;
+      content: '';
+      background-image: image-url("icon_sprites.png"),none;
+      background-repeat: no-repeat;
+      background-position: -198px -177px;
+    }
+    a:hover {
+      color: #8D9399;
+    }
+  }
+  &__status {
+    font-size: 12px;
+    font-weight: 700;
+    padding-right: 3px;
+    a:hover {
+      color: #8D9399;
+    }
+  }
+  &__rate {
+    margin: 0 20px 20px;
+    p {
+      color: #788086;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    span {
+      color: #3DB6E3;
+      font-weight: 700;
+      padding-left: 6px;
+      text-align: right;
+      display: inline-block;
+      float: right;
+    }
+  }
+  &__rate--graph {
+    width: 100%;
+    vertical-align: middle;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #CBD0D0;
+    border-radius: 4px;
+    .graph100 {
+      background-color: #3DB6E3;
+      height: 10px;
+    }
+  }
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+}
+
+.box__status {
+  overflow: hidden;
+  .status__list {
+    border-top: 1px solid #CBCED0;
+    box-shadow: #FFFFFF 0 1px 0;
+  }
+  li {
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    text-align: center;
+    box-shadow: #FFFFFF 1px 1px 0px inset;
+    padding: 10px 0px;
+  }
+  .item__like {
+    border-right: 1px solid #CBD0D0;
+  }
+  .status__label {
+    color: #788086;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .status__value {
+    font-size: 18px;
+    &:before {
+      position: relative;
+      top: 2px;
+      right: 4px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      content: '';
+      background-image: image-url("icon_sprites.png"),none;
+      background-repeat: no-repeat;
+    }
+  }
+  .like__sprite:before {
+    background-position: 2px -43px;
+  }
+  .point__sprite:before {
+    background-position: -28px -43px;
+  }
+  .add__btn {
+    font-size: 12px;
+    padding: 4px 10px 6px;
+    line-height: 1;
+    display: inline-block;
+    border-radius: 40px;
+  }
+}
+
+.box__store {
+  border-top: 1px solid #CBD0D0;
+  border-bottom: 1px solid #CBD0D0;
+  box-shadow: #FFFFFF 0 1px 0;
+  .pairs__store {
+    margin: 10px 0;
+    padding:10px 15px;
+    img {
+      width: 100%;
+    }
+  }
+  .pairs__btn {
+    font-size: 12px;
+    padding: 6px 33px;
+    line-height: 1;
+    display: inline-block;
+    border-radius: 30px;
+  }
+}
+
+.box__navi {
+  .navi__title {
+    color: #BEC3C9;
+    font-size: 13px;
+    margin: 0 0 4px 20px;
+  }
+  .navi__item {
+    font-size: 14px;
+    position: relative;
+    a {
+      padding: 8px 15px;
+      display: block;
+      &:hover {
+        background-color: #DFE1E3;
+      }
+    }
+  }
+  .navi {
+    padding: 20px 0 12px;
+    border-bottom: 1px solid #CBD0D0;
+    box-shadow: #FFFFFF 0 1px 0;
+  }
+  .navi__other {
+    padding: 20px;
+  }
+  .other__item {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #00c4cc;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:before {
+      position: relative;
+      top: 2px;
+      right: 4px;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      content: '';
+      background-image: url("icon_sprites.png"),none;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.item01:before {
+  background-position: -62px -45px;
+}
+.item02:before {
+  background-position: -87px -46px;
+}
+.item03:before {
+  background-position: -115px -46px;
+}
+
+.btn--orange {
+  background-color: #FFBE40;
+  box-shadow: #DEA22E 0 3px 0;
+  color: #FFFFFF;
+}
