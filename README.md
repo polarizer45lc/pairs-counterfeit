@@ -2,41 +2,126 @@
 
 ## usersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
-|tel|int|null: false|
-|password|string|null: false|
-|sex|int|null: false|
-|comment|string||
-|height|string|null: false|
-|weight|string|null: false|
-|blood_type|string|null: false|
-|residence|string|null: false|
-|birthplace|string|null: false|
-|job_category|string|null: false|
-|educational|string|null: false|
-|annual_income|string|null: false|
-|tobacco|string|null: false|
-|brother|string|null: false|
-|country|string|null: false|
-|language|string|null: false|
-|marital|string|null: false|
-|child|string|null: false|
-|mdesire|string|null: false|
-|cdesire|string|null: false|
-|hkeeping|string|null: false|
-|encounter|string|null: false|
-|cost|string|null: false|
-|hobby1|string|null: false|
-|hobby2|string|null: false|
-|hobby3|string|null: false|
+|Columns      |Type     |Options                 |
+|-------------|---------|------------------------|
+|nickname     |string   |null: false             |
+|email        |string   |null: false             |
+|tell         |integer  |null: false, unique:true|    個別ユーザー認証のためのものなのでつけない可能性もある
+|password     |string   |null: false             |
+|sex          |string   |null: false             |
+|birthday     |datetime |null: false             |
+|introduction |string   |                        |
+|height       |string   |                        |
+|weight       |string   |                        |
+|blood_type   |integer  |                        |
+|residence    |string   |                        |
+|birthplace   |string   |                        |
+|job_category |string   |                        |
+|educational  |string   |                        |
+|annual_income|string   |                        |
+|tobacco      |string   |                        |
+|brother      |string   |                        |    男女で表示するビューが違うので注意
+|country      |string   |                        |
+|marital      |string   |                        |
+|child        |string   |                        |
+|mdesire      |string   |                        |
+|cdesire      |string   |                        |
+|hkeeping     |string   |                        |
+|encounter    |string   |                        |
+|cost         |string   |                        |
+|holiday      |string   |                        |
+|sociability  |string   |                        |
+|hobby1       |string   |                        |
+|hobby2       |string   |                        |
+|hobby3       |string   |                        |
+|language1    |string   |                        |
+|language2    |string   |                        |
+|language3    |string   |                        |
+
+
+has_many :profimages
+has_one :characters                <!--     このテーブルはユーザーと１対１。 -->
+has_many :active_relationships,class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
+has_many :active_relationships,class_name:  "Relationship", foreign_key: "following_id", dependent: :destroy
+has_many :group_users
+has_many :groups, through: :group_users
+has_many :masseges
 
 
 
 
+##charactersテーブル
 
+|Columns        |Type      | Options                     |
+|---------------|----------|-----------------------------|
+|user_id        |references|null: false,foreign_key: true|
+|kindness       |integer   |null: false, default: 0      |      優しい　
+|honest         |integer   |null: false, default: 0      |      素直
+|determination  |integer   |null: false, default: 0      |      決断力がある
+|gentle         |integer   |null: false, default: 0      |      穏やか
+|familiar       |integer   |null: false, default: 0      |      親しみやすい
+|cheerful       |integer   |null: false, default: 0      |      明るい
+|indoor         |integer   |null: false, default: 0      |      インドア
+|outdoor        |integer   |null: false, default: 0      |      アウトドア
+|earnest        |integer   |null: false, default: 0      |      真面目
+|intellectual   |integer   |null: false, default: 0      |      知的
+|sincere        |integer   |null: false, default: 0      |      誠実
+|punctual       |integer   |null: false, default: 0      |      几帳面
+|optimistic     |integer   |null: false, default: 0      |      楽観的
+|shy            |integer   |null: false, default: 0      |      照れ屋
+|smilly         |integer   |null: false, default: 0      |      いつも笑顔
+|elegance       |integer   |null: false, default: 0      |      上品
+|clamness       |integer   |null: false, default: 0      |      落ち着いている
+|humility       |integer   |null: false, default: 0      |      謙虚
+|strict         |integer   |null: false, default: 0      |      厳格
+|considerate    |integer   |null: false, default: 0      |      思いやりがある
+|lonely         |integer   |null: false, default: 0      |      寂しがり
+|sociable       |integer   |null: false, default: 0      |      社交的
+|cool           |integer   |null: false, default: 0      |      冷静沈着
+|curiosity      |integer   |null: false, default: 0      |      好奇心旺盛
+|homely         |integer   |null: false, default: 0      |      家庭的
+|workerholic    |integer   |null: false, default: 0      |      仕事好き
+|responsibility |integer   |null: false, default: 0      |      責任感がある
+|intercourse    |integer   |null: false, default: 0      |      面倒見が良い
+|speaker        |integer   |null: false, default: 0      |      話し上手
+|listner        |integer   |null: false, default: 0      |      聞き上手
+|refreshing     |integer   |null: false, default: 0      |      さわやか
+|active         |integer   |null: false, default: 0      |      行動的
+|rational       |integer   |null: false, default: 0      |      合理的
+|defeated       |integer   |null: false, default: 0      |      負けず嫌い
+|funny          |integer   |null: false, default: 0      |      面白い
+|hot            |integer   |null: false, default: 0      |      熱い
+|comfortable    |integer   |null: false, default: 0      |      気が利く
+|devoted        |integer   |null: false, default: 0      |      マメ
+|boldness       |integer   |null: false, default: 0      |      大胆
+|tolerance      |integer   |null: false, default: 0      |      寛容
+|generosity     |integer   |null: false, default: 0      |      気前がいい
+|naturally      |integer   |null: false, default: 0      |      天然と言われる
+|backlashless   |integer   |null: false, default: 0      |      裏表がない
+|mypace         |integer   |null: false, default: 0      |      マイペース
+|latecrop       |integer   |null: false, default: 0      |      奥手
+|moody          |integer   |null: false, default: 0      |      気分屋
+　
+
+belongs_to :user
+
+<!-- userインスタンスが登録された時に同時にレコードを生成。
+日本語はカラムとして設定できないので横の連なる表示はヘルパーメソッドを使い簡略化
+初期値は0にしてチェックが入れば1にし、1の時のみ表示するようメソッドを組む。
+
+ -->
+
+
+##profimagesテーブル
+
+|Columns |Type      |Options                       |
+|--------|----------|------------------------------|
+|user_id |references|null: false, foreign_key: true|
+|image   |string    |null: false                   |
+|status  |integer   |null: false                   |
+
+
+belongs_to :user
 
 
 
