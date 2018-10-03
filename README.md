@@ -40,7 +40,7 @@
 |language2    |string   |                        |
 |language3    |string   |                        |
 
-##Association
+## Association
 - has_many :profimages
 - has_one :characters                <!--     このテーブルはユーザーと１対１。 -->
 - has_many :active_relationships,class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -193,10 +193,10 @@
 
 ## relationshipsテーブル
 
-|Column      |Type      |Options                       |
-|------------|----------|------------------------------|
-|followed_id |references|null: false, foreign_key: true|
-|following_id|references|null: false, foreign_key: true|
+|Column      |Type      |Options     |                  |
+|------------|----------|------------|
+|followed_id |integer   |null: false |
+|following_id|integer   |null: false |
 
 ### Association
 - belongs_to :user
@@ -206,10 +206,10 @@
 
 ## footprintsテーブル
 
-|Column    |Type      |Options                           |
-|----------|----------|----------------------------------|
-|visite_id |references|null: false, foreign_key: true    |
-|visited_id|references|null: false, foreign_key: true    |
+|Column    |Type      |Options     |
+|----------|----------|------------|
+|visite_id |integer   |null: false |
+|visited_id|integer   |null: false |
 
 ### Association
 - belongs_to :user
