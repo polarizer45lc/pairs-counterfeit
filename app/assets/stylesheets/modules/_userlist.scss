@@ -139,6 +139,24 @@
     }
   }
 }
+
+.box__paginate {
+  // bg-colorとheightはkaminari実装後、削除
+  background-color: #CCC;
+  height: 30px;
+  padding-top: 5px;
+  margin: 0 4px 20px;
+  text-align: center;
+}
+
+.box__remaining {
+  color: #788086;
+  font-size: 13px;
+  text-align: center;
+  em {
+    color:#ed4655;
+  }
+}
 // オンライン状況表示（現時点では全てオンライン表示）
 .user__login {
   &:before {
