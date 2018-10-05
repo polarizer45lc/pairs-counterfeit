@@ -1,10 +1,14 @@
 @import "./reset";
 @import "./body";
+@import "./mixin/clearfix";
 @import "./modules/header";
 @import "./modules/side";
+@import "./modules/main";
+@import "./modules/userlist";
 
 .wrapper {
   height: 100%;
   width: 928px;
   margin: 0 auto;
+  display: table;
 }
