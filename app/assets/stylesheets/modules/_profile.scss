@@ -1,18 +1,64 @@
-.box_mypage_detail {
-  width: calc( 100% - 180px );
-  height: 1830px;
+@mixin white_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
   float: right;
-  background-color: #f3f3f3;
-  color: #8d9399;
+  border-radius: 25px;
+  font-size: 12px;
+  background-color: $white;
+  border: 1px solid #cbced0;
+  box-shadow: 0 2px 0 #c9c9c9;
+  color: $color_title;
+}
+
+@mixin cyan_botton($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $white;
+  background-color: $cyan;
+  border: 0;
+  box-shadow: 0 3px 0 #00abb3;
+}
+
+// mixin -----------------------------------------------
+
+$color_border: #e1e3e5;
+$color_background: #f3f3f3;
+$color_title: #8d9399;
+$white: #fff;
+$black: #54595d;
+$cyan: #00b8c0;
+
+
+// color変数 --------------------------------------------
+
+
+
+
+
+
+
+.box_mypage_detail {
+  float: right;
+  color: $color_title;
   font-size: 13px;
-
-
 
   &__01 {
     width: 720px;
-    height: 593px;
+    min-height: 593px;
     margin: 15px 15px 0px;
-    background-color: #e1e3e5;
+    background-color: $color_background;
+    clear: both;
 
     .mypage_detail_inner_left {
       width: 230px;
@@ -25,27 +71,17 @@
           height: 44px;
           line-height: 40px;
           font-size: 13px;
-          background-color: #fff;
-          border-bottom: 1px solid #e1e3e5;
+          background-color: $white;
+          border-bottom: 1px solid $color_border;
           .status {
             margin-top: 3px;
             margin-left: 15px;
             width: 100px;
+            color: $black;
             display: inline-block;
           }
           .button_status {
-            width: 50px;
-            height: 28px;
-            display: inline-block;
-            margin: 6px 8px;
-            text-align: center;
-            line-height: 28px;
-            float: right;
-            border-radius: 25px;
-            font-size: 12px;
-            background-color: #fff;
-            border: 1px solid #cbced0;
-            box-shadow: 0 2px 0 #c9c9c9;
+            @include white_button(50px, 28px);
           }
         }
 
@@ -54,70 +90,75 @@
           line-height: 45px;
           text-align: center;
           font-weight: 700;
-          background-color: #fff;
+          background-color: $white;
         }
       }
 
       .user_tweet {
         height: 163px;
         margin-top: 10px;
+        position: relative;
 
         &__title {
           height: 44px;
-          background-color: #fff;
-          border-bottom: 1px solid #e1e3e5;
+          background-color: $white;
+          border-bottom: 1px solid $color_border;
           .tweet {
             margin-top: 12px;
             margin-left: 15px;
-            width: 100px;
+            width: 55px;
             display: inline-block;
+            color: $black;
           }
           .button_tweet {
-            width: 50px;
-            height: 28px;
-            display: inline-block;
-            margin: 6px 8px;
-            text-align: center;
-            line-height: 28px;
-            float: right;
-            border-radius: 25px;
-            font-size: 12px;
-            color: #fff;
-            background-color: #00b8c0;
-            border: 0;
-            box-shadow: 0 3px 0 #00abb3;
+            @include cyan_botton(50px, 28px);
           }
         }
 
         &__inner {
           height: calc( 100% - 44px );
-          background-color: #fff;
+          background-color: $white;
+          .user_tweet_textarea {
+            vertical-align: baseline;
+            .user_tweet_text {
+              padding: 10px 15px;
+              color: $black;
+            }
+            .user_tweet_note {
+              padding: 0 15px 10px;
+              font-size: 8px;
+              position: absolute;
+              bottom: 0;
+              width: 205px;
+              text-align: center;
+              color: $cyan;
+            }
+          }
         }
       }
 
       .visiter_summary {
         height: 290px;
         margin-top: 10px;
-        background-color: #fff;
+        background-color: $white;
 
         .visiter_summary__title {
           vertical-align: center;
-          height: 40px;
+          height: 35px;
           line-height: 40px;
-          border-bottom: 1px solid #e1e3e5;
+          border-bottom: 1px solid $color_border;
           .title {
             margin-top: 3px;
             margin-left: 15px;
             width: 130px;
-            display: inline-block;
+            color: $black;
           }
         }
 
         .visiter_summary__count {
-          height: 40px;
-          border-bottom: 1px solid #e1e3e5;
+          height: 35px;
+          border-bottom: 1px solid $color_border;
           .text {
-            margin-top: 12px;
             margin-left: 15px;
             width: 130px;
             display: inline-block;
@@ -131,36 +172,35 @@
           }
         }
 
-        %ul.user_list {
-          height: 160px;
-
-          %li.user_item01 {
-            height: 40px;
-            border-bottom: 1px dashed #e1e3e5;
+        ul.user_list {
+          height: 188px;
+          margin: 0 10px 0;
+          li.user_item {
+            border-bottom: 1px dashed $color_border;
+            vertical-align: baseline;
+            p.user_info{
+              display: inline-block;
+              vertical-align: middle;
+              width: 90px;
+              position: relative;
+              bottom: 10px;
+            }
+            p.user_time {
+              font-size: 8px;
+              display: inline-block;
+              vertical-align: middle;
+              position: relative;
+              bottom: 11px;
+            }
           }
-
         }
-        .box_link_more {
+
+        .button_more {
+          @include white_button(72px, 20px);
           position: relative;
-          top: 165px;
-          height: 40px;
-          .button_more {
-            width: 80px;
-            height: 28px;
-            display: inline-block;
-            margin: 6px 8px;
-            text-align: center;
-            line-height: 28px;
-            float: right;
-            border-radius: 25px;
-            font-size: 12px;
-            background-color: #fff;
-            border: 1px solid #cbced0;
-            box-shadow: 0 2px 0 #c9c9c9;
-
-          }
-
+          bottom: 3px;
         }
+
       }
     }
 
@@ -170,7 +210,8 @@
       float: right;
       margin-top: 15px;
       margin-right: 10px;
-      background-color: #fff;
+      background-color: $white;
+      position: relative;
 
       .my_display_photo {
         height: 563px;
@@ -184,43 +225,67 @@
             margin-top: 2px;
             margin-left: 15px;
             width: 300px;
+            color: $black;
             display: inline-block;
             font-size: 13px;
           }
           .button_photo {
-            width: 60px;
-            height: 28px;
-            display: inline-block;
-            margin: 5px 6px;
-            text-align: center;
-            line-height: 28px;
-            float: right;
-            border-radius: 25px;
-            font-size: 12px;
-            color: #fff;
-            background-color: #00b8c0;
-            border: 0;
-            box-shadow: 0 3px 0 #00abb3;
-
+            @include cyan_botton(60px, 28px);
           }
         }
 
         &__summary {
           height: 380px;
-          border: 1px solid #e1e3e5;
+          width: 425px;
+          border: 1px solid $color_border;
+          margin-bottom: 10px;
+          border-radius: 4px;
+          .photo_summary {
+            width: 100%;
+            height:100%;
+            border-radius: 4px;
+          }
         }
         &__box {
-          height: 90px;
-          margin-top: 10px;
-          background-color: gray;
-          .my_photo_list {
-            height: 90px;
-            .photo_item {
-              float: left;
-              width: 90px;
-              background-color: blue;
-
+          margin-bottom: 10px;
+          .box_my_photo {
+            overflow: hidden;
+            ul {
+              width: 449px;
+              height: 99px;
+              display: inline-block;
+              margin-right: -12px;
+              li {
+                display: inline-block;
+                float: left;
+                height: 96px;
+                width: 96px;
+                margin-right: 12px;
+                border-radius: 4px;
+                border: 1px solid $color_border;
+                .photo_item {
+                  height: 100%;
+                  width: 100%;
+                  border-radius: 4px;
+                }
+              }
             }
+          }
+        }
+        .my_photo_pager {
+
+          .button_before {
+            @include white_button(60px, 20px);
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+
+          }
+          .button_after {
+            @include white_button(60px, 20px);
+            position: absolute;
+            bottom: 0;
+            right: 5px;
           }
         }
       }
@@ -232,29 +297,136 @@
   &__02 {
     margin: 0px 15px 10px;
     width: 720px;
-    height: 1140px;
-    background-color: #e1e3e5;
+    min-height: 1160px;
+    background-color: $color_background;
     .mypage_detail_inner_left {
       width: 288px;
       height: calc( 100% - 15px );
       margin-left: 15px;
       margin-bottom: 15px;
-      background-color: #fff;
+      background-color: $white;
       float: left;
+      .detail_sub_note {
+        height:30px;
+        border-bottom: 1px solid $color_border;
+        padding: 15px 0 0 15px;
+        color: $cyan;
+      }
+      .detail_sub_title {
+        height:35px;
+        margin-left:15px;
+        line-height:40px;
+        color: #bec3c9;
+        .title_a {
+          border-left: 3px solid $color_title;
+          padding-left: 8px;
+          color: $color_title;
+        }
+      }
+      .detail_item_list {
+        padding: 0 15px;
+        .detail_item_title {
+          float: left;
+          clear: both;
+          margin: 0 6px 8px 0;
+          width: 120px;
+          vertical-align: baseline;
+        }
+        .detail_item_value {
+          position: relative;
+          min-height: 18px;
+          margin: 10px 0 8px 120px;
+          text-decoration: underline;
+          color: $cyan;
+          vertical-align: baseline;
+        }
+      }
     }
     .mypage_detail_inner_right {
       width: 393px;
       height: calc( 100% - 15px );
       margin-bottom: 15px;
       margin-left: 14px;
-      background-color: #fff;
       float: left;
-      .detail_item_list {
-        padding: 0 15px;
-        height: 100%;
-        background-color: blue;
+      .join_community {
+        min-height: 200px;
+        background-color: $white;
+        margin-bottom: 15px;
+        &__title {
+          position: relative;
+          top: 1px;
+          padding: 12px 10px;
+          border-bottom: 1px solid $color_border;
+          .title_b {
+            border-left: 3px solid;
+            padding-left: 8px;
+          }
+          .button_community {
+            @include white_button(160px, 28px);
+            position: relative;
+            bottom: 12px;
+          }
+        }
+        &__list {
+          .about_community {
+            padding-top: 40px;
+            text-align: center;
+          }
+        }
+      }
+      .mypage_introduction {
+        min-height: 170px;
+        padding: 20px 15px;
+        background-color: $white;
+        .introduction_title {
+          width: 100%;
+          height: 30px;
+          color: $black;
+          .button_introduction {
+            @include cyan_botton(40px, 20px);
+            font-size: 13px;
+            margin: 0 10px 0 0;
+          }
+        }
+        .introduction_note {
+          margin-bottom: 10px;
+          padding: 6px 8px;
+          text-align: center;
+          background-color: #fff8f8;
+          em {
+            color: #ed4655;
+          }
+        }
+        .introduction_text {
+          text-align: center;
+          margin: 20px 0;
+        }
       }
     }
 
   }
 }
+
+.image-circle {
+  border-radius: 50%;
+  margin: 5px 10px 0;
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+}
+
+li.user_item:hover {
+  background-color: #fff8f8;
+  opacity: 0.8;
+
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+
+
+
+
