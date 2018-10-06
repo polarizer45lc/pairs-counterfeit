@@ -2,13 +2,7 @@
 @import "./body";
 @import "./mixin/clearfix";
 @import "./modules/header";
-<<<<<<< HEAD
 @import "./modules/profile";
-
-.wrapper {
-  width: 928px;
-  margin: 0 16% 0;
-=======
 @import "./modules/side";
 @import "./modules/main";
 @import "./modules/userlist";
@@ -18,5 +12,4 @@
   width: 928px;
   margin: 0 auto;
   display: table;
->>>>>>> master
 }
