@@ -1,0 +1,24 @@
+.main__content
+  = link_to '#', class: "banner" do
+    = image_tag('banner.png', width: "721px")
+  .box__search
+    .search__area
+      = link_to "検索条件", '#', class: "btn__white btn__b"
+    %nav.search__view
+      %ul
+        %li.tab__item.tag01.btn__white--active
+          = link_to " ", '#'
+        %li.tab__item.tag02.btn__white
+          = link_to " ", '#'
+    %p.search__result
+      誰もいません
+  .grid__header
+    .header__text
+      %span
+        「いいね！」をあと
+      %em
+        30人
+      %span
+        押しましょう!
+  = render "shared/userlist"
+  = render "shared/footer"
