@@ -10,7 +10,7 @@
   font-size: 12px;
   background-color: $white;
   border: 1px solid #cbced0;
-  box-shadow: 0 2px 0 #c9c9c9;
+  box-shadow: 0 1px 0 #c9c9c9;
   color: $color_title;
 }
 
@@ -26,8 +26,7 @@
   font-size: 12px;
   color: $white;
   background-color: $cyan;
-  border: 0;
-  box-shadow: 0 3px 0 #00abb3;
+  box-shadow: 0 2px 0 #00abb3;
 }
 
 // mixin -----------------------------------------------
@@ -81,9 +80,7 @@ $cyan: #00b8c0;
             color: $black;
             display: inline-block;
           }
-          .button_status {
-            @include white_button(50px, 28px);
-          }
+
         }
 
         &__label {
@@ -110,9 +107,6 @@ $cyan: #00b8c0;
             width: 55px;
             display: inline-block;
             color: $black;
-          }
-          .button_tweet {
-            @include cyan_botton(50px, 28px);
           }
         }
 
@@ -195,13 +189,6 @@ $cyan: #00b8c0;
             }
           }
         }
-
-        .button_more {
-          @include white_button(72px, 20px);
-          position: relative;
-          bottom: 3px;
-        }
-
       }
     }
 
@@ -230,9 +217,7 @@ $cyan: #00b8c0;
             display: inline-block;
             font-size: 13px;
           }
-          .button_photo {
-            @include cyan_botton(60px, 28px);
-          }
+
         }
 
         &__summary {
@@ -271,22 +256,6 @@ $cyan: #00b8c0;
                 }
               }
             }
-          }
-        }
-        .my_photo_pager {
-
-          .button_before {
-            @include white_button(60px, 20px);
-            position: absolute;
-            bottom: 0;
-            left: 5px;
-
-          }
-          .button_after {
-            @include white_button(60px, 20px);
-            position: absolute;
-            bottom: 0;
-            right: 5px;
           }
         }
       }
@@ -362,11 +331,6 @@ $cyan: #00b8c0;
             border-left: 3px solid;
             padding-left: 8px;
           }
-          .button_community {
-            @include white_button(160px, 28px);
-            position: relative;
-            bottom: 12px;
-          }
         }
         &__list {
           .about_community {
@@ -383,11 +347,6 @@ $cyan: #00b8c0;
           width: 100%;
           height: 30px;
           color: $black;
-          .button_introduction {
-            @include cyan_botton(40px, 20px);
-            font-size: 13px;
-            margin: 0 10px 0 0;
-          }
         }
         .introduction_note {
           margin-bottom: 10px;
@@ -422,9 +381,59 @@ li.user_item:hover {
 
 }
 
-a {
-  outline: none;
-  text-decoration: none;
+// button ------------------------------------------------
+
+.button_status {
+  @include white_button(50px, 28px);
+}
+
+.button_tweet {
+  @include cyan_botton(50px, 28px);
+}
+
+.button_more {
+  @include white_button(72px, 20px);
+  position: relative;
+  bottom: 3px;
+}
+
+.button_photo {
+  @include cyan_botton(60px, 28px);
+}
+
+.button_before {
+  @include white_button(60px, 20px);
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.button_after {
+  @include white_button(60px, 20px);
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+.button_community {
+  @include white_button(160px, 28px);
+  position: relative;
+  bottom: 12px;
+}
+
+.button_introduction {
+  @include cyan_botton(40px, 20px);
+  font-size: 13px;
+  margin: 0 10px 0 0;
+}
+
+
+
+a:hover {
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(0.8px);
+  box-shadow: none;
 }
 
 
