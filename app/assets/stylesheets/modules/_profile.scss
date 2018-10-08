@@ -1,0 +1,444 @@
+@mixin white_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $color_title;
+  background-color: $white;
+  border: 1px solid #cbced0;
+  box-shadow: 0 1px 0 #c9c9c9;
+}
+
+@mixin cyan_botton($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $white;
+  background-color: $cyan;
+  box-shadow: 0 2px 0 #00abb3;
+}
+
+// mixin -----------------------------------------------
+
+$color_border: #e1e3e5;
+$color_background: #f3f3f3;
+$color_title: #8d9399;
+$white: #FFFFFF;
+$black: #54595d;
+$cyan: #00b8c0;
+
+
+// color変数 --------------------------------------------
+
+
+
+
+
+
+
+.box_mypage_detail {
+  width: calc(915px - 180px);
+  float: right;
+  color: $color_title;
+  font-size: 13px;
+
+  &__01 {
+    width: 720px;
+    min-height: 593px;
+    margin: 15px 15px 0px;
+    background-color: $color_background;
+    clear: both;
+
+    .mypage_detail_inner_left {
+      width: 230px;
+      height: 563px;
+      margin: 15px 10px 0px 15px;
+      float: left;
+
+      .user_status {
+        &__title {
+          height: 44px;
+          line-height: 40px;
+          font-size: 13px;
+          background-color: $white;
+          border-bottom: 1px solid $color_border;
+          .status {
+            margin-top: 3px;
+            margin-left: 15px;
+            width: 100px;
+            color: $black;
+            display: inline-block;
+          }
+
+        }
+
+        &__label {
+          height: 45px;
+          line-height: 45px;
+          text-align: center;
+          font-weight: 700;
+          background-color: $white;
+        }
+      }
+
+      .user_tweet {
+        height: 163px;
+        margin-top: 10px;
+        position: relative;
+
+        &__title {
+          height: 44px;
+          background-color: $white;
+          border-bottom: 1px solid $color_border;
+          .tweet {
+            margin-top: 12px;
+            margin-left: 15px;
+            width: 55px;
+            display: inline-block;
+            color: $black;
+          }
+        }
+
+        &__inner {
+          height: calc( 100% - 44px );
+          background-color: $white;
+          .user_tweet_textarea {
+            vertical-align: baseline;
+            .user_tweet_text {
+              padding: 10px 15px;
+              color: $black;
+            }
+            .user_tweet_note {
+              padding: 0 15px 10px;
+              font-size: 8px;
+              position: absolute;
+              bottom: 0;
+              width: 205px;
+              text-align: center;
+              color: $cyan;
+            }
+          }
+        }
+      }
+
+      .visiter_summary {
+        height: 290px;
+        margin-top: 10px;
+        background-color: $white;
+
+        .visiter_summary__title {
+          vertical-align: center;
+          height: 35px;
+          line-height: 40px;
+          border-bottom: 1px solid $color_border;
+          .title {
+            margin-top: 3px;
+            margin-left: 15px;
+            width: 130px;
+            color: $black;
+          }
+        }
+
+        .visiter_summary__count {
+          height: 35px;
+          border-bottom: 1px solid $color_border;
+          .text {
+            margin-left: 15px;
+            width: 130px;
+            display: inline-block;
+          }
+          .count {
+            margin-top: 12px;
+            margin-right: 5px;
+            width: 60px;
+            display: inline-block;
+            text-align: right;
+          }
+        }
+
+        ul.user_list {
+          height: 188px;
+          margin: 0 10px 0;
+          li.user_item {
+            border-bottom: 1px dashed $color_border;
+            vertical-align: baseline;
+            p.user_info{
+              display: inline-block;
+              vertical-align: middle;
+              width: 90px;
+              position: relative;
+              bottom: 10px;
+            }
+            p.user_time {
+              font-size: 8px;
+              display: inline-block;
+              vertical-align: middle;
+              position: relative;
+              bottom: 11px;
+            }
+          }
+        }
+      }
+    }
+
+    .mypage_detail_inner_right {
+      width: 450px;
+      height: 563px;
+      float: right;
+      margin-top: 15px;
+      margin-right: 10px;
+      background-color: $white;
+      position: relative;
+
+      .my_display_photo {
+        height: 563px;
+        margin: 0px 10px 0px;
+        font-size: 12px;
+
+        &__title {
+          height: 40px;
+          line-height: 40px;
+          .photo {
+            margin-top: 2px;
+            margin-left: 15px;
+            width: 300px;
+            color: $black;
+            display: inline-block;
+            font-size: 13px;
+          }
+
+        }
+
+        &__summary {
+          height: 380px;
+          width: 425px;
+          border: 1px solid $color_border;
+          margin-bottom: 10px;
+          border-radius: 4px;
+          .photo_summary {
+            width: 100%;
+            height:100%;
+            border-radius: 4px;
+          }
+        }
+        &__box {
+          margin-bottom: 10px;
+          .box_my_photo {
+            overflow: hidden;
+            ul {
+              width: 449px;
+              height: 99px;
+              display: inline-block;
+              margin-right: -12px;
+              li {
+                display: inline-block;
+                float: left;
+                height: 96px;
+                width: 96px;
+                margin-right: 12px;
+                border-radius: 4px;
+                border: 1px solid $color_border;
+                .photo_item {
+                  height: 100%;
+                  width: 100%;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &__02 {
+    margin: 0px 15px 10px;
+    width: 720px;
+    min-height: 1160px;
+    background-color: $color_background;
+    .mypage_detail_inner_left {
+      width: 288px;
+      height: calc( 100% - 15px );
+      margin-left: 15px;
+      margin-bottom: 15px;
+      background-color: $white;
+      float: left;
+      .detail_sub_note {
+        height:30px;
+        border-bottom: 1px solid $color_border;
+        padding: 15px 0 0 15px;
+        color: $cyan;
+      }
+      .detail_sub_title {
+        height:35px;
+        margin-left:15px;
+        line-height:40px;
+        color: #bec3c9;
+        .title_a {
+          border-left: 3px solid $color_title;
+          padding-left: 8px;
+          color: $color_title;
+        }
+      }
+      .detail_item_list {
+        padding: 0 15px;
+        .detail_item_title {
+          float: left;
+          clear: both;
+          margin: 0 6px 8px 0;
+          width: 120px;
+          vertical-align: baseline;
+        }
+        .detail_item_value {
+          position: relative;
+          min-height: 18px;
+          margin: 10px 0 8px 120px;
+          text-decoration: underline;
+          color: $cyan;
+          vertical-align: baseline;
+        }
+      }
+    }
+    .mypage_detail_inner_right {
+      width: 393px;
+      height: calc( 100% - 15px );
+      margin-bottom: 15px;
+      margin-left: 14px;
+      float: left;
+      .join_community {
+        min-height: 200px;
+        background-color: $white;
+        margin-bottom: 15px;
+        &__title {
+          position: relative;
+          top: 1px;
+          padding: 12px 10px;
+          border-bottom: 1px solid $color_border;
+          .title_b {
+            border-left: 3px solid;
+            padding-left: 8px;
+          }
+        }
+        &__list {
+          .about_community {
+            padding-top: 40px;
+            text-align: center;
+          }
+        }
+      }
+      .mypage_introduction {
+        min-height: 170px;
+        padding: 20px 15px;
+        background-color: $white;
+        .introduction_title {
+          width: 100%;
+          height: 30px;
+          color: $black;
+        }
+        .introduction_note {
+          margin-bottom: 10px;
+          padding: 6px 8px;
+          text-align: center;
+          background-color: #fff8f8;
+          em {
+            color: #ed4655;
+          }
+        }
+        .introduction_text {
+          text-align: center;
+          margin: 20px 0;
+        }
+      }
+    }
+
+  }
+}
+
+.image-circle {
+  border-radius: 50%;
+  margin: 5px 10px 0;
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+}
+
+li.user_item:hover {
+  background-color: #fff8f8;
+  opacity: 0.8;
+
+}
+
+// button ------------------------------------------------
+
+.button_status {
+  @include white_button(50px, 28px);
+}
+
+.button_tweet {
+  @include cyan_botton(50px, 28px);
+}
+
+.button_more {
+  @include white_button(72px, 20px);
+  position: relative;
+  bottom: 3px;
+}
+
+.button_photo {
+  @include cyan_botton(60px, 28px);
+}
+
+.button_before {
+  @include white_button(60px, 20px);
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.button_after {
+  @include white_button(60px, 20px);
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+.button_community {
+  @include white_button(160px, 28px);
+  position: relative;
+  bottom: 12px;
+}
+
+.button_introduction {
+  @include cyan_botton(40px, 20px);
+  font-size: 13px;
+  margin: 0 10px 0 0;
+}
+
+
+
+a:active {
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(0.8px);
+  box-shadow: none;
+}
+
+
+
+
+
+
+
