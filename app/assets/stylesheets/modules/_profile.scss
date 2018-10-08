@@ -367,6 +367,9 @@ $cyan: #00b8c0;
   }
 }
 
+
+// module ------------------------------------------------
+
 .image-circle {
   border-radius: 50%;
   margin: 5px 10px 0;
@@ -448,7 +451,6 @@ a:active {
   opacity: 0.60;
   z-index: 100;
 }
-
 
 * html #filter { /* ie用 */
   position: absolute;

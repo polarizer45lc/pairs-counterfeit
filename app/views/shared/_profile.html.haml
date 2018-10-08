@@ -12,7 +12,7 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-          =link_to "ルール", "#" , class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
+          =link_to "ルール", "#" , id: "tweet_rule", class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet"
         .user_tweet__inner
           .user_tweet_textarea
@@ -209,7 +209,7 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", root_path, style:"color: #00abb3;"
+            =link_to "コミュニティとは?", root_path, class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文

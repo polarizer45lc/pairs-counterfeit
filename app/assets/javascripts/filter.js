@@ -1,8 +1,8 @@
 $(function(){
-  $(".filterTrigger").click(function(e){
+  $('.filterTrigger').click(function(e){
     e.preventDefault();
     if(!document.getElementById("filter")){
-      $("body").append("<div id=\"filter\"></div>");
+      $('body').append("<div id=\"filter\"></div>");
     }else{
       $("#filter").show();
     }
