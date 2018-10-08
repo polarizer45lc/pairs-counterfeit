@@ -12,7 +12,7 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-          =link_to "ルール", "#" , style:"display: inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
+          =link_to "ルール", "#" , class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet"
         .user_tweet__inner
           .user_tweet_textarea
@@ -28,19 +28,19 @@
           %p.count 9726人
         %ul.user_list
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
+            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
+            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
+            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
+            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
 
@@ -50,7 +50,7 @@
       .my_display_photo
         .my_display_photo__title
           %p.photo メイン・サブ写真
-          =link_to "写真編集", root_path , class: "button_photo"
+          =link_to "写真編集", '#' , class: "button_photo filterTrigger"
         .my_display_photo__summary
           = image_tag("img03899.jpg", class: "photo_summary")
         .my_display_photo__box
