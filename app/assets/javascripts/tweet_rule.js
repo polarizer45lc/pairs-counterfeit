@@ -15,8 +15,8 @@ $(function(){
     console.log(html)
 
 
-    $("#filter").click(function(){
-      $('.tweet_rule').remove();
+    $('.tweet_rule').click(function(){
+      $('.tweet_rule, #filter').remove();
       console.log("ok11")
     });
   });
