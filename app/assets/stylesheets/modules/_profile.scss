@@ -457,9 +457,12 @@ a:active {
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 }
 
+.model_sub_title {
+  border-left: 3px solid $cyan;
+  padding-left: 8px;
+  color: $cyan;
 
-
-
+}
 
 
 
