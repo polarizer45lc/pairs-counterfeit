@@ -2,7 +2,8 @@ $(document).on("turbolinks:load", function(){
 
   function buildHTML(){
     var html = `
-      <div class="bg-overlay">
+      <div class=".box__search-form">
+        test
       </div>
       `
   }
