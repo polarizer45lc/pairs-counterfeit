@@ -1,5 +1,16 @@
 # README
 
+## regionsテーブル
+<!-- 静的マスター -->
+
+|Column   |Type    |Option      |
+|---------|--------|------------|
+|name     |string  |null: false |
+|overseas |integer |            |
+
+### Association
+has_many: users
+
 
 
 ## usersテーブル
@@ -15,9 +26,9 @@
 |introduction |string   |                        |
 |height       |string   |                        |
 |weight       |string   |                        |
-|blood_type   |integer  |                        |
-|residence    |string   |                        |
-|birthplace   |string   |                        |
+|blood_type   |string   |                        |
+|residence_id |integer  |                        |
+|birthplace_id|integer  |                        |
 |job_category |string   |                        |
 |educational  |string   |                        |
 |annual_income|string   |                        |
@@ -39,15 +50,31 @@
 |language1    |string   |                        |
 |language2    |string   |                        |
 |language3    |string   |                        |
+|hearts       |integer  |null: false, default: 30|
 
-## Association
-- has_many :profimages
-- has_one :characters                <!--     このテーブルはユーザーと１対１。 -->
-- has_many :active_relationships,class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
-- has_many :active_relationships,class_name:  "Relationship", foreign_key: "following_id", dependent: :destroy
+### Association
+- belongs_to :residence, class_name: "Region", optional: true, primary_key: true
+- belongs_to :birthplace, class_name: "Region", optional: true, primary_key: true      <!---わからん。多分こう-->
+
+- has_one :character              <!--     このテーブルはユーザーと１対１。 -->
+- has_many :images
+
+- has_many :passive_relationships,class_name:  "Relationship", foreign_key: "following_id", dependent: :destroy
+- has_many :followedes, through: :passive_relationships
+- has_many :active_relationships,class_name:  "Relationship", foreign_key: "followed_id", dependent: :destroy
+- has_many :followings, through: :active_relationships
+
+- has_many :passive_footprints, class_name: "Footprint", foreign_key: "visitor_id"
+- has_many :hosts, through: :passive_relationships
+- has_many :active_footprints, class_name: "Footprint", foreign_key: "host_id"
+- has_many :visitors, through: :active_footprints
+
 - has_many :group_users
 - has_many :groups, through: :group_users
 - has_many :masseges
+
+- has_many :communities, through: :user_communities
+- has_many :user_communities
 
 
 
@@ -103,7 +130,7 @@
 |latecrop       |integer   |null: false, default: 0      |      奥手
 |moody          |integer   |null: false, default: 0      |      気分屋
 　
-## Association
+### Association
 - belongs_to :user
 
 <!-- userインスタンスが登録された時に同時にレコードを生成。
@@ -112,7 +139,7 @@
 
  -->
 
-## profimagesテーブル
+## imagesテーブル
 
 |Columns |Type      |Options                       |
 |--------|----------|------------------------------|
@@ -120,8 +147,62 @@
 |image   |string    |null: false                   |
 |status  |integer   |null: false                   |
 
-## Association
+### Association
 - belongs_to :user
+
+
+
+## relationshipsテーブル
+
+|Column      |Type      |Options     |                  |
+|------------|----------|------------|
+|followed_id |integer   |null: false |
+|following_id|integer   |null: false |
+
+### Association
+- belongs_to :following, class_name: "User", foreign_key: "following_id"
+- belongs_to :followed, class_name: "User", foreign_key: "followed_id"
+
+
+
+
+## footprintsテーブル
+
+|Column     |Type      |Options     |
+|-----------|----------|------------|
+|visiter_id |integer   |null: false |
+|visited_id |integer   |null: false |
+
+### Association
+- belongs_to :visitor, class_name: "User", foreign_key: "visitor_id"
+- belongs_to :host, class_name: "User", foreign_key: "host_id"
+
+
+
+## user_groupsテーブル
+
+|Column  |Type      |Options                         |
+|--------|----------|--------------------------------|
+|user_id |references|null: false, foreign_key: true  |
+|group_id|references|null: false, fore 5ign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
+
+## groupsテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|group_id|integer    |null: false                   |
+
+### Association
+- has_many :users, through: :user_groups
+- has_many :user_groups
+- accepts_nested_attributes_for :group_users, allow_destroy: true     <!-- group側からuser側を配列として触れるようにするメソッド -->
+- has_many :messages
 
 
 
@@ -139,45 +220,6 @@
 - belongs_to :user
 
 
-## user_groupsテーブル
-
-|Column  |Type      |Options                       |
-|--------|----------|------------------------------|
-|user_id |references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
-
-
-## groupsテーブル
-
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|group_id|integer    |null: false                   |
-
-
-### Association
-- has_many :users, through: :user_groups
-- has_many :user_groups
-- has_many :messages
-
-
-## communitiesテーブル
-
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|name    |string     |null: false                   |
-|image   |string     |null: false                   |
-|category|string     |null: false                   |
-
-### Association
-- has_many :users, through: :user_communities
-- has_many :user_communities
-
-
 
 ## user_communitiesテーブル
 
@@ -187,30 +229,22 @@
 |user_id       |references |null: false, foreign_key: true|
 
 ### Association
+- belongs_to :user
+- belongs_to :community
+
+
+
+## communitiesテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|name    |string     |null: false                   |
+|image   |string     |null: false                   |
+|category|integer    |null: false, default: 0       |
+
+### Association
 - has_many :users, through: :user_communities
 - has_many :user_communities
+- enum category: { neew: 0,musics: 1, movies: 2, tvs: 3, games: 4, books: 5, arts: 6, sports: 7, motors: 8, trips: 9, homes: 10, pets: 11, pcs: 12, fashions: 13, gourmets: 14, divinations: 15, hobbies: 16, loves: 17, healths: 18, livings: 19, beauties: 20, housekeepings: 21, Regions: 22, schools: 23, companies: 24, jobs: 25, stadies: 26, businesses: 27}
 
-
-## relationshipsテーブル
-
-|Column      |Type      |Options     |                  |
-|------------|----------|------------|
-|followed_id |integer   |null: false |
-|following_id|integer   |null: false |
-
-### Association
-- belongs_to :user
-- belongs_to :group
-
-
-
-## footprintsテーブル
-
-|Column    |Type      |Options     |
-|----------|----------|------------|
-|visite_id |integer   |null: false |
-|visited_id|integer   |null: false |
-
-### Association
-- belongs_to :user
 
