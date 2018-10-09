@@ -86,17 +86,45 @@
   }
 }
 
+.search_more {
+  padding: 5px;
+  text-align: center;
+  a {
+    color: #00ABB3;
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:before {
+    display: inline-block;
+    width: 21px;
+    height: 20px;
+    margin-right: 10px;
+    content: '';
+    vertical-align: bottom;
+    background-image: image-url("icon_sprites.png"),none;
+    background-repeat: no-repeat;
+    background-position: -141px -610px;
+  }
+}
+
+.search-btn {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.box_search-btn {
+  background: #F7F7F7;
+  margin-top: 20px;
+  padding: 15px 0;
+  text-align: center;
+}
+
 .btn_f {
   font-size: 12px;
   line-height: 1;
   display: inline-block;
   padding: 8px 12px;
   border-radius: 30px;
-}
-
-.btn_white_a {
-  color: #8D9399;
-  border: 1px solid #CBCED0;
-  background: #FFFFFF;
-  box-shadow: 0 2px 0 #C9C9C9;
 }

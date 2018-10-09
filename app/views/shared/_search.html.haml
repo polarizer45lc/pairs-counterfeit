@@ -12,50 +12,42 @@
         %table.search_table
           %tbody
             %tr
-              %th
-                年齢
+              %th 年齢
               %td.search_age
                 80歳
             %tr
-              %th
-                居住地
-              %td.search_age
+              %th 居住地
+              %td.search_residence
                 大阪
             %tr
-              %th
-                職業
-              %td.search_age
+              %th 職業
+              %td.search_job
                 無職
             %tr
-              %th
-                学歴
-              %td.search_age
+              %th 学歴
+              %td.search_education
                 中卒
             %tr
-              %th
-                身長
-              %td.search_age
+              %th 身長
+              %td.search_height
                 150cm
             %tr
-              %th
-                タバコ
-              %td.search_age
+              %th タバコ
+              %td.search_smoking
                 吸う
             %tr
               %th
                 お酒
                 %p.note
                   複数可
-              %td.search_age
+              %td.search_drinking
                 飲む
             %tr
-              %th
-                体型
-              %td.search_age
+              %th 体型
+              %td.search_body
                 筋肉質
             %tr
-              %th
-                年収
+              %th 年収
               %td.search_age
                 180万円
             %tr
@@ -84,5 +76,12 @@
                 アメリカ
             %tr
               %td{colspan: "2"}
-                アメリカ
-
+                %p.search_more
+                  = link_to "更に詳しい条件を設定する", '#'
+        %ul.box_search-btn
+          %li.search-btn.w20p
+            %button.btn_a.btn_white_a
+              キャンセル
+          %li.search-btn.w40p
+            %button.btn_a.btn_blue_a
+              この条件で検索する
