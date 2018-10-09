@@ -155,7 +155,7 @@ has_many: users
 
 ## relationshipsテーブル
 
-|Column      |Type      |Options     |                  |
+|Column      |Type      |Options     |
 |------------|----------|------------|
 |followed_id |integer   |null: false |
 |following_id|integer   |null: false |
