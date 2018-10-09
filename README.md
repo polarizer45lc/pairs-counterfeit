@@ -54,8 +54,8 @@ has_many: users
 
 
 ### Association
-- belongs_to :residence, class_name: "Region", optional: true, primary_key: true
-- belongs_to :birthplace, class_name: "Region", optional: true, primary_key: true      <!---わからん。多分こう-->
+- belongs_to :residence, class_name: "Region", optional: true, primary_key: "residence_id"
+- belongs_to :birthplace, class_name: "Region", optional: true, primary_key: "birthplace_id"       <!---わからん。多分こう-->
 
 - has_one :character              <!--     このテーブルはユーザーと１対１。 -->
 - has_many :images
