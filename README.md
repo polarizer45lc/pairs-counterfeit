@@ -145,7 +145,7 @@ has_many: users
 |Columns |Type      |Options                       |
 |--------|----------|------------------------------|
 |user_id |references|null: false, foreign_key: true|
-|image   |string    |null: false                   |
+|content |string    |null: false                   |
 |status  |integer   |null: false                   |
 
 ### Association
@@ -171,25 +171,12 @@ has_many: users
 
 |Column     |Type      |Options     |
 |-----------|----------|------------|
-|visiter_id |integer   |null: false |
+|visitor_id |integer   |null: false |
 |visited_id |integer   |null: false |
 
 ### Association
 - belongs_to :visitor, class_name: "User", foreign_key: "visitor_id"
 - belongs_to :host, class_name: "User", foreign_key: "host_id"
-
-
-
-## user_groupsテーブル
-
-|Column  |Type      |Options                         |
-|--------|----------|--------------------------------|
-|user_id |references|null: false, foreign_key: true  |
-|group_id|references|null: false, fore 5ign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
 
 
 
@@ -207,14 +194,12 @@ has_many: users
 
 
 
-## messagesテーブル
+## user_groupsテーブル
 
-|Column  |Type      |Options                       |
-|--------|----------|------------------------------|
-|message |text      |                              |
-|image   |string    |                              |
-|user_id |references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|Column  |Type      |Options                         |
+|--------|----------|--------------------------------|
+|user_id |references|null: false, foreign_key: true  |
+|group_id|references|null: false, fore 5ign_key: true|
 
 ### Association
 - belongs_to :group
@@ -222,16 +207,18 @@ has_many: users
 
 
 
-## user_communitiesテーブル
+## messagesテーブル
 
-|Column        |Type       |Options                       |
-|--------------|-----------|------------------------------|
-|communities_id|references |null: false, foreign_key: true|
-|user_id       |references |null: false, foreign_key: true|
+|Column  |Type      |Options                       |
+|--------|----------|------------------------------|
+|text    |string    |                              |
+|image   |string    |                              |
+|user_id |references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :group
 - belongs_to :user
-- belongs_to :community
 
 
 
@@ -249,3 +236,14 @@ has_many: users
 - enum category: { neew: 0,musics: 1, movies: 2, tvs: 3, games: 4, books: 5, arts: 6, sports: 7, motors: 8, trips: 9, homes: 10, pets: 11, pcs: 12, fashions: 13, gourmets: 14, divinations: 15, hobbies: 16, loves: 17, healths: 18, livings: 19, beauties: 20, housekeepings: 21, Regions: 22, schools: 23, companies: 24, jobs: 25, stadies: 26, businesses: 27}
 
 
+
+## user_communitiesテーブル
+
+|Column        |Type       |Options                       |
+|--------------|-----------|------------------------------|
+|communities_id|references |null: false, foreign_key: true|
+|user_id       |references |null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :community
