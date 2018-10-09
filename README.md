@@ -21,8 +21,9 @@ has_many: users
 |email        |string   |null: false             |
 |tell         |integer  |null: false, unique:true|    個別ユーザー認証のためのものなのでつけない可能性もある
 |password     |string   |null: false             |
-|sex          |string   |null: false             |
+|sex          |integer  |null: false             |
 |birthday     |datetime |null: false             |
+|hearts       |integer  |null: false, default: 30|
 |introduction |string   |                        |
 |height       |string   |                        |
 |weight       |string   |                        |
@@ -50,7 +51,7 @@ has_many: users
 |language1    |string   |                        |
 |language2    |string   |                        |
 |language3    |string   |                        |
-|hearts       |integer  |null: false, default: 30|
+
 
 ### Association
 - belongs_to :residence, class_name: "Region", optional: true, primary_key: "residence_id"
