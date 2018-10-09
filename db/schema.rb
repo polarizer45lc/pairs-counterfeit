@@ -10,7 +10,138 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181002061338) do
+ActiveRecord::Schema.define(version: 20181009074241) do
+
+  create_table "characters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "kindness",       default: 0, null: false
+    t.integer  "honest",         default: 0, null: false
+    t.integer  "determination",  default: 0, null: false
+    t.integer  "gentle",         default: 0, null: false
+    t.integer  "familiar",       default: 0, null: false
+    t.integer  "cheerful",       default: 0, null: false
+    t.integer  "indoor",         default: 0, null: false
+    t.integer  "outdoor",        default: 0, null: false
+    t.integer  "earnest",        default: 0, null: false
+    t.integer  "intellectual",   default: 0, null: false
+    t.integer  "sincere",        default: 0, null: false
+    t.integer  "punctual",       default: 0, null: false
+    t.integer  "optimistic",     default: 0, null: false
+    t.integer  "shy",            default: 0, null: false
+    t.integer  "smily",          default: 0, null: false
+    t.integer  "elegance",       default: 0, null: false
+    t.integer  "clamness",       default: 0, null: false
+    t.integer  "humility",       default: 0, null: false
+    t.integer  "strict",         default: 0, null: false
+    t.integer  "considerate",    default: 0, null: false
+    t.integer  "lonely",         default: 0, null: false
+    t.integer  "sociable",       default: 0, null: false
+    t.integer  "cool",           default: 0, null: false
+    t.integer  "curiosity",      default: 0, null: false
+    t.integer  "homely",         default: 0, null: false
+    t.integer  "workerholic",    default: 0, null: false
+    t.integer  "responsibility", default: 0, null: false
+    t.integer  "intercourse",    default: 0, null: false
+    t.integer  "speaker",        default: 0, null: false
+    t.integer  "listner",        default: 0, null: false
+    t.integer  "refreshing",     default: 0, null: false
+    t.integer  "active",         default: 0, null: false
+    t.integer  "ratioanl",       default: 0, null: false
+    t.integer  "defeated",       default: 0, null: false
+    t.integer  "funny",          default: 0, null: false
+    t.integer  "hot",            default: 0, null: false
+    t.integer  "comfortable",    default: 0, null: false
+    t.integer  "devoted",        default: 0, null: false
+    t.integer  "boldness",       default: 0, null: false
+    t.integer  "tolerance",      default: 0, null: false
+    t.integer  "generosity",     default: 0, null: false
+    t.integer  "naturally",      default: 0, null: false
+    t.integer  "bcklashless",    default: 0, null: false
+    t.integer  "mypace",         default: 0, null: false
+    t.integer  "latecrop",       default: 0, null: false
+    t.integer  "moody",          default: 0, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_characters_on_user_id", using: :btree
+  end
+
+  create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                   null: false
+    t.string   "image",                  null: false
+    t.integer  "category",   default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "community_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "community_id", null: false
+    t.integer  "user_id",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_community_users_on_community_id", using: :btree
+    t.index ["user_id"], name: "index_community_users_on_user_id", using: :btree
+  end
+
+  create_table "footprints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "visitor_id", null: false
+    t.integer  "host_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_footprints_on_host_id", using: :btree
+    t.index ["visitor_id", "host_id"], name: "index_footprints_on_visitor_id_and_host_id", unique: true, using: :btree
+    t.index ["visitor_id"], name: "index_footprints_on_visitor_id", using: :btree
+  end
+
+  create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_users_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_group_users_on_user_id", using: :btree
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.integer  "status"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_images_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "text",       null: false
+    t.string   "image"
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+  end
+
+  create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.integer  "overseas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "followed_id"
+    t.integer  "following_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+    t.index ["following_id", "followed_id"], name: "index_relationships_on_following_id_and_followed_id", unique: true, using: :btree
+    t.index ["following_id"], name: "index_relationships_on_following_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                            null: false
@@ -56,4 +187,12 @@ ActiveRecord::Schema.define(version: 20181002061338) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "characters", "users"
+  add_foreign_key "community_users", "communities"
+  add_foreign_key "community_users", "users"
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
+  add_foreign_key "images", "users"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
 end
