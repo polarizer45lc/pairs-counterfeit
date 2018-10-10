@@ -14,7 +14,7 @@
   box-shadow: 0 1px 0 #c9c9c9;
 }
 
-@mixin cyan_botton($width, $height) {
+@mixin cyan_button($width, $height) {
   width: $width;
   height: $height;
   display: inline-block;
@@ -92,41 +92,87 @@ $cyan: #00b8c0;
         }
       }
 
-      .user_tweet {
-        height: 163px;
+      // .user_tweet {
+      //   height: 163px;
+      //   margin-top: 10px;
+      //   position: relative;
+
+      //   &__title {
+      //     height: 44px;
+      //     background-color: $white;
+      //     border-bottom: 1px solid $color_border;
+      //     .tweet {
+      //       margin-top: 12px;
+      //       margin-left: 15px;
+      //       width: 55px;
+      //       display: inline-block;
+      //       color: $black;
+      //     }
+      //   }
+
+      .user_tweet_edit {
         margin-top: 10px;
         position: relative;
-
         &__title {
           height: 44px;
           background-color: $white;
           border-bottom: 1px solid $color_border;
-          .tweet {
-            margin-top: 12px;
-            margin-left: 15px;
-            width: 55px;
+          box-sizing: border-box;
+          padding: 8px 12px 8px 12px;
+          .tweet_edit {
+            width: 80px;
             display: inline-block;
             color: $black;
+            &:before {
+              position: relative;
+              top: 7px;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              content: '';
+              background-image: image-url("icon_sprites.png"),none;
+              background-repeat: no-repeat;
+            }
           }
+            .edit_point__sprite:before {
+              background-position: -65px -610px;
+            }
         }
 
         &__inner {
-          height: calc( 100% - 44px );
+          height: calc( 100% - 44px);
           background-color: $white;
-          .user_tweet_textarea {
-            vertical-align: baseline;
-            .user_tweet_text {
-              padding: 10px 15px;
-              color: $black;
-            }
+          background-color: $white;
+          padding-right: 12px;
+          padding-left: 12px;
+          padding-top: 12px;
+          box-sizing: border-box;
+          padding-bottom: 20px;
+          input, textarea {
+            border: 1px solid $color_border;
+            border-radius: 3px;
+            width: 206px;
+            height: 57px;
+            padding: 6px;
+            resize: none;
+            outline: none;
+            line-height: 1.5;
+            overflow: hidden;
+            box-sizing: border-box;
+          }
+          .user_tweet_alertbox {
+            width: 206px;
+            height: 50px;
             .user_tweet_note {
-              padding: 0 15px 10px;
-              font-size: 8px;
-              position: absolute;
-              bottom: 0;
-              width: 205px;
-              text-align: center;
-              color: $cyan;
+              color: #00abb3;
+              font-size: 12px;
+            }
+            .user_tweet_buttonbox {
+              width: 135px;
+              height: 40px;
+              float: right;
+              padding-bottom: 10px;
+              box-sizing: border-box;
             }
           }
         }
@@ -218,7 +264,6 @@ $cyan: #00b8c0;
             display: inline-block;
             font-size: 13px;
           }
-
         }
 
         &__summary {
@@ -392,7 +437,33 @@ li.user_item:hover {
 }
 
 .button_tweet {
-  @include cyan_botton(50px, 28px);
+  @include cyan_button(50px, 28px);
+}
+
+.button_cancel {
+  @include white_button(74px, 26px);
+  margin: 0;
+  margin-bottom: 1px;
+  font-size: 10px;
+  float: right;
+}
+
+.button_delete {
+  @include cyan_button(50px, 28px);
+  background-color: #f06976;
+  box-shadow: 0 2px 0 #ed4655;
+  margin: 0;
+}
+
+.button_update {
+  @include cyan_button(50px, 28px);
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 0 #c9c9c9;
+  color: #8d9399;
+  margin: 0;
+  margin-left: 5px;
+  box-sizing: border-box;
+
 }
 
 .button_more {
@@ -402,7 +473,7 @@ li.user_item:hover {
 }
 
 .button_photo {
-  @include cyan_botton(60px, 28px);
+  @include cyan_button(60px, 28px);
 }
 
 .button_before {
@@ -426,7 +497,7 @@ li.user_item:hover {
 }
 
 .button_introduction {
-  @include cyan_botton(40px, 20px);
+  @include cyan_button(40px, 20px);
   font-size: 13px;
   margin: 0 10px 0 0;
 }

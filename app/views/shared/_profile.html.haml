@@ -8,10 +8,25 @@
             会員ステータス
           =link_to "確認", root_path , class: "button_status"
         %p.user_status__label 無料会員
-      .user_tweet
-        .user_tweet__title
-          %p.tweet
+
+
+      / .user_tweet
+      /   .user_tweet__title
+      /     %p.tweet
+      /       つぶやき
+      /     =link_to "ルール", "#" , style:"display: inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
+      /     =link_to "編集", "#" , class: "button_tweet"
+      /   .user_tweet__inner
+      /     .user_tweet_textarea
+      /       %p.user_tweet_text はじめまして!
+      /       %p.user_tweet_note
+      /         あと３回まで変更できます。(１日３回まで)
+
+      .user_tweet_edit
+        .user_tweet_edit__title
+          %p.tweet_edit.edit_point__sprite
             つぶやき
+
           =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
@@ -19,6 +34,22 @@
             %p.user_tweet_text はじめまして!
             %p.user_tweet_note
               あと３回まで変更できます。(１日３回まで)
+
+        /   =link_to "ルール", "#" , style:"display:inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
+        /   =link_to "キャンセル", "#" , class: "button_cancel"
+        / .user_tweet_edit__inner
+        /   .user_tweet_edit__texterea
+        /     = text_area :content, class: 'user_tweet_edit__tweet', placeholder: '呟け！！'
+        /   .user_tweet_alertbox
+        /     %p.user_tweet_note あと全角24文字です。
+        /     / %p.user_tweet_alert
+        /     /   *つぶやきは全角4文字以上入力してください。
+        /     .user_tweet_buttonbox
+        /       =link_to "更新", "#" , class: "button_update"
+        /       =link_to "削除", "#" , class: "button_delete"
+
+
+
       .visiter_summary
         .visiter_summary__title
           %p.title
