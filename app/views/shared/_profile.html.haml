@@ -12,8 +12,8 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-          =link_to "ルール", "#" , id: "tweet_rule", class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
-          =link_to "編集", "#" , class: "button_tweet"
+          =link_to "ルール", "#" , class: "btn-modal","data-toggle": "modal", "data-target": "#modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
             %p.user_tweet_text はじめまして!
@@ -28,19 +28,19 @@
           %p.count 9726人
         %ul.user_list
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
+            = image_tag("no_image_lady.jpg", class: "image-circle")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
+            = image_tag("no_image_lady.jpg", class: "image-circle")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
+            = image_tag("no_image_lady.jpg", class: "image-circle")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
           %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle filterTrigger")
+            = image_tag("no_image_lady.jpg", class: "image-circle")
             %p.user_info 25歳 奈良
             %p.user_time 19:00
 
@@ -50,7 +50,7 @@
       .my_display_photo
         .my_display_photo__title
           %p.photo メイン・サブ写真
-          =link_to "写真編集", '#' , class: "button_photo filterTrigger"
+          =link_to "写真編集", '#' , class: "button_photo"
         .my_display_photo__summary
           = image_tag("img03899.jpg", class: "photo_summary")
         .my_display_photo__box
@@ -209,7 +209,7 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", root_path, class: "filterTrigger", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
+            =link_to "コミュニティとは?", root_path, style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文

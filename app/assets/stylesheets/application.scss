@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "./reset";
 @import "./body";
+@import "./modal";
 @import "./mixin/clearfix";
 @import "./modules/header";
 @import "./modules/profile";
@@ -8,6 +9,7 @@
 @import "./modules/main";
 @import "./modules/userlist";
 @import "./modules/footer";
+
 
 .wrapper {
   height: 100%;

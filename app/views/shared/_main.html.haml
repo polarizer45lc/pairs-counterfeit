@@ -3,7 +3,7 @@
     = image_tag('banner.png', width: "721px")
   .box__search
     .search__area
-      = link_to "検索条件", '#', class: "btn__white btn__b filterTrigger"
+      = link_to "検索条件", '#', class: "btn__white btn__b btn-modal"
     %nav.search__view
       %ul
         %li.tab__item.tag01.btn__white--active
@@ -22,3 +22,9 @@
         押しましょう!
   = render "shared/userlist"
   = render "shared/footer"
+#overlay.overlay
+#modal.modal
+  %button.close{"data-dismiss": "modal", type: "button"}
+    = image_tag("button_close.png", class: "button_close", width: "40px")
+  .modal-body
+    = render "shared/userlist"
