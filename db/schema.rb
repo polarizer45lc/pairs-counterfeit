@@ -128,9 +128,10 @@ ActiveRecord::Schema.define(version: 20181009074241) do
 
   create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
-    t.integer  "overseas"
+    t.integer  "overseas",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name", "overseas"], name: "index_regions_on_name_and_overseas", unique: true, using: :btree
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -155,7 +156,7 @@ ActiveRecord::Schema.define(version: 20181009074241) do
     t.string   "height"
     t.string   "weight"
     t.string   "blood_type"
-    t.integer  "residence_id"
+    t.integer  "residence_id",                        null: false
     t.integer  "birthplace_id"
     t.string   "job_category"
     t.string   "educational"
