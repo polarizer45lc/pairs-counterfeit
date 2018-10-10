@@ -1,0 +1,29 @@
+.sessions
+  .sessions_box
+    = image_tag('pairs_logo.png', class: "pairs", width: "220px")
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :メールアドレス, style: "font-size: 13px; "
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 230px; height: 28px; border-radius: 4px; "
+      .field
+        = f.label :パスワード, style: "font-size: 13px;"
+        - if @minimum_password_length
+          / %em
+          /   (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password", maxlength: "8", style: "width: 230px; height: 28px; border-radius: 4px;"
+      %p.check_box
+        ログインしたままにする？
+      / .field
+      /   = f.label :password_confirmation
+      /   %br/
+      /   = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "ログインですが"
+      .actions2
+        = f.submit "新規登録ですねん"
+      %p.alert
+        パスワードを忘れた方はこちら
+    / = render "devise/shared/links"

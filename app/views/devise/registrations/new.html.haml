@@ -1,0 +1,32 @@
+.registrations
+  %h2
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .image_field
+      = image_tag('no_image_man.png')
+    .nickname_field
+      = f.label :ニックネーム
+      %br/
+      = f.text_field :nickname, autofcus: true, maxlength: "15"
+    .email_field
+      = f.label :メールアドレス
+      %br/
+      = f.email_field :email, autocomplete: "email"
+    .birthday_field
+      = f.label :生年月日
+      %br/
+      = f.date_select(                    |
+        :birthday,                        |
+        start_year: 1994,                 |
+        end_year:   (Time.now.year - 18), |
+        default:  Date.new(1994, 01, 01)) |
+    .country_field
+      = f.label :居住地
+      %br/
+      = f.text_field :country
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        = f.label :remember_me
+    .actions
+      = f.submit "新規登録やん！！"
+  / = render "devise/shared/links"
