@@ -12,7 +12,7 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-          =link_to "ルール", "#" , class: "btn-modal","data-toggle": "modal", "data-target": "#modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
@@ -209,11 +209,11 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", root_path, style:"display: inline-block;text-decoration:underline;color:#00abb3;"
+            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-id": "modal2", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文
-          =link_to "編集", root_path , class: "button_introduction"
+          =link_to "編集", "#" , class: "button_introduction"
         %p.introduction_note
           自己紹介文を充実させると、
           %em マッチング率10倍UP!
