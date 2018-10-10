@@ -26,18 +26,28 @@
         .user_tweet_edit__title
           %p.tweet_edit.edit_point__sprite
             つぶやき
-          =link_to "ルール", "#" , style:"display:inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
-          =link_to "キャンセル", "#" , class: "button_cancel"
-        .user_tweet_edit__inner
-          .user_tweet_edit__texterea
-            = text_area :content, class: 'user_tweet_edit__tweet', placeholder: '呟け！！'
-          .user_tweet_alertbox
-            %p.user_tweet_note あと全角24文字です。
-            / %p.user_tweet_alert
-            /   *つぶやきは全角4文字以上入力してください。
-            .user_tweet_buttonbox
-              =link_to "更新", "#" , class: "button_update"
-              =link_to "削除", "#" , class: "button_delete"
+
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "編集", "#" , class: "button_tweet btn-modal"
+        .user_tweet__inner
+          .user_tweet_textarea
+            %p.user_tweet_text はじめまして!
+            %p.user_tweet_note
+              あと３回まで変更できます。(１日３回まで)
+
+        /   =link_to "ルール", "#" , style:"display:inline-block;text-decoration:underline;color: #00abb3;font-size:8px"
+        /   =link_to "キャンセル", "#" , class: "button_cancel"
+        / .user_tweet_edit__inner
+        /   .user_tweet_edit__texterea
+        /     = text_area :content, class: 'user_tweet_edit__tweet', placeholder: '呟け！！'
+        /   .user_tweet_alertbox
+        /     %p.user_tweet_note あと全角24文字です。
+        /     / %p.user_tweet_alert
+        /     /   *つぶやきは全角4文字以上入力してください。
+        /     .user_tweet_buttonbox
+        /       =link_to "更新", "#" , class: "button_update"
+        /       =link_to "削除", "#" , class: "button_delete"
+
 
 
       .visiter_summary
@@ -71,7 +81,7 @@
       .my_display_photo
         .my_display_photo__title
           %p.photo メイン・サブ写真
-          =link_to "写真編集", root_path , class: "button_photo"
+          =link_to "写真編集", '#' , class: "button_photo"
         .my_display_photo__summary
           = image_tag("img03899.jpg", class: "photo_summary")
         .my_display_photo__box
@@ -230,11 +240,11 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", root_path, style:"color: #00abb3;"
+            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-id": "modal2", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文
-          =link_to "編集", root_path , class: "button_introduction"
+          =link_to "編集", "#" , class: "button_introduction"
         %p.introduction_note
           自己紹介文を充実させると、
           %em マッチング率10倍UP!

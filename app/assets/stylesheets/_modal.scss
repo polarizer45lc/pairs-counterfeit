@@ -1,0 +1,41 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  max-width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.modal-body {
+  padding: 0;
+  margin: 0;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  opacity: 0.6;
+}
+
+button.close {
+  opacity: 1;
+}
+.button_close {
+  position: fixed;
+  top: 33px;
+  margin-left: -18px;
+}
