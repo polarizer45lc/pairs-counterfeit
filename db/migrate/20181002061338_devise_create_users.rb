@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :height
       t.string :weight
       t.string :blood_type
-      t.integer :residence_id
+      t.integer :residence_id,      null: false
       t.integer :birthplace_id
       t.string :weight
       t.string :job_category
