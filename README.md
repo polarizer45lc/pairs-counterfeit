@@ -1,17 +1,5 @@
 # README
 
-## regionsテーブル
-<!-- 静的マスター -->
-
-|Column   |Type    |Option      |
-|---------|--------|------------|
-|name     |string  |null: false |
-|overseas |integer |            |
-
-### Association
-has_many: users
-
-
 
 ## usersテーブル
 
@@ -241,9 +229,22 @@ has_many: users
 
 |Column        |Type       |Options                       |
 |--------------|-----------|------------------------------|
-|communities_id|references |null: false, foreign_key: true|
+|community_id|references |null: false, foreign_key: true|
 |user_id       |references |null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :community
+
+
+
+## regionsテーブル
+<!-- 静的マスター -->
+
+|Column   |Type    |Option      |
+|---------|--------|------------|
+|name     |string  |null: false |
+|overseas |integer |            |
+
+### Association
+has_many: users
