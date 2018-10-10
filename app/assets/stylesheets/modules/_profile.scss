@@ -219,19 +219,20 @@ $cyan: #00b8c0;
           li.user_item {
             border-bottom: 1px dashed $color_border;
             vertical-align: baseline;
+            padding-bottom: 3px;
             p.user_info{
               display: inline-block;
               vertical-align: middle;
               width: 90px;
               position: relative;
-              bottom: 10px;
+              top: 4px;
             }
             p.user_time {
               font-size: 8px;
               display: inline-block;
               vertical-align: middle;
               position: relative;
-              bottom: 11px;
+              top: 2px;
             }
           }
         }
@@ -322,9 +323,9 @@ $cyan: #00b8c0;
       background-color: $white;
       float: left;
       .detail_sub_note {
-        height:30px;
+        height:35px;
         border-bottom: 1px solid $color_border;
-        padding: 15px 0 0 15px;
+        padding: 8px 0 0 15px;
         color: $cyan;
       }
       .detail_sub_title {
@@ -411,6 +412,9 @@ $cyan: #00b8c0;
 
   }
 }
+
+
+// module ------------------------------------------------
 
 .image-circle {
   border-radius: 50%;
@@ -507,9 +511,30 @@ a:active {
   box-shadow: none;
 }
 
+#filter{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: $white;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.60;
+  opacity: 0.60;
+  z-index: 100;
+}
 
+* html #filter { /* ie用 */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
 
+.model_sub_title {
+  border-left: 3px solid $cyan;
+  padding-left: 8px;
+  color: $cyan;
 
+}
 
 
 
