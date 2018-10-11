@@ -1,7 +1,7 @@
 .sessions
   .sessions_box
     = image_tag('pairs_logo.png', class: "pairs", width: "220px")
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = devise_error_messages!
       .field
         = f.label :メールアドレス, style: "font-size: 13px; "
