@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :residence, class_name: "Region", optional: true, primary_key: "residence_id"
-  belongs_to :birthplace, class_name: "Region", optional: true, primary_key: "birthplace_id"
+  belongs_to :residence, class_name: "Region", foreign_key: "residence_id"
+  belongs_to :birthplace, class_name: "Region",foreign_key: "birthplace_id"
 
   has_one :characters
   has_many :images

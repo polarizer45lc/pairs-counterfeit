@@ -20,11 +20,15 @@
         30人
       %span
         押しましょう!
-  = render "shared/userlist"
+  - @users.each do |user|
+    = render partial: "shared/userlist", locals: { user: user }
+  .box__paginate
+    kaminari導入予定地
+  .box__remaining
+    %p
+      あと
+      %em
+        30人
+      に「いいね！」ができます
+
   = render "shared/footer"
-#overlay.overlay
-#modal.modal
-  %button.close{"data-dismiss": "modal", type: "button"}
-    = image_tag("button_close.png", class: "button_close", width: "40px")
-  .modal-body
-    = render "shared/userlist"
