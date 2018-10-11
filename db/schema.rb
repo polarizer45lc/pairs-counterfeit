@@ -128,10 +128,9 @@ ActiveRecord::Schema.define(version: 20181009074241) do
 
   create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
-    t.integer  "overseas",   null: false
+    t.integer  "overseas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "overseas"], name: "index_regions_on_name_and_overseas", unique: true, using: :btree
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -145,40 +144,8 @@ ActiveRecord::Schema.define(version: 20181009074241) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
-    t.integer  "tell",                                null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.integer  "sex",                                 null: false
-    t.datetime "birthday",                            null: false
-    t.integer  "hearts",                 default: 30
-    t.string   "introduction"
-    t.string   "height"
-    t.string   "weight"
-    t.string   "blood_type"
-    t.integer  "residence_id",                        null: false
-    t.integer  "birthplace_id"
-    t.string   "job_category"
-    t.string   "educational"
-    t.string   "annual_income"
-    t.string   "tobacco"
-    t.string   "brother"
-    t.string   "country"
-    t.string   "marital"
-    t.string   "child"
-    t.string   "mdesire"
-    t.string   "cdesire"
-    t.string   "hkeeping"
-    t.string   "encounter"
-    t.string   "cost"
-    t.string   "holiday"
-    t.string   "sociability"
-    t.string   "hobby1"
-    t.string   "hobby2"
-    t.string   "hobby3"
-    t.string   "language1"
-    t.string   "language2"
-    t.string   "language3"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
