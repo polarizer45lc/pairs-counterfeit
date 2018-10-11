@@ -1,8 +1,11 @@
 .registrations
   %h2
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    / .image_field
-    /   = image_tag('no_image_man.png')
+    .image_field
+      = f.fields_for :images do |image|
+        %img
+        = image.file_field :content
+        = image.hidden_field :status, value: "main"
     .nickname_field
       = f.label :ニックネーム
       %br/

@@ -20,10 +20,12 @@
         30人
       %span
         押しましょう!
-  - @users.each do |user|
-    = render partial: "shared/userlist", locals: { user: user }
+  .user__list
+    %ul
+      - @users.each do |user|
+        = render partial: "shared/userlist", locals: { user: user }
   .box__paginate
-    kaminari導入予定地
+    = paginate(@users)
   .box__remaining
     %p
       あと
