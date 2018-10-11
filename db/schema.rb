@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(version: 20181009074241) do
     t.string   "encrypted_password",     default: "", null: false
     t.integer  "sex",                                 null: false
     t.datetime "birthday",                            null: false
-    t.integer  "hearts",                 default: 30, null: false
+    t.integer  "hearts",                 default: 30
     t.string   "introduction"
     t.string   "height"
     t.string   "weight"
