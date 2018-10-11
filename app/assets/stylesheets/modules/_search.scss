@@ -2,13 +2,6 @@
   background: white;
   position: relative;
   margin-bottom: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-}
-
-.modal_close {
-  top: -26px;
-  right: -26px;
-  position: absolute;
 }
 
 .search_title {
@@ -49,10 +42,12 @@
   padding-bottom: 15px;
   background: #FFFFFF;
   border-spacing: 0;
+
   .note {
     color: #F48D97;
     font-size: 10px;
   }
+
   tbody {
     display: table-row-group;
   }
@@ -78,6 +73,7 @@
 .search_more {
   padding: 5px;
   text-align: center;
+
   a {
     color: #00ABB3;
     text-decoration: underline;
@@ -108,12 +104,4 @@
   margin-top: 20px;
   padding: 15px 0;
   text-align: center;
-}
-
-.btn_f {
-  font-size: 12px;
-  line-height: 1;
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 30px;
 }

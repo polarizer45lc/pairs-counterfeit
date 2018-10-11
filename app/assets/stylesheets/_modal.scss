@@ -1,6 +1,7 @@
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
+  height: 100%;
   top: 50px;
   left: 0;
   right: 0;
@@ -33,6 +34,7 @@ button.close {
   opacity: 1;
 }
 .button_close {
+  z-index: 2000;
   position: fixed;
   top: 33px;
   margin-left: -18px;
