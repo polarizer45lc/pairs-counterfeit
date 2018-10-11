@@ -4,7 +4,6 @@
   top: 50px;
   left: 0;
   right: 0;
-  height: 100%;
   margin: 0 auto;
   padding: 0;
   background: #fff;
@@ -34,6 +33,7 @@ button.close {
   opacity: 1;
 }
 .button_close {
+  z-index: 2000;
   position: fixed;
   top: 20px;
   margin-left: -10px;

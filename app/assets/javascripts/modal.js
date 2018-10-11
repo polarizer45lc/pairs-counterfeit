@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load',function(){
+$(document).on('turbolinks:load', function(){
+
   $('.btn-modal').on('click', function(e){
     $('#overlay').fadeIn();
     var id = $(this).data('id');

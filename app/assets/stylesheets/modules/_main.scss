@@ -17,7 +17,7 @@
 .box__search {
   height: 40px;
   font-size: 14px;
-  margin-top: 4px;
+  margin-top: 10px;
   margin-bottom: 15px;
   .search__area {
     float: left;
@@ -85,12 +85,11 @@
 .search__result {
   padding-top: 15px;
   text-align: center;
-  padding-right: 120px;
 }
 
 .grid__header {
+  height: 49px;
   background-color: #F3F3F3;
-  height: 31px;
   font-size: 12px;
   margin-bottom: 15px;
   padding: 8px 14px;
@@ -112,7 +111,6 @@
 }
 
 .btn__white--active {
-  height: 23px;
   color: #8D9399;
   border-bottom: 1px solid #CBCED0;
   background-color: #F1F1F1;
