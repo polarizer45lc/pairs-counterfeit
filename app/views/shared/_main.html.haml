@@ -22,9 +22,4 @@
         押しましょう!
   = render "shared/userlist"
   = render "shared/footer"
-#overlay.overlay
-#modal.modal
-  %button.close{"data-dismiss": "modal", type: "button"}
-    = image_tag("button_close.png", class: "button_close", width: "40px")
-  .modal-body
-    = render "shared/userlist"
+  = render "shared/userlist"
