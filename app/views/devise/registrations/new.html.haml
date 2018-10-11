@@ -1,6 +1,6 @@
 .registrations
   %h2
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     / .image_field
     /   = image_tag('no_image_man.png')
     .nickname_field
@@ -11,22 +11,40 @@
       = f.label :メールアドレス
       %br/
       = f.email_field :email, autocomplete: "email"
+    .tell_field
+      / = f.label :電話番号
+      / %br/
+      / = f.text_field :tell, maxlength: "11"
+    .password_field
+      = f.label :パスワード
+      %br/
+      = f.password_field :password, minlength: "6"
+    .passworf_field
+      = f.label :パスワード2回目
+      %br/
+      = f.password_field :password_confirmation
     .birthday_field
       = f.label :生年月日
       %br/
-      = f.date_select(                    |
-        :birthday,                        |
-        start_year: 1994,                 |
-        end_year:   (Time.now.year - 18), |
-        default:  Date.new(1994, 01, 01)) |
-    .country_field
-      = f.label :居住地
+      = f.text_field :birthday
+      / = f.date_select(                    |
+      /   :birthday,                        |
+      /   start_year: 1994,                 |
+      /   end_year:   (Time.now.year - 18), |
+      /   default:  Date.new(1994, 01, 01)) |
+    .sex_field
+      =f.label :性別
       %br/
-      = f.text_field :country
-    / - if devise_mapping.rememberable?
-    /   .field
-    /     = f.check_box :remember_me
-    /     = f.label :remember_me
+      = f.text_field :sex
+      / = f.select :sex, [['男', 0], ['女', 1]]
+    .country_field
+      / = f.label :居住地
+      / %br/
+      / = f.select :residence_id, [['日本', 1], ['海外', 2]]
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        = f.label :remember_me
     .actions
       = f.submit "新規登録やん！！"
   / = render "devise/shared/links"
