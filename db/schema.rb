@@ -147,16 +147,16 @@ ActiveRecord::Schema.define(version: 20181009074241) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
-    t.integer  "tell",                                null: false
+    t.integer  "tell"
     t.string   "encrypted_password",     default: "", null: false
     t.integer  "sex",                                 null: false
     t.datetime "birthday",                            null: false
-    t.integer  "hearts",                 default: 30
+    t.integer  "hearts",                 default: 30, null: false
     t.string   "introduction"
     t.string   "height"
     t.string   "weight"
     t.string   "blood_type"
-    t.integer  "residence_id",                        null: false
+    t.integer  "residence_id"
     t.integer  "birthplace_id"
     t.string   "job_category"
     t.string   "educational"
