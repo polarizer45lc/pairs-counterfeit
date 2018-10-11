@@ -10,12 +10,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :encrypted_password, null: false, default: ""
       t.integer :sex,               null: false
       t.datetime :birthday,         null: false
-      t.integer :hearts,            null: false, default: 30
+      t.integer :hearts,            default: 30
       t.string :introduction
       t.string :height
       t.string :weight
       t.string :blood_type
-      t.integer :residence_id
+      t.integer :residence_id,      null: false
       t.integer :birthplace_id
       t.string :weight
       t.string :job_category
