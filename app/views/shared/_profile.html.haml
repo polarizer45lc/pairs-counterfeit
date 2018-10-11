@@ -27,7 +27,7 @@
           %p.tweet_edit.edit_point__sprite
             つぶやき
 
-          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "modal1", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
@@ -143,8 +143,10 @@
         %dt.detail_item_title
           %span.item_title タバコ
         %dd.detail_item_value 基本吸わない
+
       %p.detail_sub_title
         %span.title_a 詳細プロフィール
+
       %p.detail_sub_title 基本情報
       %dl.detail_item_list
 
@@ -240,7 +242,7 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-id": "modal2", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
+            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-id": "community_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文

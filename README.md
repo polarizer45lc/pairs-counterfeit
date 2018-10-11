@@ -118,7 +118,7 @@
 |mypace         |integer   |null: false, default: 0      |      マイペース
 |latecrop       |integer   |null: false, default: 0      |      奥手
 |moody          |integer   |null: false, default: 0      |      気分屋
-　
+
 ### Association
 - belongs_to :user
 
