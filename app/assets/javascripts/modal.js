@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('.btn-modal').on('click', function(e){
     $('#overlay').fadeIn();
     var id = $(this).data('id');
@@ -7,7 +7,7 @@ $(function(){
     e.preventDefault();
   });
 
-  $('.close').on('click', function(){
+  $('.close, #overlay').on('click', function(){
     $('#overlay').fadeOut();
     $('.js-modal').fadeOut();
   });
