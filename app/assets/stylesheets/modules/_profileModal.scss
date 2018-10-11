@@ -36,149 +36,45 @@
         }
       }
 
-      // .user_tweet {
-      //   height: 163px;
-      //   margin-top: 10px;
-      //   position: relative;
-
-      //   &__title {
-      //     height: 44px;
-      //     background-color: $white;
-      //     border-bottom: 1px solid $color_border;
-      //     .tweet {
-      //       margin-top: 12px;
-      //       margin-left: 15px;
-      //       width: 55px;
-      //       display: inline-block;
-      //       color: $black;
-      //     }
-      //   }
-
       .user_tweet_edit {
         margin-top: 10px;
         position: relative;
-        &__title {
-          height: 44px;
-          background-color: $white;
-          border-bottom: 1px solid $color_border;
-          box-sizing: border-box;
-          padding: 8px 12px 8px 12px;
-          .tweet_edit {
-            width: 80px;
-            display: inline-block;
-            color: $black;
-            &:before {
-              position: relative;
-              top: 7px;
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              content: '';
-              background-image: image-url("icon_sprites.png"),none;
-              background-repeat: no-repeat;
-            }
-          }
-            .edit_point__sprite:before {
-              background-position: -65px -610px;
-            }
-        }
+        width: 100%;
+        background-color: $white;
+        position: relative;
+        padding-bottom: 0;
 
-        &__inner {
-          height: calc( 100% - 44px);
-          background-color: $white;
-          background-color: $white;
-          padding-right: 12px;
-          padding-left: 12px;
-          padding-top: 12px;
-          box-sizing: border-box;
-          padding-bottom: 20px;
-          input, textarea {
-            border: 1px solid $color_border;
-            border-radius: 3px;
-            width: 206px;
-            height: 57px;
-            padding: 6px;
-            resize: none;
-            outline: none;
-            line-height: 1.5;
-            overflow: hidden;
-            box-sizing: border-box;
-          }
-          .user_tweet_alertbox {
-            width: 206px;
-            height: 50px;
-            .user_tweet_note {
-              color: #00abb3;
-              font-size: 12px;
-            }
-            .user_tweet_buttonbox {
-              width: 135px;
-              height: 40px;
-              float: right;
-              padding-bottom: 10px;
-              box-sizing: border-box;
-            }
-          }
+        .detail_sub_title {
+          height:40px;
+          line-height:40px;
+          color: #bec3c9;
+          border-bottom: 1px solid $color_border;
+        }
+        .title_a {
+          margin-left:15px;
+          border-left: 3px solid $color_title;
+          padding-left: 8px;
+          color: $color_title;
         }
       }
 
-      .visiter_summary {
-        height: 290px;
-        margin-top: 10px;
-        background-color: $white;
+      .detail_item_list {
+        padding: 0 15px;
 
-        .visiter_summary__title {
-          vertical-align: center;
-          height: 35px;
-          line-height: 40px;
-          border-bottom: 1px solid $color_border;
-          .title {
-            margin-top: 3px;
-            margin-left: 15px;
-            width: 130px;
-            color: $black;
-          }
+        .detail_item_title {
+          float: left;
+          clear: both;
+          margin: 0 6px 8px 0;
+          width: 120px;
+          vertical-align: baseline;
         }
-
-        .visiter_summary__count {
-          height: 35px;
-          border-bottom: 1px solid $color_border;
-          .text {
-            margin-left: 15px;
-            width: 130px;
-            display: inline-block;
-          }
-          .count {
-            margin-top: 12px;
-            margin-right: 5px;
-            width: 60px;
-            display: inline-block;
-            text-align: right;
-          }
-        }
-
-        ul.user_list {
-          height: 188px;
-          margin: 0 10px 0;
-          li.user_item {
-            border-bottom: 1px dashed $color_border;
-            vertical-align: baseline;
-            padding-bottom: 3px;
-            p.user_info{
-              display: inline-block;
-              vertical-align: middle;
-              width: 90px;
-              position: relative;
-              top: 4px;
-            }
-            p.user_time {
-              font-size: 8px;
-              display: inline-block;
-              vertical-align: middle;
-              position: relative;
-              top: 2px;
-            }
-          }
+        .detail_item_value {
+          position: relative;
+          min-height: 18px;
+          margin: 10px 0 8px 120px;
+          text-decoration: underline;
+          color: $cyan;
+          vertical-align: baseline;
         }
       }
     }

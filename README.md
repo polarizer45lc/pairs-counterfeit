@@ -72,7 +72,7 @@
 |Columns        |Type      | Options                     |
 |---------------|----------|-----------------------------|
 |user_id        |references|null: false,foreign_key: true|
-|kindness       |integer   |null: false, default: 0      |      優しい　
+|kindness       |integer   |null: false, default: 0      |      優しい
 |honest         |integer   |null: false, default: 0      |      素直
 |determination  |integer   |null: false, default: 0      |      決断力がある
 |gentle         |integer   |null: false, default: 0      |      穏やか

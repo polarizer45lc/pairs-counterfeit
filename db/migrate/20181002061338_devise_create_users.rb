@@ -6,7 +6,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       ## Database authenticatable
       t.string :nickname,           null: false, unique: true
       t.string :email,              null: false, default: ""
-      t.integer :tell,              null: false, unique:true
+      t.integer :tell,              unique:true
       t.string :encrypted_password, null: false, default: ""
       t.integer :sex,               null: false
       t.datetime :birthday,         null: false
@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :height
       t.string :weight
       t.string :blood_type
-      t.integer :residence_id,      null: false
+      t.integer :residence_id
       t.integer :birthplace_id
       t.string :weight
       t.string :job_category
