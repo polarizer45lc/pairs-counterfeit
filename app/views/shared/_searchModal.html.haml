@@ -1,10 +1,10 @@
 #overlay.overlay
 
 .modal.js-modal{"data-id": "modal-search", style: "width:680px; height:880px;"}
-  %button.close{"data-dismiss": "modal", type: "button"}
-    = image_tag("button_close.png", class: "button_close", width: "40px")
   .modal-body
     .box_search-view
+      %button.close{"data-dismiss": "modal", type: "button"}
+        = image_tag("button_close.png", class: "button_close", width: "40px")
       %ul
         %li.search_title
           あなたの検索条件
@@ -68,8 +68,8 @@
                     = link_to "更に詳しい条件を設定する", "#"
           %ul.box_search-btn
             %li.search-btn.w20p
-              %button.btn_a.btn_white_a
+              %p.btn_a.btn_white_a
                 = link_to "キャンセル", "#"
             %li.search-btn.w40p
-              %button.btn_a.btn_blue_a
+              %p.btn_a.btn_blue_a
                 = link_to "この条件で検索する", "#"
