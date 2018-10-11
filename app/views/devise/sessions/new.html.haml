@@ -13,7 +13,7 @@
           / %em
           /   (#{@minimum_password_length} characters minimum)
         %br/
-        = f.password_field :password, autocomplete: "new-password", maxlength: "8", style: "width: 230px; height: 28px; border-radius: 4px;"
+        = f.password_field :password, autocomplete: "new-password", style: "width: 230px; height: 28px; border-radius: 4px;"
       %p.check_box
         ログインしたままにする？
       / .field
@@ -23,7 +23,6 @@
       .actions
         = f.submit "ログインですが"
       .actions2
-        = f.submit "新規登録ですねん"
+        = link_to "新規登録", new_user_registration_path
       %p.alert
         パスワードを忘れた方はこちら
-    / = render "devise/shared/links"
