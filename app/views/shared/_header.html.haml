@@ -5,3 +5,5 @@
         = image_tag("pairs_logo.png", width: "88px")
     %p.header__concept
       恋愛・婚活マッチングサービス
+    .log_out
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
