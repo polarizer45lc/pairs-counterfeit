@@ -3,7 +3,6 @@ $(document).on('turbolinks:load', function(){
   $('.btn-modal').on('click', function(e){
     $('#overlay').fadeIn();
     var id = $(this).data('id');
-    console.log(id)
     $('.js-modal[data-id='+ id +']').fadeIn();
     e.preventDefault();
   });
@@ -13,3 +12,7 @@ $(document).on('turbolinks:load', function(){
     $('.js-modal').fadeOut();
   });
 });
+
+$(function () {
+  $("[data-toggle=popover]").popover()
+})

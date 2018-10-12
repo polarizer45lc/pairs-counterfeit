@@ -22,12 +22,11 @@
       /       %p.user_tweet_note
       /         あと３回まで変更できます。(１日３回まで)
 
-      .user_tweet_edit
-        .user_tweet_edit__title
-          %p.tweet_edit.edit_point__sprite
+      .user_tweet
+        .user_tweet__title
+          %p.tweet
             つぶやき
-
-          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
@@ -210,27 +209,33 @@
 
         %dt.detail_item_title
           %span.item_title 性格・タイプ
-        %dd.detail_item_value 変人
+        %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
+          変人
 
         %dt.detail_item_title
           %span.item_title 社交性
-        %dd.detail_item_value プライベートでは皆無
+        %dd.detail_item_value.modal-btn{"data-id": "rule_modal", "data-content": "フリーランスの1匹狼なんだよ!", "data-placement": "top", "data-toggle": "popover"}
+          プライベートでは皆無
 
         %dt.detail_item_title
           %span.item_title 同居人
-        %dd.detail_item_value 独り暮らし
+        %dd.detail_item_value{"data-id": "body", "data-content": "ナイフで遊んでたら1人になっちゃった( ´Д`)y━･~~テヘ", "data-placement": "top", "data-toggle": "popover"}
+          独り暮らし
 
         %dt.detail_item_title
           %span.item_title 休日
-        %dd.detail_item_value 土日祝
+        %dd.detail_item_value{"data-id": "body", "data-content": "休みは編み物をして過ごしたいんだよコノヤロ", "data-placement": "top", "data-toggle": "popover"}
+          土日祝
 
         %dt.detail_item_title
           %span.item_title お酒
-        %dd.detail_item_value 安酒は飲まない
+        %dd.detail_item_value{"data-id": "body", "data-content": "焼酎消えろ", "data-placement": "top", "data-toggle": "popover"}
+          安酒は飲まない
 
         %dt.detail_item_title
           %span.item_title 趣味
-        %dd.detail_item_value 洋裁,カメラ,芸術鑑賞,シューティング
+        %dd.detail_item_value{"data-id": "body", "data-content": "僕のカメラに気安く触れないでくれるかい?", "data-placement": "top", "data-toggle": "popover"}
+          %p 洋裁,カメラ,芸術鑑賞,シューティング
 
     .mypage_detail_inner_right
       .join_community
@@ -251,9 +256,6 @@
           自己紹介文を充実させると、
           %em マッチング率10倍UP!
         %p.introduction_text 自己紹介文はまだ入力されておりません。
-        .dropdown
-          %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-
 
 
 

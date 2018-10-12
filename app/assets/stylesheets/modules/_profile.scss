@@ -87,23 +87,24 @@ $cyan: #00b8c0;
         }
       }
 
-      // .user_tweet {
-      //   height: 163px;
-      //   margin-top: 10px;
-      //   position: relative;
+      .user_tweet {
+        height: 163px;
+        margin-top: 10px;
+        position: relative;
 
-      //   &__title {
-      //     height: 44px;
-      //     background-color: $white;
-      //     border-bottom: 1px solid $color_border;
-      //     .tweet {
-      //       margin-top: 12px;
-      //       margin-left: 15px;
-      //       width: 55px;
-      //       display: inline-block;
-      //       color: $black;
-      //     }
-      //   }
+        &__title {
+          height: 44px;
+          background-color: $white;
+          border-bottom: 1px solid $color_border;
+          .tweet {
+            margin-top: 12px;
+            margin-left: 15px;
+            width: 55px;
+            display: inline-block;
+            color: $black;
+          }
+        }
+      }
 
       .user_tweet_edit {
         margin-top: 10px;
@@ -313,6 +314,7 @@ $cyan: #00b8c0;
     .mypage_detail_inner_left {
       width: 288px;
       height: calc( 100% - 15px );
+      margin-top: 15px;
       margin-left: 15px;
       margin-bottom: 15px;
       background-color: $white;
@@ -356,6 +358,7 @@ $cyan: #00b8c0;
     .mypage_detail_inner_right {
       width: 393px;
       height: calc( 100% - 15px );
+      margin-top: 15px;
       margin-bottom: 15px;
       margin-left: 14px;
       float: left;
@@ -433,6 +436,7 @@ li.user_item:hover {
 
 .button_tweet {
   @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
 }
 
 .button_cancel {
