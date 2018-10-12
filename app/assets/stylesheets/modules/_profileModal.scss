@@ -1,89 +1,38 @@
-@mixin white_button($width, $height) {
-  width: $width;
-  height: $height;
-  display: inline-block;
-  margin: 6px 8px;
-  text-align: center;
-  line-height: $height;
-  float: right;
-  border-radius: 25px;
-  font-size: 12px;
-  color: $color_title;
-  background-color: $white;
-  border: 1px solid #cbced0;
-  box-shadow: 0 1px 0 #c9c9c9;
-}
-
-@mixin cyan_button($width, $height) {
-  width: $width;
-  height: $height;
-  display: inline-block;
-  margin: 6px 8px;
-  text-align: center;
-  line-height: $height;
-  float: right;
-  border-radius: 25px;
-  font-size: 12px;
-  color: $white;
-  background-color: $cyan;
-  box-shadow: 0 2px 0 #00abb3;
-}
-
-// mixin -----------------------------------------------
-
-$color_border: #e1e3e5;
-$color_background: #f3f3f3;
-$color_title: #8d9399;
-$white: #FFFFFF;
-$black: #54595d;
-$cyan: #00b8c0;
-
-
-// color変数 --------------------------------------------
-
-
-.box_mypage_detail {
-  width: calc(915px - 180px);
-  float: right;
+.modal-body {
   color: $color_title;
   font-size: 13px;
 
-  &__01 {
-    width: calc(100% - 15px);
+  .box_personal_detail__01 {
+    width: 725px;
     min-height: 593px;
-    margin: 15px;
+    margin: 15px 15px 0;
     background-color: $color_background;
     clear: both;
 
-    .mypage_detail_inner_left {
+    .personal_detail_inner_left {
       width: 230px;
       height: 563px;
       margin: 15px 10px 0px 15px;
       float: left;
 
-      .user_status {
-        &__title {
-          height: 44px;
-          line-height: 40px;
+      ul.user_status_list {
+        li.user_status_item {
+          padding: 12px;
           font-size: 13px;
           background-color: $white;
-          border-bottom: 1px solid $color_border;
-          .status {
-            margin-top: 3px;
-            margin-left: 15px;
-            width: 100px;
-            color: $black;
-            display: inline-block;
-          }
-
+          margin-bottom: 6px;
         }
-
-        &__label {
-          height: 45px;
-          line-height: 45px;
-          text-align: center;
-          font-weight: 700;
+        li.user_status_item {
+          padding: 12px;
+          font-size: 13px;
           background-color: $white;
+          margin-bottom: 6px;
+        }
+        li.user_like_count {
+          padding: 12px;
+          font-size: 13px;
+          background-color: $white;
+          margin-bottom: 6px;
         }
       }
 
@@ -234,7 +183,7 @@ $cyan: #00b8c0;
       }
     }
 
-    .mypage_detail_inner_right {
+    .personal_detail_inner_right {
       width: 450px;
       height: 563px;
       float: right;
@@ -302,15 +251,12 @@ $cyan: #00b8c0;
       }
     }
   }
-
-
-
-  &__02 {
+  .box_personal_detail__02 {
     margin: 0px 15px 10px;
-    width: 720px;
+    width: 725px;
     min-height: 1160px;
     background-color: $color_background;
-    .mypage_detail_inner_left {
+    .personal_detail_inner_left {
       width: 288px;
       height: calc( 100% - 15px );
       margin-left: 15px;
@@ -353,7 +299,7 @@ $cyan: #00b8c0;
         }
       }
     }
-    .mypage_detail_inner_right {
+    .personal_detail_inner_right {
       width: 393px;
       height: calc( 100% - 15px );
       margin-bottom: 15px;
@@ -380,7 +326,7 @@ $cyan: #00b8c0;
           }
         }
       }
-      .mypage_introduction {
+      .personal_introduction {
         min-height: 170px;
         padding: 20px 15px;
         background-color: $white;
@@ -404,132 +350,9 @@ $cyan: #00b8c0;
         }
       }
     }
-
   }
 }
 
-
-// module ------------------------------------------------
-
-.image-circle {
-  border-radius: 50%;
-  margin: 5px 10px 0;
-  display: inline-block;
-  height: 35px;
-  width: 35px;
+li {
+  display: list-item;
 }
-
-li.user_item:hover {
-  background-color: #fff8f8;
-  opacity: 0.8;
-
-}
-
-// button ------------------------------------------------
-
-.button_status {
-  @include white_button(50px, 28px);
-}
-
-.button_tweet {
-  @include cyan_button(50px, 28px);
-}
-
-.button_cancel {
-  @include white_button(74px, 26px);
-  margin: 0;
-  margin-bottom: 1px;
-  font-size: 10px;
-  float: right;
-}
-
-.button_delete {
-  @include cyan_button(50px, 28px);
-  background-color: #f06976;
-  box-shadow: 0 2px 0 #ed4655;
-  margin: 0;
-}
-
-.button_update {
-  @include cyan_button(50px, 28px);
-  background-color: #f3f3f3;
-  box-shadow: 0 2px 0 #c9c9c9;
-  color: #8d9399;
-  margin: 0;
-  margin-left: 5px;
-  box-sizing: border-box;
-
-}
-
-.button_more {
-  @include white_button(72px, 20px);
-  position: relative;
-  bottom: 3px;
-}
-
-.button_photo {
-  @include cyan_button(60px, 28px);
-}
-
-.button_before {
-  @include white_button(60px, 20px);
-  position: absolute;
-  bottom: 0;
-  left: 5px;
-}
-
-.button_after {
-  @include white_button(60px, 20px);
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-}
-
-.button_community {
-  @include white_button(160px, 28px);
-  position: relative;
-  bottom: 12px;
-}
-
-.button_introduction {
-  @include cyan_button(40px, 20px);
-  font-size: 13px;
-  margin: 0 10px 0 0;
-}
-
-
-
-a:active {
-  -ms-transform: translateY(4px);
-  -webkit-transform: translateY(4px);
-  transform: translateY(0.8px);
-  box-shadow: none;
-}
-
-#filter{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: $white;
-  filter: alpha(opacity=60);
-  -moz-opacity: 0.60;
-  opacity: 0.60;
-  z-index: 100;
-}
-
-* html #filter { /* ie用 */
-  position: absolute;
-  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
-}
-
-.model_sub_title {
-  border-left: 3px solid $cyan;
-  padding-left: 8px;
-  color: $cyan;
-
-}
-
-
-
