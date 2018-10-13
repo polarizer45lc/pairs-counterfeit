@@ -39,7 +39,9 @@
 |language1    |string   |                        |
 |language2    |string   |                        |
 |language3    |string   |                        |
-
+|tweet        |string   |                        |
+|housemate    |string   |                        |
+|drink        |string   |                        |
 
 ### Association
 - belongs_to :residence, class_name: "Region", optional: true, primary_key: "residence_id"

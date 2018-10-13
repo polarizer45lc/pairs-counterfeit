@@ -26,11 +26,17 @@
         .user_tweet__title
           %p.tweet
             つぶやき
+<<<<<<< HEAD
           =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+=======
+
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+>>>>>>> search_content
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
-            %p.user_tweet_text はじめまして!
+            %p.user_tweet_text
+              = current_user.tweet
             %p.user_tweet_note
               あと３回まで変更できます。(１日３回まで)
 
@@ -107,42 +113,46 @@
         %span.title_a Pairsプロフィール
       %dl.detail_item_list{style:"border-bottom: 1px solid #e1e3e5;"}
 
+        - str = '選択してください'
         %dt.detail_item_title
           %span.item_title 身長
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"} 166cm
 
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
+          = current_user.height.present? ? current_user.height : str
         %dt.detail_item_title
           %span.item_title 体型
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "weight", "data-placement": "top", "data-toggle": "popover"} ややぽっちゃり
-
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "weight", "data-placement": "top", "data-toggle": "popover"}
+          = current_user.weight.present? ? current_user.weight : str
         %dt.detail_item_title
           %span.item_title 血液型
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "blood_type", "data-placement": "top", "data-toggle": "popover"} O型
-
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "blood_type", "data-placement": "top", "data-toggle": "popover"}
+          = current_user.blood_type? ? current_user.blood_type : str
         %dt.detail_item_title
           %span.item_title 居住地
-        %dd.detail_item_value 東京
+        %dd.detail_item_value
+          = current_user.residence.present? ? current_user.residence.name : str
 
         %dt.detail_item_title
           %span.item_title 出身地
-        %dd.detail_item_value 奈良
-
+        %dd.detail_item_value
+          = current_user.birthplace.present? ? current_user.birthplace.name : str
         %dt.detail_item_title
           %span.item_title 職種
-        %dd.detail_item_value 前衛芸術家,洋裁家,写真家,プログラマー
+        %dd.detail_item_value
+          =  current_user.job_category.present? ? current_user.job_category : str
 
         %dt.detail_item_title
           %span.item_title 学歴
-        %dd.detail_item_value 理系大学卒業
-
+        %dd.detail_item_value
+          =  current_user.educational.present? ? current_user.educational : str
         %dt.detail_item_title
           %span.item_title 年収
-        %dd.detail_item_value 1911万円
-
+        %dd.detail_item_value
+          = current_user.annual_income.present? ? current_user.annual_income : str
         %dt.detail_item_title
           %span.item_title タバコ
         %dd.detail_item_value 基本吸わない
-
+          =  current_user.tobacco.present? ? current_user.tobacco : str
       %p.detail_sub_title
         %span.title_a 詳細プロフィール
 
@@ -151,91 +161,95 @@
 
         %dt.detail_item_title
           %span.item_title ニックネーム
-        %dd.detail_item_value Polarizer45lc
+        %dd.detail_item_value
+          = current_user.nickname
 
         %dt.detail_item_title
           %span.item_title 年齢
-        %dd.detail_item_value 25歳
+        %dd.detail_item_value
+          =  age(current_user[:birthday])
 
         %dt.detail_item_title
           %span.item_title 兄弟姉妹
-        %dd.detail_item_value 長男
-
+        %dd.detail_item_value
+          =  current_user.brother.present? ? current_user.brother : str
         %dt.detail_item_title
           %span.item_title 国籍
-        %dd.detail_item_value 日本
-
+        %dd.detail_item_value
+          =  current_user.country.present? ? current_user.country : str
         %dt.detail_item_title
           %span.item_title 話せる言語
-        %dd.detail_item_value 日本語,英語
+        %dd.detail_item_value 日本語,英語(= current_user.language(num)をeachで回す)
 
       %p.detail_sub_title 恋愛・結婚について
       %dl.detail_item_list
 
         %dt.detail_item_title
           %span.item_title 結婚歴
-        %dd.detail_item_value 一生独身
-
+        %dd.detail_item_value
+          =  current_user.marital.present? ? current_user.marital : str
         %dt.detail_item_title
           %span.item_title 子どもの有無
-        %dd.detail_item_value 無
-
+        %dd.detail_item_value
+          =  current_user.child? ? current_user.child : str
         %dt.detail_item_title
           %span.item_title 結婚に対する意思
-        %dd.detail_item_value 無
-
+        %dd.detail_item_value
+          =  current_user.mdesire.present? ? current_user.mdesire : str
         %dt.detail_item_title
           %span.item_title 子どもが欲しいか
-        %dd.detail_item_value いいえ
-
+        %dd.detail_item_value
+          =  current_user.cdesire.present? ? current_user.cdesire : str
         %dt.detail_item_title
           %span.item_title 子どもの有無
-        %dd.detail_item_value 無
-
+        %dd.detail_item_value
+          =  current_user.child.present? ? current_user.child : str
         %dt.detail_item_title
           %span.item_title 家事・育児
-        %dd.detail_item_value 家事は得意分野
-
+        %dd.detail_item_value
+          =  current_user.hkeeping.present? ? current_user.hkeeping : str
         %dt.detail_item_title
           %span.item_title 出会うまでの希望
-        %dd.detail_item_value 出会いません!
-
+        %dd.detail_item_value
+          =  current_user.encounter.present? ? current_user.encounter : str
         %dt.detail_item_title
           %span.item_title 初回デート費用
-        %dd.detail_item_value デート致しません!
+        %dd.detail_item_value
+          =  current_user.cost? ? current_user.cost : str
 
       %p.detail_sub_title 性格・趣味・生活
       %dl.detail_item_list
 
         %dt.detail_item_title
           %span.item_title 性格・タイプ
+
         %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
-          ドロップダウン
+          (= current_user.characterをあるだけ表示)
 
         %dt.detail_item_title
           %span.item_title 社交性
         %dd.detail_item_value{"data-id": "rule_modal", "data-content": "フリーランスの1匹狼なんだよ!", "data-placement": "top", "data-toggle": "popover"}
-          プライベートでは皆無
+          =  current_user.sociability.present? ? current_user.sociability : str
 
         %dt.detail_item_title
           %span.item_title 同居人
         %dd.detail_item_value{"data-id": "body", "data-content": "ナイフで遊んでたら1人になっちゃった( ´Д`)y━･~~テヘ", "data-placement": "top", "data-toggle": "popover"}
-          独り暮らし
+          =  current_user.housemate.present? ? current_user.housemate : str
 
         %dt.detail_item_title
           %span.item_title 休日
         %dd.detail_item_value{"data-id": "body", "data-content": "休みは編み物をして過ごしたいんだよコノヤロ", "data-placement": "top", "data-toggle": "popover"}
-          土日祝
+          =  current_user.holiday.present? ? current_user.holiday : str
 
         %dt.detail_item_title
           %span.item_title お酒
         %dd.detail_item_value{"data-id": "body", "data-content": "焼酎消えろ", "data-placement": "top", "data-toggle": "popover"}
-          安酒は飲まない
+          =  current_user.drink.present? ? current_user.drink : str
 
         %dt.detail_item_title
           %span.item_title 趣味
         %dd.detail_item_value{"data-id": "body", "data-content": "僕のカメラに気安く触れないでくれるかい?", "data-placement": "top", "data-toggle": "popover"}
-          %p 洋裁,カメラ,芸術鑑賞,シューティング
+          %p 洋裁,カメラ,芸術鑑賞,シューティング(= current_user.hobby(num)をeachで回す)
 
     .mypage_detail_inner_right
       .join_community

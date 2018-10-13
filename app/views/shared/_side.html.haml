@@ -1,10 +1,10 @@
 .side__content
   .profile
     %p.profile__image
-      = link_to '/users/show' do
+      = link_to user_path(current_user.id) do
         = image_tag('no-image__man.png')
     %p.profile__name
-      = link_to "杉野郁弥 栃木",'/users/show'
+      =link_to current_user.nickname + "   " + current_user.residence.name, user_path(current_user)
     %p.profile__status
       = link_to "無料会員", '#'
   .profile__rate
@@ -20,7 +20,7 @@
         %p.status__label
           残りいいね数
         %p.status__value.like__sprite
-          30
+          = current_user.hearts
         = link_to "追加する", '#', class: "add__btn btn--orange"
       %li.item__point
         %p.status__label
