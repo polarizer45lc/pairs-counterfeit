@@ -113,17 +113,18 @@
         %dt.detail_item_title
           %span.item_title 身長
         %dd.detail_item_value
-          = current_user.height.present? ? current_user.height : str
+          =link_to current_user.height.present? ? current_user.height : str, '#', class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:14px"
 
 
         %dt.detail_item_title
           %span.item_title 体型
         %dd.detail_item_value
-          = current_user.weight.present? ? current_user.weight : str
-        %dt.detail_item_title
+          =link_to current_user.weight.present? ? current_user.weight : str, '#', class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:14px"
+        %dt.detail_item_title{id:'profile_update'}
           %span.item_title 血液型
-        %dd.detail_item_value
+        %dd.detail_item_value{id:'blood_type', 'data-user-id': current_user.id}
           = current_user.blood_type? ? current_user.blood_type : str
+
         %dt.detail_item_title
           %span.item_title 居住地
         %dd.detail_item_value
