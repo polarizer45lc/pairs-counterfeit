@@ -14,5 +14,13 @@ $(document).on('turbolinks:load', function(){
 });
 
 $(function () {
-  $("[data-toggle=popover]").popover()
-})
+  $("[data-toggle=popover]").popover({
+    html: true,
+    container: 'body',
+    content: function () {
+        var contentDivId = '#' + $(this).data('content_div_id');
+        return $(contentDivId).html();
+    },
+    trigger: 'click'
+  });
+});
