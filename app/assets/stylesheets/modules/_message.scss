@@ -43,6 +43,38 @@
   width: 434px;
   background-color: green;
   float: right;
+  border: 1px;
+  .box_message_exchange_title{
+    height: 46px;
+    width: 434px;
+    padding: 8px 8px 11px;
+    border-bottom: 1px;
+    border-color: #AAA;
+    background-color: #DDD;
+  }
+  .box_message_exchange{
+    height: 434px;
+    width: 480px;
+    padding: 10px;
+    background-color: #EEE;
+
+  }
+  .box_message_action{
+    height: 228px;
+    width: 434px;
+    padding: 10px;
+    border-top: 10px;
+    // border-bottom: 1px;
+    // border-color: yellow;
+    background-color: #BBB;
+
+  }
+  .box_banner_a{
+
+  }
+  .box_message_note{
+
+  }
 }
 
 

@@ -7,9 +7,12 @@
           %span
             =user.nickname
           %span
-            5歳
+            = age(user[:birthday])
+            歳
           %span
             =user.residence.name
         .user_info02
           / = group.show_last_message
           メッセージを交換していません
+        %p.logintime
+
