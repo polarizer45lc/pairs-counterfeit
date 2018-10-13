@@ -1,0 +1,15 @@
+.matching_item
+  = link_to group_messages_path(group) do
+    .ng-click
+      .user_photo
+      .info_inner
+        .user_info01
+          %span
+            =user.nickname
+          %span
+            5歳
+          %span
+            =current_user.residence.name
+        .user_info02
+          / = group.show_last_message
+          メッセージを交換していません
