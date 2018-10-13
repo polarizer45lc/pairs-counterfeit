@@ -111,12 +111,10 @@
         - str = '選択してください'
         %dt.detail_item_title
           %span.item_title 身長
-<<<<<<< HEAD
-=======
+
         %dd.detail_item_value
           =link_to current_user.height.present? ? current_user.height : str, '#', class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:14px"
 
->>>>>>> origin/ProfileView-Activation
 
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
         / = current_user.height.present? ? current_user.height : str
