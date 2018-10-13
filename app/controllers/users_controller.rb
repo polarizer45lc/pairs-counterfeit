@@ -11,4 +11,8 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def matches
+    @groups = current_user.groups
+  end
+
 end
