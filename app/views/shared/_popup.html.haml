@@ -51,19 +51,12 @@
     %tbody
       %tr
         %td.select_box
-          %form{:name => "form1"}
-            %select
-              %option.value 選択してください
-              %option.label{value:"長男", selected:"selected"} 長男
-              %option.label{value:"次男jinann"} 次男
-          %input{onclick: "clickBtn_profile()", type: "button", value: "profile_btn"}/
-
-
-          %span.select_custom#span1
+          = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+          %span.select_custom
             こだわらない
-
   %br/
   =link_to "更新", "#" , class: "button_tweet btn-modal"
+
 
 #brother{style:"display:none;"}
   %p.popup_title 兄弟姉妹を選択してください
@@ -88,7 +81,8 @@
         %td.select_box
           = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
           %span.select_custom
-            こだわ
+            こだわらない
+  %br/
   =link_to "更新", "#" , class: "button_tweet btn-modal"
 
 

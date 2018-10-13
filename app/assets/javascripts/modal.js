@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function(){
 
 
 
-function clickBtn_profile(){
+function clickBtn1(){
 
   const color1 = document.form1.color1;
 
