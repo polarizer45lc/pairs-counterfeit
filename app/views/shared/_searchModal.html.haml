@@ -20,15 +20,15 @@
                 %td.select_box
                   = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
                   %span.select_custom
-                    こだわらない
+                    %span.select_inner
+                      こだわらない
                   %span 〜
                   = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
                   %span.select_custom
                     こだわらない
               %tr
                 %th 居住地
-                %td
-                  .select_custom
+                %td こだわらない
               %tr
                 %th 職業
                 %td こだわらない
