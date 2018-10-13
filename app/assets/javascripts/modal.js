@@ -13,7 +13,14 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-$(function () {
+
+
+
+
+
+
+$(document).on('turbolinks:load', function(){
+
   $("[data-toggle=popover]").popover({
     html: true,
     container: 'body',
