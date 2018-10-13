@@ -26,12 +26,7 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-<<<<<<< HEAD
           =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
-=======
-
-          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
->>>>>>> search_content
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
@@ -118,41 +113,41 @@
           %span.item_title 身長
 
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
-          = current_user.height.present? ? current_user.height : str
+        / = current_user.height.present? ? current_user.height : str
         %dt.detail_item_title
           %span.item_title 体型
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "weight", "data-placement": "top", "data-toggle": "popover"}
-          = current_user.weight.present? ? current_user.weight : str
+        / = current_user.weight.present? ? current_user.weight : str
         %dt.detail_item_title
           %span.item_title 血液型
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "blood_type", "data-placement": "top", "data-toggle": "popover"}
-          = current_user.blood_type? ? current_user.blood_type : str
+        / = current_user.blood_type? ? current_user.blood_type : str
         %dt.detail_item_title
           %span.item_title 居住地
         %dd.detail_item_value
-          = current_user.residence.present? ? current_user.residence.name : str
+        / = current_user.residence.present? ? current_user.residence.name : str
 
         %dt.detail_item_title
           %span.item_title 出身地
         %dd.detail_item_value
-          = current_user.birthplace.present? ? current_user.birthplace.name : str
+        / = current_user.birthplace.present? ? current_user.birthplace.name : str
         %dt.detail_item_title
           %span.item_title 職種
         %dd.detail_item_value
-          =  current_user.job_category.present? ? current_user.job_category : str
+        / =  current_user.job_category.present? ? current_user.job_category : str
 
         %dt.detail_item_title
           %span.item_title 学歴
         %dd.detail_item_value
-          =  current_user.educational.present? ? current_user.educational : str
+        / =  current_user.educational.present? ? current_user.educational : str
         %dt.detail_item_title
           %span.item_title 年収
         %dd.detail_item_value
-          = current_user.annual_income.present? ? current_user.annual_income : str
+        / = current_user.annual_income.present? ? current_user.annual_income : str
         %dt.detail_item_title
           %span.item_title タバコ
         %dd.detail_item_value 基本吸わない
-          =  current_user.tobacco.present? ? current_user.tobacco : str
+        / =  current_user.tobacco.present? ? current_user.tobacco : str
       %p.detail_sub_title
         %span.title_a 詳細プロフィール
 
@@ -161,21 +156,21 @@
 
         %dt.detail_item_title
           %span.item_title ニックネーム
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "nickname", "data-placement": "top", "data-toggle": "popover"}
           = current_user.nickname
 
         %dt.detail_item_title
           %span.item_title 年齢
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "age", "data-placement": "top", "data-toggle": "popover"}
           =  age(current_user[:birthday])
 
         %dt.detail_item_title
           %span.item_title 兄弟姉妹
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "brother", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.brother.present? ? current_user.brother : str
         %dt.detail_item_title
           %span.item_title 国籍
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "country", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.country.present? ? current_user.country : str
         %dt.detail_item_title
           %span.item_title 話せる言語

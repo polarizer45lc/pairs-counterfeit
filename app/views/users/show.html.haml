@@ -5,3 +5,13 @@
 
 = render "shared/showModal"
 = render "shared/popup"
+%p
+  選択した色
+  %span#span1
+%form{:name => "form1"}
+  %select{:name => "color1"}
+    %option{:value => "red"} 赤
+    %option{:value => "yellow"} 黄
+    %option{:value => "blue"} 青
+%input{onclick: "clickBtn_profile()", type: "button", value: "profile_btn"}/
+
