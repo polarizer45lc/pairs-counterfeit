@@ -39,7 +39,9 @@
 |language1    |string   |                        |
 |language2    |string   |                        |
 |language3    |string   |                        |
-
+|tweet        |string   |                        |
+|housemate    |string   |                        |
+|drink        |string   |                        |
 
 ### Association
 - belongs_to :residence, class_name: "Region", optional: true, primary_key: "residence_id"
@@ -118,7 +120,7 @@
 |mypace         |integer   |null: false, default: 0      |      マイペース
 |latecrop       |integer   |null: false, default: 0      |      奥手
 |moody          |integer   |null: false, default: 0      |      気分屋
-　
+
 ### Association
 - belongs_to :user
 
