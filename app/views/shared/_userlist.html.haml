@@ -20,7 +20,6 @@
       .tweet__box
         .tweet__body{ limit_length: '22' }
           = user.tweet
-          = user.nickname
     .like__box
       .btn__zone
         - if current_user.following?(user)
