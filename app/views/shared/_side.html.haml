@@ -2,7 +2,7 @@
   .profile
     %p.profile__image
       = link_to user_path(current_user.id) do
-        = image_tag('no-image__man.png')
+        = image_tag(current_user.avatar)
     %p.profile__name
       =link_to current_user.nickname + "   " + current_user.residence.name, user_path(current_user)
     %p.profile__status
