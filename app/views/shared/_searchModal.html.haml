@@ -1,31 +1,28 @@
 #overlay.overlay
 
-.modal.js-modal{"data-id": "modal-search", style: "width:680px; height:880px;"}
+#modal_search.modal.js-modal{"data-id": "modal-search"}
   .modal-body
-    .box_search-view
+    .box_search_form
       %button.close{"data-dismiss": "modal", type: "button"}
         = image_tag("button_close.png", class: "button_close", width: "40px")
       %ul
-        %li.search_title
-          あなたの検索条件
-      .form
-      = form_tag("#") do |f|
-        .search_inner
-          %p.box_search-reset
+        %li.search_title.w100p
+          %a あなたの検索条件
+      = form_tag ("#") do |f|
+        .search_form_inner
+          %p.box_search_reset
             = link_to "検索条件をリセットする", "#", id: "resetSearchBtn", class: "btn_f btn_white_a"
-          %table.search_table
+          %table#search_table
             %tbody
               %tr
                 %th 年齢
-                %td.select_box
-                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+                %td#search-age.search-age
+                  = select_tag :birthday, options_for_select(18..65), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
                   %span.select_custom
-                    %span.select_inner
-                      こだわらない
+                    %span.select_inner こだわらない
                   %span 〜
-                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
                   %span.select_custom
-                    こだわらない
+                    %span.select_inner こだわらない
               %tr
                 %th 居住地
                 %td こだわらない
