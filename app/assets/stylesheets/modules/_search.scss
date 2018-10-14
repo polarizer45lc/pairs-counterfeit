@@ -1,6 +1,7 @@
 #modal_search {
   position: absolute;
   width: 680px;
+  height: 830px;
   z-index: 2001;
   letter-spacing: .5px;
 
@@ -56,6 +57,65 @@
       border: 1px solid #CBCED0;
     }
 
+    select {
+      position: absolute;
+      height: 29px;
+      font-size: 12px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    .custom_select {
+      background-color: #FFFFFF;
+      background-image: image-url("select_arrow.png"), none;
+      background-repeat: no-repeat;
+      background-position: right center;
+      width: 180px;
+      height: 29px;
+      border: 1px solid #CBCED0;
+      border-radius: 30px;
+      color: #788086;
+      font-size: 12px;
+      box-sizing: border-box;
+      padding: 6px 40px 6px 14px;
+      border-collapse: separate;
+      white-space: nowrap;
+      box-shadow: 0 2px 0 #c9c9c9;
+    }
+
+    .search_age .custom_select {
+      width: 130px;
+    }
+
+    .custom_select .custom_select_inner {
+      width: auto!important;
+    }
+
+    .box_search_btn {
+      background: #F7F7F7;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+
+      .search_btn {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+    }
+
   }
 
+}
+
+.search-select-age {
+  width: 130px;
+}
+
+.search-select-residence {
+  width: 180px;
 }

@@ -16,16 +16,21 @@
             %tbody
               %tr
                 %th 年齢
-                %td#search-age.search-age
+                %td#age.search_age
                   = select_tag :birthday, options_for_select(18..65), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
-                  %span.select_custom
-                    %span.select_inner こだわらない
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
                   %span 〜
-                  %span.select_custom
-                    %span.select_inner こだわらない
+                  = select_tag :birthday, options_for_select(18..65), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
               %tr
                 %th 居住地
-                %td こだわらない
+                %td#residence.search_residence
+                  .form_block
+                    = select_tag :residence_id, options_from_collection_for_select(Region.all, :id, :name), class: "hasCustomSelect search-select-residence", include_blank: "こだわらない"
+                    %span.custom_select
+                      %span.custom_select_inner こだわらない
               %tr
                 %th 職業
                 %td こだわらない
@@ -68,14 +73,10 @@
               %tr
                 %th 出身地
                 %td こだわらない
-              %tr
-                %td{ colspan:"2" }
-                  %p.search_more
-                    = link_to "更に詳しい条件を設定する", "#"
-          %ul.box_search-btn
-            %li.search-btn.w20p
+          %ul.box_search_btn
+            %li.search_btn.w20p
               %p.btn_a.btn_white_a
                 = link_to "キャンセル", "#"
-            %li.search-btn.w40p
+            %li.search_btn.w40p
               %p.btn_a.btn_blue_a
                 = link_to "この条件で検索する", "#"
