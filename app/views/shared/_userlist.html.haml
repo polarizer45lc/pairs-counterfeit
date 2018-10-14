@@ -22,4 +22,11 @@
           = user.tweet
     .like__box
       .btn__zone
-        = link_to "いいね！", '#', class: "like__btn btn__pink"
+        - if current_user.following?(user)
+          = link_to "いいね済み", '#', class: "like__btn btn__pink"
+        - else
+          -if user.following?(current_user)
+            いいねありがとう
+          -else
+            いいね
+          = render 'shared/follow', user: user,  class: "like__btn btn__pink"

@@ -177,19 +177,19 @@
 |group_id|integer    |null: false                   |
 
 ### Association
-- has_many :users, through: :user_groups
-- has_many :user_groups
+- has_many :users, through: :group_users
+- has_many :group_users
 - accepts_nested_attributes_for :group_users, allow_destroy: true     <!-- group側からuser側を配列として触れるようにするメソッド -->
 - has_many :messages
 
 
 
-## user_groupsテーブル
+## group_usersテーブル
 
 |Column  |Type      |Options                         |
 |--------|----------|--------------------------------|
-|user_id |references|null: false, foreign_key: true  |
-|group_id|references|null: false, fore 5ign_key: true|
+|user_id |references|index: true, foreign_key: true  |
+|group_id|references|index: true, fore 5ign_key: true|
 
 ### Association
 - belongs_to :group

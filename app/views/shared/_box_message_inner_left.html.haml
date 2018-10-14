@@ -1,0 +1,21 @@
+.box_message_inner_left
+  .box_matching_summary
+    %p.matching_summary_text
+    %em
+      %span
+        =current_user.groups.count
+        人
+    -if current_user.sex ==0
+      の女性
+    -else
+      の男性
+    とマッチングしています。
+  .box_matching_list.box_inner_scroll.ps-container.ps-theme-default
+    - @groups.each do |group|
+      -group.users.each do|user|
+        -if user.id != current_user.id
+          =render "shared/matches", user: user,group: group
+
+
+
+
