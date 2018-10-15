@@ -1,0 +1,128 @@
+@mixin chat-left() {
+  .left {
+    width: 100%;
+    margin: 10px 0;
+    overflow: hidden;
+    .faceicon {
+      float: left;
+      margin-right: -50px;
+      margin-bottom: 10px;
+      width: 40px;
+      img{
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+    .chatting {
+      width: 100%;
+      text-align: left;
+      .says {
+        display: inline-block;
+        position: relative;
+        margin: 0 0 0 50px;
+        padding: 10px;
+        max-width: 250px;
+        border-radius: 12px;
+        background: #edf1ee;
+        &:after{
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 3px;
+          left: -19px;
+          border: 8px solid transparent;
+          border-right: 18px solid #edf1ee;
+          -ms-transform: rotate(35deg);
+          -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+        }
+        & p{
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .image{
+        img{
+          width: calc(100% - 50px);
+          height: auto;
+          margin-left: 50px;
+        }
+      }
+      .sendtime{
+
+        margin-left: 50px;
+      }
+    }
+  }
+}
+
+@mixin chat-right() {
+  .right{
+    .mycomment {
+      float: right;
+      margin-top: 10px;
+      & p{
+        display: inline-block;
+        position: relative;
+        margin: 0 10px 0 0;
+        padding: 8px;
+        max-width: 250px;
+        border-radius: 12px;
+        background: #30e852;
+        font-size: 15px;
+        &:after{
+          content: "";
+          position: absolute;
+          top: 3px;
+          right: -19px;
+          border: 8px solid transparent;
+          border-left: 18px solid #30e852;
+          -ms-transform: rotate(-35deg);
+          -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+        }
+      }
+    }
+    .image{
+      img{
+        width: calc(100% - 50px);
+        height: auto;
+        margin-left: 50px;
+      }
+    }
+    .sendtime{
+      clear: both;
+      float: right;
+      margin:0 10px 10px 0;
+    }
+  }
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

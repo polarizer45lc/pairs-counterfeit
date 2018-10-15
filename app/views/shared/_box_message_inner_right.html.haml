@@ -1,7 +1,64 @@
 .box_message_inner_right
   .box_message_exchange_title
+    .info_inner
+      .user_info01
+        %span
+          aaa
+          / =user.nickname
+        %span
+          24
+          / = age(user[:birthday])
+          歳
+        %span
+          沖縄
+          / =user.residence.name
   .box_message_exchange
+    = render "shared/message"
   .box_message_action
-  .box_banner_a
+    %textarea.messege_textarea
+    .box_message_action__inner
+      %ul.message_option_list
+        %li.messege_option_item
+          .button_message_submit
+            送信
+        / %li.messege_option_item
+        /   .button_open_sticker_view
+        /     ^^
+        %li.messege_option_item
+          .button_photo_upload
+            = image_tag('カメラアイコン8.png')
+        / %li.messege_option_item
+        /   .button_read_mark
+        /     既読
+
+
+
+
+
+
+  = link_to '#' do
+    = image_tag('banner_report_wanted.png', class: "box_banner_a")
   .box_message_note
+    %p.message_note_title
+      メッセージ送信時のご注意
+    .message_note_detail
+      %p.note_text
+        メッセージを送る際は、以下のような点に気をつけてください。他のユーザーからの違反報告があった場合は、警告表示や強制退会となる場合もありますので、ご注意ください。
+      %ul.note_list
+        %li.note_item
+          %em
+            メッセージには誠実に対応してください。
+          送信前に相手を不快にさせるような内容ではないか確認しましょう。
+        %li.note_item
+          %em
+            ネットワークビジネス・不動産投資への勧誘、その他Pairsの趣旨から離れたメッセージの送信は、利用規約で禁止されています。
+        %li.note_item
+          %em
+            Pairs内外に関わらず、上記のようなメッセージを受け取られましたら直ちに通報機能をご利用ください。
+      %p.note_text
+        ※健全なサービスを運営する目的で運営者がメッセージの内容を確認・削除する場合があります。これに同意した上で送信してください
+      %p.note_text
+        = link_to '#' do
+          .safety
+            安心・安全の取り組みとガイド
 
