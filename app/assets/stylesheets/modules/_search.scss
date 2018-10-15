@@ -1,7 +1,7 @@
 #modal_search {
   position: absolute;
   width: 680px;
-  height: 830px;
+  height: 1200px;
   z-index: 2001;
   letter-spacing: .5px;
 
@@ -69,6 +69,10 @@
       display: inline-block;
     }
 
+    label {
+      margin: 0;
+    }
+
     .custom_select {
       background-color: #FFFFFF;
       background-image: image-url("select_arrow.png"), none;
@@ -81,18 +85,68 @@
       color: #788086;
       font-size: 12px;
       box-sizing: border-box;
+      margin-right: 5px;
       padding: 6px 40px 6px 14px;
       border-collapse: separate;
       white-space: nowrap;
       box-shadow: 0 2px 0 #c9c9c9;
     }
 
+    .form_item {
+      display: inline-block;
+      margin: 5px 15px 5px 0;
+    }
+
     .search_age .custom_select {
       width: 130px;
     }
 
+    .search_height .custom_select {
+      width: 130px;
+    }
+
+    .search_tobacco .custom_select {
+      width: 250px;
+    }
+
     .custom_select .custom_select_inner {
       width: auto!important;
+    }
+
+    .form_block {
+      margin: 0 0 10px;
+    }
+
+    .add_form_btn {
+      display: block;
+      width: 64px;
+      padding: 6px;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        width: 16px;
+        height: 15px;
+        margin-right: 5px;
+        content: '';
+        vertical-align: text-bottom;
+        vertical-align: bottom;
+        background-image: image-url("icon_sprites.png"),none;
+        background-repeat: no-repeat;
+        background-position: -165px -316px;
+      }
+    }
+
+    .remove_form_btn {
+      background: #C9C9C9;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      right: 8px;
+      height: 16px;
+      padding: 1px 5px 2px;
+      border-radius: 50%;
+      cursor: pointer;
     }
 
     .box_search_btn {
@@ -100,22 +154,56 @@
       margin-top: 20px;
       padding: 15px 0;
       text-align: center;
-
       .search_btn {
         display: inline-block;
         margin: 0 10px;
       }
-
     }
 
   }
-
 }
 
-.search-select-age {
+.search-select-age .search-select-height {
   width: 130px;
 }
 
-.search-select-residence {
+.search-select-residence,
+.search-select-income,
+.search-select-login,
+.search-select-birthplace {
   width: 180px;
+}
+
+.search-select-tobacco {
+  width: 250px;
+}
+
+
+// CheckBoxスタイル
+input[type= checkbox]:not(.not_use_default) {
+  position: absolute;
+  left: -1000px;
+  opacity: 0;
+}
+
+input[type= checkbox]:not(.not_use_default)+label {
+  cursor: pointer;
+  &:before {
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    margin: 0 4px 0 0;
+    content: '';
+    vertical-align: top;
+    background-image: image-url("icon_sprites.png"), none;
+    background-repeat: no-repeat;
+    background-position: 0 -105px;
+  }
+}
+
+input[type= checkbox]:not(.not_use_default):checked+label {
+  color: #00ABB3;
+  &:before {
+    background-position: -27px -105px;
+  }
 }
