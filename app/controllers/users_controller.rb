@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @search = User.ransack(params[:q])
-    @users = @search.result(distinct: true).opposite_gender(current_user).page(params[:page]).per(16)
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).opposite_gender(current_user).page(params[:page]).per(16)
   end
 
   def show
@@ -27,5 +27,6 @@ class UsersController < ApplicationController
 
 
   private
+
 
 end

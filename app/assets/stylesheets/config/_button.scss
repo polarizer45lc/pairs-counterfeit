@@ -1,3 +1,7 @@
+button, select {
+  cursor: pointer;
+}
+
 .btn_a {
   font-size: 14px;
   line-height: 1;
@@ -20,10 +24,31 @@
   border: 1px solid #CBCED0;
   color: #8D9399;
   box-shadow: 0 2px 0 #C9C9C9;
+  outline: none;
+  &:active {
+    position: relative;
+    top: 2px;
+    background-color: #dfe1e3;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn_blue_a {
   background: #00B8C0;
+  border: none;
   color: #FFFFFF;
   box-shadow: 0 3px 0 #00ABB3;
+  outline: none;
+  &:active {
+    position: relative;
+    top: 3px;
+    background-color: #00ABB3;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }

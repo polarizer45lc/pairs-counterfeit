@@ -33,3 +33,25 @@ $(document).on("click", '.remove_form_btn', function(e){
   $(this).parent().parent().remove()
   $(this).prev().parent().prev().append(remove_btn)
 })
+
+// Submit
+$(document).on("click", '#submitSearchConditionBtn', function(e){
+  lower_age = $("#q_birthday_to_age_gteq").val()
+  upper_age = $("#q_birthday_to_age_lteq").val()
+  lower_height = $("#q_height_gteq").val()
+  higher_height = $("#q_height_lteq").val()
+  lower_income = $("#q_annual_income_gt").val()
+  higher_income = $("#q_annual_income_lteq").val()
+  if (lower_age > upper_age && upper_age != "") {
+    $("#q_birthday_to_age_gteq").val(upper_age)
+    $("#q_birthday_to_age_lteq").val(lower_age)
+  }
+  if(lower_height > higher_height && higher_height != "") {
+    $("#q_height_gteq").val(higher_height)
+    $("#q_height_lteq").val(lower_height)
+  }
+  if(lower_income > higher_income && higher_income != "") {
+    $("#q_annual_income_gt").val(higher_income)
+    $("#q_annual_income_lteq").val(lower_income)
+  }
+})

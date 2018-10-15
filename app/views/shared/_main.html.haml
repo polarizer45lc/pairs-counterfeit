@@ -3,7 +3,7 @@
     = image_tag('banner.png', width: "721px")
   .box__search
     .search__area
-      = link_to "検索条件", '#', class: "btn__white btn__b btn-modal", "data-id": "modal-search"
+      = link_to "検索条件", '#', class: "btn__white btn__b", "data-toggle": "modal", "data-target": "#search_modal", "remote": "true"
     %nav.search__view
       %ul
         %li.tab__item.tag01.btn__white--active
@@ -35,4 +35,4 @@
 
   = render "shared/footer"
 -# 検索フォーム
-= render "shared/searchModal"
+= render partial: "shared/searchModal", locals: {q: @q}

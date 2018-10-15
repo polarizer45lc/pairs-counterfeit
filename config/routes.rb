@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'users#index'
+  root 'users#index'
 
   resources :groups, only: [:index, :new, :create] do
     resources :messages, only: [:index, :create]
@@ -15,4 +14,7 @@ Rails.application.routes.draw do
      post :user_edit
     end
   end
+
+  get "search", to: "users#search"
+
 end
