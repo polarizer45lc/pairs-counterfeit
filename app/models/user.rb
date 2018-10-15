@@ -55,6 +55,9 @@ class User < ApplicationRecord
      .where(id: active_relationships.select(:followed_id))
   end
 
+# userの異性を表示する
+  scope :opposite_gender, -> (user) { where.not(sex: user.sex)}
+
 # 検索フォーム用配列集
   Job = ["無職", "ニート", "ヒモ", "家事手伝い", "自宅警備員"]
   AcademicBackground = ["短大/専門学校卒", "高校卒", "大学卒", "大学院卒", "その他"]
