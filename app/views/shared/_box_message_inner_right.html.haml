@@ -4,14 +4,11 @@
       .user_info01
         %span
           aaa
-          / =user.nickname
         %span
           24
-          / = age(user[:birthday])
           歳
         %span
           沖縄
-          / =user.residence.name
   .box_message_exchange
     = render "shared/message"
   .box_message_action
@@ -21,21 +18,9 @@
         %li.messege_option_item
           .button_message_submit
             送信
-        / %li.messege_option_item
-        /   .button_open_sticker_view
-        /     ^^
         %li.messege_option_item
           .button_photo_upload
             = image_tag('カメラアイコン8.png')
-        / %li.messege_option_item
-        /   .button_read_mark
-        /     既読
-
-
-
-
-
-
   = link_to '#' do
     = image_tag('banner_report_wanted.png', class: "box_banner_a")
   .box_message_note
