@@ -40,6 +40,12 @@
     font-size: 14px;
     margin: 5px 8px 2px;
     text-align: center;
+    .area {
+      width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
   .user__info02 {
     font-size: 13px;

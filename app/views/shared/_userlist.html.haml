@@ -9,7 +9,7 @@
         %span.area{ limit_length: '5' }
           = user.residence.name
         %span.age
-          = age(user[:birthday])
+          #{age(user[:birthday])}歳
     .user__info02
       %p.chemistry
         0%
