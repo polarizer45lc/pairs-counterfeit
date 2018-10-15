@@ -9,6 +9,7 @@
         %li.search_title
           あなたの検索条件
       .form
+      = form_tag("#") do |f|
         .search_inner
           %p.box_search-reset
             = link_to "検索条件をリセットする", "#", id: "resetSearchBtn", class: "btn_f btn_white_a"
@@ -16,10 +17,18 @@
             %tbody
               %tr
                 %th 年齢
-                %td こだわらない
+                %td.select_box
+                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+                  %span.select_custom
+                    こだわらない
+                  %span 〜
+                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+                  %span.select_custom
+                    こだわらない
               %tr
                 %th 居住地
-                %td こだわらない
+                %td
+                  .select_custom
               %tr
                 %th 職業
                 %td こだわらない
