@@ -17,13 +17,12 @@
               %br/
               = f.text_field :nickname, placeholder: "ニックネーム", autofcus: true, maxlength: "15"
             .sex_field
-              =f.label :性別
+              = f.label :性別
               %br/
-              = f.radio_button :sex, value: "0"
+              = f.radio_button :sex, value= "0"
               男
-              = f.radio_button :sex, value: "1"
+              = f.radio_button :sex, value= "1"
               女
-            / = f.select :sex, [['男', 0], ['女', 1]]
           .email_field
             = f.label :メールアドレス
             %br/
@@ -45,13 +44,14 @@
               end_year:  (Time.now.year - 18),  |
               default:  Date.new(1994, 01, 01)) |
           .country_field
-            / = f.label :居住地#ランサック森
-            / %br/
-            / = f.select :residence_id, [['日本', 1], ['海外', 2]]
+            = f.label :居住地
+            %br/
+            = f.select :residence_id, [['日本', 0], ['海外', 1]]
+            = f.select :residence_id,options_from_collection_for_select(Region.all, :id, :name)
           - if devise_mapping.rememberable?
             .field
-              = f.check_box :sex
-              = f.label :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
+              / = f.check_box :sex
+              / = f.label :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
           .actions
             = f.submit "Pairsを始める", class: "submit"
 
