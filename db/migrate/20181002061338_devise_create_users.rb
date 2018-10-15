@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :language1
       t.string :language2
       t.string :language3
+      t.string :avatar
 
       ## Recoverable
       t.string   :reset_password_token

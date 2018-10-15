@@ -48,6 +48,8 @@ class User < ApplicationRecord
   has_many :communities, through: :user_communities
   has_many :user_communities
 
+  mount_uploader :avatar, UserImageUploader
+
   def matchers
     User.where(id: passive_relationships.select(:following_id))
      .where(id: active_relationships.select(:followed_id))
