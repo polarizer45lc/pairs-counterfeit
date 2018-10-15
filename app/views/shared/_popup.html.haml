@@ -4,7 +4,8 @@
 / 身長
 
 #height{style:"display:none;"}
-  %p.popup_title 身長を選択してください
+  %p.popup_title{id:'height'}
+    身長を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -14,12 +15,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 体型
 
 #weight{style:"display:none;"}
-  %p.popup_title 体型を選択してください
+  %p.popup_title{id:'weight'}
+    体型を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -29,12 +31,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 血液型
 
 #blood_type{style:"display:none;"}
-  %p.popup_title 血液型を選択してください
+  %p.popup_title{id:'blood_type'}
+    血液型を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -44,12 +47,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 居住地
 
 #residence{style:"display:none;"}
-  %p.popup_title 居住地を選択してください
+  %p.popup_title{id:'residence'}
+    居住地を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -59,12 +63,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 出身地
 
 #birthplace{style:"display:none;"}
-  %p.popup_title 出身地を選択してください
+  %p.popup_title{id:'birthplace'}
+    出身地を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -74,12 +79,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 職種
 
 #job_category{style:"display:none;"}
-  %p.popup_title 職種を選択してください
+  %p.popup_title{id:'job_category'}
+    職種を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -89,12 +95,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 学歴
 
 #educational{style:"display:none;"}
-  %p.popup_title 学歴を選択してください
+  %p.popup_title{id:'educational'}
+    学歴を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -104,12 +111,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 年収
 
 #annual_income{style:"display:none;"}
-  %p.popup_title 年収を選択してください
+  %p.popup_title{id:'annual_income'}
+    年収を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -119,12 +127,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / タバコ
 
 #tobacco{style:"display:none;"}
-  %p.popup_title タバコを選択してください
+  %p.popup_title{id:'tobacco'}
+    タバコを選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -134,7 +143,7 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 
 
@@ -152,7 +161,7 @@
         %td.select_box{style:"width:100%;"}
 
           %span.select_custom
-            こだわらない
+
   %br/
   %button.button_tweet-btn-modal  更新
 
@@ -166,16 +175,9 @@
     %tbody
       %tr
         %td.select_box
-<<<<<<< HEAD
           = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-brother'
           %span.select_custom
             選択してください
-=======
-          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4)
-          %span.select_custom
-            こだわらないわ〜
-
->>>>>>> master
   %br/
   %button.button_tweet 更新
 
@@ -191,15 +193,15 @@
         %td.select_box
           = select_tag :country, options_for_select('選択してください':0,'日本':1,'アメリカ合衆国':2,'カナダ':3,'オーストラリア':4,'イギリス':5,'フランス':6,'ドイツ':7,'イタリア':8,'スペイン':9,'ブラジル':10,'ロシア連邦':11,'中華人民共和国':12,'大韓民国':13,'台湾':14,'インドネシア':15,'フィリピン':16,'インド':17,'メキシコ':18,'トルコ':19,'オランダ':20,'スイス':21,'ポーランド':22,'ベルギー':23,'スウェーデン':24,'ノルウェー':25,'オーストリア':26,'アルゼンチン':27,'南アフリカ':28,'サウジアラビア':29,'ニュージーランド':30,'タイ':31,'シンガポール':32,'マレーシア':33,'ベトナム':34,'アフガニスタン':35,'アルバニア':36,'アルジェリア':37,'アンギラ':38,'アンゴラ':39,'アンクチグア・バーブーダ':40,'アルメニア':41,'アゼルバイジャン':42,'バハマ':43,'バーレーン':44,'バングラデシュ':45,'バルバドス':46,'ベラルーシ':47,'ベリーズ':48,'ベナン':49,'バミューダ':50,'ブータン':51,'ボリビア':52,'ボスニア・ヘルツェゴビナ':53,'ボツワナ':54,'ブルネイ・ダルサラーム':55,'ブルガリア':56,'ブルキファナソ':57,'ブルンジ':58,'カンボジア':59,'カメルーン':60), class: 'hasCustomSelect select-country'
           %span.select_custom
-<<<<<<< HEAD
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 話せる言語
 
 #language{style:"display:none;"}
-  %p.popup_title 話せる言語を選択してください
+  %p.popup_title{id:'language'}
+    話せる言語を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -209,27 +211,29 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 結婚歴
 
 #marital{style:"display:none;"}
-  %p.popup_title 結婚歴を選択してください
+  %p.popup_title{id:'marital'}
+    結婚歴を選択してください
   %br/
   %table{style:"width:100%;"}
-    %tbody
+    %tbody{id:'marital'}
       %tr
         %td.select_box
           = select_tag :marital, options_for_select('選択してください':0,'独身(未婚)':1,'独身(離婚)':2,'独身(死別)':3), class: 'hasCustomSelect select-marital'
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 子供の有無
 
 #child{style:"display:none;"}
-  %p.popup_title 子供の有無を選択してください
+  %p.popup_title{id:'child'}
+    子供の有無を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -239,12 +243,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 結婚に対する意思
 
 #mdesire{style:"display:none;"}
-  %p.popup_title 結婚に対する意思を選択してください
+  %p.popup_title{id:'mdesire'}
+    結婚に対する意思を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -254,12 +259,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 子供が欲しいか
 
 #cdesire{style:"display:none;"}
-  %p.popup_title 子供が欲しいかを選択してください
+  %p.popup_title{id:'cdesire'}
+    子供が欲しいかを選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -269,12 +275,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 家事・育児
 
 #hkeeping{style:"display:none;"}
-  %p.popup_title 家事・育児を選択してください
+  %p.popup_title{id:'hkeeping'}
+    家事・育児を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -284,12 +291,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 出会うまでの希望
 
 #encounter{style:"display:none;"}
-  %p.popup_title 出会うまでの希望を選択してください
+  %p.popup_title{id:'encounter'}
+    出会うまでの希望を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -299,12 +307,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 初回デート費用
 
 #cost{style:"display:none;"}
-  %p.popup_title 初回デート費用を選択してください
+  %p.popup_title{id:'cost'}
+    初回デート費用を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -314,13 +323,14 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 性格・タイプ
 / 社交性
 
 #sociability{style:"display:none;"}
-  %p.popup_title 社交性を選択してください
+  %p.popup_title{id:'sociability'}
+    社交性を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -330,12 +340,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 同居人
 
 #housemate{style:"display:none;"}
-  %p.popup_title 同居人を選択してください
+  %p.popup_title{id:'housemate'}
+    同居人を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -345,12 +356,13 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 休日
 
 #holiday{style:"display:none;"}
-  %p.popup_title 休日を選択してください
+  %p.popup_title{id:'holiday'}
+    休日を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -360,22 +372,23 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / お酒
 
 #drink{style:"display:none;"}
-  %p.popup_title お酒を選択してください
+  %p.popup_title{id:'drink'}
+    お酒を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
       %tr
         %td.select_box
-          = select_tag :drink, options_for_select('選択してください':0,'土日':1,'平日':2,'不定期':3,'その他':4), class: 'hasCustomSelect select-drink'
+          = select_tag :drink, options_for_select('選択してください':0,'飲まない':1,'飲む':2,'ときどき飲む':3), class: 'hasCustomSelect select-drink'
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 
 
