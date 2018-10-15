@@ -1,84 +1,161 @@
 #overlay.overlay
 
-.modal.js-modal{"data-id": "modal-search", style: "width:680px; height:880px;"}
+#modal_search.modal.js-modal{"data-id": "modal-search"}
   .modal-body
-    .box_search-view
+    .box_search_form
       %button.close{"data-dismiss": "modal", type: "button"}
         = image_tag("button_close.png", class: "button_close", width: "40px")
       %ul
-        %li.search_title
-          あなたの検索条件
-      .form
-      = form_tag("#") do |f|
-        .search_inner
-          %p.box_search-reset
+        %li.search_title.w100p
+          %a あなたの検索条件
+      = form_tag ("#") do |f|
+        .search_form_inner
+          %p.box_search_reset
             = link_to "検索条件をリセットする", "#", id: "resetSearchBtn", class: "btn_f btn_white_a"
-          %table.search_table
+          %table#search_table
             %tbody
               %tr
                 %th 年齢
-                %td.select_box
-                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
-                  %span.select_custom
-                    こだわらない
+                %td.search_age
+                  = select_tag :birthday, options_for_select(18..65), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
                   %span 〜
-                  = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
-                  %span.select_custom
-                    こだわらない
+                  = select_tag :birthday, options_for_select(18..65), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
               %tr
                 %th 居住地
-                %td
-                  .select_custom
+                %td.search_residence
+                  .form_block
+                    = select_tag :residence_id, options_from_collection_for_select(Region.all, :id, :name), class: "hasCustomSelect search-select-residence", include_blank: "こだわらない"
+                    %span.custom_select
+                      %span.custom_select_inner こだわらない
+                  %a.btn_f.btn_white_a.add_form_btn 追加
               %tr
                 %th 職業
-                %td こだわらない
+                %td.search_job
+                  = select_tag :job_category, options_for_select(User::Job), class: "hasCustomSelect search-select-age", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
               %tr
                 %th 学歴
-                %td こだわらない
+                %td.search_educational
+                  %ul
+                    %li.form_item.do_not_care
+                      = check_box_tag :educational, checked: true
+                      %label.for_items.do_not_care
+                        こだわらない
+                    - User::AcademicBackground.each do |ele|
+                      %li.form_item
+                        = check_box_tag :educational, ele
+                        %label.for_items
+                          = ele
               %tr
                 %th 身長
-                %td こだわらない
+                %td.search_height
+                  = select_tag :birthday, options_for_select((135..200).map{|i| "#{i}cm"}), class: "hasCustomSelect search-select-height", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
+                  %span 〜
+                  = select_tag :birthday, options_for_select((135..200).map{|i| "#{i}cm"}), class: "hasCustomSelect search-select-height", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_inner こだわらない
               %tr
                 %th タバコ
-                %td こだわらない
+                %td.search_tobacco
+                  = select_tag :tobacco, options_for_select(User::Tobacco), class: "hasCustomSelect search-select-tobacco", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_innner こだわらない
               %tr
                 %th
                   お酒
                   %p.note
                     複数可
-                %td こだわらない
+                %td.search_drink
+                  %ul
+                    %li.form_item.do_not_care
+                      = check_box_tag :drink, checked: true
+                      %label.for_items.do_not_care
+                        こだわらない
+                    - User::Drink.each do |ele|
+                      %li.form_item
+                        = check_box_tag :drink, ele
+                        %label.for_items
+                          = ele
               %tr
                 %th 体型
-                %td こだわらない
+                %td.search_weight
+                  %ul
+                    %li.form_item.do_not_care
+                      = check_box_tag :weight, checked: true
+                      %label.for_items.do_not_care
+                        こだわらない
+                    - User::Weight.each do |ele|
+                      %li.form_item
+                        = check_box_tag :weight, ele
+                        %label.for_items
+                          = ele
               %tr
                 %th 年収
-                %td こだわらない
+                %td.search_income
+                  = select_tag :annual_income, options_for_select(User::Income), class: "hasCustomSelect search-select-income", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_innner こだわらない
+                  %span 〜
+                  = select_tag :annual_income, options_for_select(User::Income), class: "hasCustomSelect search-select-income", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_innner こだわらない
               %tr
                 %th 最終ログイン
-                %td こだわらない
+                %td.search_login
+                  = select_tag :updated_at, options_for_select(User::Login), class: "hasCustomSelect search-select-login", include_blank: "こだわらない"
+                  %span.custom_select
+                    %span.custom_select_innner こだわらない
               %tr
                 %th
                   同居人
                   %p.note
                     複数可
-                %td こだわらない
+                %td.search_housemate
+                  %ul
+                    %li.form_item.do_not_care
+                      = check_box_tag :housemate, checked: true
+                      %label.for_items.do_not_care
+                        こだわらない
+                    - User::Housemate.each do |ele|
+                      %li.form_item
+                        = check_box_tag :housemate, ele
+                        %label.for_items
+                          = ele
               %tr
                 %th
                   休日
                   %p.note
                     複数可
-                %td こだわらない
+                %td.search_holiday
+                  %ul
+                    %li.form_item.do_not_care
+                      = check_box_tag :holiday, checked: true
+                      %label.for_items.do_not_care
+                        こだわらない
+                    - User::Holiday.each do |ele|
+                      %li.form_item
+                        = check_box_tag :holiday, ele
+                        %label.for_items
+                          = ele
               %tr
                 %th 出身地
-                %td こだわらない
-              %tr
-                %td{ colspan:"2" }
-                  %p.search_more
-                    = link_to "更に詳しい条件を設定する", "#"
-          %ul.box_search-btn
-            %li.search-btn.w20p
+                %td.search_birthplace
+                  .form_block
+                    = select_tag :birthplace_id, options_from_collection_for_select(Region.all, :id, :name), class: "hasCustomSelect search-select-birthplace", include_blank: "こだわらない"
+                    %span.custom_select
+                      %span.custom_select_inner こだわらない
+                  %a.btn_f.btn_white_a.add_form_btn 追加
+          %ul.box_search_btn
+            %li.search_btn.w20p
               %p.btn_a.btn_white_a
                 = link_to "キャンセル", "#"
-            %li.search-btn.w40p
+            %li.search_btn.w40p
               %p.btn_a.btn_blue_a
                 = link_to "この条件で検索する", "#"
