@@ -41,7 +41,7 @@
           %span.select_custom
             こだわらない
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  =link_to "更新", "" , class: "button_tweet btn-modal"
 
 
 #age{style:"display:none;"}
@@ -55,21 +55,23 @@
           %span.select_custom
             こだわらない
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet-btn-modal  更新
 
 
 #brother{style:"display:none;"}
-  %p.popup_title 兄弟姉妹を選択してください
+  %p.popup_title{id:'brother'}
+    兄弟姉妹を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
       %tr
         %td.select_box
-          = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
-          %span.select_custom
-            こだわらない
+          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4)
+          %span.select_custom{id: 'brother_value', 'data-user-id': current_user.id }
+            こだわらないわ〜
+
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 
 #country{style:"display:none;"}

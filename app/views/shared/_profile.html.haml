@@ -105,18 +105,15 @@
     .mypage_detail_inner_left
       %p.detail_sub_note 項目を選択すると編集できます
       %p.detail_sub_title
-        %span.title_a Pairsプロフィール
+        %span.title_a{'data-user-id': current_user.id} Pairsプロフィール
       %dl.detail_item_list{style:"border-bottom: 1px solid #e1e3e5;"}
 
         - str = '選択してください'
         %dt.detail_item_title
           %span.item_title 身長
-<<<<<<< HEAD
-=======
         %dd.detail_item_value
           =link_to current_user.height.present? ? current_user.height : str, '#', class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:14px"
 
->>>>>>> origin/ProfileView-Activation
 
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
         / = current_user.height.present? ? current_user.height : str
@@ -175,7 +172,7 @@
         %dt.detail_item_title
           %span.item_title 兄弟姉妹
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "brother", "data-placement": "top", "data-toggle": "popover"}
-          =  current_user.brother.present? ? current_user.brother : str
+          =  current_user.brother.present? ? current_user.brother : 'いけるやん！'
         %dt.detail_item_title
           %span.item_title 国籍
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "country", "data-placement": "top", "data-toggle": "popover"}

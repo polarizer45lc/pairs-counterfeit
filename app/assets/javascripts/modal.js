@@ -18,7 +18,6 @@ $(document).on('turbolinks:load', function(){
 
 
 
-
 $(document).on('turbolinks:load', function(){
 
   $("[data-toggle=popover]").popover({
