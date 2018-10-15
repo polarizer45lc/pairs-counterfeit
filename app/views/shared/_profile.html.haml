@@ -105,8 +105,9 @@
     .mypage_detail_inner_left
       %p.detail_sub_note 項目を選択すると編集できます
       %p.detail_sub_title
-        %span.title_a Pairsプロフィール
+        %span.title_a{'data-user-id': current_user.id} Pairsプロフィール
       %dl.detail_item_list{style:"border-bottom: 1px solid #e1e3e5;"}
+
 
         - str = '選択してください'
         %dt.detail_item_title
@@ -159,16 +160,20 @@
           %span.item_title タバコ
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "tobacco", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.tobacco.present? ? current_user.tobacco : str
+
+
       %p.detail_sub_title
         %span.title_a 詳細プロフィール
 
       %p.detail_sub_title 基本情報
       %dl.detail_item_list
 
+
         %dt.detail_item_title
           %span.item_title ニックネーム
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "nickname", "data-placement": "top", "data-toggle": "popover"}
           = current_user.nickname
+
 
         %dt.detail_item_title
           %span.item_title 年齢

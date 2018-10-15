@@ -104,7 +104,7 @@
           %span.select_custom
             選択してください
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  =link_to "更新", "" , class: "button_tweet btn-modal"
 
 / 年収
 
@@ -154,27 +154,36 @@
           %span.select_custom
             こだわらない
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet-btn-modal  更新
 
 / 兄弟姉妹
 
 #brother{style:"display:none;"}
-  %p.popup_title 兄弟姉妹を選択してください
+  %p.popup_title{id:'brother'}
+    兄弟姉妹を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
       %tr
         %td.select_box
+<<<<<<< HEAD
           = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-brother'
           %span.select_custom
             選択してください
+=======
+          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4)
+          %span.select_custom
+            こだわらないわ〜
+
+>>>>>>> master
   %br/
-  =link_to "更新", "#" , class: "button_tweet btn-modal"
+  %button.button_tweet 更新
 
 / 国籍
 
 #country{style:"display:none;"}
-  %p.popup_title 国籍を選択してください
+  %p.popup_title{id:'country'}
+    国籍を選択してください
   %br/
   %table{style:"width:100%;"}
     %tbody
@@ -182,6 +191,7 @@
         %td.select_box
           = select_tag :country, options_for_select('選択してください':0,'日本':1,'アメリカ合衆国':2,'カナダ':3,'オーストラリア':4,'イギリス':5,'フランス':6,'ドイツ':7,'イタリア':8,'スペイン':9,'ブラジル':10,'ロシア連邦':11,'中華人民共和国':12,'大韓民国':13,'台湾':14,'インドネシア':15,'フィリピン':16,'インド':17,'メキシコ':18,'トルコ':19,'オランダ':20,'スイス':21,'ポーランド':22,'ベルギー':23,'スウェーデン':24,'ノルウェー':25,'オーストリア':26,'アルゼンチン':27,'南アフリカ':28,'サウジアラビア':29,'ニュージーランド':30,'タイ':31,'シンガポール':32,'マレーシア':33,'ベトナム':34,'アフガニスタン':35,'アルバニア':36,'アルジェリア':37,'アンギラ':38,'アンゴラ':39,'アンクチグア・バーブーダ':40,'アルメニア':41,'アゼルバイジャン':42,'バハマ':43,'バーレーン':44,'バングラデシュ':45,'バルバドス':46,'ベラルーシ':47,'ベリーズ':48,'ベナン':49,'バミューダ':50,'ブータン':51,'ボリビア':52,'ボスニア・ヘルツェゴビナ':53,'ボツワナ':54,'ブルネイ・ダルサラーム':55,'ブルガリア':56,'ブルキファナソ':57,'ブルンジ':58,'カンボジア':59,'カメルーン':60), class: 'hasCustomSelect select-country'
           %span.select_custom
+<<<<<<< HEAD
             選択してください
   %br/
   =link_to "更新", "#" , class: "button_tweet btn-modal"
@@ -366,7 +376,6 @@
             選択してください
   %br/
   =link_to "更新", "#" , class: "button_tweet btn-modal"
-
 
 
 
