@@ -1,0 +1,80 @@
+.box_message_inner_left{
+  height: 633px;
+  width: 300px;
+  background-color: red;
+  float: left;
+  .box_matching_summary{
+    height: 34px;
+    width: 300px;
+    background-color: blue;
+    padding: 10px 10px;
+    color: #FFF;
+  }
+  .box_matching_list{
+    overflow: scroll;
+    .matching_item{
+      height: 83px;
+      width: 300px;
+      background-color: #FFF;
+      .ng-click{
+        height: 83px;
+        width: 300px;
+        padding: 14px 10px;
+        .user_photo{
+          height: 55px;
+          width: 55px;
+          margin-right: 10px;
+          background-color: black;
+          float: left;
+        }
+        .info_inner{
+          height: 32px;
+          width: 215px;
+          background-color: #DDD;
+          float:right;
+          color: black;
+        }
+      }
+    }
+  }
+}
+.box_message_inner_right{
+  height: 1348px;
+  width: 434px;
+  background-color: green;
+  float: right;
+  border: 1px;
+  .box_message_exchange_title{
+    height: 46px;
+    width: 434px;
+    padding: 8px 8px 11px;
+    border-bottom: 1px;
+    border-color: #AAA;
+    background-color: #DDD;
+  }
+  .box_message_exchange{
+    height: 434px;
+    width: 480px;
+    padding: 10px;
+    background-color: #EEE;
+
+  }
+  .box_message_action{
+    height: 228px;
+    width: 434px;
+    padding: 10px;
+    border-top: 10px;
+    // border-bottom: 1px;
+    // border-color: yellow;
+    background-color: #BBB;
+
+  }
+  .box_banner_a{
+
+  }
+  .box_message_note{
+
+  }
+}
+
+

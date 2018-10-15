@@ -53,3 +53,23 @@ Region.create(name: 'ユーラシア大陸', overseas: 1)
 Region.create(name: 'アフリカ大陸', overseas: 1)
 Region.create(name: 'オーストラリア大陸', overseas: 1)
 Region.create(name: '南極大陸', overseas: 1)
+
+
+53.times do |n|
+  nickname = Faker::Pokemon.name
+  email = "test-#{n+1}@gmail.com"
+  password = "password"
+  tell = "#{10000000+n}"
+  sex = n % 2
+  birthday = Faker::Date.between(40.years.ago, Date.today)
+  residence = (n+1)
+  User.create!(nickname:  nickname,
+              email:  email,
+              password:               password,
+              password_confirmation:  password,
+              tell:                   tell,
+              sex:                    sex,
+              birthday:               birthday,
+              residence_id:            residence
+  )
+end
