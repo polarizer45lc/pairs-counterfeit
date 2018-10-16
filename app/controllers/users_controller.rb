@@ -9,7 +9,16 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
   end
 
-  def edit
+  def user_edit
+    @user = current_user
+    respond_to do |format|
+      format.html
+      format.json{
+        referense_column = params[:referense_column]
+        @user[referense_column] = params[:profvalue]
+        @user.save
+      }
+    end
   end
 
   def matches

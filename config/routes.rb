@@ -14,6 +14,7 @@ registrations: 'users/registrations'
   resources :users do
     member do
      get :followings, :followedes, :matches
+     post :user_edit
     end
   end
 end

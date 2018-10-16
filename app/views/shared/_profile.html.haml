@@ -22,12 +22,11 @@
       /       %p.user_tweet_note
       /         あと３回まで変更できます。(１日３回まで)
 
-      .user_tweet_edit
-        .user_tweet_edit__title
-          %p.tweet_edit.edit_point__sprite
+      .user_tweet
+        .user_tweet__title
+          %p.tweet
             つぶやき
-
-          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
           =link_to "編集", "#" , class: "button_tweet btn-modal"
         .user_tweet__inner
           .user_tweet_textarea
@@ -106,143 +105,185 @@
     .mypage_detail_inner_left
       %p.detail_sub_note 項目を選択すると編集できます
       %p.detail_sub_title
-        %span.title_a Pairsプロフィール
+        %span.title_a{'data-user-id': current_user.id} Pairsプロフィール
       %dl.detail_item_list{style:"border-bottom: 1px solid #e1e3e5;"}
+
 
         - str = '選択してください'
         %dt.detail_item_title
           %span.item_title 身長
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
           = current_user.height.present? ? current_user.height : str
 
 
         %dt.detail_item_title
           %span.item_title 体型
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "weight", "data-placement": "top", "data-toggle": "popover"}
           = current_user.weight.present? ? current_user.weight : str
+
+
         %dt.detail_item_title
           %span.item_title 血液型
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "blood_type", "data-placement": "top", "data-toggle": "popover"}
           = current_user.blood_type? ? current_user.blood_type : str
+
         %dt.detail_item_title
           %span.item_title 居住地
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "residence", "data-placement": "top", "data-toggle": "popover"}
           = current_user.residence.present? ? current_user.residence.name : str
+
 
         %dt.detail_item_title
           %span.item_title 出身地
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "birthplace", "data-placement": "top", "data-toggle": "popover"}
           = current_user.birthplace.present? ? current_user.birthplace.name : str
+
+
         %dt.detail_item_title
           %span.item_title 職種
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "job_category", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.job_category.present? ? current_user.job_category : str
 
         %dt.detail_item_title
           %span.item_title 学歴
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "educational", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.educational.present? ? current_user.educational : str
+
+
         %dt.detail_item_title
           %span.item_title 年収
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "annual_income", "data-placement": "top", "data-toggle": "popover"}
           = current_user.annual_income.present? ? current_user.annual_income : str
+
+
         %dt.detail_item_title
           %span.item_title タバコ
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "tobacco", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.tobacco.present? ? current_user.tobacco : str
+
+
       %p.detail_sub_title
         %span.title_a 詳細プロフィール
 
       %p.detail_sub_title 基本情報
       %dl.detail_item_list
 
+
         %dt.detail_item_title
           %span.item_title ニックネーム
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "nickname", "data-placement": "top", "data-toggle": "popover"}
           = current_user.nickname
+
 
         %dt.detail_item_title
           %span.item_title 年齢
-        %dd.detail_item_value
+        %dd.detail_item_value{style:"text-decoration:none;color:black;"}
           =  age(current_user[:birthday])
+          歳
+
 
         %dt.detail_item_title
           %span.item_title 兄弟姉妹
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "brother", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.brother.present? ? current_user.brother : str
+
+
         %dt.detail_item_title
           %span.item_title 国籍
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "country", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.country.present? ? current_user.country : str
+
+
         %dt.detail_item_title
           %span.item_title 話せる言語
-        %dd.detail_item_value 日本語,英語(= current_user.language(num)をeachで回す)
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "language", "data-placement": "top", "data-toggle": "popover"}
+          日本語,英語(= current_user.language(num)をeachで回す)
+
 
       %p.detail_sub_title 恋愛・結婚について
       %dl.detail_item_list
 
+
         %dt.detail_item_title
           %span.item_title 結婚歴
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "marital", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.marital.present? ? current_user.marital : str
+
+
         %dt.detail_item_title
           %span.item_title 子どもの有無
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "child", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.child? ? current_user.child : str
+
+
         %dt.detail_item_title
           %span.item_title 結婚に対する意思
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "mdesire", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.mdesire.present? ? current_user.mdesire : str
+
+
         %dt.detail_item_title
           %span.item_title 子どもが欲しいか
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "cdesire", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.cdesire.present? ? current_user.cdesire : str
-        %dt.detail_item_title
-          %span.item_title 子どもの有無
-        %dd.detail_item_value
-          =  current_user.child.present? ? current_user.child : str
+
+
         %dt.detail_item_title
           %span.item_title 家事・育児
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "hkeeping", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.hkeeping.present? ? current_user.hkeeping : str
+
+
         %dt.detail_item_title
           %span.item_title 出会うまでの希望
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "encounter", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.encounter.present? ? current_user.encounter : str
+
+
         %dt.detail_item_title
           %span.item_title 初回デート費用
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "cost", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.cost? ? current_user.cost : str
 
       %p.detail_sub_title 性格・趣味・生活
       %dl.detail_item_list
 
+
         %dt.detail_item_title
           %span.item_title 性格・タイプ
-        %dd.detail_item_value (= current_user.characterをあるだけ表示)
+        %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
+          (= current_user.characterをあるだけ表示)
+
 
         %dt.detail_item_title
           %span.item_title 社交性
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "sociability", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.sociability.present? ? current_user.sociability : str
+
+
         %dt.detail_item_title
           %span.item_title 同居人
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "housemate", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.housemate.present? ? current_user.housemate : str
+
 
         %dt.detail_item_title
           %span.item_title 休日
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "holiday", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.holiday.present? ? current_user.holiday : str
+
 
         %dt.detail_item_title
           %span.item_title お酒
-        %dd.detail_item_value
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "drink", "data-placement": "top", "data-toggle": "popover"}
           =  current_user.drink.present? ? current_user.drink : str
+
 
         %dt.detail_item_title
           %span.item_title 趣味
-        %dd.detail_item_value 洋裁,カメラ,芸術鑑賞,シューティング(= current_user.hobby(num)をeachで回す)
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "drink", "data-placement": "top", "data-toggle": "popover"}
+          %p 洋裁,カメラ,芸術鑑賞,シューティング(= current_user.hobby(num)をeachで回す)
+
 
     .mypage_detail_inner_right
       .join_community
@@ -263,9 +304,6 @@
           自己紹介文を充実させると、
           %em マッチング率10倍UP!
         %p.introduction_text 自己紹介文はまだ入力されておりません。
-        .dropdown
-          %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-
 
 
 
