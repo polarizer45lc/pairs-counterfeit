@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   def set_group
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
-    @user = @group.users.where("user_id != ?", current_user.id)
+    @users = @group.users.where("user_id != ?", current_user.id)
   end
 
 end
