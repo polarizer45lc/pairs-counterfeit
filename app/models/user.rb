@@ -20,6 +20,9 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships
   has_many :followerds, through: :passive_relationships
 
+  enum sex: %i(male female)
+  #文字列で返すので、registration_controllerで整数として変換するメソッドを記入する。
+
   # ユーザーをフォローする
   def follow(other_user)
     active_relationships.create(following_id: other_user.id)
