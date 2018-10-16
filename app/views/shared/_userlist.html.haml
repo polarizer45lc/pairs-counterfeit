@@ -1,7 +1,7 @@
 %li.user__view
   .user__avatar
     = link_to user_path(user), class: "btn-modal", "data-id": "profile_modal" do
-      = image_tag('no-image__woman.png')
+      = image_tag(user.avatar)
   .user__info
     .user__info01
       %p.user__data
