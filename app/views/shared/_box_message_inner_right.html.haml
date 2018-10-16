@@ -3,14 +3,14 @@
     .info_inner
       .user_info01
         %span
-          =user.nickname
+          = user.nickname
         %span
           = age(user[:birthday])
           歳
         %span
-          =user.residence.name
+          = user.residence.name
   .box_message_exchange
-    -@messages.each do |message|
+    - @messages.each do |message|
       = render "shared/message", message: message
   .box_message_action
     = form_for [current_user, @group, @message] do |f|

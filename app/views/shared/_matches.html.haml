@@ -6,17 +6,17 @@
       .info_inner
         .user_info01
           %span
-            =user.nickname
+            = user.nickname
           %span
             = age(user[:birthday])
             歳
           %span
-            =user.residence.name
+            = user.residence.name
         .user_info02
           = group.show_last_message
         %p.logintime
           -if group.messages.present?
             %p= l(group.messages.last.created_at, format: :long)
-          -else
+          - else
             %p= l(group.created_at, format: :long)
 

@@ -1,18 +1,18 @@
--if message.user_id ==current_user.id
+- if message.user_id == current_user.id
   .right
-    -if message.text.present?
+    - if message.text.present?
       .mycomment
         %p
-          =message.text
+          = message.text
     = image_tag message.image.url, class: 'image' if message.image.present?
     .sendtime
       %p= l(message.created_at, format: :long)
--else
+- else
   .left
     .faceicon
       = image_tag('no-image__man.png')
     .chatting
-      -if message.text.present?
+      - if message.text.present?
         .says
           %p
             =message.text
