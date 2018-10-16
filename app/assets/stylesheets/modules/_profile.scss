@@ -106,7 +106,7 @@ $cyan: #00b8c0;
         }
       }
 
-      .user_tweet_edit {
+      .user_tweet {
         margin-top: 10px;
         position: relative;
         &__title {
@@ -130,11 +130,7 @@ $cyan: #00b8c0;
               background-repeat: no-repeat;
             }
           }
-            .edit_point__sprite:before {
-              background-position: -65px -610px;
-            }
         }
-
         &__inner {
           height: calc( 100% - 44px);
           background-color: $white;
@@ -411,6 +407,10 @@ $cyan: #00b8c0;
   }
 }
 
+.popup_title {
+  color: $cyan;
+  font-size: 11px;
+}
 
 // module ------------------------------------------------
 
@@ -533,6 +533,60 @@ a:active {
   padding-left: 8px;
   color: $cyan;
 
+}
+
+th {
+  background: #F7F7F7;
+  font-weight: 400;
+  width: 22%;
+  .note {
+    color: #F48D97;
+    font-size: 10px;
+  }
+}
+
+th, td {
+  padding: 12px 17px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+select {
+  position: absolute;
+  height: 29px;
+  font-size: 12px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+span {
+  display: inline-block;
+}
+
+label {
+  margin: 0;
+}
+.select_custom {
+  background-color: #FFFFFF;
+  background-image: image-url("select_arrow.png"), none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 180px;
+  height: 29px;
+  border: 1px solid #CBCED0;
+  border-radius: 30px;
+  color: #788086;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin-right: 5px;
+  padding: 6px 40px 6px 14px;
+  border-collapse: separate;
+  white-space: nowrap;
+  box-shadow: 0 2px 0 #c9c9c9;
+}
+
+.select_select .custom_select_inner {
+  width: auto!important;
 }
 
 
