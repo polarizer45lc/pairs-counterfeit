@@ -43,11 +43,9 @@
         }
       }
       .image{
-        img{
-          width: calc(100% - 50px);
-          height: auto;
-          margin-left: 50px;
-        }
+        max-width:200px;
+        height: auto;
+        margin-left: 50px;
       }
       .sendtime{
         margin-left: 50px;
@@ -84,11 +82,11 @@
       }
     }
     .image{
-      img{
-        width: calc(100% - 50px);
-        height: auto;
-        margin-left: 50px;
-      }
+      max-width:200px;
+      height: auto;
+      float:right;
+      margin-right: 15px;
+      clear:both;
     }
     .sendtime{
       clear: both;
