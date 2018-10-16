@@ -106,7 +106,7 @@ $cyan: #00b8c0;
         }
       }
 
-      .user_tweet_edit {
+      .user_tweet {
         margin-top: 10px;
         position: relative;
         &__title {
@@ -130,11 +130,7 @@ $cyan: #00b8c0;
               background-repeat: no-repeat;
             }
           }
-            .edit_point__sprite:before {
-              background-position: -65px -610px;
-            }
         }
-
         &__inner {
           height: calc( 100% - 44px);
           background-color: $white;
@@ -589,6 +585,9 @@ label {
   box-shadow: 0 2px 0 #c9c9c9;
 }
 
+.select_select .custom_select_inner {
+  width: auto!important;
+}
 
 
 

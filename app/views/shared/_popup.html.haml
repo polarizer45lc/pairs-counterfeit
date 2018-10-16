@@ -54,12 +54,11 @@
 #residence{style:"display:none;"}
   %p.popup_title{id:'residence'}
     居住地を選択してください
-  %br/
   %table{style:"width:100%;"}
     %tbody
       %tr
         %td.select_box
-          = select_tag :residence, options_for_select('日本':0,'海外':1), class: 'hasCustomSelect select-residence'
+          = select_tag :residence, options_from_collection_for_select(Region.all, :id, :name), class: 'hasCustomSelect select-residence'
           %span.select_custom
             選択してください
   %br/
@@ -70,12 +69,11 @@
 #birthplace{style:"display:none;"}
   %p.popup_title{id:'birthplace'}
     出身地を選択してください
-  %br/
   %table{style:"width:100%;"}
     %tbody
       %tr
         %td.select_box
-          = select_tag :birthplace, options_for_select('日本':0,'海外':1), class: 'hasCustomSelect select-birthplace'
+          = select_tag :birthplace, options_from_collection_for_select(Region.all, :id, :name), class: 'hasCustomSelect select-birthplace'
           %span.select_custom
             選択してください
   %br/
@@ -326,6 +324,21 @@
   %button.button_tweet 更新
 
 / 性格・タイプ
+
+#sociability{style:"display:none;"}
+  %p.popup_title{id:'sociability'}
+    社交性を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :sociability, options_for_select('選択してください':0,'大人数が好き':1,'少人数が好き':2,'一人が好き':3,'すぐに仲良くなる':4,'徐々に仲良くなる':5), class: 'hasCustomSelect select-sociability'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_tweet 更新
+
 / 社交性
 
 #sociability{style:"display:none;"}
