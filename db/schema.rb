@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(version: 20181011124629) do
     t.string   "language1"
     t.string   "language2"
     t.string   "language3"
+    t.string   "avatar"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

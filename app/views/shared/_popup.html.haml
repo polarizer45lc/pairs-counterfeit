@@ -1,0 +1,94 @@
+#height{style:"display:none;"}
+  %p.popup_title 身長を選択してください
+  =link_to "更新", "#" , class: "button_status dropdown-toggle", id: "dropdownMenuButton", "aria-expanded": "false","aria-haspopup": "true","data-toggle": "dropdown"
+  .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
+    %a.dropdown-item Action
+    %a.dropdown-item Another action
+    %a.dropdown-item Something else here
+
+
+
+  =link_to "更新", "#" , class: "button_tweet btn-modal"
+
+#weight{style:"display:none;"}
+  %p.popup_title 体型を選択してください
+  .dropdown
+    %button.btn.btn-default.dropdown-toggle#dropdown-menu1{type: "button", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "true"}
+
+
+  =link_to "更新", "#" , class: "button_tweet btn-modal"
+
+#blood_type{style:"display:none;"}
+  %p.popup_title 血液型を選択してください
+  .dropdown
+    %button.btn.btn-default.dropdown-toggle#dropdown-menu1{type: "button", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "true"}
+
+
+  =link_to "更新", "#" , class: "button_tweet btn-modal"
+
+
+/ 詳細 -------------------------------------
+
+
+#nickname{style:"display:none;"}
+  %p.popup_title ニックネームを入力してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box{style:"width:100%;"}
+          = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+          %span.select_custom
+            こだわらない
+  %br/
+  =link_to "更新", "" , class: "button_tweet btn-modal"
+
+
+#age{style:"display:none;"}
+  %p.popup_title 年齢を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+          %span.select_custom
+            こだわらない
+  %br/
+  %button.button_tweet-btn-modal  更新
+
+
+#brother{style:"display:none;"}
+  %p.popup_title{id:'brother'}
+    兄弟姉妹を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4)
+          %span.select_custom
+            こだわらないわ〜
+
+  %br/
+  %button.button_tweet 更新
+
+
+#country{style:"display:none;"}
+  %p.popup_title{id:'country'}
+    国籍を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :birthday, options_for_select(18..65), {include_blank:"こだわらない"}
+          %span.select_custom
+            こだわらない
+
+  %br/
+  %button.button_tweet 更新
+
+
+
+
