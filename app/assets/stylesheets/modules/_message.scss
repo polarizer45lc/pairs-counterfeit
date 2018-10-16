@@ -90,23 +90,17 @@
           margin-left: 10px;
           text-align: center;
           float: right;
-          .button_message_submit{
-            @include cyan_button(60px, 34px);
-            @include center();
-            padding: 10px;
-            margin: 0;
 
-          }
           .button_open_sticker_view {
             @include white_button(38px, 38px);
             margin: 0;
           }
           .button_photo_upload {
-            @include white_button(38px, 38px);
-            margin: 0;
             img{
-              height:70%;
-              width: 70%;
+              @include white_button(38px, 38px);
+              // height:70%;
+              // width: 70%;
+              margin: 0;
             }
           }
           .button_read_mark{
@@ -161,4 +155,8 @@
   }
 }
 
+.button_message_submit{
+  @include cyan_button(60px, 34px);
+  margin: 0;
 
+}

@@ -1,32 +1,22 @@
--if true
+-if message.user_id ==current_user.id
   .right
-    .mycomment
-      %p
-        hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    .image
-    .sendtime
-      1990/05/01
-  .right
-    .image
-      = image_tag('no-image__man.png')
-    .sendtime
-      1990/05/01
-  .left
-    .faceicon
-      = image_tag('no-image__man.png')
-    .chatting
-      .says
+    -if message.text.present?
+      .mycomment
         %p
-          hello
-      .image
-      .sendtime
-        1990/05/01
+          =message.text
+    = image_tag message.image.url, class: 'image' if message.image.present?
+    .sendtime
+      %p= l(message.created_at, format: :long)
+-else
   .left
     .faceicon
       = image_tag('no-image__man.png')
     .chatting
-      .image
-        = image_tag('no-image__man.png')
+      -if message.text.present?
+        .says
+          %p
+            =message.text
+      = image_tag message.image.url, class: 'image' if message.image.present?
       .sendtime
-        1990/05/01
+        %p= l(message.created_at, format: :long)
 

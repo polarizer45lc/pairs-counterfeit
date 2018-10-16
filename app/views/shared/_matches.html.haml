@@ -1,5 +1,5 @@
 .matching_item
-  = link_to group_messages_path(group) do
+  = link_to user_group_messages_path(user, group) do
     .ng-click
       .user_photo
         = image_tag('no-image__man.png')
@@ -13,7 +13,10 @@
           %span
             =user.residence.name
         .user_info02
-          / = group.show_last_message
-          メッセージを交換していません
+          = group.show_last_message
         %p.logintime
+          -if group.messages.present?
+            %p= l(group.messages.last.created_at, format: :long)
+          -else
+            %p= l(group.created_at, format: :long)
 

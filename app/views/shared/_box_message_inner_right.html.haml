@@ -3,24 +3,27 @@
     .info_inner
       .user_info01
         %span
-          aaa
+          =user.nickname
         %span
-          24
+          = age(user[:birthday])
           歳
         %span
-          沖縄
+          =user.residence.name
   .box_message_exchange
-    = render "shared/message"
+    -@messages.each do |message|
+      = render "shared/message", message: message
   .box_message_action
-    %textarea.messege_textarea
-    .box_message_action__inner
-      %ul.message_option_list
-        %li.messege_option_item
-          .button_message_submit
-            送信
-        %li.messege_option_item
-          .button_photo_upload
-            = image_tag('カメラアイコン8.png')
+    = form_for [current_user, @group, @message] do |f|
+      = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する'
+      .box_message_action__inner
+        %ul.message_option_list
+          %li.messege_option_item
+            = f.submit '送信', class: 'button_message_submit'
+          %li.messege_option_item
+            .button_photo_upload
+              = f.label :image do
+                = image_tag('カメラアイコン8.png')
+                = f.file_field :image, style: "display:none"
   = link_to '#' do
     = image_tag('banner_report_wanted.png', class: "box_banner_a")
   .box_message_note
