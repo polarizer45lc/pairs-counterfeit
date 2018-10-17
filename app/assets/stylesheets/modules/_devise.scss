@@ -31,37 +31,57 @@
 .registrations {
   width: 100%;
   height: 100vh;
-  padding: 0 100px;
+  // padding-right: 400px;
+  // padding-left: 200px;
+
 
   .registrations_box {
-    width: 800px;
+    width: 100%;
+    height: 190px;
     padding-top: 80px;
+    // float: right;
     // padding-left: 300px;
 
     .logo_box {
-      width: 100%;
+      width: 600px;
       height: 80px;
+      margin: 0 auto;
 
       .pairs {
-        text-align: center;
-        // padding-left: 100px;
+        width: 300px;
+        height: 130px;
       }
 
       .title {
-        width: 100px;
-        text-align: center;
+        width: 290px;
+        font-size: 40px;
+        vertical-align: -20px;
         display: inline-block;
       }
     }
 
     .content_left {
-      width: 150px;
-      height: 200px;
-      margin-left: 200px;
+      padding-top: 30px;
+      width: 140px;
+      height: 400px;
+      // margin-left: 200px;
       float: left;
+
+      .prof_box {
+        width: 130px;
+        height: 139px;
+        background-image: url(prof-picture.png);
+        background-size: 120px;
+        background-repeat:no-repeat;
+      }
+
+      .hidden {
+        // display: none;
+      }
     }
 
     .content_right {
+      padding-top: 30px;
       width: 400px;
       height: 100%;
       float: right;
@@ -80,7 +100,22 @@
           width: 150px;
           height: 100px;
           float: left;
+
+          .radio1 {
+            display: none;
+            // background: #31A9EE;/* マウス選択時の背景色を指定する */
+            // color: red;   /* マウス選択時のフォント色を指定する */
+          }
+
+          .radio2 {
+            display: none;
+          }
+
+          .label:hover {
+            background-color: #E2EDF9;  /* マウスオーバー時の背景色を指定する */
+}
         }
+
       }
 
       .email_field {
@@ -88,14 +123,36 @@
         height: 100px;
       }
 
+      .birthday_field {
+        width: 300px;
+        height: 100px;
+        .date_select {
+          position: relative;
+          opacity: 1.0;
+        }
+      }
+
+      .country_field {
+        width: 300px;
+        height: 100px;
+        #registration_region_id {
+          position: relative;
+          opacity: 1.0;
+        }
+      }
+
       .password_field {
         width: 300px;
         height: 100px;
       }
 
-      .submit {
-        @include white_button(300px, 50px);
-
+      .send_box {
+        width: 300px;
+        height: 100px;
+        float: left;
+        .submit {
+          @include white_button(300px, 50px);
+        }
       }
     }
   }
