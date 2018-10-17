@@ -1,400 +1,411 @@
-.modal-body {
-  color: $color_title;
-  font-size: 13px;
-
-  .box_personal_detail__01 {
-    width: 725px;
-    min-height: 593px;
-    margin: 15px 15px 0;
-    background-color: $color_background;
-    clear: both;
-
-    .personal_detail_inner_left {
-      width: 230px;
-      height: 563px;
-      margin: 15px 10px 0px 15px;
-      float: left;
-
-      ul.user_status_list {
-        li.user_status_item {
-          padding: 12px;
-          font-size: 13px;
-          background-color: $white;
-          margin-bottom: 6px;
-        }
-        li.user_status_item {
-          padding: 12px;
-          font-size: 13px;
-          background-color: $white;
-          margin-bottom: 6px;
-        }
-        li.user_like_count {
-          padding: 12px;
-          font-size: 13px;
-          background-color: $white;
-          margin-bottom: 6px;
-        }
-      }
-
-      .user_tweet_edit {
-        margin-top: 10px;
-        position: relative;
-        width: 100%;
-        background-color: $white;
-        position: relative;
-        padding-bottom: 0;
-
-        .detail_sub_title {
-          height:40px;
-          line-height:40px;
-          color: #bec3c9;
-          border-bottom: 1px solid $color_border;
-        }
-        .title_a {
-          margin-left:15px;
-          border-left: 3px solid $color_title;
-          padding-left: 8px;
-          color: $color_title;
-        }
-      }
-
-      .detail_item_list {
-        padding: 0 15px;
-
-        .detail_item_title {
-          float: left;
-          clear: both;
-          margin: 0 6px 8px 0;
-          width: 120px;
-          vertical-align: baseline;
-        }
-        .detail_item_value {
-          position: relative;
-          min-height: 18px;
-          margin: 10px 0 8px 120px;
-          text-decoration: underline;
-          color: $cyan;
-          vertical-align: baseline;
-        }
-      }
-      // .user_tweet {
-      //   height: 163px;
-      //   margin-top: 10px;
-      //   position: relative;
-
-      //   &__title {
-      //     height: 44px;
-      //     background-color: $white;
-      //     border-bottom: 1px solid $color_border;
-      //     .tweet {
-      //       margin-top: 12px;
-      //       margin-left: 15px;
-      //       width: 55px;
-      //       display: inline-block;
-      //       color: $black;
-      //     }
-      //   }
-
-      .user_tweet_edit {
-        margin-top: 10px;
-        position: relative;
-        &__title {
-          height: 44px;
-          background-color: $white;
-          border-bottom: 1px solid $color_border;
-          box-sizing: border-box;
-          padding: 8px 12px 8px 12px;
-          .tweet_edit {
-            width: 80px;
-            display: inline-block;
-            color: $black;
-            &:before {
-              position: relative;
-              top: 7px;
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              content: '';
-              background-image: image-url("icon_sprites.png"),none;
-              background-repeat: no-repeat;
-            }
-          }
-          .edit_point__sprite:before {
-            background-position: -65px -610px;
-          }
-        }
-
-        &__inner {
-          height: calc( 100% - 44px);
-          background-color: $white;
-          background-color: $white;
-          padding-right: 12px;
-          padding-left: 12px;
-          padding-top: 12px;
-          box-sizing: border-box;
-          padding-bottom: 20px;
-          input, textarea {
-            border: 1px solid $color_border;
-            border-radius: 3px;
-            width: 206px;
-            height: 57px;
-            padding: 6px;
-            resize: none;
-            outline: none;
-            line-height: 1.5;
-            overflow: hidden;
-            box-sizing: border-box;
-          }
-          .user_tweet_alertbox {
-            width: 206px;
-            height: 50px;
-            .user_tweet_note {
-              color: #00abb3;
-              font-size: 12px;
-            }
-            .user_tweet_buttonbox {
-              width: 135px;
-              height: 40px;
-              float: right;
-              padding-bottom: 10px;
-              box-sizing: border-box;
-            }
-          }
-        }
-      }
-
-      .visiter_summary {
-        height: 290px;
-        margin-top: 10px;
-        background-color: $white;
-
-        .visiter_summary__title {
-          vertical-align: center;
-          height: 35px;
-          line-height: 40px;
-          border-bottom: 1px solid $color_border;
-
-          .title {
-            margin-top: 3px;
-            margin-left: 15px;
-            width: 130px;
-            color: $black;
-          }
-        }
-
-        .visiter_summary__count {
-          height: 35px;
-          border-bottom: 1px solid $color_border;
-          .text {
-            margin-left: 15px;
-            width: 130px;
-            display: inline-block;
-          }
-          .count {
-            margin-top: 12px;
-            margin-right: 5px;
-            width: 60px;
-            display: inline-block;
-            text-align: right;
-          }
-        }
-
-        ul.user_list {
-          height: 188px;
-          margin: 0 10px 0;
-          li.user_item {
-            border-bottom: 1px dashed $color_border;
-            vertical-align: baseline;
-            padding-bottom: 3px;
-            p.user_info{
-              display: inline-block;
-              vertical-align: middle;
-              width: 90px;
-              position: relative;
-              top: 4px;
-            }
-            p.user_time {
-              font-size: 8px;
-              display: inline-block;
-              vertical-align: middle;
-              position: relative;
-              top: 2px;
-            }
-          }
-        }
-      }
-    }
-
-    .personal_detail_inner_right {
-      width: 450px;
-      height: 563px;
-      float: right;
-      margin-top: 15px;
-      margin-right: 10px;
-      background-color: $white;
-      position: relative;
-
-      .my_display_photo {
-        height: 563px;
-        margin: 0px 10px 0px;
-        font-size: 12px;
-
-        &__title {
-          height: 40px;
-          line-height: 40px;
-          .photo {
-            margin-top: 2px;
-            margin-left: 15px;
-            width: 300px;
-            color: $black;
-            display: inline-block;
-            font-size: 13px;
-          }
-        }
-
-        &__summary {
-          height: 380px;
-          width: 425px;
-          border: 1px solid $color_border;
-          margin-bottom: 10px;
-          border-radius: 4px;
-          .photo_summary {
-            width: 100%;
-            height:100%;
-            border-radius: 4px;
-          }
-        }
-        &__box {
-          margin-bottom: 10px;
-          .box_my_photo {
-            overflow: hidden;
-            ul {
-              width: 449px;
-              height: 99px;
-              display: inline-block;
-              margin-right: -12px;
-              li {
-                display: inline-block;
-                float: left;
-                height: 96px;
-                width: 96px;
-                margin-right: 12px;
-                border-radius: 4px;
-                border: 1px solid $color_border;
-                .photo_item {
-                  height: 100%;
-                  width: 100%;
-                  border-radius: 4px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .box_personal_detail__02 {
-    margin: 0px 15px 10px;
-    width: 725px;
-    min-height: 1160px;
-    background-color: $color_background;
-    .personal_detail_inner_left {
-      width: 288px;
-      height: calc( 100% - 15px );
-      margin-left: 15px;
-      margin-bottom: 15px;
-      background-color: $white;
-      float: left;
-      .detail_sub_note {
-        height:35px;
-        border-bottom: 1px solid $color_border;
-        padding: 8px 0 0 15px;
-        color: $cyan;
-      }
-      .detail_sub_title {
-        height:35px;
-        margin-left:15px;
-        line-height:40px;
-        color: #bec3c9;
-        .title_a {
-          border-left: 3px solid $color_title;
-          padding-left: 8px;
-          color: $color_title;
-        }
-      }
-      .detail_item_list {
-        padding: 0 15px;
-        .detail_item_title {
-          float: left;
-          clear: both;
-          margin: 0 6px 8px 0;
-          width: 120px;
-          vertical-align: baseline;
-        }
-        .detail_item_value {
-          position: relative;
-          min-height: 18px;
-          margin: 10px 0 8px 120px;
-          text-decoration: underline;
-          color: $cyan;
-          vertical-align: baseline;
-        }
-      }
-    }
-    .personal_detail_inner_right {
-      width: 393px;
-      height: calc( 100% - 15px );
-      margin-bottom: 15px;
-      margin-left: 14px;
-      float: left;
-      .join_community {
-        min-height: 200px;
-        background-color: $white;
-        margin-bottom: 15px;
-        &__title {
-          position: relative;
-          top: 1px;
-          padding: 12px 10px;
-          border-bottom: 1px solid $color_border;
-          .title_b {
-            border-left: 3px solid;
-            padding-left: 8px;
-          }
-        }
-        &__list {
-          .about_community {
-            padding-top: 40px;
-            text-align: center;
-          }
-        }
-      }
-      .personal_introduction {
-        min-height: 170px;
-        padding: 20px 15px;
-        background-color: $white;
-        .introduction_title {
-          width: 100%;
-          height: 30px;
-          color: $black;
-        }
-        .introduction_note {
-          margin-bottom: 10px;
-          padding: 6px 8px;
-          text-align: center;
-          background-color: #fff8f8;
-          em {
-            color: #ed4655;
-          }
-        }
-        .introduction_text {
-          text-align: center;
-          margin: 20px 0;
-        }
-      }
-    }
-  }
+#profile_content {
+  position: absolute;
+  width: 780px;
+  top: 30px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 30px;
+  z-index: 2001;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
-li {
-  display: list-item;
-}
+// .modal-body {
+//   color: $color_title;
+//   font-size: 13px;
+
+//   .box_personal_detail__01 {
+//     width: 725px;
+//     min-height: 593px;
+//     margin: 15px 15px 0;
+//     background-color: $color_background;
+//     clear: both;
+
+//     .personal_detail_inner_left {
+//       width: 230px;
+//       height: 563px;
+//       margin: 15px 10px 0px 15px;
+//       float: left;
+
+//       ul.user_status_list {
+//         li.user_status_item {
+//           padding: 12px;
+//           font-size: 13px;
+//           background-color: $white;
+//           margin-bottom: 6px;
+//         }
+//         li.user_status_item {
+//           padding: 12px;
+//           font-size: 13px;
+//           background-color: $white;
+//           margin-bottom: 6px;
+//         }
+//         li.user_like_count {
+//           padding: 12px;
+//           font-size: 13px;
+//           background-color: $white;
+//           margin-bottom: 6px;
+//         }
+//       }
+
+//       .user_tweet_edit {
+//         margin-top: 10px;
+//         position: relative;
+//         width: 100%;
+//         background-color: $white;
+//         position: relative;
+//         padding-bottom: 0;
+
+//         .detail_sub_title {
+//           height:40px;
+//           line-height:40px;
+//           color: #bec3c9;
+//           border-bottom: 1px solid $color_border;
+//         }
+//         .title_a {
+//           margin-left:15px;
+//           border-left: 3px solid $color_title;
+//           padding-left: 8px;
+//           color: $color_title;
+//         }
+//       }
+
+//       .detail_item_list {
+//         padding: 0 15px;
+
+//         .detail_item_title {
+//           float: left;
+//           clear: both;
+//           margin: 0 6px 8px 0;
+//           width: 120px;
+//           vertical-align: baseline;
+//         }
+//         .detail_item_value {
+//           position: relative;
+//           min-height: 18px;
+//           margin: 10px 0 8px 120px;
+//           text-decoration: underline;
+//           color: $cyan;
+//           vertical-align: baseline;
+//         }
+//       }
+//       // .user_tweet {
+//       //   height: 163px;
+//       //   margin-top: 10px;
+//       //   position: relative;
+
+//       //   &__title {
+//       //     height: 44px;
+//       //     background-color: $white;
+//       //     border-bottom: 1px solid $color_border;
+//       //     .tweet {
+//       //       margin-top: 12px;
+//       //       margin-left: 15px;
+//       //       width: 55px;
+//       //       display: inline-block;
+//       //       color: $black;
+//       //     }
+//       //   }
+
+//       .user_tweet_edit {
+//         margin-top: 10px;
+//         position: relative;
+//         &__title {
+//           height: 44px;
+//           background-color: $white;
+//           border-bottom: 1px solid $color_border;
+//           box-sizing: border-box;
+//           padding: 8px 12px 8px 12px;
+//           .tweet_edit {
+//             width: 80px;
+//             display: inline-block;
+//             color: $black;
+//             &:before {
+//               position: relative;
+//               top: 7px;
+//               display: inline-block;
+//               width: 20px;
+//               height: 20px;
+//               content: '';
+//               background-image: image-url("icon_sprites.png"),none;
+//               background-repeat: no-repeat;
+//             }
+//           }
+//           .edit_point__sprite:before {
+//             background-position: -65px -610px;
+//           }
+//         }
+
+//         &__inner {
+//           height: calc( 100% - 44px);
+//           background-color: $white;
+//           background-color: $white;
+//           padding-right: 12px;
+//           padding-left: 12px;
+//           padding-top: 12px;
+//           box-sizing: border-box;
+//           padding-bottom: 20px;
+//           input, textarea {
+//             border: 1px solid $color_border;
+//             border-radius: 3px;
+//             width: 206px;
+//             height: 57px;
+//             padding: 6px;
+//             resize: none;
+//             outline: none;
+//             line-height: 1.5;
+//             overflow: hidden;
+//             box-sizing: border-box;
+//           }
+//           .user_tweet_alertbox {
+//             width: 206px;
+//             height: 50px;
+//             .user_tweet_note {
+//               color: #00abb3;
+//               font-size: 12px;
+//             }
+//             .user_tweet_buttonbox {
+//               width: 135px;
+//               height: 40px;
+//               float: right;
+//               padding-bottom: 10px;
+//               box-sizing: border-box;
+//             }
+//           }
+//         }
+//       }
+
+//       .visiter_summary {
+//         height: 290px;
+//         margin-top: 10px;
+//         background-color: $white;
+
+//         .visiter_summary__title {
+//           vertical-align: center;
+//           height: 35px;
+//           line-height: 40px;
+//           border-bottom: 1px solid $color_border;
+
+//           .title {
+//             margin-top: 3px;
+//             margin-left: 15px;
+//             width: 130px;
+//             color: $black;
+//           }
+//         }
+
+//         .visiter_summary__count {
+//           height: 35px;
+//           border-bottom: 1px solid $color_border;
+//           .text {
+//             margin-left: 15px;
+//             width: 130px;
+//             display: inline-block;
+//           }
+//           .count {
+//             margin-top: 12px;
+//             margin-right: 5px;
+//             width: 60px;
+//             display: inline-block;
+//             text-align: right;
+//           }
+//         }
+
+//         ul.user_list {
+//           height: 188px;
+//           margin: 0 10px 0;
+//           li.user_item {
+//             border-bottom: 1px dashed $color_border;
+//             vertical-align: baseline;
+//             padding-bottom: 3px;
+//             p.user_info{
+//               display: inline-block;
+//               vertical-align: middle;
+//               width: 90px;
+//               position: relative;
+//               top: 4px;
+//             }
+//             p.user_time {
+//               font-size: 8px;
+//               display: inline-block;
+//               vertical-align: middle;
+//               position: relative;
+//               top: 2px;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .personal_detail_inner_right {
+//       width: 450px;
+//       height: 563px;
+//       float: right;
+//       margin-top: 15px;
+//       margin-right: 10px;
+//       background-color: $white;
+//       position: relative;
+
+//       .my_display_photo {
+//         height: 563px;
+//         margin: 0px 10px 0px;
+//         font-size: 12px;
+
+//         &__title {
+//           height: 40px;
+//           line-height: 40px;
+//           .photo {
+//             margin-top: 2px;
+//             margin-left: 15px;
+//             width: 300px;
+//             color: $black;
+//             display: inline-block;
+//             font-size: 13px;
+//           }
+//         }
+
+//         &__summary {
+//           height: 380px;
+//           width: 425px;
+//           border: 1px solid $color_border;
+//           margin-bottom: 10px;
+//           border-radius: 4px;
+//           .photo_summary {
+//             width: 100%;
+//             height:100%;
+//             border-radius: 4px;
+//           }
+//         }
+//         &__box {
+//           margin-bottom: 10px;
+//           .box_my_photo {
+//             overflow: hidden;
+//             ul {
+//               width: 449px;
+//               height: 99px;
+//               display: inline-block;
+//               margin-right: -12px;
+//               li {
+//                 display: inline-block;
+//                 float: left;
+//                 height: 96px;
+//                 width: 96px;
+//                 margin-right: 12px;
+//                 border-radius: 4px;
+//                 border: 1px solid $color_border;
+//                 .photo_item {
+//                   height: 100%;
+//                   width: 100%;
+//                   border-radius: 4px;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .box_personal_detail__02 {
+//     margin: 0px 15px 10px;
+//     width: 725px;
+//     min-height: 1160px;
+//     background-color: $color_background;
+//     .personal_detail_inner_left {
+//       width: 288px;
+//       height: calc( 100% - 15px );
+//       margin-left: 15px;
+//       margin-bottom: 15px;
+//       background-color: $white;
+//       float: left;
+//       .detail_sub_note {
+//         height:35px;
+//         border-bottom: 1px solid $color_border;
+//         padding: 8px 0 0 15px;
+//         color: $cyan;
+//       }
+//       .detail_sub_title {
+//         height:35px;
+//         margin-left:15px;
+//         line-height:40px;
+//         color: #bec3c9;
+//         .title_a {
+//           border-left: 3px solid $color_title;
+//           padding-left: 8px;
+//           color: $color_title;
+//         }
+//       }
+//       .detail_item_list {
+//         padding: 0 15px;
+//         .detail_item_title {
+//           float: left;
+//           clear: both;
+//           margin: 0 6px 8px 0;
+//           width: 120px;
+//           vertical-align: baseline;
+//         }
+//         .detail_item_value {
+//           position: relative;
+//           min-height: 18px;
+//           margin: 10px 0 8px 120px;
+//           text-decoration: underline;
+//           color: $cyan;
+//           vertical-align: baseline;
+//         }
+//       }
+//     }
+//     .personal_detail_inner_right {
+//       width: 393px;
+//       height: calc( 100% - 15px );
+//       margin-bottom: 15px;
+//       margin-left: 14px;
+//       float: left;
+//       .join_community {
+//         min-height: 200px;
+//         background-color: $white;
+//         margin-bottom: 15px;
+//         &__title {
+//           position: relative;
+//           top: 1px;
+//           padding: 12px 10px;
+//           border-bottom: 1px solid $color_border;
+//           .title_b {
+//             border-left: 3px solid;
+//             padding-left: 8px;
+//           }
+//         }
+//         &__list {
+//           .about_community {
+//             padding-top: 40px;
+//             text-align: center;
+//           }
+//         }
+//       }
+//       .personal_introduction {
+//         min-height: 170px;
+//         padding: 20px 15px;
+//         background-color: $white;
+//         .introduction_title {
+//           width: 100%;
+//           height: 30px;
+//           color: $black;
+//         }
+//         .introduction_note {
+//           margin-bottom: 10px;
+//           padding: 6px 8px;
+//           text-align: center;
+//           background-color: #fff8f8;
+//           em {
+//             color: #ed4655;
+//           }
+//         }
+//         .introduction_text {
+//           text-align: center;
+//           margin: 20px 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// li {
+//   display: list-item;
+// }
