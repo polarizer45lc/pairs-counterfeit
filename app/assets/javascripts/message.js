@@ -9,14 +9,16 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message) {
     //画像アップロードを判断する
     var image_src = message.image ? message.image : "";
-    var html = `
-                <div class="message" data-message-id="${message.id}">
-                  <div class="right">
+    var hukidashi = message.text ? `
                     <div class="mycomment">
                       <p>
                         ${message.text}
                       </p>
-                    </div>
+                    </div>` : "";
+    var html = `
+                <div class="message" data-message-id="${message.id}">
+                  <div class="right">
+                    ${hukidashi}
                     <img class="image" src= ${ image_src }>
                     <div class="sendtime">
                       <p>${message.created_at}</p>
