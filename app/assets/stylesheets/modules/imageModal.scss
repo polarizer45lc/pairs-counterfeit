@@ -1,0 +1,109 @@
+.modal-dialog {
+  margin: 0 auto;
+}
+.modal-lg {
+  max-width: 680px;
+}
+
+.modal-backdrop {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#image_content {
+  position: absolute;
+  width: 680px;
+  top: 30px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 30px;
+  z-index: 2001;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.box_modal_inner_image {
+  width: 100%;
+  background-color: $white;
+  padding: 25px;
+  .modal_image_edit {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #788086;
+    border-left: 4px solid #788086;
+
+  }
+  .modal_image_edit_photo_status {
+    height: 130px;
+    width: 100%;
+    margin-bottom: 20px;
+    .edit_user_main_photo {
+      position: relative;
+      height: 130px;
+      width: 130px;
+      background-color: $white;
+      box-shadow: 0 0 2px #ccc;
+      margin: 0 auto;
+      .modal_image_edit_photo {
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        margin: 5px;
+      }
+    }
+  }
+  .modal_image_edit_image_button_area {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .modal_sub_image_edit {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #788086;
+    border-left: 4px solid #788086;
+  }
+  ul {
+    height: 130px;
+    width: 100%;
+    display: block;
+    li {
+      height: 100%;
+      width: 20%;
+      margin: 0 2% 25px;
+      background-color: $white;
+      display: inline-block;
+      box-shadow: 0 0 2px #ccc;
+      .modal_sub_image_edit_photo {
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        margin: 5px;
+      }
+    }
+  }
+  .modal_image_edit_image_button_area {
+    padding-top: 30px;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+}
+
+.button_edit_image {
+  @include cyan_button(130px, 38px);
+  float: left;
+  position: relative;
+  left: 39%;
+  right: 39%;
+}
+
+.button_edit_sub_image {
+  @include cyan_button(130px, 38px);
+  float: left;
+  position: relative;
+  left: 39%;
+  right: 39%;
+}
+
