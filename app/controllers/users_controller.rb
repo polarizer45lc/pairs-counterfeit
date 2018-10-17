@@ -8,10 +8,25 @@ class UsersController < ApplicationController
       @users = User.where(sex: 'male').page(params[:page]).per(16).order("created_at DESC")
     end
     @user = current_user.id
+
+    if current_user.sex == "male" && current_user.avatar.file.nil?
+       @image = "no-image__man.png"
+    elsif current_user.sex == "female" && current_user.avatar.file.nil?
+       @image = "no-image__woman.png"
+    else
+       @image = current_user.avatar
+    end
   end
 
   def show
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if current_user.sex == "male" && current_user.avatar.file.nil?
+       @image = "no-image__man.png"
+    elsif current_user.sex == "female" && current_user.avatar.file.nil?
+       @image = "no-image__woman.png"
+    else
+       @image = current_user.avatar
+    end
   end
 
   def user_edit
@@ -35,4 +50,15 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatar, :nickname)
   end
+
+  # def main_avatar
+  #   if current_user.sex == "male" && current_user.avatar.nil?
+  #      @image = "no_image_man.png"
+  #   elsif current_user.sex == "female" && current_user.avatar.nil?
+  #      @image = "no_image_woman.png"
+  #   else
+  #      @image = current_user.avatar
+  #   end
+  # end
+
 end

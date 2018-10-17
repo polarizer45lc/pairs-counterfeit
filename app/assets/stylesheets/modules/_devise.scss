@@ -70,13 +70,21 @@
       .prof_box {
         width: 130px;
         height: 139px;
-        background-image: url(prof-picture.png);
         background-size: 120px;
         background-repeat:no-repeat;
       }
 
       .hidden {
+        background-image: url(prof-picture.png);
         // display: none;
+        width: 120px;
+        height: 139px;
+        background-size: 120px;
+        background-repeat:no-repeat;
+        text-indent: -9999px;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
       }
     }
 
@@ -100,20 +108,35 @@
           width: 150px;
           height: 100px;
           float: left;
+        }
 
-          .radio1 {
-            display: none;
-            // background: #31A9EE;/* マウス選択時の背景色を指定する */
-            // color: red;   /* マウス選択時のフォント色を指定する */
+        .radio_box {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+
+          .sex_text {
+            display: inline-block;
+            border: 1px solid #ccc;
+            color: #ccc;
+            border-radius: 21px;
+            line-height: 36px;
+            padding: 0 15px;
+            font-size: 18px;
           }
 
-          .radio2 {
-            display: none;
-          }
+          input[type = radio] {
+            opacity: 0;
+            width: 0;
+            height: 0;
 
-          .label:hover {
-            background-color: #E2EDF9;  /* マウスオーバー時の背景色を指定する */
-}
+            &:checked {
+              + .sex_text {
+                border-color: #000;
+                color: #000;
+              }
+            }
+          }
         }
 
       }

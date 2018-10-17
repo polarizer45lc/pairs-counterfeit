@@ -38,6 +38,25 @@ class User < ApplicationRecord
     followings.include?(other_user)
   end
 
+  # def default_avatar
+  #   if self.male?
+  #     "no_image_man.png"
+  #   else
+  #     "no_image_woman.png"
+  #   end
+  # end
+
+  # def main_avatar
+  #   if self.avatar.present?
+  #     current_user.avatar
+  #   else
+  #     self.default_avatar
+  #   end
+  # end
+
+
+
+
   # 足跡
   has_many :passive_footprints, class_name: "Footprint", foreign_key: "visitor_id"
   has_many :hosts, through: :passive_relationships
