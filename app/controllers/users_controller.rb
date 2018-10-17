@@ -1,13 +1,8 @@
 class UsersController < ApplicationController
 
-  def index   #自分の性別以外を取得する状態です。条件弄ったらこのコメントアウト消してください。
-
-    if current_user.sex == "male"
-      @users = User.where(sex: 'female').page(params[:page]).per(16).order("created_at DESC")
-    elsif current_user.sex == 'female'
-      @users = User.where(sex: 'male').page(params[:page]).per(16).order("created_at DESC")
-    end
-    @user = current_user.id
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).opposite_gender(current_user).page(params[:page]).per(16)
   end
 
   def show
@@ -32,7 +27,6 @@ class UsersController < ApplicationController
 
 
   private
-  def user_params
-    params.require(:user).permit(:avatar, :nickname)
-  end
+
+
 end
