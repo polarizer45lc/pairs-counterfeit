@@ -25,13 +25,10 @@
               %button.sex_choise1 男性
               = f.radio_button(:sex, value= "1", class: "radio2", id: "user_sex_2")
               %button.sex_choise2 女性
-              = f.radio_button :sex, value= "0", class: "radio"
 
-              = f.radio_button :sex, value= "1", class: "rad
-              = f.radio_button :sex, value= "0"
-              男
               = f.radio_button :sex, value= "1"
-              
+              = f.radio_button :sex, value= "0"
+
           .email_field
             = f.label :メールアドレス
             %br/
@@ -56,10 +53,10 @@
             = f.password_field :password_confirmation
 
 
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box
-              = f.label :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
+          / - if devise_mapping.rememberable?
+          /   .field
+          /     = f.check_box
+          /     = f.label :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
           .send_box
             .actions
               = f.submit "Pairsを始める", class: "submit"
