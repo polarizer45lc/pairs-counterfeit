@@ -14,7 +14,7 @@
       = render "shared/message", message: message
   .box_message_action
     = form_for [current_user, @group, @message] do |f|
-      = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する'
+      = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する',  id: "new_message"
       .box_message_action__inner
         %ul.message_option_list
           %li.messege_option_item
@@ -23,7 +23,7 @@
             .button_photo_upload
               = f.label :image do
                 = image_tag('カメラアイコン8.png')
-                = f.file_field :image, style: "display:none"
+                = f.file_field :image, style: "display:none", class: 'image'
   = link_to '#' do
     = image_tag('banner_report_wanted.png', class: "box_banner_a")
   .box_message_note
