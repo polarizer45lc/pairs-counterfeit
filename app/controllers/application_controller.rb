@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :sex, :email, :birthday, :avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :nickname, :sex, :birthday, :avatar, :residence_id])
   end
+
+  # def params_int(enum_value)
+  #   enum_value = enum_value.to_i
+  # end
+
 end

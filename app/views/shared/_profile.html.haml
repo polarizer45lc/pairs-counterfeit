@@ -53,7 +53,7 @@
       .my_display_photo
         .my_display_photo__title
           %p.photo メイン・サブ写真
-          =link_to "写真編集", '#' , class: "button_photo"
+          =link_to "写真編集", '#' , class: "button_photo btn-modal", "data-id": "image_modal"
         .my_display_photo__summary
           = image_tag("img03899.jpg", class: "photo_summary")
         .my_display_photo__box

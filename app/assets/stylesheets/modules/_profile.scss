@@ -451,7 +451,13 @@ li.user_item:hover {
   margin: 0;
   margin-left: 5px;
   box-sizing: border-box;
+}
 
+.button_save {
+  @include cyan_button(50px, 28px);
+  margin: 0;
+  margin-left: 5px;
+  box-sizing: border-box;
 }
 
 .button_more {

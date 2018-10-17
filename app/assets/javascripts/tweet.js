@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(){
     var html = `<div class="user_tweet__title">
                   <p class="tweet">つぶやき</p>
-                  <a class="btn-modal" data-id="rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
                   <a class="button_cancel" style="margin-top:8px;margin-right:8px;">キャンセル</a>
                 </div>
                 <div class="user_tweet__inner">

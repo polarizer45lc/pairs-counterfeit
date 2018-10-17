@@ -1,0 +1,13 @@
+.overlay#overlay
+
+.modal.js-modal{"data-id": "image_modal",style:"width: 755px;min-height:1700px;"}
+  %button.close{"data-dismiss": "modal", type: "button"}
+    = image_tag("button_close.png", class: "button_close", width: "40px")
+  .modal-body
+    .box_modal_image
+      %p.image_sub_title
+        メイン写真の編集
+      .box_edit_main_photo_status
+        .user_main_photo
+          %img
+

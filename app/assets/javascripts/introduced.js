@@ -13,8 +13,7 @@ $(document).on('turbolinks:load', function(){
                   <textarea class="user_tweet_edit__tweet" placeholder="自己紹介" style="width:100%;height:100px;"></textarea>
                 </p>
                 <div class="introduction_text" style="height:30px;margin:0;">
-                  <a class="button_update">更新</a>
-                  <a class="button_delete">削除</a>
+                  <a class="button_save">保存</a>
                 </div>`
     return html;
   }
