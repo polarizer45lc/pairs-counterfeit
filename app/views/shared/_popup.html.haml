@@ -197,19 +197,19 @@
 
 / 話せる言語
 
-#language{style:"display:none;"}
-  %p.popup_title{id:'language'}
-    話せる言語を選択してください
-  %br/
-  %table{style:"width:100%;"}
-    %tbody
-      %tr
-        %td.select_box
-          = select_tag :language, options_for_select('選択してください':0,'日本語':1,'英語':2,'中国語':3,'ヒンディー語':4,'スペイン語':5,'ロシア語':6,'フランス語':7,'アラビア語':8,'ポルトガル語':9,'マレー語':10,'ベンガル語':11,'ドイツ語':12,'ウルドゥー語':13,'イタリア語':14,'韓国語':15,'ベトナム語':16,'ペルシア語':17,'タガログ語':18,'タイ語':19,'トルコ語':20,'その他':21), class: 'hasCustomSelect select-language'
-          %span.select_custom
-            選択してください
-  %br/
-  %button.button_tweet 更新
+/ #language{style:"display:none;"}
+/   %p.popup_title{id:'language'}
+/     話せる言語を選択してください
+/   %br/
+/   %table{style:"width:100%;"}
+/     %tbody
+/       %tr
+/         %td.select_box
+/           = select_tag :language, options_for_select('選択してください':0,'日本語':1,'英語':2,'中国語':3,'ヒンディー語':4,'スペイン語':5,'ロシア語':6,'フランス語':7,'アラビア語':8,'ポルトガル語':9,'マレー語':10,'ベンガル語':11,'ドイツ語':12,'ウルドゥー語':13,'イタリア語':14,'韓国語':15,'ベトナム語':16,'ペルシア語':17,'タガログ語':18,'タイ語':19,'トルコ語':20,'その他':21), class: 'hasCustomSelect select-language'
+/           %span.select_custom
+/             選択してください
+/   %br/
+/   %button.button_tweet 更新
 
 
 #language{style:"display:none;"}
@@ -219,14 +219,14 @@
   %table{id:'language1'}
     %tbody
       %tr
-        %td.select_box{class: 'languages'}
+        %td.select_box{select_form_id: 'languages'}
           = select_tag :language, options_for_select('日本語':'日本語', '英語':'英語','中国語':'中国','ヒンディー語':'ヒンディー語', 'スペイン語':'スペイン語', 'ロシア語':'ロシア語','フランス語':'フランス語','アラビア語':'アラビア語', 'ポルトガル語':'ポルトガル語','マレー語':'マレー語','ベンガル語':'ベンガル語','ドイツ語':'ドイツ語','ウルドゥー語':'ウルドゥー語', 'イタリア語':'イタリア語','韓国語':'韓国語','ベトナム語':'ベトナム語','ペルシア語':'ペルシア語','タガログ語':'タガログ語','タイ語':'タイ語','トルコ語':'トルコ語','その他':'その他')
           %span.select_custom
             誰でも大好き
   %br/
-  %a.btn_f.btn_white_a.add_form_btn 追加
+  %a.btn_f.btn_white_a.add_form_btn2 追加
   %button.button_tweet2 更新
-  
+
 / 結婚歴
 
 #marital{style:"display:none;"}
@@ -420,5 +420,14 @@
   %button.button_tweet 更新
 
 
+/趣味
+#hobby{style:"display:none;"}
+  %p.popup_title{id:'hobby'}
+    趣味を入力してください
+  %br/
+  %textarea{class: 'for_hobby',placeholder: '入力してください',id: 'hobby1'}
 
+  %br/
+  %a.btn_f.btn_white_a.add_form_btn3 追加
+  %button.button_tweet3 更新
 

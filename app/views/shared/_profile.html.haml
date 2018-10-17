@@ -285,8 +285,12 @@
 
         %dt.detail_item_title
           %span.item_title 趣味
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "drink", "data-placement": "top", "data-toggle": "popover"}
-          %p 洋裁,カメラ,芸術鑑賞,シューティング(= current_user.hobby(num)をeachで回す)
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "hobby", "data-placement": "top", "data-toggle": "popover"}
+          = current_user.hobby1 if current_user.hobby1
+          = current_user.hobby2 if current_user.hobby2
+          = current_user.hobby3 if current_user.hobby3
+          - if current_user.hobby1.blank? and current_user.hobby2.blank? and current_user.hobby3.blank?
+            = str
 
 
     .mypage_detail_inner_right
