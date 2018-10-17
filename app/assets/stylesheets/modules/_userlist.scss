@@ -185,3 +185,25 @@
   color: #FFFFFF;
   box-shadow: 0 3px 0 #F06976;
 }
+
+.love__btn {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 30px;
+}
+.love__btn:before {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  content: '';
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: 0 -45px;
+}
+

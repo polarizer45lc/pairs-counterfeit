@@ -103,18 +103,7 @@ $cyan: #00b8c0;
             display: inline-block;
             color: $black;
           }
-        }
-      }
 
-      .user_tweet {
-        margin-top: 10px;
-        position: relative;
-        &__title {
-          height: 44px;
-          background-color: $white;
-          border-bottom: 1px solid $color_border;
-          box-sizing: border-box;
-          padding: 8px 12px 8px 12px;
           .tweet_edit {
             width: 80px;
             display: inline-block;
@@ -442,7 +431,7 @@ li.user_item:hover {
 .button_cancel {
   @include white_button(74px, 26px);
   margin: 0;
-  margin-bottom: 1px;
+  margin: 1px;
   font-size: 10px;
   float: right;
 }
@@ -500,6 +489,12 @@ li.user_item:hover {
   font-size: 13px;
   margin: 0 10px 0 0;
 }
+
+.button_profile {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+}
+
 
 
 
@@ -587,6 +582,19 @@ label {
 
 .select_select .custom_select_inner {
   width: auto!important;
+}
+
+input, textarea {
+  border: 1px solid $color_border;
+  border-radius: 3px;
+  width: 206px;
+  height: 57px;
+  padding: 6px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 
