@@ -61,7 +61,6 @@
 @mixin chat-right() {
   .right{
     .mycomment {
-      // float: right;
       margin-top: 10px;
       & p{
         clear:both;
