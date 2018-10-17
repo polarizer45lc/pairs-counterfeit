@@ -47,9 +47,3 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-
-// %p.user_tweet_alert
-//         /     /   *つぶやきは全角4文字以上入力してください。
-//         /     .user_tweet_buttonbox
-//         /       =link_to "更新", "#" , class: "button_update"
-//         /       =link_to "削除", "#" , class: "button_delete"

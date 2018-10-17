@@ -53,7 +53,7 @@
       .my_display_photo
         .my_display_photo__title
           %p.photo メイン・サブ写真
-          =link_to "写真編集", '#' , class: "button_photo btn-modal", "data-id": "image_modal"
+          =link_to "写真編集", '#' , class: "button_photo btn-modal", "data-toggle": "modal", "data-target": "#image_modal"
         .my_display_photo__summary
           = image_tag("img03899.jpg", class: "photo_summary")
         .my_display_photo__box
@@ -149,7 +149,7 @@
 
         %dt.detail_item_title
           %span.item_title 年齢
-        %dd.detail_item_value{style:"text-decoration:none;color:black;"}
+        %dd.detail_item_value{style:"text-decoration:none;color: #54595d;"}
           =  age(current_user[:birthday])
           歳
 
