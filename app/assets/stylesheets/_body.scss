@@ -14,9 +14,24 @@ a {
   text-decoration: none;
   color: inherit;
   outline: none;
-
   &:hover, &:focus {
     color: inherit;
     text-decoration: none;
   }
+}
+
+.wrapper {
+  height: 100%;
+  width: 928px;
+  padding: 0;
+  margin: 0 auto;
+  display: table;
+}
+
+.w-20 {
+  width: 20%!important;
+}
+
+.w-40 {
+  width: 40%!important;
 }
