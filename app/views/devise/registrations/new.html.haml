@@ -20,15 +20,18 @@
             .sex_field
               = f.label :性別
               %br/
+
               = f.radio_button(:sex, value= "0", class: "radio1", id: "user_sex_1")
               %button.sex_choise1 男性
               = f.radio_button(:sex, value= "1", class: "radio2", id: "user_sex_2")
               %button.sex_choise2 女性
               = f.radio_button :sex, value= "0", class: "radio"
 
-              = f.radio_button :sex, value= "1", class: "radio"
-
-
+              = f.radio_button :sex, value= "1", class: "rad
+              = f.radio_button :sex, value= "0"
+              男
+              = f.radio_button :sex, value= "1"
+              
           .email_field
             = f.label :メールアドレス
             %br/
@@ -60,5 +63,6 @@
           .send_box
             .actions
               = f.submit "Pairsを始める", class: "submit"
+       
 
         / = render "devise/shared/links"

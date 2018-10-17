@@ -1,0 +1,8 @@
+= render "shared/header"
+.wrapper
+  = render "shared/side"
+  .box_mypage_detail
+    = render "shared/box_message_inner_left"
+    - @users.each do |user|
+      = render "shared/box_message_inner_right",user: user
+  = render "shared/footer"
