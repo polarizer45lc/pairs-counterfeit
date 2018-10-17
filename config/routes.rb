@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
      get :followings, :followedes, :matches
-     post :user_edit
+     post :user_edit, :continuous_user_edit
     end
   end
 end

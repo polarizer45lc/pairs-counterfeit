@@ -12,15 +12,7 @@ $(function(){
   	  url:'/users/' + user_id + '/user_edit',
   	  type:'POST',
   	  data:{referense_column: referense_column, profvalue: profvalue},
-      dataType: 'json',
-  	  //ajax通信エラー
-      error : function(XMLHttpRequest, textStatus, errorThrown) {
-        console.log("ajax通信に失敗しました");
-      },
-      //ajax通信成功
-      success : function(response) {
-        console.log("ajax通信に成功しました");
-      }
+      dataType: 'json'
   	})
     .done(function(json){
     $('[data-content_div_id='+ referense_column +']').text(json.referense_column)

@@ -89,6 +89,20 @@
   %br/
   %button.button_tweet 更新
 
+#language{style:"display:none;"}
+  %p.popup_title{id:'language'}
+    言語を選択してください
+  %br/
+  %table{id:'language1'}
+    %tbody
+      %tr
+        %td.select_box{class: 'languages'}
+          = select_tag :language, options_for_select('日本語':'日本語', '英語':'英語','中国語':'中国','ヒンディー語':'ヒンディー語', 'スペイン語':'スペイン語', 'ロシア語':'ロシア語','フランス語':'フランス語','アラビア語':'アラビア語', 'ポルトガル語':'ポルトガル語','マレー語':'マレー語','ベンガル語':'ベンガル語','ドイツ語':'ドイツ語','ウルドゥー語':'ウルドゥー語', 'イタリア語':'イタリア語','韓国語':'韓国語','ベトナム語':'ベトナム語','ペルシア語':'ペルシア語','タガログ語':'タガログ語','タイ語':'タイ語','トルコ語':'トルコ語','その他':'その他')
+          %span.select_custom
+            誰でも大好き
+  %br/
+  %a.btn_f.btn_white_a.add_form_btn 追加
+  %button.button_tweet2 更新
 
 
 

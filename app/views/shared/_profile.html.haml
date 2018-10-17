@@ -179,7 +179,13 @@
           =  current_user.country.present? ? current_user.country : str
         %dt.detail_item_title
           %span.item_title 話せる言語
-        %dd.detail_item_value 日本語,英語(= current_user.language(num)をeachで回す)
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "language", "data-placement": "top", "data-toggle": "popover"}
+          = current_user.language1 if current_user.language1
+          = current_user.language2 if current_user.language2
+          = current_user.language3 if current_user.language3
+          - if current_user.language1.blank? and current_user.language2.blank? and current_user.language3.blank?
+            = str
+
 
       %p.detail_sub_title 恋愛・結婚について
       %dl.detail_item_list
