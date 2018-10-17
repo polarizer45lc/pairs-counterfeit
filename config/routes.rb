@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  devise_for :users
-  root 'users#index'
-
-  resources :groups, only: [:index, :new, :create] do
-    resources :messages, only: [:index, :create]
-  end
+  root to: 'users#index'
 
   resources :relationships, only: [:create, :destroy]
   resources :users do
+    resources :groups, only: [:index, :new, :create] do
+      resources :messages, only: [:index, :create]
+    end
     member do
-     get :followings, :followedes, :matches
-     post :user_edit
+      get :followings, :followedes
+      post :user_edit
+    end
+    collection do
+      get :search
     end
   end
-
-  get "search", to: "users#search"
-
 end

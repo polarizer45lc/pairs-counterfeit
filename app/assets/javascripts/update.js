@@ -6,7 +6,7 @@ $(function(){
   	console.log(profvalue);
   	var user_id = $('.title_a').data('user-id');
     console.log(user_id)
-    var elem = $('[data-content_div_id="brother"]')
+    var elem = $('[data-content_div_id='+ referense_column +']')
     console.log(elem.text())
   	$.ajax({
   	  url:'/users/' + user_id + '/user_edit',
@@ -30,3 +30,4 @@ $(function(){
     })
   })
 })
+
