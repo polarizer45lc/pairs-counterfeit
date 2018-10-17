@@ -3,8 +3,9 @@
     %p.profile__image
       = link_to user_path(current_user.id) do
         = image_tag(@image)
+
     %p.profile__name
-      =link_to current_user.nickname + "   " + current_user.residence.name, user_path(current_user)
+      =link_to current_user.nickname + "   " + current_user.residence.name, edit_user_path(current_user)
     %p.profile__status
       = link_to "無料会員", '#'
   .profile__rate

@@ -18,9 +18,10 @@
             %span.title_a プロフィール
           %dl.detail_item_list
 
+            - str = '選択してください'
             %dt.detail_item_title
               %span.item_title 年齢
-            %dd.detail_item_value 31歳
+            %dd.detail_item_value
 
             %dt.detail_item_title
               %span.item_title 居住地
@@ -28,7 +29,8 @@
 
             %dt.detail_item_title
               %span.item_title 身長
-            %dd.detail_item_value 160cm
+            %dd.detail_item_value
+              = current_user.height.present? ? current_user.height : str
 
             %dt.detail_item_title
               %span.item_title 体型
@@ -58,8 +60,6 @@
               %span.item_title 好きなこと・趣味
             %dd.detail_item_value 文通,藍染,家庭菜園
 
-          .box_link_more
-            =link_to "もっと見る", root_path , class: "button_more"
       .personal_detail_inner_right
         .my_display_photo
           .my_display_photo__title
