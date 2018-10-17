@@ -20,6 +20,9 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships
   has_many :followerds, through: :passive_relationships
 
+  enum sex: %i(male female)
+  #文字列で返すので、registration_controllerで整数として変換するメソッドを記入する。
+
   # ユーザーをフォローする
   def follow(other_user)
     active_relationships.create(following_id: other_user.id)
@@ -49,5 +52,16 @@ class User < ApplicationRecord
     User.where(id: passive_relationships.select(:following_id))
      .where(id: active_relationships.select(:followed_id))
   end
+
+# 検索フォーム用配列集
+  Job = ["無職", "ニート", "ヒモ", "家事手伝い", "自宅警備員"]
+  AcademicBackground = ["短大/専門学校卒", "高校卒", "大学卒", "大学院卒", "その他"]
+  Tobacco = ["吸わない", "吸う", "吸う（電子タバコ）", "非喫煙者の前では吸わない", "相手が嫌なら吸わない", "ときどき吸う"]
+  Drink = ["飲まない", "飲む", "ときどき飲む"]
+  Weight = ["スリム", "やや細め", "普通", "グラマー", "筋肉質", "ややぽっちゃり", "ぽっちゃり"]
+  Income = ["200万円", "400万円", "600万円", "800万円", "1000万円", "1500万円", "2000万円", "3000万円"]
+  Login = ["24時間以内", "3日以内", "1週間以内", "2週間以内", "1ヶ月以内", "3ヶ月以内", "3ヶ月以上"]
+  Housemate = ["一人暮らし", "友達と一緒", "ペットと一緒", "実家暮らし", "その他"]
+  Holiday = ["土日", "平日", "不定期", "その他"]
 
 end

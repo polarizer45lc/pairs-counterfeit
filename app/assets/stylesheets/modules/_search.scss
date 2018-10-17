@@ -1,132 +1,213 @@
-.box_search-view {
-  background: white;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.search_title {
-  width: 680px;
-  background: #FFFFFF;
-  color: #00ABB3;
-  border-top: 6px solid #00ABB3;
-  font-size: 16px;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 16px 0 20px;
-  display: block;
-}
-
-.search_inner {
-  width: 680px;
-  font-size: 13px;
-  box-sizing: border-box;
-  padding: 10px 20px 20px;
-  border-radius: 4px;
-}
-
-.box_search-reset {
-  margin-bottom: 12px;
-  text-align: right;
-}
-
-.search_table {
-  font-size: 13px;
-  box-sizing: border-box;
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #CBCED0;
-  border-radius: 4px;
-  margin: 2px;
-  padding: 2px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  background: #FFFFFF;
-  border-spacing: 0;
-
-  .note {
-    color: #F48D97;
-    font-size: 10px;
-  }
-
-  tbody {
-    display: table-row-group;
-  }
-  th {
-    font-weight: 400;
-    width: 22%;
-    background: #F7F7F7;
-    padding: 12px 17px;
-    text-align: left;
-    vertical-align: middle;
-    border: 1px solid #CBCED0;
-    display: table-cell;
-  }
-  td {
-    padding: 12px 17px;
-    text-align: left;
-    vertical-align: middle;
-    border: 1px solid #CBCED0;
-    display: table-cell;
-  }
-}
-
-.search_more {
-  padding: 5px;
-  text-align: center;
-
-  a {
-    color: #00ABB3;
-    text-decoration: underline;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  a:before {
-    display: inline-block;
-    width: 21px;
-    height: 20px;
-    margin-right: 10px;
-    content: '';
-    vertical-align: bottom;
-    background-image: image-url("icon_sprites.png"),none;
-    background-repeat: no-repeat;
-    background-position: -141px -610px;
-  }
-}
-
-.select_box select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  opacity: 0;
+#modal_search {
   position: absolute;
+  width: 680px;
+  height: 1200px;
+  z-index: 2001;
+  letter-spacing: .5px;
+
+  .box_search_form {
+    position: relative;
+  }
+
+  .search_title {
+    background: #FFFFFF;
+    border-top: 6px solid #00ABB3;
+    color: #00ABB3;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 16px 0 20px;
+  }
+
+  .search_form_inner {
+    background: #FFFFFF;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding: 10px 20px 20px;
+    border-radius: 4px;
+
+    .box_search_reset {
+      margin-bottom: 12px;
+      text-align: right;
+    }
+
+    table {
+      width: 100%;
+      font-size: 13px;
+      box-sizing: border-box;
+      border-collapse: collapse;
+      border: 1px solid #CBCED0;
+      border-radius: 4px;
+    }
+
+    th {
+      background: #F7F7F7;
+      font-weight: 400;
+      width: 22%;
+      .note {
+        color: #F48D97;
+        font-size: 10px;
+      }
+    }
+
+    th, td {
+      padding: 12px 17px;
+      text-align: left;
+      vertical-align: middle;
+      border: 1px solid #CBCED0;
+    }
+
+    select {
+      position: absolute;
+      height: 29px;
+      font-size: 12px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    label {
+      margin: 0;
+    }
+
+    .custom_select {
+      background-color: #FFFFFF;
+      background-image: image-url("select_arrow.png"), none;
+      background-repeat: no-repeat;
+      background-position: right center;
+      width: 180px;
+      height: 29px;
+      border: 1px solid #CBCED0;
+      border-radius: 30px;
+      color: #788086;
+      font-size: 12px;
+      box-sizing: border-box;
+      margin-right: 5px;
+      padding: 6px 40px 6px 14px;
+      border-collapse: separate;
+      white-space: nowrap;
+      box-shadow: 0 2px 0 #c9c9c9;
+    }
+
+    .form_item {
+      display: inline-block;
+      margin: 5px 15px 5px 0;
+    }
+
+    .search_age .custom_select {
+      width: 130px;
+    }
+
+    .search_height .custom_select {
+      width: 130px;
+    }
+
+    .search_tobacco .custom_select {
+      width: 250px;
+    }
+
+    .custom_select .custom_select_inner {
+      width: auto!important;
+    }
+
+    .form_block {
+      margin: 0 0 10px;
+    }
+
+    .add_form_btn {
+      display: block;
+      width: 64px;
+      padding: 6px;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        width: 16px;
+        height: 15px;
+        margin-right: 5px;
+        content: '';
+        vertical-align: text-bottom;
+        vertical-align: bottom;
+        background-image: image-url("icon_sprites.png"),none;
+        background-repeat: no-repeat;
+        background-position: -165px -316px;
+      }
+    }
+
+    .remove_form_btn {
+      background: #C9C9C9;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      right: 8px;
+      height: 16px;
+      padding: 1px 5px 2px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .box_search_btn {
+      background: #F7F7F7;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+      .search_btn {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+
+  }
 }
 
-.select_custom {
-  font-size: 12px;
-  box-sizing: border-box;
-  height: 29px;
-  padding: 6px 40px 6px 14px;
-  border-collapse: separate;
-  white-space: nowrap;
-  color: #788086;
-  border: 1px solid #CBCED0;
-  border-radius: 30px;
-  background-color: #FFFFFF;
-  background-image: image-url("select_arrow.png"),none;
-  background-repeat: no-repeat;
-  background-position: right center;
-  box-shadow: 0 2px 0 #C9C9C9;
+.search-select-age .search-select-height {
+  width: 130px;
 }
 
-.search-btn {
-  display: inline-block;
-  margin: 0 10px;
+.search-select-residence,
+.search-select-income,
+.search-select-login,
+.search-select-birthplace {
+  width: 180px;
 }
 
-.box_search-btn {
-  background: #F7F7F7;
-  margin-top: 20px;
-  padding: 15px 0;
-  text-align: center;
+.search-select-tobacco {
+  width: 250px;
 }
+
+
+// CheckBoxスタイル
+input[type= checkbox]:not(.not_use_default) {
+  position: absolute;
+  left: -1000px;
+  opacity: 0;
+}
+
+input[type= checkbox]:not(.not_use_default)+label {
+  cursor: pointer;
+  &:before {
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    margin: 0 4px 0 0;
+    content: '';
+    vertical-align: top;
+    background-image: image-url("icon_sprites.png"), none;
+    background-repeat: no-repeat;
+    background-position: 0 -105px;
+  }
+}
+
+input[type= checkbox]:not(.not_use_default):checked+label {
+  color: #00ABB3;
+  &:before {
+    background-position: -27px -105px;
+  }
+}
+
+
+
+
