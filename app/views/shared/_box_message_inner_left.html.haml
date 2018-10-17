@@ -6,7 +6,7 @@
         %em
           = current_user.groups.count
           人
-    - if current_user.sex ==0
+    - if current_user.sex == "male"
       の女性
     - else
       の男性
