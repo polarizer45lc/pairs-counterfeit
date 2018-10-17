@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index   #自分の性別以外を取得する状態です。条件弄ったらこのコメントアウト消してください。
+
     if current_user.sex == "male"
       @users = User.where(sex: 'female').page(params[:page]).per(16).order("created_at DESC")
     elsif current_user.sex == 'female'
