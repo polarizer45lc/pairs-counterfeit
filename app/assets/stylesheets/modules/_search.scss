@@ -1,7 +1,9 @@
 // Modal制御
 .modal-dialog {
   margin: 0 auto;
-  @include clearfix;
+}
+.modal-lg {
+  max-width: 680px;
 }
 
 .modal-backdrop {

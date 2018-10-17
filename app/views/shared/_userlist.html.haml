@@ -1,33 +1,22 @@
-%li.user__view
-  .user__avatar
+%li.list_view_user_item
+  .list_view_user_avatar
     = link_to user_path(user), class: "btn-modal", "data-id": "profile_modal" do
-      = image_tag('no-image__woman.png')
-  .user__info
-    .user__info01
-      %p.user__data
-        %span.user__login
-        %span.area{ limit_length: '5' }
+      = image_tag('no-image__woman.png', class: "user_photo")
+  .box_user_info
+    .box_user_info01
+      %p.user_summary
+        %span.isLogIn10min
+        %span.user_area{ limit_length: '5' }
           = user.residence.name
-        %span.age
-          #{age(user[:birthday])}歳
-    .user__info02
-      %p.chemistry
-        0%
-      %p.like__count
+        %span.user_age #{age(user[:birthday])}歳
+    .box_user_info02
+      %p.user_chemistry 0%
+      %p.user_like_count
         %span
-          %em
-            ？
-      .tweet__box
-        .tweet__body{ limit_length: '22' }
+          %em ？
+      .user_tweet{ limit_length: "22" }
+        .user_tweet_body
           = user.tweet
-    .like__box
-      .btn__zone
-        - if current_user.following?(user)
-          = link_to "いいね済み", '#', class: "like__btn btn__pink"
-        - else
-          -if user.following?(current_user)
-            いいねありがとう
-          -else
-            いいね
-          = render 'shared/follow', user: user,  class: "like__btn btn__pink"
-
+    .box_button_like
+      #like_button_zone{ id: user.id }
+        = render 'shared/follow', user: user
