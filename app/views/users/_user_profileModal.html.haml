@@ -15,7 +15,7 @@
                   %strong 0%
               %li.user_status_item.user_like_count
                 %p.user_like_count_b
-                  %strong 0
+                  %strong ？
                   %strong いいね！
                   %span 直近30日間
             .box_user_custom_display
@@ -93,7 +93,7 @@
               .user_summary_info
                 %ul.user_display_photo_list
                   %li.user_display_photo_item
-                    = image_tag("no-image__woman.png", width: "390px", height: "390px")
+                    = image_tag("mewtwo.png", width: "390px", height: "390px")
 
                 .summary_info_inner
                   .user_info_wrapper
@@ -256,6 +256,24 @@
             .box_join_community
               .join_community_title_a
                 %p.title_a
-                  参加コミュニティ（ 0件 )
+                  参加コミュニティ（0件）
+              %ul.join_community_list
+                %li.join_community_item
+                  %p.empty_item.pt15.pb15.pl15
+                    #{user.nickname}さんが参加しているコミュニティはありません。
+            .box_introduction
+              %p.introduction_title.title_a 自己紹介文
+              - if user.introduction.present?
+                %p.introduction_text
+                  = user.introduction
+              - else
+                %p.empty_item
+                  #{user.nickname}さんは自己紹介文を記入していません。
+      .box_user_action_b
+        .user_photo.not_display_photo_request
+          = image_tag("mewtwo.png", class: "image-circle")
+        .not_display_photo_request
+          .modal-like-button-zone
+            = render partial: "shared/follow", locals: { user: user }
 
 
