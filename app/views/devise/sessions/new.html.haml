@@ -3,26 +3,24 @@
     = image_tag('pairs_logo.png', class: "pairs", width: "220px")
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = devise_error_messages!
-      .field
-        = f.label :メールアドレス, style: "font-size: 13px; "
+      .sessions_field
+        = f.label :メールアドレス
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 230px; height: 28px; border-radius: 4px; "
-      .field
-        = f.label :パスワード, style: "font-size: 13px;"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "sessions_text"
+        = f.label :パスワード, style: "margin-top: 20px;"
         - if @minimum_password_length
           / %em
           /   (#{@minimum_password_length} characters minimum)
         %br/
-        = f.password_field :password, autocomplete: "new-password", style: "width: 230px; height: 28px; border-radius: 4px;"
-      %p.check_box
-        ログインしたままにする？
-      / .field
-      /   = f.label :password_confirmation
-      /   %br/
-      /   = f.password_field :password_confirmation, autocomplete: "new-password"
+        = f.password_field :password, autocomplete: "new-password", class: "sessions_text"
       .actions
         = f.submit "ログインですが"
       .actions2
         = link_to "新規登録", new_user_registration_path
       %p.alert
         パスワードを忘れた方はこちら
+    / - if devise_mapping.rememberable?
+    /   .check_box_field
+    /   = f.check_box :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
+    /   = f.label
+

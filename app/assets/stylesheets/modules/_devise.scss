@@ -1,25 +1,62 @@
+@mixin devise_box($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// mixin--------------------------
+
+
+$color_text_area: #f8f9f9;
+
+// color変数-----------------------
+
+
+
+
+
+
+
 .sessions {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: $cyan;
+
   .sessions_box {
-    background-color: black;
-    width: 300px;
-    height: 600px;
+    @include devise_box(300px, 600px);
+    background-color: #fff;
+    border: 1px solid #ccc;
     margin: 0 auto;
     margin-left: 100px;
-    margin-top: 100px;
     border-radius: 10px;
+    box-sizing: border-box;
+
     .pairs {
       padding-left: 40px;
       padding-top: 60px;
       padding-bottom: 40px;
     }
-    .field {
+
+    .sessions_field {
       padding: 0 30px;
       padding-bottom: 15px;
+      font-size: 13px;
+
+      .sessions_text {
+        @include devise_box(230px, 33px);
+        border-radius: 4px;
+        outline: none;
+        box-shadow: none;
+        resize: none;
+        outline: none;
+      }
     }
+
     .check_box {
       font-size: 13px;
       padding-left: 30px;
     }
+
     .alert {
       padding-top: 50px;
       font-size: 13px;
@@ -94,7 +131,9 @@
 
         .nickname_box {
           width: 180px;
-          background-color: gray;
+          height: 50px;
+          background-color: #f8f9f9;
+          border: none;
         }
       }
 
@@ -149,6 +188,7 @@
       .birthday_field {
         width: 300px;
         height: 100px;
+
         .date_select {
           position: relative;
           opacity: 1.0;
@@ -158,6 +198,7 @@
       .country_field {
         width: 300px;
         height: 100px;
+
         #registration_region_id {
           position: relative;
           opacity: 1.0;
