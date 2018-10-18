@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include UsersHelper
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -37,6 +39,10 @@ class User < ApplicationRecord
   def following?(other_user)
     followings.include?(other_user)
   end
+
+
+
+
 
   # 足跡
   has_many :passive_footprints, class_name: "Footprint", foreign_key: "visitor_id"
