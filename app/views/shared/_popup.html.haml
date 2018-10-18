@@ -325,17 +325,32 @@
 
 / 性格・タイプ
 
-#sociability{style:"display:none;"}
-  %p.popup_title{id:'sociability'}
-    社交性を選択してください
+#characters{style:"display:none"}
+  %p.popup_title{id:'characters', style:"width:100%;"}
+    性格・タイプを選択してください
   %br/
   %table{style:"width:100%;"}
-    %tbody
+    %tbody{style:"width:100%;"}
       %tr
-        %td.select_box
-          = select_tag :sociability, options_for_select('選択してください':0,'大人数が好き':1,'少人数が好き':2,'一人が好き':3,'すぐに仲良くなる':4,'徐々に仲良くなる':5), class: 'hasCustomSelect select-sociability'
-          %span.select_custom
-            選択してください
+        %p.parts_line{style:"display:inline-block;width:70px;"}
+          %input{type:"checkbox", name:"characters", value: "1", id:"kindness"}
+          %label{onclick: "null",for:"kindness", class: "form_label"}
+            優しい
+
+        %p.parts_line{style:"display:inline-block;width:70px;"}
+          %input{type:"checkbox", name:"characters", value: "2", id:"honest"}
+          %label{for:"honest", class: "form_label"}
+            素直
+
+        %p.parts_line
+          %input{type:"checkbox", name:"characters", value: "3", id:"determination"}
+          %label{for:"determination", class: "form_label"}
+            決断力がある
+
+
+
+
+
   %br/
   %button.button_profile 更新
 

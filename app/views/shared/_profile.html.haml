@@ -25,7 +25,7 @@
           %p.title
             足あと
         .visiter_summary__count
-          %p.text 過去一週間の足あと
+          %p.text 足あとの合計
           %p.count 9726人
         %ul.user_list{style:"overflow-y:auto"}
           %li.user_item
@@ -52,6 +52,18 @@
             = image_tag("no_image_lady.jpg", class: "image-circle")
             %p.user_info 75歳 奈良
             %p.user_time 4:00
+          %li.user_item
+            = image_tag("no_image_lady.jpg", class: "image-circle")
+            %p.user_info 85歳 奈良
+            %p.user_time 6:00
+          %li.user_item
+            = image_tag("no_image_lady.jpg", class: "image-circle")
+            %p.user_info 85歳 奈良
+            %p.user_time 6:00
+          %li.user_item
+            = image_tag("no_image_lady.jpg", class: "image-circle")
+            %p.user_info 85歳 奈良
+            %p.user_time 6:00
         .visiter_summary__note
           ※ スクロールしてください
 
@@ -227,7 +239,7 @@
 
         %dt.detail_item_title
           %span.item_title 性格・タイプ
-        %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "characters", "data-placement": "top", "data-toggle": "popover"}
           (= current_user.characterをあるだけ表示)
 
 
