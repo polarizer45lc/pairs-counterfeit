@@ -1,5 +1,5 @@
 $(function(){
-  $(document).on('click','.button_tweet',function(e){
+  $(document).on('click','.button_profile',function(e){
   	var referense_column = $(this).siblings('.popup_title').attr('id');
     console.log(referense_column)
     var profvalue = $(this).siblings('table').find('.select_custom').text();

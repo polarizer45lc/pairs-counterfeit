@@ -1,0 +1,3 @@
+$(".list_view_users").html("<%= j(render partial: 'shared/userlist', collection: @users, as: 'user') %>")
+$(".box_result_pager").html("<%= j(paginate @users, remote: true) %>")
+$("#search_modal, #image_modal").modal("hide")

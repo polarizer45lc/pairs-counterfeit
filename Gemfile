@@ -71,3 +71,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+
+# Ransack導入
+gem 'ransack'
+gem 'fog-aws'

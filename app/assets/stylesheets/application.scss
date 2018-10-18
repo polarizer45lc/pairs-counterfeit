@@ -9,18 +9,10 @@
 @import "./modules/profile";
 @import "./modules/side";
 @import "./modules/main";
-@import "./modules/userlist";
 @import "./modules/footer";
 @import "./modules/profileModal";
 @import "./modules/search";
 @import "./modules/devise";
 @import "./modules/profileModal";
 @import "./modules/message";
-
-.wrapper {
-  height: 100%;
-  width: 928px;
-  padding: 0;
-  margin: 0 auto;
-  display: table;
-}
+@import "./modules/imageModal";
