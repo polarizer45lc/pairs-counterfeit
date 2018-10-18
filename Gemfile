@@ -74,3 +74,4 @@ gem 'faker'
 
 # Ransack導入
 gem 'ransack'
+gem 'fog-aws'
