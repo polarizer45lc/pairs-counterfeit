@@ -22,15 +22,12 @@ $(document).on('turbolinks:load', function(){
   function returnHTML(){
     var html = `<div class="user_tweet__title">
                   <p class="tweet">つぶやき</p>
-                  <a class="btn-modal" data-id="rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
+                  <a class="btn-modal" data-toggle= "modal" data-target= "#rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
                   <a class="button_tweet" href="#">編集</a>
                 </div>
                 <div class="user_tweet__inner">
                   <div class="user_tweet_texterea">
                     <p class="user_tweet_text"></p>
-                    <p class="user_tweet_note">
-                      あと３回まで変更できます。(１日３回まで)
-                    </p>
                   </div>
                 </div>`
     return html;
@@ -43,6 +40,10 @@ $(document).on('turbolinks:load', function(){
   $(document).on('click', ".button_cancel" ,function(e) {
     var html = returnHTML();
     $(".user_tweet").html(html);
+    e.preventDefault();
+  });
+  $(document).on('click', ".button_delete" ,function(e) {
+    $('textarea.user_tweet_edit__tweet').val('');
     e.preventDefault();
   });
 });
