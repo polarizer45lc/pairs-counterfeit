@@ -27,26 +27,34 @@
         .visiter_summary__count
           %p.text 過去一週間の足あと
           %p.count 9726人
-        %ul.user_list
+        %ul.user_list{style:"overflow-y:auto"}
           %li.user_item
             = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
+            %p.user_info 75歳 奈良
+            %p.user_time 4:00
           %li.user_item
             = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
+            %p.user_info 85歳 奈良
+            %p.user_time 7:00
           %li.user_item
             = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
+            %p.user_info 95歳 奈良
+            %p.user_time 4:00
           %li.user_item
             = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
+            %p.user_info 85歳 奈良
+            %p.user_time 6:00
+          %li.user_item
+            = image_tag("no_image_lady.jpg", class: "image-circle")
+            %p.user_info 105歳 奈良
+            %p.user_time 3:00
+          %li.user_item
+            = image_tag("no_image_lady.jpg", class: "image-circle")
+            %p.user_info 75歳 奈良
+            %p.user_time 4:00
+        .visiter_summary__note
+          ※ スクロールしてください
 
-        .box_link_more
-          =link_to "もっと見る", root_path , class: "button_more"
     .mypage_detail_inner_right
       .my_display_photo
         .my_display_photo__title
@@ -66,8 +74,6 @@
               %li.photo_item
                 = image_tag("no_image.jpg", class: "photo_item")
         .my_photo_pager
-          =link_to "前の4枚", root_path , class: "button_before"
-          =link_to "後の4枚", root_path , class: "button_after"
 
 
 
