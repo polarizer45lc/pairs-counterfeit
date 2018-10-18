@@ -1,0 +1,27 @@
+#image_modal.modal.fade{"role": "dialog"}
+  .modal-dialog.modal-lg{"role": "document"}
+    #image_content.modal-content
+      .box_search_form
+        = image_tag("button_close.png", class: "modal-close modal_close", "data-dismiss": "modal")
+        .box_modal_inner_image
+          %p.modal_image_edit
+            メイン写真の編集
+          .modal_image_edit_photo_status
+            .edit_user_main_photo
+              = image_tag("img03899.jpg", class: "modal_image_edit_photo")
+          .modal_image_edit_image_button_area
+            =link_to "ファイルから選ぶ", '#' , class: "button_edit_image"
+          %p.modal_sub_image_edit
+            サブ写真の追加・削除
+          %ul.modal_photo_edit_list
+            %li.modal_photo_edit_box
+              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+            %li.modal_photo_edit_box
+              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+            %li.modal_photo_edit_box
+              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+            %li.modal_photo_edit_box
+              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+          .modal_image_edit_image_button_area
+            =link_to "ファイルから選ぶ", '#' , class: "button_edit_sub_image"
+

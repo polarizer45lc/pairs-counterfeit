@@ -18,6 +18,7 @@
       width: 100%;
       text-align: left;
       .says {
+        float: left;
         display: inline-block;
         position: relative;
         margin: 0 0 0 50px;
@@ -43,11 +44,14 @@
         }
       }
       .image{
+        clear: both;
+        float: left;
         max-width:200px;
         height: auto;
         margin-left: 50px;
       }
       .sendtime{
+        clear: both;
         margin-left: 50px;
       }
     }
@@ -57,9 +61,9 @@
 @mixin chat-right() {
   .right{
     .mycomment {
-      float: right;
       margin-top: 10px;
       & p{
+        clear:both;
         display: inline-block;
         position: relative;
         margin: 0 10px 0 0;
@@ -68,6 +72,7 @@
         border-radius: 12px;
         background: #30e852;
         font-size: 15px;
+        float: right;
         &:after{
           content: "";
           position: absolute;
@@ -82,11 +87,11 @@
       }
     }
     .image{
+      clear:both;
       max-width:200px;
       height: auto;
       float:right;
       margin-right: 15px;
-      clear:both;
     }
     .sendtime{
       clear: both;
