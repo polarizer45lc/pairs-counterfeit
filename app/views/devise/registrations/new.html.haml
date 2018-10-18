@@ -16,18 +16,20 @@
             .nickname_field
               = f.label :ニックネーム
               %br/
-              = f.text_field :nickname, placeholder: "ニックネーム", autofcus: true, maxlength: "15"
+              = f.text_field :nickname, placeholder: "ニックネーム", autofcus: true, maxlength: "15", class: "nickname_box"
             .sex_field
-              = f.label :性別
+              %p.sex_title
+                性別
               %br/
+              %label.radio_box
+                = f.radio_button :sex, value= "0"
+                %span.sex_text
+                  男性
+              %label.radio_box
+                = f.radio_button :sex, value= "1"
+                %span.sex_text
+                  女性
 
-              = f.radio_button(:sex, value= "0", class: "radio1", id: "user_sex_1")
-              %button.sex_choise1 男性
-              = f.radio_button(:sex, value= "1", class: "radio2", id: "user_sex_2")
-              %button.sex_choise2 女性
-
-              = f.radio_button :sex, value= "1"
-              = f.radio_button :sex, value= "0"
 
           .email_field
             = f.label :メールアドレス
@@ -60,6 +62,6 @@
           .send_box
             .actions
               = f.submit "Pairsを始める", class: "submit"
-       
+
 
         / = render "devise/shared/links"

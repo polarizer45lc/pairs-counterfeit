@@ -31,16 +31,12 @@
 .registrations {
   width: 100%;
   height: 100vh;
-  // padding-right: 400px;
-  // padding-left: 200px;
-
 
   .registrations_box {
     width: 100%;
     height: 190px;
     padding-top: 80px;
-    // float: right;
-    // padding-left: 300px;
+
 
     .logo_box {
       width: 600px;
@@ -58,25 +54,30 @@
         vertical-align: -20px;
         display: inline-block;
       }
-    }
 
     .content_left {
       padding-top: 30px;
       width: 140px;
       height: 400px;
-      // margin-left: 200px;
       float: left;
 
       .prof_box {
         width: 130px;
         height: 139px;
-        background-image: url(prof-picture.png);
         background-size: 120px;
         background-repeat:no-repeat;
       }
 
       .hidden {
-        // display: none;
+        background-image: url(prof-picture.png);
+        width: 120px;
+        height: 139px;
+        background-size: 120px;
+        background-repeat:no-repeat;
+        text-indent: -9999px;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
       }
     }
 
@@ -86,34 +87,56 @@
       height: 100%;
       float: right;
 
+      .nickname_field {
+        width: 200px;
+        height: 100px;
+        float: left;
+
+        .nickname_box {
+          width: 180px;
+          background-color: gray;
+        }
+      }
+
       .sex_box {
           width: 400px;
           height: 120px;
 
-        .nickname_field {
-          width: 200px;
-          height: 100px;
-          float: left;
         }
 
         .sex_field {
           width: 150px;
           height: 100px;
           float: left;
+        }
 
-          .radio1 {
-            display: none;
-            // background: #31A9EE;/* マウス選択時の背景色を指定する */
-            // color: red;   /* マウス選択時のフォント色を指定する */
+        .radio_box {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+
+          .sex_text {
+            display: inline-block;
+            border: 1px solid #ccc;
+            color: #ccc;
+            border-radius: 21px;
+            line-height: 36px;
+            padding: 0 15px;
+            font-size: 18px;
           }
 
-          .radio2 {
-            display: none;
-          }
+          input[type = radio] {
+            opacity: 0;
+            width: 0;
+            height: 0;
 
-          .label:hover {
-            background-color: #E2EDF9;  /* マウスオーバー時の背景色を指定する */
-}
+            &:checked {
+              + .sex_text {
+                border-color: #000;
+                color: #000;
+              }
+            }
+          }
         }
 
       }
