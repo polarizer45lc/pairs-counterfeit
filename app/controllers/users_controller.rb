@@ -4,28 +4,10 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true).opposite_gender(current_user).page(params[:page]).per(16)
-
-    if current_user.sex == "male" && current_user.avatar.file.nil?
-       @image = "no-image__man.png"
-    elsif current_user.sex == "female" && current_user.avatar.file.nil?
-       @image = "no-image__woman.png"
-    else
-       @image = current_user.avatar
-    end
-
   end
 
   def show
     @user = User.find(params[:id])
-
-    if current_user.sex == "male" && current_user.avatar.file.nil?
-       @image = "no-image__man.png"
-    elsif current_user.sex == "female" && current_user.avatar.file.nil?
-       @image = "no-image__woman.png"
-    else
-       @image = current_user.avatar
-    end
-
   end
 
   def user_edit
@@ -43,5 +25,6 @@ class UsersController < ApplicationController
   def matches
     @groups = current_user.groups
   end
+
 
 end

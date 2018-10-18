@@ -1,12 +1,19 @@
 module UsersHelper
-  def main_avatar
-    if current_user.sex == "male" && current_user.avatar.file.nil?
-       @image = "no-image__man.png"
-    elsif current_user.sex == "female" && current_user.avatar.file.nil?
-       # @image = "no-image__woman.png"
-       "no-image__woman.png"
+
+    def default_avatar
+    if self.male?
+      "no-image__man.png"
     else
-       @image = current_user.avatar
+      "no-image__woman.png"
     end
   end
+
+  def main_avatar
+    if self.avatar.present?
+      self.avatar
+    else
+      self.default_avatar
+    end
+  end
+
 end
