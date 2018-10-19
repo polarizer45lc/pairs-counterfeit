@@ -59,6 +59,7 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'unicorn-worker-killer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -75,4 +76,3 @@ gem 'faker'
 # Ransack導入
 gem 'ransack'
 gem 'fog-aws'
-gem 'unicorn-worker-killer'
