@@ -46,7 +46,7 @@
         いいね
       %ul
         %li.navi__item
-          = link_to "相手からのいいね！", '#'
+          = link_to "相手からのいいね！", follower_user_path(current_user.id)
         %li.navi__item
           = link_to "自分からのいいね！", '#'
         %li.navi__item

@@ -1,0 +1,8 @@
+= render "shared/header"
+.wrapper
+  = render "shared/side"
+  .box_mypage_detail
+    -users.each do |user|
+      =user.nickname
+
+  = render "shared/footer"
