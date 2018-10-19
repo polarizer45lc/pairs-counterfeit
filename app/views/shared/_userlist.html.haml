@@ -4,7 +4,7 @@
   .box_user_info
     .box_user_info01
       %p.user_summary
-        %span.isLogIn10min
+        %span.user_login
         %span.user_area{ limit_length: '5' }
           = user.residence.name
         %span.user_age #{age(user[:birthday])}歳
