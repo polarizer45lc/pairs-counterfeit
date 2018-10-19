@@ -2,7 +2,10 @@
   = link_to user_group_messages_path(user, group) do
     .ng-click
       .user_photo
-        = image_tag('no-image__man.png')
+        -if user.avatar.present?
+          = image_tag(user.avatar)
+        -else
+          = image_tag(current_user.default_other_avatar)
       .info_inner
         .user_info01
           %span
