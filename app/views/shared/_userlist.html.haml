@@ -22,11 +22,11 @@
     .box_button_like
       #like_button_zone
         -if current_user.following?(user)
-          = link_to "いいね済", class: "btn_like btn_d"
+          = link_to "いいね済", "#", class: "btn_like btn_mitene btn_orange_a btn_d"
         - elsif user.following?(current_user)
           = form_for(current_user.active_relationships.build) do |f|
             %div= hidden_field_tag :followed_id, user.id
-            = f.submit "いいね", class: "btn_like"
+            = f.submit "いいね！ありがとう", class: "btn_like"
         -else
           = form_for(current_user.active_relationships.build) do |f|
             %div= hidden_field_tag :followed_id, user.id
