@@ -46,15 +46,28 @@ set :default_env, {
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
 
+#本番環境DB操作
+namespace :deploy do
 
+  task :db_reset do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:migrate:reset"
+        end
+      end
+    end
+  end
 
+  task :db_seed do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
 
+end
 
-
-
-# after 'deploy:publishing', 'deploy:restart'
-# namespace :deploy do
-#   task :restart do
-#     invoke 'unicorn:restart'
-#   end
-# end
