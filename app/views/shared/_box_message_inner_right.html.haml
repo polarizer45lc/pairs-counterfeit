@@ -11,7 +11,7 @@
           = user.residence.name
   .box_message_exchange
     - @messages.each do |message|
-      = render "shared/message", message: message
+      = render "shared/message", message: message, user: user
   .box_message_action
     = form_for [current_user, @group, @message] do |f|
       = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する',  id: "new_message"

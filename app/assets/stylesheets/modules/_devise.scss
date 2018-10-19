@@ -127,7 +127,7 @@ $color_text_area: #f8f9f9;
 
       .hidden {
         @include devise_box(120px, 139px);
-        background-image: url(prof-picture.png);
+        background-image: image-url("prof-picture.png");
         background-size: 120px;
         background-repeat:no-repeat;
         text-indent: -9999px;

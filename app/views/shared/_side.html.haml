@@ -54,9 +54,13 @@
     .navi
       %p.navi__title
         マッチング
-      %ul
-        %li.navi__item
-          = link_to "メッセージ", user_groups_path(current_user.id)
+      -if current_user.matchers.present?
+        %ul
+          %li.navi__item
+            = link_to "メッセージ", user_groups_path(current_user.id)
+      -else
+        %p.navi__title
+          メッセージ
     .navi
       %p.navi__title
         コミュニティ
