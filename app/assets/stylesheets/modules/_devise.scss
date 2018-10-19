@@ -23,7 +23,7 @@ $color_text_area: #f8f9f9;
   background-color: $cyan;
 
   .sessions_box {
-    @include devise_box(300px, 600px);
+    @include devise_box(360px, 650px);
     background-color: #fff;
     border: 1px solid #ccc;
     margin: 0 auto;
@@ -32,6 +32,7 @@ $color_text_area: #f8f9f9;
     box-sizing: border-box;
 
     .pairs {
+      width: 315px;
       padding-left: 40px;
       padding-top: 60px;
       padding-bottom: 40px;
@@ -43,10 +44,15 @@ $color_text_area: #f8f9f9;
       font-size: 13px;
 
       .sessions_text {
-        @include devise_box(230px, 33px);
+        @include devise_box(260px, 40px);
+        margin-left: 20px;
+        margin-bottom: 25px;
         border-radius: 4px;
         outline: none;
         box-shadow: none;
+        box-sizing: border-box;
+        padding-left: 5px;
+        font-size: 13px;
         resize: none;
         outline: none;
       }
@@ -57,32 +63,48 @@ $color_text_area: #f8f9f9;
       padding-left: 30px;
     }
 
-    .alert {
-      padding-top: 50px;
-      font-size: 13px;
-      padding-left: 30px;
+    .sessions_log_in_box {
+      @include devise_box(240px, 150px);
+      margin: 0 60px;
+
+      .button_log_in {
+        @include white_button(240px, 40px);
+        background-color: $cyan;
+        box-shadow: 0 1px 0 #008B8B;
+        font-size: 16px;
+        border: none;
+        color: $white;
+      }
+
+      .button_sign_up{
+        @include white_button(240px, 40px);
+        background-color: #f3f3f3;
+        font-size: 16px;
+      }
+
+      .alert {
+        margin-top: 20px;
+        font-size: 14px;
+      }
     }
   }
 }
 
+
 .registrations {
-  width: 100%;
-  height: 100vh;
+  @include devise_box(100%, 100vh);
 
   .registrations_box {
-    width: 100%;
-    height: 190px;
+    @include devise_box(100%, 190px);
     padding-top: 80px;
 
 
     .logo_box {
-      width: 600px;
-      height: 80px;
+       @include devise_box(600px, 80px);
       margin: 0 auto;
 
       .pairs {
-        width: 300px;
-        height: 130px;
+        @include devise_box(300px, 130px);
       }
 
       .title {
@@ -93,22 +115,19 @@ $color_text_area: #f8f9f9;
       }
 
     .content_left {
+      @include devise_box(140px, 400px);
       padding-top: 30px;
-      width: 140px;
-      height: 400px;
       float: left;
 
       .prof_box {
-        width: 130px;
-        height: 139px;
+        @include devise_box(130px, 139px);
         background-size: 120px;
         background-repeat:no-repeat;
       }
 
       .hidden {
+        @include devise_box(120px, 139px);
         background-image: url(prof-picture.png);
-        width: 120px;
-        height: 139px;
         background-size: 120px;
         background-repeat:no-repeat;
         text-indent: -9999px;
@@ -119,20 +138,27 @@ $color_text_area: #f8f9f9;
     }
 
     .content_right {
+      @include devise_box(400px, 100%);
       padding-top: 30px;
-      width: 400px;
-      height: 100%;
       float: right;
 
       .nickname_field {
+        @include devise_box(200px, 100px);
         width: 200px;
         height: 100px;
         float: left;
 
+        ::placeholder {
+          color: #ccc;
+          padding-left: 5px;
+        }
+
         .nickname_box {
-          width: 180px;
-          height: 50px;
+          @include devise_box(180px, 50px);
+          font-size: 17px;
           background-color: #f8f9f9;
+          box-sizing: border-box;
+          padding-left: 5px;
           border: none;
         }
       }
@@ -140,12 +166,11 @@ $color_text_area: #f8f9f9;
       .sex_box {
           width: 400px;
           height: 120px;
-
         }
 
         .sex_field {
-          width: 150px;
-          height: 100px;
+          @include devise_box(150px, 100px);
+          margin-left: 15px;
           float: left;
         }
 
@@ -181,41 +206,90 @@ $color_text_area: #f8f9f9;
       }
 
       .email_field {
-        width: 300px;
-        height: 100px;
+        @include devise_box(300px, 100px);
+
+       ::placeholder {
+          color: #ccc;
+          padding-left: 5px;
+        }
+
+        .email_box {
+          @include devise_box(400px, 50px);
+          background-color: #f8f9f9;
+          box-sizing: border-box;
+          padding-left: 5px;
+          font-size: 17px;
+          border: none;
+        }
       }
 
       .birthday_field {
-        width: 300px;
-        height: 100px;
+        @include devise_box(300px, 100px);
 
-        .date_select {
+        .date_box {
+          @include devise_box(80px, 40px);
+          font-size: 16px;
           position: relative;
           opacity: 1.0;
+          width: 80px;
         }
       }
 
       .country_field {
-        width: 300px;
-        height: 100px;
+        @include devise_box(300px, 100px);
 
-        #registration_region_id {
+        #registration_region1_id {
+          @include devise_box(80px, 40px);
           position: relative;
+          font-size: 16px;
+          opacity: 1.0;
+        }
+
+        #registration_region2_id {
+          @include devise_box(150px, 40px);
+          position: relative;
+          font-size: 16px;
           opacity: 1.0;
         }
       }
 
       .password_field {
-        width: 300px;
-        height: 100px;
+        @include devise_box(300px, 100px);
+
+        .password_box {
+          @include devise_box(300px, 40px);
+          background-color: #f8f9f9;
+          border: none;
+        }
+      }
+
+      .mark_box {
+        @include devise_box(400px, 50px);
+        margin-right: 50px;
+        margin-top: 20px;
+
+        .check_mark {
+          @include devise_box(35px, 35px);
+          float: left;
+          margin-right: 10px;
+          vertical-align: 16px;
+        }
+
+        .mark_text {
+          @include devise_box(290px, 50px);
+          display: inline-block;
+          vertical-align: 18px;
+          font-size: 14px;
+        }
       }
 
       .send_box {
-        width: 300px;
-        height: 100px;
+        @include devise_box(300px, 100px);
+        margin-top: 20px;
         float: left;
+
         .submit {
-          @include white_button(300px, 50px);
+          @include white_button(400px, 50px);
         }
       }
     }
