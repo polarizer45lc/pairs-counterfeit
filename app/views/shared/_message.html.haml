@@ -11,7 +11,10 @@
   - else
     .left
       .faceicon
-        = image_tag('no-image__man.png')
+        -if user.avatar.present?
+          = image_tag(user.avatar)
+        -else
+          = image_tag(current_user.default_other_avatar)
       .chatting
         - if message.text.present?
           .says

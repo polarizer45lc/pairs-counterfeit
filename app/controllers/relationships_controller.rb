@@ -16,8 +16,6 @@ class RelationshipsController < ApplicationController
         current_user.update_attribute(:hearts, hearts)    #heartsの数を更新
       end
     end
-    redirect_to user
-    return
   end
 
 end
