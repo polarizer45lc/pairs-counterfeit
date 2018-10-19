@@ -9,7 +9,7 @@ class User < ApplicationRecord
   belongs_to :residence, class_name: "Region", optional: true, foreign_key: "residence_id"
   belongs_to :birthplace, class_name: "Region",optional: true, foreign_key: "birthplace_id"
 
-  has_one :characters
+  has_one :character
   has_many :images
 
   # フォロー
