@@ -14,7 +14,7 @@
           %p.tweet
             つぶやき
           =link_to "ルール", "#" , class: "btn-modal" ,"data-toggle": "modal", "data-target": "#rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
-          =link_to "編集", "#" , class: "button_tweet"
+          %button.button_tweet 編集
         .user_tweet__inner
           .user_tweet_textarea
             %p.user_tweet_text
@@ -73,12 +73,12 @@
           %p.photo メイン・サブ写真
           =link_to "写真編集", '#' , class: "button_photo btn-modal", "data-toggle": "modal", "data-target": "#image_modal"
         .my_display_photo__summary
-          = image_tag("img03899.jpg", class: "photo_summary")
+          = image_tag(current_user.main_avatar, class: "photo_summary")
         .my_display_photo__box
           .box_my_photo
             %ul.my_phto_list
               %li
-                = image_tag("img03899.jpg", class: "photo_item")
+                = image_tag("no_image.jpg", class: "photo_item")
               %li.photo_item
                 = image_tag("no_image.jpg", class: "photo_item")
               %li.photo_item
@@ -287,12 +287,11 @@
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文
-          =link_to "編集", "#" , class: "button_introduction"
+          %button.button_introduction 編集
         %p.introduction_note
           自己紹介文を充実させると、
           %em マッチング率10倍UP!
-        %p.introduction_text 自己紹介文はまだ入力されておりません。
-
-
+        %p.introduction_text
+          = current_user.introduction
 
 

@@ -1,9 +1,10 @@
 .side__content
   .profile
-    %p.profile__image
-      = link_to user_path(current_user.id) do
+    %p.profile__image{onclick:"reload_this()"}
+      = link_to edit_user_path(current_user.id) do
         = image_tag(current_user.main_avatar)
-    %p.profile__name
+
+    %p.profile__name{onclick:"reload_this()"}
       =link_to current_user.nickname + "   " + current_user.residence.name, edit_user_path(current_user)
     %p.profile__status
       = link_to "無料会員", '#'

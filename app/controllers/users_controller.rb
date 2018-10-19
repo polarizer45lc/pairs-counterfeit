@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def matches
     @groups = current_user.groups
   end
