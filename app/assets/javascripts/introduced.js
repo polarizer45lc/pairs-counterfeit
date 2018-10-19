@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
 
     var html = `<p class="introduction_title">
                   <span class="title_b">自己紹介文</span>
-                  <button class="button_cancel">キャンセル</button>
+                  <button class="button_introdution_cancel">キャンセル</button>
                 </p>
                 <p class="introduction_note">
                   自己紹介文を充実させると、
@@ -73,7 +73,7 @@ $(document).on('turbolinks:load', function(){
     })
   })
 
-  $(document).on('click', ".button_cancel" ,function(json) {
+  $(document).on('click', ".button_introdution_cancel" ,function(json) {
     var html = returnHTML(json);
     $(".mypage_introduction").html(html);
   });

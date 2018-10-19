@@ -405,8 +405,8 @@ $cyan: #00b8c0;
           }
         }
         .introduction_text {
-          text-align: center;
-          margin: 20px 0;
+          margin: 20px 1px;
+          color: $black;
         }
       }
     }
@@ -457,6 +457,14 @@ li.user_item:hover {
 }
 
 .button_cancel {
+  @include white_button(74px, 26px);
+  margin: 0;
+  margin: 1px;
+  font-size: 10px;
+  float: right;
+}
+
+.button_introdution_cancel {
   @include white_button(74px, 26px);
   margin: 0;
   margin: 1px;
@@ -519,7 +527,7 @@ li.user_item:hover {
 }
 
 .button_introduction {
-  @include cyan_button(40px, 20px);
+  @include cyan_button(43px, 20px);
   font-size: 13px;
   margin: 0 10px 0 0;
 }
