@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @user = User.find(params[:user_id])
     respond_to do |format|
       format.html
       # まだ画面上に更新されてないメッセージがあれば取得
