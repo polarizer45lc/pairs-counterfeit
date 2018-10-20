@@ -22,6 +22,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def follow
+    @title = "あなたからのいいね！"
+    @users = current_user.followings
+  end
+
+  def follower
+    @title = "お相手からのいいね！"
+    @users = current_user.followerds
+  end
+
   def matches
     @groups = current_user.groups
   end

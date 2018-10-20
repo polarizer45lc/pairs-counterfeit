@@ -48,7 +48,7 @@
         %li.navi__item
           = link_to "相手からのいいね！", follower_user_path(current_user.id)
         %li.navi__item
-          = link_to "自分からのいいね！", '#'
+          = link_to "自分からのいいね！", follow_user_path(current_user.id)
         %li.navi__item
           = link_to "お気に入り", '#'
     .navi
