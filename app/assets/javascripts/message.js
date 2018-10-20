@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
     if (avatar_src == "" && message.sex == "male") {
       avatar_src = "/assets/no-image__man-70d87b89e4e1f521760cd9d67ac3bcf0d8cde177fd73b304bf28aa8122b3d3ac.png";
     } else if(avatar_src == "" ){
-      avatar_src = "/assets/no-image__woman-2537c1305a350dea3e0bc22c75e7a5b56831efd82e977062c2e96d4d46e09f9b.png"
+      avatar_src = "/assets/no-image__woman-2537c1305a350dea3e0bc22c75e7a5b56831efd82e977062c2e96d4d46e09f9b.png";
     }
     var hukidashi = message.text ? `
                     <div class="says">
