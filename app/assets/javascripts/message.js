@@ -8,16 +8,13 @@ $(document).on('turbolinks:load', function(){
 
  function buildHTML_Left(message) {
     //画像アップロードを判断する
-    var avatar_src = ""
     var image_src = message.image ? message.image : "";
     var avatar_src = message.avatar || ""
-    console.log(avatar_src)
-    if (avatar_src == "" && message.sex == 1) {
-      "/assets/no-image__man-70d87b89e4e1f521760cd9d67ac3bcf0d8cde177fd73b304bf28aa8122b3d3ac.png";
-    } else if(avatar_src == ""){
-      "no-image__woman-2537c1305a350dea3e0bc22c75e7a5b56831efd82e977062c2e96d4d46e09f9b.png"
+    if (avatar_src == "" && message.sex == "male") {
+      avatar_src = "/assets/no-image__man-70d87b89e4e1f521760cd9d67ac3bcf0d8cde177fd73b304bf28aa8122b3d3ac.png";
+    } else if(avatar_src == "" ){
+      avatar_src = "/assets/no-image__woman-2537c1305a350dea3e0bc22c75e7a5b56831efd82e977062c2e96d4d46e09f9b.png";
     }
-    console.log(avatar_src)
     var hukidashi = message.text ? `
                     <div class="says">
                       <p>

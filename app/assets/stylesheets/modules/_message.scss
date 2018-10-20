@@ -59,6 +59,7 @@
     height: 480px;
     width: 434px;
     padding: 10px;
+    border-right: 1px solid $color_border;
     background-color: #FFF;
     @include chat-left();
     @include chat-right();
