@@ -7,37 +7,39 @@
         %span.page_tile.icon_square
           = @title
     - @users.each do |user|
-      .user_info01
-      %span
-        / ニックネーム
-        = user.nickname
-      %span
-        / 年齢
-        = age(user[:birthday])
-        歳
-      %span
-        / 所在地
-        = user.residence.name
-      %span
-        / コメント
-        = user.tweet
-      %span
-        / 身長
-        = user.height
-      %span
-        / 職種
-        = user.job_category
-      %span
-        / 同居人
-        = user.housemate
-      %span
-        / 兄弟姉妹
-        = user.brother
-      %span
-        / 血液型
-        = user.blood_type
-      %span
-        / 血液型
-        = user.blood_type
+      / すでにマッチングしている人は表示しない。お相手からのいいね！なら自分がフォローしているか、あなたからのいいね！なら相手がフォローしているかで判断する。
+      -if (@title == "お相手からのいいね！" && current_user.following?(user).blank?) || (@title == "あなたからのいいね！" && user.following?(current_user).blank?)
+        .user_info01
+          %span
+            / ニックネーム
+            = user.nickname
+          %span
+            / 年齢
+            = age(user[:birthday])
+            歳
+          %span
+            / 所在地
+            = user.residence.name
+          %span
+            / コメント
+            = user.tweet
+          %span
+            / 身長
+            = user.height
+          %span
+            / 職種
+            = user.job_category
+          %span
+            / 同居人
+            = user.housemate
+          %span
+            / 兄弟姉妹
+            = user.brother
+          %span
+            / 血液型
+            = user.blood_type
+          %span
+            / 血液型
+            = user.blood_type
 
   = render "shared/footer"
