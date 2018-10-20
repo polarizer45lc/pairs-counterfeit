@@ -21,10 +21,5 @@
           = user.tweet
     .box_button_like
       #like_button_zone{ id: user.id }
-        -if current_user.following?(user)
-          .like__btn
-            いいね済み
-        -else
-          = form_for(current_user.active_relationships.build) do |f|
-            %div= hidden_field_tag :followed_id, user.id
-            = f.submit "いいね", class: "like__btn"
+        = render partial: "relationships/relationships", locals: { user: user }
+
