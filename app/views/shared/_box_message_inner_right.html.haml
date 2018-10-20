@@ -1,8 +1,8 @@
 .box_message_inner_right
   .box_message_exchange_title
     .info_inner
-      / @flug message_controllerはtrue、group_controllerはfolseをもつ、チャット開始前はガワだけ残し送信できないようにする。
-      - if @flug == true
+      / @chat_use message_controllerはtrue、group_controllerはfolseをもつ、チャット開始前はガワだけ残し送信できないようにする。
+      - if @chat_use == true
         .user_info01
           %span
             = user.nickname
@@ -12,11 +12,11 @@
           %span
             = user.residence.name
   .box_message_exchange
-    - if @flug == true
+    - if @chat_use == true
       - @messages.each do |message|
         = render "shared/message", message: message, user: user
   .box_message_action
-    - if @flug == true
+    - if @chat_use == true
       = form_for [current_user, @group, @message] do |f|
         = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する',  id: "new_message"
         .box_message_action__inner
