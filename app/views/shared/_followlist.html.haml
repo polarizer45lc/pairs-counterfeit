@@ -1,45 +1,20 @@
-= render "shared/header"
-.wrapper
-  = render "shared/side"
-  .main.box_like_view
-    .data-from-partner
-      .common_page_header
-        %span.page_tile.icon_square
-          = @title
-    - @users.each do |user|
-      / すでにマッチングしている人は表示しない。お相手からのいいね！なら自分がフォローしているか、あなたからのいいね！なら相手がフォローしているかで判断する。
-      -if (@title == "お相手からのいいね！" && current_user.following?(user).blank?) || (@title == "あなたからのいいね！" && user.following?(current_user).blank?)
-        .user_info01
-          %span
-            / ニックネーム
-            = user.nickname
-          %span
-            / 年齢
-            = age(user[:birthday])
-            歳
-          %span
-            / 所在地
-            = user.residence.name
-          %span
-            / コメント
-            = user.tweet
-          %span
-            / 身長
-            = user.height
-          %span
-            / 職種
-            = user.job_category
-          %span
-            / 同居人
-            = user.housemate
-          %span
-            / 兄弟姉妹
-            = user.brother
-          %span
-            / 血液型
-            = user.blood_type
-          %span
-            / 血液型
-            = user.blood_type
+.common_page_header
+  %span.page_title.icon_square
+    = @title
 
-  = render "shared/footer"
+%pager-nums-top
+  %p.display_option_number.mb15
+    pagination_info
+    .box_display_option
+      .box_result_pager.mb0
+        paginate
+  %ol.box_follow_list
+    = render partial: "shared/follow_profile", collection: @users, as: "user"
+  %pager-nums-bottom
+    .box_display_option
+      .box_result_pager.mb15
+        paginate
+      %span
+    %p.display_option_number.mb0
+      pagination_info
+    #profile_modal.modal.fade{tabindex: "-1", role: "dialog"}

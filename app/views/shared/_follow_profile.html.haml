@@ -1,0 +1,77 @@
+/ すでにマッチングしている人は表示しない。お相手からのいいね！なら自分がフォローしているか、あなたからのいいね！なら相手がフォローしているかで判断する。
+-if (@title == "お相手からのいいね！" && current_user.following?(user).blank?) || (@title == "あなたからのいいね！" && user.following?(current_user).blank?)
+  %li.like_item
+    .item_inner01
+      .box_user_photo
+        %ul.user_photo_list
+          %li.photo_item
+            = link_to image_tag(user.main_avatar, style: "width:90px;"), user_path(user)
+    .box_user_summary
+      .user_summary_inner01
+        %p.user_action_time
+          いいねした日時
+        %p.user_info
+          %a
+            %span{ limit_length: "5" }
+            = user.nickname
+            #{age(user[:birthday])}歳
+            %span{ limit_length: "8" }
+            = user.residence.name
+        %p.user_tweet
+          %spann.user_login
+          = user.tweet
+        %p.user_chemistry.user_chemistry_a
+          相性0%
+        %p.user_like_count.user_like_count_a
+          %span ？
+      .user_summary_inner02
+        %ul.summary_info_list
+          %li.summary_info_item
+            %p.item_title 身長：
+            - if user.height.present?
+              %p.item_value #{user.height}cm
+            - else
+              %p.item_value 秘密
+          %li.summary_info_item
+            %p.item_title 職種：
+            - if user.job_category.present?
+              %p.item_value
+                = user.job_category
+            - else
+              %p.item_value 秘密
+          %li.summary_info_item
+            %p.item_title 同居人：
+            - if user.housemate.present?
+              %p.item_value
+                = user.housemate
+            - else
+              %p.item_value 秘密
+          %li.summary_info_item
+            %p.item_title 年収：
+            - if user.annual_income.present?
+              %p.item_value
+                = user.annual_income
+            - else
+              %p.item_value 秘密
+          %li.summary_info_item
+            %p.item_title 兄弟姉妹：
+            - if user.brother.present?
+              %p.item_value
+                = user.brother
+            - else
+              %p.item_value 秘密
+          %li.summary_info_item
+            %p.item_title 職種：
+            - if user.blood_type.present?
+              %p.item_value
+                = user.blood_type
+            - else
+              %p.item_value 秘密
+      .box_summary_community
+        %p.summary_community_title 参加コミュニティ
+        %ul.summary_community_list
+          %li.summary_community_item
+            %a テストコミュニティ
+    .item_inner02
+      #like-button-zone.wrap_action_button{ id: user.id }
+        = render partial: "shared/follow", locals: { user: user }

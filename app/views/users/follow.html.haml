@@ -1,1 +1,6 @@
-= render "shared/followlist"
+= render "shared/header"
+.wrapper
+  = render "shared/side"
+  .box_follow_view
+    = render "shared/followlist", locals: { users: @users }
+  = render "shared/footer"

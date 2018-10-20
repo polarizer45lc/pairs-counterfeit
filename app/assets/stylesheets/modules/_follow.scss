@@ -1,0 +1,37 @@
+.box_follow_view {
+  min-height: 500px;
+  margin-bottom: 50px;
+  padding: 20px 0 0 17px;
+}
+
+.common_page_header {
+  margin-bottom: 12px;
+
+  .icon_square {
+  padding-left: 10px;
+  border-left: 5px solid #cbced0;
+  }
+
+  .page_title {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8D9399;
+  }
+
+  .page_back {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .page_back:before {
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    margin-right: 5px;
+    content: "";
+    vertical-align: bottom;
+    background-image: image-url("icon_sprites.png");
+    background-repeat: no-repeat;
+    background-position: -119px -175px;
+  }
+}
