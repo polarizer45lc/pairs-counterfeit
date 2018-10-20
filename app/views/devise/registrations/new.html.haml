@@ -53,12 +53,13 @@
             %br/
             = f.password_field :password_confirmation, class: "password_box"
           .mark_box
-            = image_tag("mark-off.png", class: "check_mark_off")
+            %span#check_mark
             %span.mark_text
               私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
           .send_box
             .actions
-              = f.submit "Pairsを始める", class: "submit"
+              / - if
+              = f.submit "Pairsを始める", id: "pairs_submit"
 
 
         / = render "devise/shared/links"
