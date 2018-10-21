@@ -11,6 +11,11 @@ $color_text_area: #f8f9f9;
 // color変数-----------------------
 
 
+
+input, select {
+  outline: none;
+}
+
 .sessions {
   width: 100%;
   height: 100%;
@@ -264,11 +269,20 @@ $color_text_area: #f8f9f9;
         margin-right: 50px;
         margin-top: 20px;
 
-        .check_mark {
+        #check_mark {
           @include devise_box(35px, 35px);
+          background-image: image-url("mark-off.png");
+          background-repeat:no-repeat;
+          background-size: contain;
+          display: inline-block;
           float: left;
           margin-right: 10px;
           vertical-align: 16px;
+          cursor: pointer;
+
+          &.check_on {
+            background-image: image-url("mark-on.png");
+          }
         }
 
         .mark_text {
@@ -284,8 +298,15 @@ $color_text_area: #f8f9f9;
         margin-top: 20px;
         float: left;
 
-        .submit {
+        #pairs_submit {
           @include white_button(400px, 50px);
+          background-color: #f3f3f3;
+          font-size: 17px;
+
+          &.submit_on {
+            @include cyan_button(400px, 50px);
+            font-size: 17px;
+          }
         }
       }
     }
