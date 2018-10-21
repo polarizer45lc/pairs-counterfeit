@@ -1,10 +1,12 @@
+// ajax通信
+
 $(document).on('turbolinks:load', function(){
   function buildHTML(json){
 
     var html = `<div class="user_tweet__title">
                   <p class="tweet">つぶやき</p>
                   <a class="btn-modal" data-toggle= "modal" data-target= "#rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
-                  <a class="button_cancel" style="margin-top:8px;margin-right:8px;" href="#">キャンセル</a>
+                  <button class="button_cancel" style="margin-top:8px;margin-right:8px;" href="#">キャンセル</button>
                 </div>
                 <div class="user_tweet__inner">
                   <div class="user_tweet_edit__texterea">
@@ -34,6 +36,8 @@ $(document).on('turbolinks:load', function(){
                 </div>`
     return html;
   }
+
+
   $(document).on('click', ".button_tweet" ,function(json) {
     var tweet = $(".user_tweet_text").text();
     console.log(tweet)
@@ -72,16 +76,35 @@ $(document).on('turbolinks:load', function(){
     .done(function(json){
     $('[data-content_div_id='+ referense_column +']').text(json.referense_column);
     })
-  })
+  });
+});
 
-  $(document).on('click', ".button_cancel" ,function(json) {
+// ajax通信無し
+
+$(document).on('turbolinks:load', function(){
+  function returnHTML(json){
+
+    var html = `<div class="user_tweet__title">
+                  <p class="tweet">つぶやき</p>
+                  <a class="btn-modal" data-toggle= "modal" data-target= "#rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
+                  <button class="button_tweet">編集</button>
+                </div>
+                <div class="user_tweet__inner">
+                  <div class="user_tweet_texterea">
+                    <p class="user_tweet_text" data-content_div_id="tweet"></p>
+                  </div>
+                </div>`
+    return html;
+  }
+
+  $(document).on('click', '.button_cancel' ,function(json) {
     var html = returnHTML(json);
     $(".user_tweet").html(html);
-    var cancel_edit = $(".user_tweet_text").text();
+    var cancel_edit = $('textarea[class="user_tweet_edit__tweet"]').text();
     console.log(cancel_edit)
-    $('.user_tweet_text').val(cancel_edit);
+    // $('.user_tweet_text').val(cancel_edit);
   });
-  $(document).on('click', ".button_delete" ,function(e) {
+  $(document).on('click', '.button_delete' ,function(e) {
     $('textarea.user_tweet_edit__tweet').val('');
     e.preventDefault();
   });
@@ -90,8 +113,3 @@ $(document).on('turbolinks:load', function(){
 function reload_this(){
   location.reload();
 }
-// $(document).on('turbolinks:load', function(){
-//   $('.reload!').click(function() {
-//     location.reload();
-//   });
-// });
