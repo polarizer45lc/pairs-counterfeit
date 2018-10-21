@@ -50,7 +50,6 @@ $(document).on('turbolinks:load', function(){
     console.log(user_id)
 
     var profvalue = $('.user_introduction_edit__text').val();
-    console.log(profvalue);
 
     var elem = $('[data-content_div_id='+ referense_column +']')
 

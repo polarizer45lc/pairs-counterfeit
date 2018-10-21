@@ -7,7 +7,7 @@
   %p.popup_title{id:'height'}
     身長を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -23,7 +23,7 @@
   %p.popup_title{id:'weight'}
     体型を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -39,7 +39,7 @@
   %p.popup_title{id:'blood_type'}
     血液型を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -54,7 +54,7 @@
 #residence{style:"display:none;"}
   %p.popup_title{id:'residence'}
     居住地を選択してください
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -69,7 +69,7 @@
 #birthplace{style:"display:none;"}
   %p.popup_title{id:'birthplace'}
     出身地を選択してください
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -85,7 +85,7 @@
   %p.popup_title{id:'job_category'}
     職種を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -101,7 +101,7 @@
   %p.popup_title{id:'educational'}
     学歴を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -117,7 +117,7 @@
   %p.popup_title{id:'annual_income'}
     年収を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -133,7 +133,7 @@
   %p.popup_title{id:'tobacco'}
     タバコを選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -156,7 +156,7 @@
   %table
     %tbody
       %tr
-        %td.select_box{style:"width:100%;"}
+        %td.select_box
 
           %span.select_custom
 
@@ -169,7 +169,7 @@
   %p.popup_title{id:'brother'}
     兄弟姉妹を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -217,8 +217,8 @@
   %p.popup_title{id:'marital'}
     結婚歴を選択してください
   %br/
-  %table{style:"width:100%;"}
-    %tbody{id:'marital'}
+  %table
+    %tbody
       %tr
         %td.select_box
           = select_tag :marital, options_for_select('選択してください':0,'独身(未婚)':1,'独身(離婚)':2,'独身(死別)':3), class: 'hasCustomSelect select-marital'
@@ -233,7 +233,7 @@
   %p.popup_title{id:'child'}
     子供の有無を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -249,7 +249,7 @@
   %p.popup_title{id:'mdesire'}
     結婚に対する意思を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -265,7 +265,7 @@
   %p.popup_title{id:'cdesire'}
     子供が欲しいかを選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -281,7 +281,7 @@
   %p.popup_title{id:'hkeeping'}
     家事・育児を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -297,7 +297,7 @@
   %p.popup_title{id:'encounter'}
     出会うまでの希望を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -313,7 +313,7 @@
   %p.popup_title{id:'cost'}
     初回デート費用を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -329,23 +329,9 @@
   %p.popup_title{id:'characters', style:"width:100%;"}
     性格・タイプを選択してください
   %br/
-  %table{style:"width:100%;"}
-    %tbody{style:"width:100%;"}
+  %table
+    %tbody
       %tr
-        %p.parts_line{style:"display:inline-block;width:70px;"}
-          %input{type:"checkbox", name:"characters", value: "1", id:"kindness"}
-          %label{onclick: "null",for:"kindness", class: "form_label"}
-            優しい
-
-        %p.parts_line{style:"display:inline-block;width:70px;"}
-          %input{type:"checkbox", name:"characters", value: "2", id:"honest"}
-          %label{for:"honest", class: "form_label"}
-            素直
-
-        %p.parts_line
-          %input{type:"checkbox", name:"characters", value: "3", id:"determination"}
-          %label{for:"determination", class: "form_label"}
-            決断力がある
   %br/
   %button.button_profile 更新
 
@@ -355,7 +341,7 @@
   %p.popup_title{id:'sociability'}
     社交性を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -371,7 +357,7 @@
   %p.popup_title{id:'housemate'}
     同居人を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -387,7 +373,7 @@
   %p.popup_title{id:'holiday'}
     休日を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box
@@ -403,7 +389,7 @@
   %p.popup_title{id:'drink'}
     お酒を選択してください
   %br/
-  %table{style:"width:100%;"}
+  %table
     %tbody
       %tr
         %td.select_box

@@ -11,16 +11,12 @@ $color_text_area: #f8f9f9;
 // color変数-----------------------
 
 
-
-
-
-
-
 .sessions {
   width: 100%;
   height: 100%;
   padding-top: 100px;
   background-color: $cyan;
+
 
   .sessions_box {
     @include devise_box(360px, 650px);
