@@ -1,29 +1,44 @@
 .box_message_inner_right
   .box_message_exchange_title
     .info_inner
-      .user_info01
-        %span
-          = user.nickname
-        %span
-          = age(user[:birthday])
-          歳
-        %span
-          = user.residence.name
+      / @chat_use message_controllerはtrue、group_controllerはfolseをもつ、チャット開始前はガワだけ残し送信できないようにする。
+      - if @chat_use == true
+        .user_info01
+          %span
+            = user.nickname
+          %span
+            = age(user[:birthday])
+            歳
+          %span
+            = user.residence.name
   .box_message_exchange
-    - @messages.each do |message|
-      = render "shared/message", message: message
+    - if @chat_use == true
+      - @messages.each do |message|
+        = render "shared/message", message: message, user: user
   .box_message_action
-    = form_for [current_user, @group, @message] do |f|
-      = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する',  id: "new_message"
+    - if @chat_use == true
+      = form_for [current_user, @group, @message] do |f|
+        = f.text_area :text, class: 'messege_textarea', placeholder: 'メッセージを入力する',  id: "new_message"
+        .box_message_action__inner
+          %ul.message_option_list
+            %li.messege_option_item
+              = f.submit '送信', class: 'button_message_submit'
+            %li.messege_option_item
+              .button_photo_upload
+                = f.label :image do
+                  = image_tag('camera.png')
+                  = f.file_field :image, style: "display:none", class: 'image'
+    - else
+      %textarea.messege_textarea
       .box_message_action__inner
         %ul.message_option_list
           %li.messege_option_item
-            = f.submit '送信', class: 'button_message_submit'
+            .button_message_submit
+              送信
           %li.messege_option_item
             .button_photo_upload
-              = f.label :image do
+              .image
                 = image_tag('camera.png')
-                = f.file_field :image, style: "display:none", class: 'image'
   = link_to '#' do
     = image_tag('banner_report_wanted.png', class: "box_banner_a")
   .box_message_note

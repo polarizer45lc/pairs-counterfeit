@@ -1,24 +1,27 @@
 .sessions
   .sessions_box
-    = image_tag('pairs_logo.png', class: "pairs", width: "220px")
+    = image_tag('pairs_logo.png', class: "pairs")
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = devise_error_messages!
       .sessions_field
-        = f.label :メールアドレス
+        = f.label :メールアドレス, style: "margin-left: 15px;"
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", class: "sessions_text"
-        = f.label :パスワード, style: "margin-top: 20px;"
+        = f.label :パスワード, style: "margin-left: 15px;"
         - if @minimum_password_length
           / %em
           /   (#{@minimum_password_length} characters minimum)
         %br/
         = f.password_field :password, autocomplete: "new-password", class: "sessions_text"
-      .actions
-        = f.submit "ログインですが"
-      .actions2
-        = link_to "新規登録", new_user_registration_path
-      %p.alert
-        パスワードを忘れた方はこちら
+      .check_box_field
+        %check_box
+      .sessions_log_in_box
+        .actions
+          = f.submit "ログイン", class: "button_log_in"
+        .actions2
+          = link_to "新規登録", new_user_registration_path, class: "button_sign_up"
+        %span.alert
+          パスワードを忘れた方はこちら
     / - if devise_mapping.rememberable?
     /   .check_box_field
     /   = f.check_box :私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。

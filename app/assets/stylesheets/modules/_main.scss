@@ -113,21 +113,19 @@
   }
 
   .box_result_pager {
-    height: 30px;
-    background-color: #CCC;
     margin: 0 4px 20px;
     padding-top: 5px;
     text-align: center;
   }
+}
 
-  .box_like_remaining {
-    color: #788086;
-    font-size: 13px;
-    text-align: center;
-    em {
-      color: #ED4655;
-      font-weight: 700;
-    }
+.box_like_remaining {
+  color: #788086;
+  font-size: 13px;
+  text-align: center;
+  em {
+    color: #F48D97;
+    font-weight: 700;
   }
 }
 
