@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    unless @user.id == current_user.id    #自分以外を訪問した時に、という条件分岐
-      @footprint = Footprint.find_or_create_by(visitor_id: current_user.id, host_id: params[:id]) #足跡レコードをクリエイト。訪問された側、つまりhost_idのカラムに訪問先のユーザーのidを放り込む。host_idは本来、'host_id: params[:id]'となるがメソッドの一行目で指定されているのでuser.idで訪問先のidを取れる。
+    unless @user.id == current_user.id
+      @footprint = Footprint.find_or_create_by(visitor_id: current_user.id, host_id: params[:id]) #足跡レコードをクリエイト。
       @footprint.touch
     end
   end
