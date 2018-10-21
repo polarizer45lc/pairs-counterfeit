@@ -22,9 +22,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def follow
+    @title = "あなたからのいいね！"
+    @users = current_user.followings.page(params[:page]).per(10)
   end
 
+  def follower
+    @title = "お相手からのいいね！"
+    @users = current_user.followerds.page(params[:page]).per(10)
+  end
+
+  def edit
+  end
 
   def matches
     @groups = current_user.groups

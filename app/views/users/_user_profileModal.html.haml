@@ -92,9 +92,8 @@
             .box_user_display_photo
               .user_summary_info
                 %ul.user_display_photo_list
-                  %li.user_display_photo_item
-                    = image_tag("mewtwo.png", width: "390px", height: "390px")
-
+                  %li.user_display_photo_item.is_current
+                    = image_tag(user.main_avatar, class: "profile_photo")
                 .summary_info_inner
                   .user_info_wrapper
                     %p.user_info
@@ -117,7 +116,7 @@
         .box_user_action_a
           %ul.box_user_action_list
             %li.user_action_item.action_like
-              = render partial: "shared/follow", locals: { user: user }
+              = render partial: "relationships/relationships", locals: { user: user }
 
         .box_like_remaining.mb-30
           %p.font14
@@ -271,9 +270,9 @@
                   #{user.nickname}さんは自己紹介文を記入していません。
       .box_user_action_b
         .user_photo.not_display_photo_request
-          = image_tag("mewtwo.png", class: "image-circle")
+          = image_tag(user.main_avatar, class: "image-circle")
         .not_display_photo_request
           .modal-like-button-zone
-            = render partial: "shared/follow", locals: { user: user }
+            = render partial: "relationships/relationships", locals: { user: user }
 
 

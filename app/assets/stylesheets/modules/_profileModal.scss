@@ -184,10 +184,18 @@
     width: 430px;
     height: 390px;
     text-align: center;
+    .user_display_photo_item.is_current {
+      display: inline;
+    }
   }
 
   .user_display_photo_item {
+    display: none;
     text-align: center;
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
   }
 
   .summary_info_inner {
@@ -277,13 +285,27 @@
 .box_user_action_a {
   margin-bottom: 15px;
 
-  .action_like {
+  .action_like a {
     font-size: 22px;
     text-align: center;
     border-radius: 30px;
     line-height: 1;
     display: block;
+    margin: 0 175px 0 155px;
     padding: 16px;
+  }
+
+  .action_like a:before {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 27px;
+    height: 23px;
+    margin-right: 4px;
+    content: '';
+    background-image: image-url("icon_sprites.png"), none;
+    background-repeat: no-repeat;
+    background-position: -36px -132px;
   }
 }
 
@@ -380,6 +402,29 @@
       height: 80px;
     }
   }
+
+  .btn_like {
+    margin: 0 150px 0 70px;
+    font-size: 22px;
+    line-height: 1;
+    display: block;
+    padding: 16px;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+  .btn_like:before {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 27px;
+    height: 23px;
+    margin-right: 4px;
+    content: '';
+    background-image: image-url("icon_sprites.png"), none;
+    background-repeat: no-repeat;
+    background-position: -36px -132px;
+  }
 }
 
 .title_a {
@@ -392,4 +437,12 @@
 
 .image-circle {
   border-radius: 50%;
+}
+
+.not_display_photo_request.user_photo {
+  padding: 0 0 0 100px;
+}
+
+.not_display_photo_request .btn_like {
+  margin: 0 100px 0 180px;
 }
