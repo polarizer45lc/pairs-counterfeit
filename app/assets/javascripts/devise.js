@@ -9,14 +9,6 @@ $(document).on('turbolinks:load', function(){
   } else {
         $(this).addClass("check_on");
         submit_button.addClass("submit_on").prop('disabled', false);
-         }
+    }
   });
 });
-
-
-
-
-
-
-
-
