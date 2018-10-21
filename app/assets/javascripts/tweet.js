@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function(){
     var html = `<div class="user_tweet__title">
                   <p class="tweet">つぶやき</p>
                   <a class="btn-modal" data-toggle= "modal" data-target= "#rule_modal" style="display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px;" href="#">ルール</a>
-                  <button class="button_cancel" style="margin-top:8px;margin-right:8px;" href="#">キャンセル</button>
+                  <a class="button_cancel" style="margin-top:8px;margin-right:8px;" href="#" onclick="reload_this()">キャンセル</a>
                 </div>
                 <div class="user_tweet__inner">
                   <div class="user_tweet_edit__texterea">
@@ -96,14 +96,6 @@ $(document).on('turbolinks:load', function(){
                 </div>`
     return html;
   }
-
-  $(document).on('click', '.button_cancel' ,function(json) {
-    var html = returnHTML(json);
-    $(".user_tweet").html(html);
-    var cancel_edit = $('textarea[class="user_tweet_edit__tweet"]').text();
-    console.log(cancel_edit)
-    // $('.user_tweet_text').val(cancel_edit);
-  });
   $(document).on('click', '.button_delete' ,function(e) {
     $('textarea.user_tweet_edit__tweet').val('');
     e.preventDefault();

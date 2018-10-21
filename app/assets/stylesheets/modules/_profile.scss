@@ -454,6 +454,7 @@ li.user_item:hover {
 .button_tweet {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
+  border-style: none;
 }
 
 .button_cancel {
@@ -477,6 +478,7 @@ li.user_item:hover {
   background-color: #f06976;
   box-shadow: 0 2px 0 #ed4655;
   margin: 0;
+  border-style: none;
 }
 
 .button_update {
@@ -530,14 +532,13 @@ li.user_item:hover {
   @include cyan_button(43px, 20px);
   font-size: 13px;
   margin: 0 10px 0 0;
+  border-style: none;
 }
 
 .button_profile {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
 }
-
-
 
 
 a:active {
@@ -547,30 +548,16 @@ a:active {
   box-shadow: none;
 }
 
-#filter{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: $white;
-  filter: alpha(opacity=60);
-  -moz-opacity: 0.60;
-  opacity: 0.60;
-  z-index: 100;
+button:active {
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(0.8px);
+  box-shadow: none;
+  outline: 0;
 }
 
-* html #filter { /* ie用 */
-  position: absolute;
-  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
-}
 
-.model_sub_title {
-  border-left: 3px solid $cyan;
-  padding-left: 8px;
-  color: $cyan;
 
-}
 
 th {
   background: #F7F7F7;
