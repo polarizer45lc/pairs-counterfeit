@@ -2,6 +2,207 @@
   min-height: 500px;
   margin-bottom: 50px;
   padding: 20px 0 0 17px;
+
+  .display_option_number {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .box_display_option {
+    height: 65px;
+    @include clearfix;
+
+    .btn_withdrawal {
+      position: relative;
+      float: right;
+      width: 111px;
+      text-align: center;
+    }
+    .btn_withdrawal.bottom {
+      top: -45px;
+    }
+  }
+
+  .box_follow_list {
+    margin-bottom: 15px;
+
+    .like_item {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #F3F3F3;
+    }
+
+    .item_inner01 {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 24px 24px 12px;
+      background: #FFFFFF;
+    }
+
+    .box_user_photo {
+      position: relative;
+      display: table-cell;
+      width: 200px;
+      vertical-align: top;
+    }
+
+    .user_photo_list {
+      margin-bottom: 10px;
+
+      .photo_item .user_photo {
+        height: 200px;
+        width: 200px;
+      }
+    }
+
+    .box_user_photo_pager .pager_pre {
+      float: left;
+    }
+
+    .box_user_photo_pager .pager_pre:before {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      width: 9px;
+      height: 14px;
+      content: "";
+      background-image: image-url("icon_sprites.png"), none;
+      background-repeat: no-repeat;
+      background-position: -118px -175px;
+    }
+
+    .box_user_photo_pager .pager_next {
+      float: right;
+    }
+
+    .box_user_photo_pager .pager_next:after {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      width: 9px;
+      height: 14px;
+      content: '';
+      background-image: image-url("icon_sprites.png"), none;
+      background-repeat: no-repeat;
+      background-position: -142px -175px;
+    }
+
+    .box_user_photo_pager .pager_pre,
+    .box_user_photo_pager .pager_next {
+      display: block;
+      padding: 6px 10px;
+    }
+
+    .box_user_photo_pager .pager_nums {
+      font-size: 14px;
+      padding-top: 5px;
+      text-align: center;
+    }
+
+    .box_user_summary {
+      display: table-cell;
+      min-width: 410px;
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    .box_user_summary .user_summary_inner01 {
+      position: relative;
+
+      .user_action_time {
+        position: absolute;
+        font-size: 14px;
+        top: 0;
+        right: 0;
+        color: #8D9399;
+      }
+
+      .user_info {
+        font-size: 20px;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+      }
+
+      .user_tweet {
+        font-size: 14px;
+        margin-bottom: 15px;
+        color: #8D9399;
+      }
+
+      .user_chemistry, .box_like_view .box_like_list .box_user_summary .user_summary_inner01 .user_like_count {
+        margin-bottom: 6px;
+      }
+    }
+
+    .user_summary_inner02 {
+      .summary_info_list {
+        font-size: 14px;
+        margin-bottom: 12px;
+        padding-bottom: 2px;
+        border-bottom: 1px solid #E1E3E5;
+        @include clearfix;
+      }
+
+      .summary_info_item {
+        float: left;
+        width: 50%;
+        margin-bottom: 6px;
+        @include clearfix;
+
+        .item_title {
+          float: left;
+          width: 36%;
+          color: #8D9399;
+        }
+
+        .item_value {
+          float: left;
+          width: 60%;
+          color: #00ABB3;
+        }
+      }
+    }
+
+    .box_summary_community {
+      @include clearfix;
+
+      .summary_community_title {
+        font-size: 16px;
+        margin-bottom: 7px;
+        color: #788086;
+      }
+
+      .summary_community_item {
+        font-size: 12px;
+        float: left;
+        margin: 0 10px 5px 0;
+        color: #788086;
+
+        a {
+          display: block;
+          padding: 5px 6px;
+          border-radius: 10px;
+          background: #E1F9FA;
+        }
+      }
+    }
+
+    .item_inner02 {
+      text-align: center;
+
+      .wrap_action_button {
+        display: inline-block;
+        width: 60%;
+      }
+
+      .button_like_view {
+        width: 360px;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
 .common_page_header {

@@ -1,20 +1,21 @@
-.common_page_header
-  %span.page_title.icon_square
-    = @title
+.box_follow_view
+  .common_page_header
+    %span.page_title.icon_square
+      = @title
 
-%pager-nums-top
-  %p.display_option_number.mb15
-    pagination_info
-    .box_display_option
-      .box_result_pager.mb0
-        paginate
-  %ol.box_follow_list
-    = render partial: "shared/follow_profile", collection: @users, as: "user"
-  %pager-nums-bottom
-    .box_display_option
-      .box_result_pager.mb15
-        paginate
-      %span
-    %p.display_option_number.mb0
+  %pager-nums-top
+    %p.display_option_number.mb15
       pagination_info
-    #profile_modal.modal.fade{tabindex: "-1", role: "dialog"}
+      .box_display_option
+        .box_result_pager.mb0
+          paginate
+    %ol.box_follow_list
+      = render partial: "shared/follow_profile", collection: @users, as: "user"
+    %pager-nums-bottom
+      .box_display_option
+        .box_result_pager.mb15
+          paginate
+        %span
+      %p.display_option_number.mb0
+        pagination_info
+      #profile_modal.modal.fade{tabindex: "-1", role: "dialog"}
