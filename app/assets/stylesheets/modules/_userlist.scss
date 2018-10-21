@@ -1,0 +1,206 @@
+.user__list {
+  width: 720px;
+  ul {
+    overflow: hidden;
+    width: 732px;
+    margin-right: -13px;
+    margin-bottom: 15px;
+  }
+}
+
+.user__view {
+  position: relative;
+  float: left;
+  width: 168px;
+  min-height: 320px;
+  margin: 0 13px 13px 0;
+}
+
+.user__avatar {
+  img {
+    overflow: hidden;
+    height: 152px;
+    width: 152px;
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 0 3px rgba(120,120,120,.35);
+    filter: blur(3px);
+    &:hover {
+      filter: blur(0);
+    }
+  }
+}
+
+.user__info {
+  p {
+    display: inline-block;
+  }
+  .user__info01 {
+    font-size: 14px;
+    margin: 5px 8px 2px;
+    text-align: center;
+  }
+  .user__info02 {
+    font-size: 13px;
+    margin: 0 8px 6px 4px;
+    text-align: center;
+    .chemistry {
+      color: #F48D97;
+      margin-right: 10px;
+      &:before {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+        content: '';
+        background-image: image-url("icon_sprites.png"),none;
+        background-repeat: no-repeat;
+        background-position: -118px -75px;
+      }
+    }
+    .like__count {
+      color: #F48D97;
+      &:before {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+        content: '';
+        vertical-align: baseline;
+        background-image: image-url("icon_sprites.png"),none;
+        background-repeat: no-repeat;
+        background-position: 0px -76px;
+      }
+    }
+    .tweet__box {
+      color: #788086;
+      min-height: 28px;
+      width: 148px;
+      font-size: 12px;
+      line-height: 1.2;
+      position: relative;
+      margin: 6px 0 10px;
+      padding: 5px;
+      text-align: left;
+      border: 1px solid #8ECFD3;
+      border-radius: 6px;
+      background: #FFFFFF;
+      &:before, &:after {
+        position: absolute;
+        bottom: 100%;
+        left: 20%;
+        height: 0;
+        width: 0;
+        content: '';
+        border: solid transparent;
+      }
+      &:before {
+        margin-left: -18px;
+        border-width: 6px;
+        border-color: rgba(171,219,222,0);
+        border-bottom-color: #8ECFD3;
+      }
+      &:after {
+        margin-left: -17px;
+        border-width: 5px;
+        border-color: rgba(255,255,255,0);
+        border-bottom-color: #FFFFFF;
+      }
+      .tweet__body {
+        height: 28px;
+        overflow: hidden;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .like__box {
+    padding: 0 10px;
+    .like__btn {
+      font-size: 14px;
+      line-height: 1;
+      display: block;
+      padding: 8px 10px;
+      text-align: center;
+      border-radius: 30px;
+      &:before {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 4px;
+        content: '';
+        background-image: image-url("icon_sprites.png"),none;
+        background-repeat: no-repeat;
+        background-position: 0 -45px;
+      }
+    }
+  }
+
+}
+
+.box__paginate {
+  // bg-colorとheightはkaminari実装後、削除
+  background-color: #CCC;
+  height: 30px;
+  padding-top: 5px;
+  margin: 0 4px 20px;
+  text-align: center;
+}
+
+.box__remaining {
+  color: #788086;
+  font-size: 13px;
+  text-align: center;
+  em {
+    color:#ed4655;
+  }
+}
+
+// オンライン状況表示（現時点では全てオンライン表示）
+.user__login {
+  &:before {
+    position: relative;
+    top:1px;
+    height: 12px;
+    width: 12px;
+    margin-right: 2px;
+    vertical-align: text-top;
+    display: inline-block;
+    content: '';
+    background-image: image-url("icon_sprites.png"),none;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+.like__box {
+  padding: 0 10px;
+  .like__btn {
+    font-size: 14px;
+    line-height: 1;
+    display: block;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 30px;
+    &:before {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      margin-right: 4px;
+      content: '';
+      background-image: image-url("icon_sprites.png"),none;
+      background-repeat: no-repeat;
+      background-position: 0 -45px;
+    }
+  }
+}
+
+

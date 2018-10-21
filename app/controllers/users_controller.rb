@@ -32,6 +32,9 @@ class UsersController < ApplicationController
     @users = current_user.followerds
   end
 
+  def edit
+  end
+
   def matches
     @groups = current_user.groups
   end
