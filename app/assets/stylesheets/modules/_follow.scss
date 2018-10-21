@@ -236,3 +236,82 @@
     background-position: -119px -175px;
   }
 }
+
+.user_chemistry_a {
+  font-size: 13px;
+  display: inline-block;
+  color: #F48D97;
+}
+
+.user_chemistry_a:before {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 2px;
+  content: '';
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: -118px -75px;
+}
+
+.user_chemistry_b {
+  font-size: 13px;
+  display: inline-block;
+  color: #F48D97;
+}
+
+.user_chemistry_b:before {
+  position: relative;
+  top: -3px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  content: '';
+  vertical-align: middle;
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: -118px -75px;
+}
+
+.user_like_count_a {
+  font-size: 13px;
+  display: inline-block;
+  color: #F48D97;
+}
+
+.user_like_count_a:before {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  content: '';
+  vertical-align: baseline;
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: 0 -76px;
+}
+
+.user_like_count_b {
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+  color: #F48D97;
+}
+
+.user_like_count_b:before {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  content: '';
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: 0 -76px;
+}

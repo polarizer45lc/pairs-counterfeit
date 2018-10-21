@@ -24,12 +24,12 @@ class UsersController < ApplicationController
 
   def follow
     @title = "あなたからのいいね！"
-    @users = current_user.followings
+    @users = current_user.followings.page(params[:page]).per(10)
   end
 
   def follower
     @title = "お相手からのいいね！"
-    @users = current_user.followerds
+    @users = current_user.followerds.page(params[:page]).per(10)
   end
 
   def edit

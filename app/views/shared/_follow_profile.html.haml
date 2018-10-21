@@ -5,11 +5,12 @@
       .box_user_photo
         %ul.user_photo_list
           %li.photo_item
-            = link_to image_tag(user.main_avatar, class: "user_photo list_view_user_avatar"), user_path(user)
+            = link_to image_tag(user.main_avatar, class: "user_photo list_view_user_avatar"), user_path(user), remote: true
       .box_user_summary
         .user_summary_inner01
           %p.user_action_time
             いいねした日時
+          %br
           %p.user_info
             %a
               %span{ limit_length: "5" }
