@@ -19,8 +19,8 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "following_id",
                                    dependent:   :destroy
-  has_many :followings, through: :active_relationships
-  has_many :followerds, through: :passive_relationships
+  has_many :followings, through: :active_relationships, source: :following
+  has_many :followerds, through: :passive_relationships, source: :followed
 
   enum sex: %i(male female)
   #文字列で返すので、registration_controllerで整数として変換するメソッドを記入する。

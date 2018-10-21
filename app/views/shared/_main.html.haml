@@ -20,7 +20,7 @@
         %span
           「いいね！」をあと
         %em
-          30人
+          #{current_user.hearts}人
         %span
           押しましょう！
 
@@ -35,7 +35,7 @@
       %p
         あと
         %em
-          30人
+          #{current_user.hearts}
         に「いいね！」ができます
     = render "shared/footer"
 

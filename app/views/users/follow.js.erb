@@ -1,0 +1,4 @@
+$(".box_follow_list").html("<%= j(render partial: 'shared/follow_profile', collection: @users, as: 'user') %>")
+$(".box_result_pager").html("<%= j(paginate @users, remote: true) %>")
+$(".display_option_number").html("<%= j(pagination_info(@users) ) %>")
+$('html, body').animate({scrollTop: 0}, 800, 'swing');

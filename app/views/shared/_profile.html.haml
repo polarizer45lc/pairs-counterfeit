@@ -27,26 +27,23 @@
           %p.title
             足あと
         .visiter_summary__count
-          %p.text 過去一週間の足あと
-          %p.count 9726人
+          %p.text 足あとをつけた人数
+          %p.count
+            =@visitors.count
+            人
         %ul.user_list
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-
+          -@visitors.each do |visitor|
+            %li.user_item
+              -if visitor.avatar.present?
+                = image_tag(visitor.avatar, class: "image-circle")
+              -else
+                = image_tag(current_user.default_other_avatar, class: "image-circle")
+              %p.user_info
+                = age(visitor[:birthday])
+                歳
+                = visitor.residence.name
+              %p.user_time
+                = l(visitor.created_at, format: :long)
         .box_link_more
           =link_to "もっと見る", root_path , class: "button_more"
     .mypage_detail_inner_right
