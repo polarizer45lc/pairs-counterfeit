@@ -49,7 +49,7 @@ module UsersHelper
     end
   end
 
-    def image_preview4
+  def image_preview4
     if self.sub_image4.present?
       self.sub_image4
     else
