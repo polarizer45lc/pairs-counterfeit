@@ -1,16 +1,20 @@
+@import "bootstrap";
 @import "./reset";
 @import "./body";
+@import "./modal";
+@import "./config/button";
 @import "./mixin/clearfix";
+@import "./mixin/chat";
 @import "./modules/header";
 @import "./modules/profile";
 @import "./modules/side";
 @import "./modules/main";
-@import "./modules/userlist";
 @import "./modules/footer";
-
-.wrapper {
-  height: 100%;
-  width: 928px;
-  margin: 0 auto;
-  display: table;
-}
+@import "./modules/profileModal";
+@import "./modules/search";
+@import "./modules/devise";
+@import "./modules/message";
+@import "./modules/imageModal";
+@import "./modules/ruleModal";
+@import "./modules/pagination";
+@import "./modules/follow";

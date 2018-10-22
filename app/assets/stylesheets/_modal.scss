@@ -1,0 +1,23 @@
+// Modal制御
+.modal-dialog {
+  margin: 0 auto;
+}
+
+.modal-backdrop {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.modal-search {
+  max-width: 680px;
+}
+
+.modal-profile {
+  max-width: 780px;
+}
+
+.modal_close {
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  cursor: pointer;
+}

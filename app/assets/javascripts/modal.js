@@ -1,0 +1,16 @@
+$(document).on('turbolinks:load', function(){
+  $("[data-toggle=popover]").popover({
+    html: true,
+    container: 'body',
+    content: function () {
+        var contentDivId = '#' + $(this).data('content_div_id');
+        return $(contentDivId).html();
+    },
+    trigger: 'click'
+  });
+});
+
+$(document).on('change', '.hasCustomSelect',function(e){
+  var val = $(this).find('option:selected').text()
+  $(this).next().text(val)
+})

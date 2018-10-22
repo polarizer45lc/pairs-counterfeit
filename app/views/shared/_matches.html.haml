@@ -1,0 +1,25 @@
+.matching_item
+  = link_to user_group_messages_path(user, group) do
+    .ng-click
+      .user_photo
+        -if user.avatar.present?
+          = image_tag(user.avatar)
+        -else
+          = image_tag(current_user.default_other_avatar)
+      .info_inner
+        .user_info01
+          %span
+            = user.nickname
+          %span
+            = age(user[:birthday])
+            歳
+          %span
+            = user.residence.name
+        .user_info02
+          = group.show_last_message
+        %p.logintime
+          -if group.messages.present?
+            %p= l(group.messages.last.created_at, format: :long)
+          - else
+            %p= l(group.created_at, format: :long)
+

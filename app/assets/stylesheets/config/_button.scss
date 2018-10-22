@@ -1,0 +1,139 @@
+button, select {
+  cursor: pointer;
+}
+
+.btn_a {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+  padding: 12px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.btn_b {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.btn_c {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  padding: 4px 10px 6px;
+  border-radius: 30px;
+}
+
+.btn_d {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.btn_f {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+
+.btn_white_a {
+  background: #FFFFFF;
+  border: 1px solid #CBCED0;
+  color: #8D9399;
+  box-shadow: 0 2px 0 #C9C9C9;
+  outline: none;
+  &:active {
+    position: relative;
+    top: 2px;
+    background-color: #dfe1e3;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn_blue_a {
+  background: #00B8C0;
+  border: none;
+  color: #FFFFFF;
+  box-shadow: 0 3px 0 #00ABB3;
+  outline: none;
+  &:active {
+    position: relative;
+    top: 3px;
+    background-color: #00ABB3;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn_pink_c {
+  background: #F48D97;
+  color: #FFFFFF;
+  box-shadow: 0 3px 0 #F06976;
+}
+
+.btn_orange_a {
+  color: #FFFFFF;
+  background: #FFBE40;
+  box-shadow: 0 3px 0 #DEA22E;
+  &:hover, &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.btn_like {
+  margin: 0 8px 12px;
+}
+
+.btn_like_default {
+  cursor:pointer;
+  &:before {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    content: '';
+    background-image: image-url("icon_sprites.png"),none;
+    background-repeat: no-repeat;
+    background-position: 0 -45px;
+  }
+}
+
+.btn_like01 {
+  width: 152px;
+  height: 34px;
+}
+
+.btn_mitene:before {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  margin-right: 4px;
+  content: '';
+  background-image: image-url("icon_sprites.png"),none;
+  background-repeat: no-repeat;
+  background-position: -155px -139px
+}
+
+.no_border {
+  border: none;
+  outline: none;
+}

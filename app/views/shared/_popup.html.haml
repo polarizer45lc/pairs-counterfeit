@@ -1,0 +1,403 @@
+/ 基本情報 -------------------------------------
+
+
+/ 身長
+
+#height{style:"display:none;"}
+  %p.popup_title{id:'height'}
+    身長を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :height, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-height'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 体型
+
+#weight{style:"display:none;"}
+  %p.popup_title{id:'weight'}
+    体型を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :weight, options_for_select('選択してください':0,'スリム':1,'やや細め':2,'普通':3,'グラマー':4,'筋肉質':5,'ややぽっちゃり':6,'ぽっちゃり':7), class: 'hasCustomSelect select-weight'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 血液型
+
+#blood_type{style:"display:none;"}
+  %p.popup_title{id:'blood_type'}
+    血液型を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :blood_type, options_for_select('選択してください':0,'A型':1,'B型':2,'O型':3,'AB型':4,'わからない':5), class: 'hasCustomSelect select-blood_type'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 居住地
+
+#residence{style:"display:none;"}
+  %p.popup_title{id:'residence'}
+    居住地を選択してください
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :residence, options_from_collection_for_select(Region.all, :id, :name), class: 'hasCustomSelect select-residence'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 出身地
+
+#birthplace{style:"display:none;"}
+  %p.popup_title{id:'birthplace'}
+    出身地を選択してください
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :birthplace, options_from_collection_for_select(Region.all, :id, :name), class: 'hasCustomSelect select-birthplace'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 職種
+
+#job_category{style:"display:none;"}
+  %p.popup_title{id:'job_category'}
+    職種を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :job_category, options_for_select('選択してください':0,'上場企業':1,'金融':2,'公務員':3,'コンサル':4,'経営者・役員':5,'大手企業':6,'大手外資':7,'大手商社':8,'外資金融':9,'医師':10,'看護師':11,'薬剤師':12,'弁護士':13,'公認会計士':14,'パイロット':15,'客室乗務員':16,'広告':17,'マスコミ':18,'教育関連':19,'IT関連':20,'食品関連':21,'旅行関連':22,'製薬':23,'保険':24,'不動産':25,'建設関連':26,'通信':27,'流通':28,'WEB関連':29,'ブライダル':30,'クリエーター':31,'接客業':32,'受付':33,'調理師・栄養士':34,'アパレルショップ':35,'美容関係':36,'エンターテイメント':37,'アナウンサー':38,'芸能・モデル':39,'イベントコンパニオン':40,'スポーツ選手':41,'秘書':42,'事務員':43,'福祉・介護':44,'保育士':45,'会社員':46,'学生':47,'自由業':48,'その他':49), class: 'hasCustomSelect select-job_category'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 学歴
+
+#educational{style:"display:none;"}
+  %p.popup_title{id:'educational'}
+    学歴を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :educational, options_for_select('選択してください':0,'短大/専門学校卒':1,'高校卒':2,'大学卒':3,'大学院卒':4,'その他':5), class: 'hasCustomSelect select-educational'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 年収
+
+#annual_income{style:"display:none;"}
+  %p.popup_title{id:'annual_income'}
+    年収を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :annual_income, options_for_select('選択してください':0,'表示しない':1,'200万円未満':2,'200万円以上〜400万円未満':3,'400万円以上〜600万円未満':4,'600万円以上〜800万円未満':5,'800万円以上〜1000万円未満':6,'1000万円以上〜1500万円未満':7,'1500万円以上〜2000万円未満':8,'2000万円以上〜3000万円未満':9,'3000万円以上':10), class: 'hasCustomSelect select-annual_income'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ タバコ
+
+#tobacco{style:"display:none;"}
+  %p.popup_title{id:'tobacco'}
+    タバコを選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :tobacco, options_for_select('選択してください':0,'吸わない':1,'吸う':2,'吸う(電子タバコ)':3,'非喫煙者の前では吸わない':4,'相手が嫌ならやめる':5,'ときどき吸う':6), class: 'hasCustomSelect select-tobacco'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+
+
+/ 詳細情報 -------------------------------------
+
+
+/ ニックネーム
+
+#nickname{style:"display:none;"}
+  %p.popup_title ニックネームを入力してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+
+          %span.select_custom
+
+  %br/
+  %button.button_profile-btn-modal  更新
+
+/ 兄弟姉妹
+
+#brother{style:"display:none;"}
+  %p.popup_title{id:'brother'}
+    兄弟姉妹を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-brother'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 国籍
+
+#country{style:"display:none;"}
+  %p.popup_title{id:'country'}
+    国籍を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :country, options_for_select('選択してください':0,'日本':1,'アメリカ合衆国':2,'カナダ':3,'オーストラリア':4,'イギリス':5,'フランス':6,'ドイツ':7,'イタリア':8,'スペイン':9,'ブラジル':10,'ロシア連邦':11,'中華人民共和国':12,'大韓民国':13,'台湾':14,'インドネシア':15,'フィリピン':16,'インド':17,'メキシコ':18,'トルコ':19,'オランダ':20,'スイス':21,'ポーランド':22,'ベルギー':23,'スウェーデン':24,'ノルウェー':25,'オーストリア':26,'アルゼンチン':27,'南アフリカ':28,'サウジアラビア':29,'ニュージーランド':30,'タイ':31,'シンガポール':32,'マレーシア':33,'ベトナム':34,'アフガニスタン':35,'アルバニア':36,'アルジェリア':37,'アンギラ':38,'アンゴラ':39,'アンクチグア・バーブーダ':40,'アルメニア':41,'アゼルバイジャン':42,'バハマ':43,'バーレーン':44,'バングラデシュ':45,'バルバドス':46,'ベラルーシ':47,'ベリーズ':48,'ベナン':49,'バミューダ':50,'ブータン':51,'ボリビア':52,'ボスニア・ヘルツェゴビナ':53,'ボツワナ':54,'ブルネイ・ダルサラーム':55,'ブルガリア':56,'ブルキファナソ':57,'ブルンジ':58,'カンボジア':59,'カメルーン':60), class: 'hasCustomSelect select-country'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 話せる言語
+
+#language{style:"display:none;"}
+  %p.popup_title{id:'language'}
+    話せる言語を選択してください
+  %br/
+  %table{style:"width:100%;"}
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :language, options_for_select('選択してください':0,'日本語':1,'英語':2,'中国語':3,'ヒンディー語':4,'スペイン語':5,'ロシア語':6,'フランス語':7,'アラビア語':8,'ポルトガル語':9,'マレー語':10,'ベンガル語':11,'ドイツ語':12,'ウルドゥー語':13,'イタリア語':14,'韓国語':15,'ベトナム語':16,'ペルシア語':17,'タガログ語':18,'タイ語':19,'トルコ語':20,'その他':21), class: 'hasCustomSelect select-language'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 結婚歴
+
+#marital{style:"display:none;"}
+  %p.popup_title{id:'marital'}
+    結婚歴を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :marital, options_for_select('選択してください':0,'独身(未婚)':1,'独身(離婚)':2,'独身(死別)':3), class: 'hasCustomSelect select-marital'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 子供の有無
+
+#child{style:"display:none;"}
+  %p.popup_title{id:'child'}
+    子供の有無を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :child, options_for_select('選択してください':0,'なし':1,'同居中':2,'別居中':3), class: 'hasCustomSelect select-child'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 結婚に対する意思
+
+#mdesire{style:"display:none;"}
+  %p.popup_title{id:'mdesire'}
+    結婚に対する意思を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :mdesire, options_for_select('選択してください':0,'すぐにでもしたい':1,'2〜3年のうちに':2,'良い人がいればしたい':3,'今のところ結婚は考えていない':4,'わからない':5), class: 'hasCustomSelect select-mdesire'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 子供が欲しいか
+
+#cdesire{style:"display:none;"}
+  %p.popup_title{id:'cdesire'}
+    子供が欲しいかを選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :cdesire, options_for_select('選択してください':0,'いいえ':1,'はい':2,'相手と相談して決める':3,'わからない':4), class: 'hasCustomSelect select-cdesire'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 家事・育児
+
+#hkeeping{style:"display:none;"}
+  %p.popup_title{id:'hkeeping'}
+    家事・育児を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :hkeeping, options_for_select('選択してください':0,'積極的に参加したい':1,'できれば参加したい':2,'できれば参加したい':3,'できれば相手に任せたい':4,'相手に任せたい':5), class: 'hasCustomSelect select-hkeeping'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 出会うまでの希望
+
+#encounter{style:"display:none;"}
+  %p.popup_title{id:'encounter'}
+    出会うまでの希望を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :encounter, options_for_select('選択してください':0,'マッチング後にまずは会いたい':1,'気が合えば会いたい':2,'メッセージを重ねてから会いたい':3), class: 'hasCustomSelect select-encounter'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 初回デート費用
+
+#cost{style:"display:none;"}
+  %p.popup_title{id:'cost'}
+    初回デート費用を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :cost, options_for_select('選択してください':0,'男性が全て払う':1,'男性が多めに払う':2,'割り勘':3,'持っている方が払う':4,'相手と相談して払う':5), class: 'hasCustomSelect select-cost'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 性格・タイプ
+
+#characters{style:"display:none"}
+  %p.popup_title{id:'characters', style:"width:100%;"}
+    性格・タイプを選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+  %br/
+  %button.button_profile 更新
+
+/ 社交性
+
+#sociability{style:"display:none;"}
+  %p.popup_title{id:'sociability'}
+    社交性を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :sociability, options_for_select('選択してください':0,'大人数が好き':1,'少人数が好き':2,'一人が好き':3,'すぐに仲良くなる':4,'徐々に仲良くなる':5), class: 'hasCustomSelect select-sociability'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 同居人
+
+#housemate{style:"display:none;"}
+  %p.popup_title{id:'housemate'}
+    同居人を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :housemate, options_for_select('選択してください':0,'一人暮らし':1,'友達と一緒':2,'ペットと一緒':3,'実家暮らし':4,'その他':5), class: 'hasCustomSelect select-housemate'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ 休日
+
+#holiday{style:"display:none;"}
+  %p.popup_title{id:'holiday'}
+    休日を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :holiday, options_for_select('選択してください':0,'土日':1,'平日':2,'不定期':3,'その他':4), class: 'hasCustomSelect select-holiday'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+/ お酒
+
+#drink{style:"display:none;"}
+  %p.popup_title{id:'drink'}
+    お酒を選択してください
+  %br/
+  %table
+    %tbody
+      %tr
+        %td.select_box
+          = select_tag :drink, options_for_select('選択してください':0,'飲まない':1,'飲む':2,'ときどき飲む':3), class: 'hasCustomSelect select-drink'
+          %span.select_custom
+            選択してください
+  %br/
+  %button.button_profile 更新
+
+
+

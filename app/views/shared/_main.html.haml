@@ -1,24 +1,43 @@
-.main__content
-  = link_to '#', class: "banner" do
-    = image_tag('banner.png', width: "721px")
-  .box__search
-    .search__area
-      = link_to "検索条件", '#', class: "btn__white btn__b"
-    %nav.search__view
-      %ul
-        %li.tab__item.tag01.btn__white--active
-          = link_to " ", '#'
-        %li.tab__item.tag02.btn__white
-          = link_to " ", '#'
-    %p.search__result
-      誰もいません
-  .grid__header
-    .header__text
-      %span
-        「いいね！」をあと
-      %em
-        30人
-      %span
-        押しましょう!
-  = render "shared/userlist"
-  = render "shared/footer"
+.main_contents
+  #pairs_search_page.box_search_view
+    = link_to "#", class: "banner" do
+      = image_tag("banner.png", width: "721px")
+    .box_search_menu
+      .button_search_setting
+        #openSearchConditionBtn.btn_b.btn_white_a{"data-toggle": "modal", "data-target": "#search_modal"}
+          %span 検索条件
+      %nav.change_view_tabs
+        %ul
+          %li.tab_item.tab_item01
+            = link_to "", "#"
+          %li.tab_item.tab_item02
+            = link_to "", "#"
+      %p.search_result_count
+        = pagination_info(@users)
+
+    .box_grid_header
+      .box_grid_header03
+        %span
+          「いいね！」をあと
+        %em
+          #{current_user.hearts}人
+        %span
+          押しましょう！
+
+    .box_list_view_user
+      %ul.list_view_users
+        = render partial: "shared/userlist", collection: @users, as: "user"
+
+    .box_result_pager
+      = paginate @users, remote: true
+
+    .box_like_remaining
+      %p
+        あと
+        %em
+          #{current_user.hearts}
+        に「いいね！」ができます
+    = render "shared/footer"
+
+= render partial: "shared/searchModal", locals: { q: @q }
+#profile_modal.modal.fade{"role": "dialog"}

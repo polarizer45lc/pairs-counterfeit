@@ -1,0 +1,64 @@
+.registrations
+  .registrations_box
+    .logo_box
+      = image_tag('pairs_logo.png', class: "pairs")
+      %span.title
+        へようこそ！
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .content_left
+          = f.label :プロフィール写真
+          .prof_box
+            = f.file_field :avatar, class: "hidden"
+
+        .content_right
+          .sex_box
+            .nickname_field
+              = f.label :ニックネーム
+              %br/
+              = f.text_field :nickname, placeholder: "ニックネーム", autofcus: true, maxlength: "15", class: "nickname_box"
+            .sex_field
+              %p.sex_title
+                性別
+              %br/
+              %label.radio_box
+                = f.radio_button :sex, value= "0"
+                %span.sex_text
+                  男性
+              %label.radio_box
+                = f.radio_button :sex, value= "1"
+                %span.sex_text
+                  女性
+
+
+          .email_field
+            = f.label :メールアドレス
+            %br/
+            = f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: "email_box"
+          .birthday_field
+            = f.label :生年月日
+            %br/
+            =f.date_select :birthday, {use_month_numbers: true, start_year: 1950, end_year: (Time.now.year - 18), default: Date.new(1990, 1, 1)}, {class: "date_box"}
+
+          .country_field
+            = f.label :居住地
+            %br/
+            = f.select :residence_id, [['日本', 0], ['海外', 1]],{},{id: 'registration_region1_id'}
+            = f.select :residence_id,options_from_collection_for_select(Region.all, :id, :name),{},{id: 'registration_region2_id'}
+          .password_field
+            = f.label :パスワード
+            %br/
+            = f.password_field :password, class: "password_box"
+          .password_field
+            = f.label :パスワードの確認
+            %br/
+            = f.password_field :password_confirmation, class: "password_box"
+          .mark_box
+            %span#check_mark
+            %span.mark_text
+              私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーに同意します。
+          .send_box
+            .actions
+              = f.submit "Pairsを始める", id: "pairs_submit"
+
+
+        / = render "devise/shared/links"
