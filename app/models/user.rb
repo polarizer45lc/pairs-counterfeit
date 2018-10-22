@@ -64,11 +64,30 @@ class User < ApplicationRecord
      .where(id: active_relationships.select(:followed_id))
   end
 
+
+
 # userの異性を表示する
   scope :opposite_gender, -> (user) { where.not(sex: user.sex) }
 
+# いいね済みのuserを除外する
+  scope :stranger, -> (user) {
+    f_array = []
+    follows = Relationship.where(followed_id: user.id)
+    follows.each do |follow|
+      f_array << follow[:following_id]
+    end
+    where.not(id: f_array)
+  }
+
+# マッチング済みのuserを除外する
+  scope :matching, -> (user) {
+    matching = where(id: Relationship.select(:following_id)).where(id: Relationship.select(:followed_id))
+    where.not(id: matching)
+  }
+
+
 # 検索フォーム用配列
-  Job = ["無職", "ニート", "ヒモ", "家事手伝い", "自宅警備員"]
+  Job = ["上場企業", "金融", "公務員", "コンサル", "経営者・役員", "大手企業", "大手外資", "大手商社", "外資金融", "医師", "看護師", "薬剤師", "弁護士", "公認会計士", "パイロット", "客室乗務員", "広告", "マスコミ", "教育関連", "IT関連", "食品関連", "旅行関連", "製薬", "保険", "不動産", "建設関連", "通信", "流通", "WEB関連", "ブライダル", "クリエーター", "接客業", "受付", "調理師・栄養士", "アパレルショップ", "美容関係", "エンターテイメント", "アナウンサー", "芸能・モデル", "イベントコンパニオン", "スポーツ選手", "秘書", "事務員", "福祉・介護", "保育士", "会社員", "学生", "自由業", "その他"]
   AcademicBackground = ["短大/専門学校卒", "高校卒", "大学卒", "大学院卒", "その他"]
   Tobacco = ["吸わない", "吸う", "吸う（電子タバコ）", "非喫煙者の前では吸わない", "相手が嫌なら吸わない", "ときどき吸う"]
   Drink = ["飲まない", "飲む", "ときどき飲む"]

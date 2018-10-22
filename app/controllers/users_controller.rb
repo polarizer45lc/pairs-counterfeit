@@ -3,7 +3,7 @@ class UsersController < ApplicationController
    #自分の性別以外を取得する状態です。条件弄ったらこのコメントアウト消してください。
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).opposite_gender(current_user).page(params[:page]).per(16)
+    @users = @q.result(distinct: true).opposite_gender(current_user).stranger(current_user).page(params[:page]).per(16)
   end
 
   def show
@@ -28,12 +28,12 @@ class UsersController < ApplicationController
 
   def follow
     @title = "あなたからのいいね！"
-    @users = current_user.followings.page(params[:page]).per(10)
+    @users = current_user.followings.matching(current_user).page(params[:page]).per(10)
   end
 
   def follower
     @title = "お相手からのいいね！"
-    @users = current_user.followerds.page(params[:page]).per(10)
+    @users = current_user.followerds.matching(current_user).page(params[:page]).per(10)
   end
 
   def edit
