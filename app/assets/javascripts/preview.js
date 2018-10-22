@@ -18,6 +18,3 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-// $(document).on('turbolinks:load', function(){
-//   $('#sub_image1').click();
-// });
