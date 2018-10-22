@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @images_sub = current_user.images
   end
 
   def update
