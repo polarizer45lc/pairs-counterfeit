@@ -284,6 +284,7 @@ input, select {
         .password_box {
           @include devise_box(300px, 40px);
           background-color: #f8f9f9;
+          padding-left: 5px;
           border: none;
         }
       }
