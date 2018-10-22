@@ -18,3 +18,55 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
+$(document).on('turbolinks:load', function(){
+  $('#main_photo').change(function(e){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('.modal_image_edit_photo').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+$(document).on('turbolinks:load', function(){
+  $('#sub_image1').change(function(e){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#modal_sub_image1').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+$(document).on('turbolinks:load', function(){
+  $('#sub_image2').change(function(e){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#modal_sub_image2').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+$(document).on('turbolinks:load', function(){
+  $('#sub_image3').change(function(e){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#modal_sub_image3').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+$(document).on('turbolinks:load', function(){
+  $('#sub_image4').change(function(e){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#modal_sub_image4').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+
+

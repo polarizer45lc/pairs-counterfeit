@@ -38,6 +38,7 @@ $(document).on('turbolinks:load', function(){
   }
 
 
+
   $(document).on('click', ".button_tweet" ,function(json) {
     var tweet = $(".user_tweet_text").text();
     console.log(tweet)
