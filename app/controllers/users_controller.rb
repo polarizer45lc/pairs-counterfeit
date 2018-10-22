@@ -44,9 +44,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
+    params.permit(
       :avatar,
-      images: [:content, :id]
+      :sub_image1,
+      :sub_image2,
+      :sub_image3,
+      :sub_image4,
     )
   end
 end
