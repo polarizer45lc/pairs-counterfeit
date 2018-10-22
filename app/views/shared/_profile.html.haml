@@ -78,13 +78,13 @@
           .box_my_photo
             %ul.my_phto_list
               %li
-                = image_tag(current_user.sub_image1, class: "photo_item")
+                = image_tag(current_user.image_preview1, class: "photo_item")
               %li.photo_item
-                = image_tag(current_user.sub_image2, class: "photo_item")
+                = image_tag(current_user.image_preview2, class: "photo_item")
               %li.photo_item
-                = image_tag(current_user.sub_image3, class: "photo_item")
+                = image_tag(current_user.image_preview3, class: "photo_item")
               %li.photo_item
-                = image_tag(current_user.sub_image4, class: "photo_item")
+                = image_tag(current_user.image_preview4, class: "photo_item")
         .my_photo_pager
 
 
