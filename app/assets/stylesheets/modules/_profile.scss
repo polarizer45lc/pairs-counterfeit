@@ -198,6 +198,7 @@ $cyan: #00b8c0;
         ul.user_list {
           height: 188px;
           margin: 0 10px 0;
+          overflow: scroll;
           li.user_item {
             border-bottom: 1px dashed $color_border;
             vertical-align: baseline;
