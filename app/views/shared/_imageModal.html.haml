@@ -3,7 +3,7 @@
     #image_content.modal-content
       .box_search_form
         = image_tag("button_close.png", class: "modal-close modal_close", "data-dismiss": "modal")
-        = form_for @user ,html: {class: 'box_modal_inner_image'} do |f|
+        = form_for current_user ,html: {class: 'box_modal_inner_image'} do |f|
           %p.modal_image_edit
             メイン写真の編集
 
@@ -13,21 +13,24 @@
 
           .modal_image_edit_image_button_area
             =link_to "ファイルから選ぶ", '#' , class: "button_edit_image"
-            = f.file_field :avatar, class: "hidden"
+            = f.file_field :avatar, class: "button_edit_image" , style: "appearance: none;"
 
 
           %p.modal_sub_image_edit
             サブ写真の追加・削除
           %ul.modal_photo_edit_list
             %li.modal_photo_edit_box
-              = f.file_field :content, class: "hidden"
-              = image_tag(current_user.images, class: "modal_sub_image_edit_photo")
+              = image_tag(current_user.sub_image1, class: "modal_sub_image_edit_photo")
+              = f.file_field :sub_image1, class: "hidden"
             %li.modal_photo_edit_box
-              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+              = image_tag(current_user.sub_image2, class: "modal_sub_image_edit_photo")
+              = f.file_field :sub_image2, class: "hidden"
             %li.modal_photo_edit_box
-              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+              = image_tag(current_user.sub_image3, class: "modal_sub_image_edit_photo")
+              = f.file_field :sub_image3, class: "hidden"
             %li.modal_photo_edit_box
-              = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
+              = image_tag(current_user.sub_image4, class: "modal_sub_image_edit_photo")
+              = f.file_field :sub_image4, class: "hidden
           .modal_image_edit_image_button_area
             = f.submit "submit" , class: "button_edit_image"
 

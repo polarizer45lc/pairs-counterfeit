@@ -23,14 +23,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @images_sub = current_user.images
+
   end
 
   def update
 
     if current_user.update(user_params)
       redirect_to edit_user_path
-      # binding.pry
     else
       render :edit
     end
@@ -44,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(
+    params.require(:user).permit(
       :avatar,
       :sub_image1,
       :sub_image2,
