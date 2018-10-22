@@ -15,6 +15,12 @@
     - if @chat_use == true
       - @messages.each do |message|
         = render "shared/message", message: message, user: user
+    - else
+      .box_message_init_attention
+        %p.init_attention_title
+          メッセージを送りましょう！（無料）
+        %p.init_attention_note
+          まずお相手を選択してください。
   .box_message_action
     - if @chat_use == true
       = form_for [current_user, @group, @message] do |f|
