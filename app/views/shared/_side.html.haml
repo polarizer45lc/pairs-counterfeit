@@ -47,9 +47,9 @@
         いいね
       %ul
         %li.navi__item
-          = link_to "相手からのいいね！", '#'
+          = link_to "相手からのいいね！", follower_user_path(current_user.id)
         %li.navi__item
-          = link_to "自分からのいいね！", '#'
+          = link_to "自分からのいいね！", follow_user_path(current_user.id)
         %li.navi__item
           = link_to "お気に入り", '#'
     .navi
@@ -82,9 +82,8 @@
     .navi
       %p.navi__title
         足あと
-      %ul
-        %li.navi__item
-          = link_to "足あと", '#'
+      %p.navi__title
+        足あと
     .navi
       %p.navi__title
         各種設定
