@@ -20,9 +20,12 @@ input, select {
 
 .sessions {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image: image-url("kiminona.jpg");
   padding-top: 100px;
-  background-color: $cyan;
+  background-repeat:no-repeat;
+  background-size: cover;
+
 
   .sessions_box {
     @include devise_box(360px, 650px);
@@ -121,10 +124,11 @@ input, select {
       padding-top: 30px;
       float: left;
 
-      .prof_box {
+      .prof_box#main_avatar_uploader {
         @include devise_box(130px, 139px);
         background-size: 120px;
         background-repeat:no-repeat;
+        z-index: 100000;
       }
 
       .hidden {
@@ -136,6 +140,10 @@ input, select {
         overflow: hidden;
         outline: none;
         cursor: pointer;
+
+        .avatar_hidden {
+          text-indent: -9999px;
+        }
       }
 
       #preview_avatar {
