@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('#main_avatar_uploader').change(function(e){
     var file = e.target.files[0];
     var reader = new FileReader();
