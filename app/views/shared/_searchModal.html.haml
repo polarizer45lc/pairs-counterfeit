@@ -8,7 +8,7 @@
         = search_form_for q, url: users_path, remote: true, html:{id: "search_condition_form"} do |f|
           .search_form_inner
             %p.box_search_reset
-              = f.submit "検索条件をリセットする", type: "reset", class: "btn_f btn_white_a"
+              = f.submit "検索条件をリセットする", id: "btn_reset", type: "reset", class: "btn_f btn_white_a"
             %table#search_condition_table
               %tbody
                 %tr
