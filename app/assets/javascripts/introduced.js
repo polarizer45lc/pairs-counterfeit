@@ -62,11 +62,11 @@ $(document).on('turbolinks:load', function(){
       data: {referense_column: referense_column, profvalue: profvalue},
       dataType: 'json',
       error : function(XMLHttpRequest, textStatus, errorThrown) {
-        console.log("ajax通信に失敗しました");
+        console.error("ajax通信に失敗しました");
       },
       //ajax通信成功
       success : function(response) {
-        console.log("ajax通信に成功しました");
+        console.warn("ajax通信に成功しました");
       }
     })
     .done(function(json){
