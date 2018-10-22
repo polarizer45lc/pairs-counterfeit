@@ -1,0 +1,72 @@
+#rule_modal.modal.fade{"role": "dialog"}
+  .modal-dialog.modal-lg{"role": "document"}
+    #rule_content.modal-content
+      .box_search_form
+        = image_tag("button_close.png", class: "modal-close modal_close", "data-dismiss": "modal")
+        .box_modal_inner_rule
+          %p.modal_rule_title
+            つぶやきのルール
+          %br/
+          %p.modal_rule_text_a
+            Pairsでは、
+            %em
+              つぶやきの内容を審査
+            しています。
+          %br/
+          %p.modal_rule_text_b
+            以下のような内容が含まれるつぶやきは否認しております。
+          %ul.common_list{style:"list-style-type: disc;"}
+            %li
+              特定できてしまう
+              %em
+                居場所
+              (今◯◯にいます）や
+              %em
+                勤務先
+              （◯◯店）など
+            %li
+              %em
+                メールアドレス
+              やURL、電話番号、
+              %em
+                フルネーム
+              、住所などの連絡先
+            %li
+              猥褻な言葉、差別用語、薬物用語、不作法な言動言葉遣いなど(※隠語を含む)
+            %li
+              商業的な広告、政治的な広告、宗教的な勧誘など
+            %li
+              18歳未満の方の個人情報を悪用、または要求するもの
+            %li
+              性行為への誘い
+            %li
+              複数のパートナーまたは追加のパートナーを誘う行為
+            %li
+              18歳未満の方のご利用と判断される内容
+            %li
+              既婚者の方のご利用と判断される内容
+            %li
+              その他、Pairs利用規約に違反する内容
+
+
+
+
+
+
+#community_modal.modal.fade{"role": "dialog"}
+  .modal-dialog.modal-lg{"role": "document"}
+    #community_content.modal-content
+      .box_search_form
+        = image_tag("button_close.png",href: "#", class: "modal-close modal_close", "data-dismiss": "modal")
+        .box_modal_inner_community
+          %p.ribbon_title
+            コミュニティーとは?
+          %p.modal_community_text_a
+            コミュニティに参加して、共通の趣味や好みのお相手とつながろう！
+          %p.modal_community_title
+            コミュニティに参加すると…
+          = image_tag("community_about01.png", class: "modal_community_img")
+          %p.modal_community_title
+            コミュニティを作成すると…
+          = image_tag("community_about02.png", class: "modal_community_img")
+

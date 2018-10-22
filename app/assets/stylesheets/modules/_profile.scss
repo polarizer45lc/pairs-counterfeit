@@ -140,10 +140,11 @@ $cyan: #00b8c0;
             line-height: 1.5;
             overflow: hidden;
             box-sizing: border-box;
+            color: $black;
           }
           .user_tweet_alertbox {
             width: 206px;
-            height: 50px;
+            height: 15px;
             .user_tweet_note {
               color: #00abb3;
               font-size: 12px;
@@ -197,6 +198,7 @@ $cyan: #00b8c0;
         ul.user_list {
           height: 188px;
           margin: 0 10px 0;
+          overflow: scroll;
           li.user_item {
             border-bottom: 1px dashed $color_border;
             vertical-align: baseline;
@@ -216,6 +218,11 @@ $cyan: #00b8c0;
               top: 2px;
             }
           }
+        }
+        .visiter_summary__note {
+          margin-top: 10px;
+          margin-left: 10px;
+          font-size: 8px;
         }
       }
     }
@@ -267,6 +274,7 @@ $cyan: #00b8c0;
               width: 449px;
               height: 99px;
               display: inline-block;
+              margin-top: 10px;
               margin-right: -12px;
               li {
                 display: inline-block;
@@ -382,19 +390,40 @@ $cyan: #00b8c0;
           padding: 6px 8px;
           text-align: center;
           background-color: #fff8f8;
-          em {
-            color: #ed4655;
+
+          input, textarea {
+            border: 1px solid $color_border;
+            border-radius: 3px;
+            width: 206px;
+            height: 57px;
+            padding: 6px;
+            resize: none;
+            outline: none;
+            line-height: 1.5;
+            overflow: hidden;
+            box-sizing: border-box;
+            color: $black;
           }
         }
         .introduction_text {
-          text-align: center;
-          margin: 20px 0;
+          margin: 20px 1px;
+          color: $black;
         }
       }
     }
   }
 }
 
+.user_tweet_text {
+  padding-top: 20px;
+  padding-left: 5px;
+  width: 100%;
+  height: 100px;
+  color: $black;
+  vertical-align: 20%;
+  display: inline-block;
+  font-size: 15px;
+}
 .popup_title {
   color: $cyan;
   font-size: 11px;
@@ -425,9 +454,18 @@ li.user_item:hover {
 .button_tweet {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
+  border-style: none;
 }
 
 .button_cancel {
+  @include white_button(74px, 26px);
+  margin: 0;
+  margin: 1px;
+  font-size: 10px;
+  float: right;
+}
+
+.button_introdution_cancel {
   @include white_button(74px, 26px);
   margin: 0;
   margin: 1px;
@@ -440,6 +478,7 @@ li.user_item:hover {
   background-color: #f06976;
   box-shadow: 0 2px 0 #ed4655;
   margin: 0;
+  border-style: none;
 }
 
 .button_update {
@@ -490,17 +529,16 @@ li.user_item:hover {
 }
 
 .button_introduction {
-  @include cyan_button(40px, 20px);
+  @include cyan_button(43px, 20px);
   font-size: 13px;
   margin: 0 10px 0 0;
+  border-style: none;
 }
 
 .button_profile {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
 }
-
-
 
 
 a:active {
@@ -510,30 +548,16 @@ a:active {
   box-shadow: none;
 }
 
-#filter{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: $white;
-  filter: alpha(opacity=60);
-  -moz-opacity: 0.60;
-  opacity: 0.60;
-  z-index: 100;
+button:active {
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(0.8px);
+  box-shadow: none;
+  outline: 0;
 }
 
-* html #filter { /* ie用 */
-  position: absolute;
-  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
-}
 
-.model_sub_title {
-  border-left: 3px solid $cyan;
-  padding-left: 8px;
-  color: $cyan;
 
-}
 
 th {
   background: #F7F7F7;
@@ -543,6 +567,10 @@ th {
     color: #F48D97;
     font-size: 10px;
   }
+}
+
+em {
+  color: #ed4655;
 }
 
 th, td {

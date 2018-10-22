@@ -1,0 +1,21 @@
+.box_follow_view
+  .common_page_header
+    %span.page_title.icon_square
+      = @title
+
+  %pager-nums-top
+    %p.display_option_number.mb15
+      = pagination_info(@users) if @users.present?
+      .box_display_option
+        .box_result_pager.mb0
+          = paginate @users, remote: true
+    %ol.box_follow_list
+      = render partial: "shared/follow_profile", collection: @users, as: "user"
+    %pager-nums-bottom
+      .box_display_option
+        .box_result_pager.mb15
+          = paginate @users, remote: true
+        %span
+      %p.display_option_number.mb0
+        = pagination_info(@users)
+      #profile_modal.modal.fade{tabindex: "-1", role: "dialog"}

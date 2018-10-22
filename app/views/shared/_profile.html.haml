@@ -13,40 +13,35 @@
         .user_tweet__title
           %p.tweet
             つぶやき
-          =link_to "ルール", "#" , class: "btn-modal" ,"data-id": "rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
-          =link_to "編集", "#" , class: "button_tweet"
+          =link_to "ルール", "#" , class: "btn-modal" ,"data-toggle": "modal", "data-target": "#rule_modal", style:"display:inline-block;text-decoration:underline;color:#00abb3;font-size:8px"
+          %button.button_tweet 編集
         .user_tweet__inner
           .user_tweet_textarea
             %p.user_tweet_text
               = current_user.tweet
-            %p.user_tweet_note
-              あと３回まで変更できます。(１日３回まで)
 
       .visiter_summary
         .visiter_summary__title
           %p.title
             足あと
         .visiter_summary__count
-          %p.text 過去一週間の足あと
-          %p.count 9726人
+          %p.text 足あとをつけた人数
+          %p.count
+            =@visitors.count
+            人
         %ul.user_list
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-          %li.user_item
-            = image_tag("no_image_lady.jpg", class: "image-circle")
-            %p.user_info 25歳 奈良
-            %p.user_time 19:00
-
+          -@visitors.each do |visitor|
+            %li.user_item
+              -if visitor.avatar.present?
+                = image_tag(visitor.avatar, class: "image-circle")
+              -else
+                = image_tag(current_user.default_other_avatar, class: "image-circle")
+              %p.user_info
+                = age(visitor[:birthday])
+                歳
+                = visitor.residence.name
+              %p.user_time
+                = l(visitor.created_at, format: :long)
         .box_link_more
           =link_to "もっと見る", root_path , class: "button_more"
     .mypage_detail_inner_right
@@ -55,12 +50,12 @@
           %p.photo メイン・サブ写真
           =link_to "写真編集", '#' , class: "button_photo btn-modal", "data-toggle": "modal", "data-target": "#image_modal"
         .my_display_photo__summary
-          = image_tag("img03899.jpg", class: "photo_summary")
+          = image_tag(current_user.main_avatar, class: "photo_summary")
         .my_display_photo__box
           .box_my_photo
             %ul.my_phto_list
               %li
-                = image_tag("img03899.jpg", class: "photo_item")
+                = image_tag("no_image.jpg", class: "photo_item")
               %li.photo_item
                 = image_tag("no_image.jpg", class: "photo_item")
               %li.photo_item
@@ -68,8 +63,6 @@
               %li.photo_item
                 = image_tag("no_image.jpg", class: "photo_item")
         .my_photo_pager
-          =link_to "前の4枚", root_path , class: "button_before"
-          =link_to "後の4枚", root_path , class: "button_after"
 
 
 
@@ -223,7 +216,7 @@
 
         %dt.detail_item_title
           %span.item_title 性格・タイプ
-        %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "characters", "data-placement": "top", "data-toggle": "popover"}
           (= current_user.characterをあるだけ表示)
 
 
@@ -267,16 +260,15 @@
             コミュニティに参加して、
             %br 共通の趣味や好みの相手とつながろう!
             %br
-            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-id": "community_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
+            =link_to "コミュニティとは?", "#", class: "btn-modal" ,"data-toggle": "modal", "data-target": "#community_modal", style:"display: inline-block;text-decoration:underline;color:#00abb3;"
       .mypage_introduction
         %p.introduction_title
           %span.title_b 自己紹介文
-          =link_to "編集", "#" , class: "button_introduction"
+          %button.button_introduction 編集
         %p.introduction_note
           自己紹介文を充実させると、
           %em マッチング率10倍UP!
-        %p.introduction_text 自己紹介文はまだ入力されておりません。
-
-
+        %p.introduction_text
+          = current_user.introduction
 
 
