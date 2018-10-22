@@ -16,14 +16,13 @@
             = f.file_field :avatar, class: "hidden"
 
 
-
           %p.modal_sub_image_edit
             サブ写真の追加・削除
           %ul.modal_photo_edit_list
             %li.modal_photo_edit_box
             = f.fields_for :images, @image do |image|
               = f.file_field :content, class: "hidden"
-              = image_tag(current_user.images.id , class: "modal_sub_image_edit_photo")
+              = image_tag(current_user.images, class: "modal_sub_image_edit_photo")
             %li.modal_photo_edit_box
               = image_tag("no_image.jpg", class: "modal_sub_image_edit_photo")
             %li.modal_photo_edit_box
