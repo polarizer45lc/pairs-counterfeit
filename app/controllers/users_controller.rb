@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def follower
     @title = "お相手からのいいね！"
-    @users = current_user.followerds.matching(current_user).page(params[:page]).per(10)
+    @users = current_user.followerds.stranger(current_user).page(params[:page]).per(10)
   end
 
   def edit
