@@ -125,9 +125,9 @@ input, select {
         background-repeat:no-repeat;
         text-indent: -9999px;
         overflow: hidden;
-        outline: none;
         cursor: pointer;
         position: relative;
+        border: none;
         z-index: 100;
 
         .avatar_hidden {
@@ -141,7 +141,7 @@ input, select {
         border-radius: 50%;
         border-style: none;
         position: relative;
-        top: -150px;
+        top: -140px;
         z-index: 0;
       }
       .none {
