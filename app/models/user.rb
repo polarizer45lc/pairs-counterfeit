@@ -58,6 +58,11 @@ class User < ApplicationRecord
   has_many :user_communities
 
   mount_uploader :avatar, UserImageUploader
+  mount_uploader :sub_image1, SubImageUploader
+  mount_uploader :sub_image2, SubImageUploader
+  mount_uploader :sub_image3, SubImageUploader
+  mount_uploader :sub_image4, SubImageUploader
+
 
   def matchers
     User.where(id: passive_relationships.select(:following_id))
