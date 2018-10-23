@@ -25,54 +25,11 @@
           %p.title
             足あと
         .visiter_summary__count
-          %p.text 足あとの合計
-          %p.count 9726人
-        %ul.user_list{style:"overflow-y:auto"}
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 75歳 奈良
-            %p.user_time 4:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 85歳 奈良
-            %p.user_time 7:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 95歳 奈良
-            %p.user_time 4:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 85歳 奈良
-            %p.user_time 6:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 105歳 奈良
-            %p.user_time 3:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 75歳 奈良
-            %p.user_time 4:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 85歳 奈良
-            %p.user_time 6:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 85歳 奈良
-            %p.user_time 6:00
-          %li.user_item
-            = image_tag("no-image__woman.png", class: "image-circle")
-            %p.user_info 85歳 奈良
-            %p.user_time 6:00
-        .visiter_summary__note
-          ※ スクロールしてください
-
-
           %p.text 足あとをつけた人数
           %p.count
             =@visitors.count
             人
-        %ul.user_list
+        %ul.user_list{style:"overflow-y:auto"}
           -@visitors.each do |visitor|
             %li.user_item
               -if visitor.avatar.present?
@@ -85,6 +42,8 @@
                 = visitor.residence.name
               %p.user_time
                 = l(visitor.created_at, format: :long)
+        .visiter_summary__note
+          ※ スクロールしてください
 
     .mypage_detail_inner_right
       .my_display_photo

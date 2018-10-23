@@ -33,6 +33,7 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
 
   def follow
     @title = "あなたからのいいね！"
@@ -63,6 +64,7 @@ class UsersController < ApplicationController
       :sub_image3,
       :sub_image4,
     )
+  end
 
   def set_visitors
     @user = User.find(params[:id])
