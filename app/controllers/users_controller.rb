@@ -108,6 +108,7 @@ class UsersController < ApplicationController
         user.save
       }
     end
+  end
 
 
   def update
