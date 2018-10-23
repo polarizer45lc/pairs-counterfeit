@@ -350,6 +350,10 @@ $cyan: #00b8c0;
           text-decoration: underline;
           color: $cyan;
           vertical-align: baseline;
+          cursor : pointer;
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -574,20 +578,20 @@ li.user_item:hover {
 
 .button_remove {
   width: 50px;
-    height: 28px;
-    display: inline-block;
-    margin: 6px 5px;
-    text-align: center;
-    line-height: 28px;
-    float: right;
-    border-radius: 25px;
-    font-size: 12px;
-    color: #FFFFFF;
-    background-color: #f06976;
-    box-shadow: 0 2px 0 #ed4655;
-    margin-bottom: 5px;
-    border-style: none;
-    outline: none;
+  height: 28px;
+  display: inline-block;
+  margin: 6px 5px;
+  text-align: center;
+  line-height: 28px;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: #FFFFFF;
+  background-color: #f06976;
+  box-shadow: 0 2px 0 #ed4655;
+  margin-bottom: 5px;
+  border-style: none;
+  outline: none;
 }
 
 
@@ -709,6 +713,5 @@ input,textarea.for_hobby,.for_nickname{
     margin-right: 3px;
     cursor: pointer
 }
-
 
 
