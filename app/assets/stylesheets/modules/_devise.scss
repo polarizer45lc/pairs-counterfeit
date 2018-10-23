@@ -320,6 +320,7 @@ input, select {
 
           &.submit_on {
             @include cyan_button(400px, 50px);
+            line-height: 1.5;
             font-size: 17px;
           }
         }
