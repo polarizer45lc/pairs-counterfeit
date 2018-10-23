@@ -15,6 +15,9 @@
       width: 300px;
       border-bottom: 1px solid $color_border;
       background-color: #FFF;
+      &:hover {
+        background-color: $cyan;
+      }
       .ng-click{
         height: 83px;
         width: 300px;
