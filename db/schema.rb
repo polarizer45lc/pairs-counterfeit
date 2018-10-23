@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011124629) do
+ActiveRecord::Schema.define(version: 20181022085535) do
 
   create_table "characters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -188,6 +188,10 @@ ActiveRecord::Schema.define(version: 20181011124629) do
     t.string   "tweet"
     t.string   "housemate"
     t.string   "drink"
+    t.string   "sub_image1"
+    t.string   "sub_image2"
+    t.string   "sub_image3"
+    t.string   "sub_image4"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

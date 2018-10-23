@@ -7,7 +7,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
    # storage :file
   # storage :fog
   if Rails.env.development?# 開発環境だった場合
-    storage :fog# 開発が終わったらfileに戻す
+    storage :file# 開発が終わったらfileに戻す
   elsif Rails.env.test?# テスト環境だった場合
     storage :file
   else# それ以外の環境だった場合
@@ -37,7 +37,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-    process resize_to_fit: [800, 800]
+    process resize_to_limit: [500, 500]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.

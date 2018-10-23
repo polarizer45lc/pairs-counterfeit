@@ -1,10 +1,13 @@
 %li.list_view_user_item
   .list_view_user_avatar
-    = link_to image_tag('no-image__woman.png', class: "user_photo"), user_path(user), remote: true
+    -if user.avatar.present?
+      = link_to image_tag(user.avatar,class: "user_photo"), user_path(user), remote: true
+    -else
+      = link_to image_tag(current_user.default_other_avatar,class: "user_photo"), user_path(user), remote: true
   .box_user_info
     .box_user_info01
       %p.user_summary
-        %span.isLogIn10min
+        %span.user_login
         %span.user_area{ limit_length: '5' }
           = user.residence.name
         %span.user_age #{age(user[:birthday])}歳
@@ -17,5 +20,6 @@
         .user_tweet_body
           = user.tweet
     .box_button_like
-      #like_button_zone{ id: user.id }
-        = render 'shared/follow', user: user
+      #like_button_zone
+        = render partial: "relationships/relationships", locals: { user: user }
+

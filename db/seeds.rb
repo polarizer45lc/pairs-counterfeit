@@ -51,7 +51,6 @@ Region.create(name: '北アメリカ大陸', overseas: 1)
 Region.create(name: '南アメリカ大陸', overseas: 1)
 Region.create(name: 'ユーラシア大陸', overseas: 1)
 Region.create(name: 'アフリカ大陸', overseas: 1)
-Region.create(name: 'オーストラリア大陸', overseas: 1)
 Region.create(name: '南極大陸', overseas: 1)
 
 

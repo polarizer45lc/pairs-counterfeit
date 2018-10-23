@@ -13,14 +13,14 @@
           %li.tab_item.tab_item02
             = link_to "", "#"
       %p.search_result_count
-        paginationで表示します
+        = pagination_info(@users)
 
     .box_grid_header
       .box_grid_header03
         %span
           「いいね！」をあと
         %em
-          30人
+          #{current_user.hearts}人
         %span
           押しましょう！
 
@@ -29,13 +29,13 @@
         = render partial: "shared/userlist", collection: @users, as: "user"
 
     .box_result_pager
-      = paginate @users
+      = paginate @users, remote: true
 
     .box_like_remaining
       %p
         あと
         %em
-          30人
+          #{current_user.hearts}
         に「いいね！」ができます
     = render "shared/footer"
 

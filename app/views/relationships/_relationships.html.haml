@@ -1,0 +1,10 @@
+-if current_user.following?(user)
+  = link_to "いいね済", "#", class: "btn_like btn_mitene btn_orange_a btn_d"
+- elsif user.following?(current_user)
+  = form_for(current_user.active_relationships.build, data: { remote: true }) do |f|
+    %div= hidden_field_tag :followed_id, user.id
+    = link_to "ありがとう！", "javascript:void(0)", onclick: "this.parentNode.submit()", remote: true, class: "btn_like btn_like_default btn_d btn_pink_c no_border"
+-else
+  = form_for(current_user.active_relationships.build, data: { remote: true }) do |f|
+    %div= hidden_field_tag :followed_id, user.id
+    = link_to "いいね！", "javascript:void(0)", onclick: "this.parentNode.submit()", remote: true, class: "btn_like btn_like_default btn_d btn_pink_c no_border"

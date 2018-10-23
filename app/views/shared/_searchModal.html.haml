@@ -8,7 +8,7 @@
         = search_form_for q, url: users_path, remote: true, html:{id: "search_condition_form"} do |f|
           .search_form_inner
             %p.box_search_reset
-              = f.submit "検索条件をリセットする", type: "reset", class: "btn_f btn_white_a"
+              = f.submit "検索条件をリセットする", id: "btn_reset", type: "reset", class: "btn_f btn_white_a"
             %table#search_condition_table
               %tbody
                 %tr
@@ -28,7 +28,7 @@
                       = f.select :residence_id_eq, options_from_collection_for_select(Region.all, :id, :name), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
                       %span.custom_select
                         %span.custom_select_inner こだわらない
-                    %a.btn_f.btn_white_a.add_form_btn 追加
+                    -# %a.btn_f.btn_white_a.add_form_btn 追加
                 %tr
                   %th 職業
                   %td.search_job
@@ -96,18 +96,18 @@
                 %tr
                   %th 年収
                   %td.search_income
-                    = f.select :annual_income_gt, options_for_select(User::Income), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
+                    = f.select :annual_income_gteq, options_for_select((200..3000).select{|i| i % 100 == 0}.map{|n| ["#{n}万円", n]}), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
                     %span.custom_select
                       %span.custom_select_inner こだわらない
                     %span 〜
-                    = f.select :annual_income_lteq, options_for_select(User::Income), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
+                    = f.select :annual_income_lteq, options_for_select((200..3000).select{|i| i % 100 == 0}.map{|n| ["#{n}万円", n]}), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
                     %span.custom_select
                       %span.custom_select_inner こだわらない
-                %tr
-                  %th 最終ログイン
-                  %td.search_login
-                    %span.custom_select
-                      %span.custom_select_inner こだわらない
+                -# %tr
+                -#   %th 最終ログイン
+                -#   %td.search_login
+                -#     %span.custom_select
+                -#       %span.custom_select_inner こだわらない
                 %tr
                   %th
                     同居人
@@ -147,7 +147,7 @@
                       = f.select :birthplace_id_eq, options_from_collection_for_select(Region.all, :id, :name), {include_blank: "こだわらない"}, {class: "hasCustomSelect"}
                       %span.custom_select
                         %span.custom_select_inner こだわらない
-                    %a.btn_f.btn_white_a.add_form_btn 追加
+                    -# %a.btn_f.btn_white_a.add_form_btn 追加
             %ul.box_search_btn
               %li.search_btn_item.w-20
                 %button#cancelConditionBtn.modal-close.btn_a.btn_white_a{type: "button", "data-dismiss": "modal"} キャンセル

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:index, :create]
     end
     member do
-      get :followings, :followedes
+      get :follow, :follower
       post :user_edit, :continuous_user_edit, :character_update, :region_update
     end
     collection do

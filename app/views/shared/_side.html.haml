@@ -1,9 +1,10 @@
 .side__content
   .profile
-    %p.profile__image
-      = link_to user_path(current_user.id) do
+    %p.profile__image{onclick:"reload_this()"}
+      = link_to edit_user_path(current_user.id) do
         = image_tag(current_user.main_avatar)
-    %p.profile__name
+
+    %p.profile__name{onclick:"reload_this()"}
       =link_to current_user.nickname + "   " + current_user.residence.name, edit_user_path(current_user)
     %p.profile__status
       = link_to "無料会員", '#'
@@ -40,23 +41,28 @@
         さがす
       %ul
         %li.navi__item
-          = link_to "お相手を探す", '#'
+          = link_to "お相手を探す", root_path
     .navi
       %p.navi__title
         いいね
       %ul
         %li.navi__item
-          = link_to "相手からのいいね！", '#'
+          = link_to "相手からのいいね！", follower_user_path(current_user.id)
         %li.navi__item
-          = link_to "自分からのいいね！", '#'
+          = link_to "自分からのいいね！", follow_user_path(current_user.id)
         %li.navi__item
           = link_to "お気に入り", '#'
     .navi
       %p.navi__title
         マッチング
-      %ul
-        %li.navi__item
-          = link_to "メッセージ", user_groups_path(current_user.id)
+
+      -if current_user.matchers.present?
+        %ul
+          %li.navi__item
+            = link_to "メッセージ", user_groups_path(current_user.id)
+      -else
+        %p.navi__title
+          メッセージ
     .navi
       %p.navi__title
         コミュニティ
@@ -76,9 +82,8 @@
     .navi
       %p.navi__title
         足あと
-      %ul
-        %li.navi__item
-          = link_to "足あと", '#'
+      %p.navi__title
+        足あと
     .navi
       %p.navi__title
         各種設定
