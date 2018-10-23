@@ -414,6 +414,10 @@ $cyan: #00b8c0;
           margin: 20px 1px;
           color: $black;
         }
+
+        .detail_item_value {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -709,6 +713,8 @@ input,textarea.for_hobby,.for_nickname{
     margin-right: 3px;
     cursor: pointer
 }
+
+
 
 
 

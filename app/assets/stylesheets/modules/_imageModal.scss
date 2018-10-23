@@ -90,6 +90,7 @@
 .button_edit_image {
   @include cyan_button(130px, 38px);
   float: left;
+  line-height: 1.5;
   position: relative;
   left: 39%;
   right: 39%;
