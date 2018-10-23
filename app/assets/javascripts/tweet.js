@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function(){
                     </div>
                   <div class="user_tweet_buttonbox">
                     <button class="button_update">更新</button>
-                    <button class="button_delete">削除</button>
+                    <button class="button_delete" style="outline:none;">削除</button>
                   </div>
                 </div>`
     return html;
