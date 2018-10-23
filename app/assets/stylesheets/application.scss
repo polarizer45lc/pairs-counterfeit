@@ -3,8 +3,12 @@
 @import "./body";
 @import "./modal";
 @import "./config/button";
+@import "./modules/color";
+// mixin
 @import "./mixin/clearfix";
 @import "./mixin/chat";
+@import "./mixin/parts_mixin";
+// module
 @import "./modules/header";
 @import "./modules/profile";
 @import "./modules/side";
@@ -18,3 +22,4 @@
 @import "./modules/ruleModal";
 @import "./modules/pagination";
 @import "./modules/follow";
+

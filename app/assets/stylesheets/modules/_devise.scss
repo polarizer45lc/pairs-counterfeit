@@ -1,22 +1,9 @@
-@mixin devise_box($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-// mixin--------------------------
-
-
-$color_text_area: #f8f9f9;
-
-// color変数-----------------------
-
-
-
 input, select {
   outline: none;
 }
 
 /* --- 全体のBOX定義 ---------------------------------------- */
+
 .box {
   position   : relative;
   margin-bottom: 1000px;
@@ -24,8 +11,6 @@ input, select {
   height     : 100vh;
   margin     : auto;
   overflow   : hidden;
-
-
 
   .sessions_box {
     @include devise_box(360px, 650px);
@@ -36,6 +21,7 @@ input, select {
     margin-top: 80px;
     border-radius: 10px;
     box-sizing: border-box;
+    color      : $black;
 
     .pairs {
       width: 315px;

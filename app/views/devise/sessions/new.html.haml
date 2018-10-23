@@ -9,10 +9,10 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = devise_error_messages!
         .sessions_field
-          = f.label :メールアドレス, style: "margin-left: 15px;"
+          = f.label :メールアドレス, style: "margin-left:15px;"
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "sessions_text"
-          = f.label :パスワード, style: "margin-left: 15px;"
+          = f.label :パスワード, style: "margin-left:15px;"
           - if @minimum_password_length
             / %em
             /   (#{@minimum_password_length} characters minimum)
