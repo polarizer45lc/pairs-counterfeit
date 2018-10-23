@@ -26,6 +26,15 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def update
+    if current_user.update(user_params)
+      redirect_to edit_user_path
+    else
+      render :edit
+    end
+  end
+
   def follow
     @title = "あなたからのいいね！"
     @users = current_user.followings.matching(current_user).page(params[:page]).per(10)
@@ -43,9 +52,23 @@ class UsersController < ApplicationController
     @groups = current_user.groups
   end
 
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :avatar,
+      :sub_image1,
+      :sub_image2,
+      :sub_image3,
+      :sub_image4,
+    )
+  end
+
   def set_visitors
     @user = User.find(params[:id])
     #自分に対する訪問者、つまり自分から見たvisitor側を取り出す
-    @visitors = @user.visitors.order("created_at DESC").limit(3)
+    @visitors = @user.visitors.order("created_at DESC")
+
   end
 end

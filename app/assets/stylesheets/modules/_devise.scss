@@ -1,27 +1,16 @@
-@mixin devise_box($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-// mixin--------------------------
-
-
-$color_text_area: #f8f9f9;
-
-// color変数-----------------------
-
-
-
 input, select {
   outline: none;
 }
 
-.sessions {
-  width: 100%;
-  height: 100%;
-  padding-top: 100px;
-  background-color: $cyan;
+/* --- 全体のBOX定義 ---------------------------------------- */
 
+.box {
+  position   : relative;
+  margin-bottom: 1000px;
+  max-width  : 100vw;
+  height     : 100vh;
+  margin     : auto;
+  overflow   : hidden;
 
   .sessions_box {
     @include devise_box(360px, 650px);
@@ -29,8 +18,10 @@ input, select {
     border: 1px solid #ccc;
     margin: 0 auto;
     margin-left: 100px;
+    margin-top: 80px;
     border-radius: 10px;
     box-sizing: border-box;
+    color      : $black;
 
     .pairs {
       width: 315px;
@@ -120,10 +111,11 @@ input, select {
       padding-top: 30px;
       float: left;
 
-      .prof_box {
+      .prof_box#main_avatar_uploader {
         @include devise_box(130px, 139px);
         background-size: 120px;
         background-repeat:no-repeat;
+        z-index: 100000;
       }
 
       .hidden {
@@ -135,6 +127,25 @@ input, select {
         overflow: hidden;
         outline: none;
         cursor: pointer;
+        position: relative;
+        z-index: 100;
+
+        .avatar_hidden {
+          text-indent: -9999px;
+        }
+      }
+
+      #preview_avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border-style: none;
+        position: relative;
+        top: -150px;
+        z-index: 0;
+      }
+      .none {
+        display: none;
       }
     }
 
@@ -260,6 +271,7 @@ input, select {
         .password_box {
           @include devise_box(300px, 40px);
           background-color: #f8f9f9;
+          padding-left: 5px;
           border: none;
         }
       }
@@ -312,3 +324,80 @@ input, select {
     }
   }
 }
+
+
+
+/* --- 背景の指定 ------------------------------------------- */
+.box .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+}
+
+/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+.box .src1 {
+  background-image : image-url("lover1.jpg");   /* 背景の画像を指定 */
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.box .src2 {
+  background-image : image-url("lover2.jpg");   /* 背景の画像を指定 */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  animation-delay  : 5s;
+}
+.box .src3 {
+  background-image : image-url("lover3.jpg");   /* 背景の画像を指定 */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  animation-delay  : 10s;
+}
+.box .src4 {
+  background-image : image-url("lover4.jpg");   /* 背景の画像を指定 */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  animation-delay  : 15s;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+   5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+
+/* --- 前面の文字定義（サンプルのため変更してください） ----- */
+.box .boxString{
+  position   : absolute;
+  display    : inline-block;
+  padding    : 20px;
+            /* 半透明の青 */
+  color      : #fff;
+  top        : 50%;                               /* 中央寄せ */
+  left       : 50%;
+  transform  : translate(-50%,-50%);
+  height: 100%;
+  width: 100%;
+
+}
+

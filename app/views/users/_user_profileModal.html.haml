@@ -105,14 +105,14 @@
               .box_user_photo
                 .box_user_photo_inner
                   %ul.user_photo_list.four_photos
-                    %li#photo_0.photo_item.is_current
-                      = image_tag("no-image__woman.png")
+                    %li#photo_0.photo_item
+                      = image_tag(image_preview1(user))
                     %li.photo_item
-                      = image_tag("no-image__woman.png")
+                      = image_tag(image_preview2(user))
                     %li.photo_item
-                      = image_tag("no-image__woman.png")
+                      = image_tag(image_preview3(user))
                     %li.photo_item
-                      = image_tag("no-image__woman.png")
+                      = image_tag(image_preview4(user))
         .box_user_action_a
           %ul.box_user_action_list
             %li.user_action_item.action_like

@@ -1,0 +1,35 @@
+@mixin white_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $color_title;
+  background-color: $white;
+  border: 1px solid #cbced0;
+  box-shadow: 0 1px 0 #c9c9c9;
+}
+
+@mixin cyan_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $white;
+  background-color: $cyan;
+  box-shadow: 0 2px 0 #00abb3;
+}
+
+@mixin devise_box($width, $height) {
+  width: $width;
+  height: $height;
+}
