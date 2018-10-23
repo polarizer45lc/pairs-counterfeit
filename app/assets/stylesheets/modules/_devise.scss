@@ -126,6 +126,7 @@ input, select {
         text-indent: -9999px;
         overflow: hidden;
         cursor: pointer;
+        border: none;
         position: relative;
         border: none;
         z-index: 100;
@@ -368,7 +369,7 @@ input, select {
   animation-delay  : 10s;
 }
 .box .src4 {
-  background-image : image-url("lover4.jpg");   /* 背景の画像を指定 */
+  background-image : image-url("kiminonaha.jpg");   /* 背景の画像を指定 */
   background-attachment: fixed;
   background-position: center center;
   background-repeat:no-repeat;
