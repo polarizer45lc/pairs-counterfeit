@@ -69,7 +69,7 @@ class UsersController < ApplicationController
   def set_visitors
     @user = User.find(params[:id])
     #自分に対する訪問者、つまり自分から見たvisitor側を取り出す
-    @visitors = @user.visitors.order("created_at DESC").limit(3)
+    @visitors = @user.visitors.order("created_at DESC")
 
   end
 end
