@@ -145,10 +145,6 @@
                   %dt.detail_item_title 兄弟姉妹
                   %dd.detail_item_value
                     = user.brother
-                - if user.blood_type.present?
-                  %dt.detail_item_title 血液型
-                  %dd.detail_item_value
-                    = user.blood_type
                 - if user.country.present?
                   %dt.detail_item_title 国籍
                   %dd.detail_item_value
@@ -175,13 +171,13 @@
                   %dd.detail_item_value
                     = user.educational
                 - if user.job_category.present?
-                  %dt.detail_item_title 学歴
+                  %dt.detail_item_title 職業
                   %dd.detail_item_value
                     = user.job_category
                 - if user.annual_income.present?
                   %dt.detail_item_title 年収
                   %dd.detail_item_value
-                    = user.annual_income
+                    #{user.annual_income}万円
                 - if user.height.present?
                   %dt.detail_item_title 身長
                   %dd.detail_item_value
