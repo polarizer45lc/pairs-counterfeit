@@ -223,6 +223,28 @@
         background-repeat: no-repeat;
         background-position: -36px -132px;
       }
+
+      .btn_d {
+        font-size: 22px;
+        line-height: 1;
+        display: block;
+        padding: 16px;
+        text-align: center;
+        border-radius: 30px;
+      }
+
+      .btn_d:before {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        width: 27px;
+        height: 23px;
+        margin-right: 4px;
+        content: '';
+        background-image: image-url("icon_sprites.png"), none;
+        background-repeat: no-repeat;
+        background-position: -36px -132px;
+      }
     }
   }
 }
