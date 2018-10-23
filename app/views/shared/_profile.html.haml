@@ -29,7 +29,7 @@
           %p.count
             =@visitors.count
             人
-        %ul.user_list
+        %ul.user_list{style:"overflow-y:auto"}
           -@visitors.each do |visitor|
             %li.user_item
               -if visitor.avatar.present?
@@ -42,6 +42,9 @@
                 = visitor.residence.name
               %p.user_time
                 = l(visitor.created_at, format: :long)
+        .visiter_summary__note
+          ※ スクロールしてください
+
     .mypage_detail_inner_right
       .my_display_photo
         .my_display_photo__title
@@ -53,13 +56,13 @@
           .box_my_photo
             %ul.my_phto_list
               %li
-                = image_tag("no_image.jpg", class: "photo_item")
+                = image_tag(image_preview1(current_user), class: "photo_item")
               %li.photo_item
-                = image_tag("no_image.jpg", class: "photo_item")
+                = image_tag(image_preview2(current_user), class: "photo_item")
               %li.photo_item
-                = image_tag("no_image.jpg", class: "photo_item")
+                = image_tag(image_preview3(current_user), class: "photo_item")
               %li.photo_item
-                = image_tag("no_image.jpg", class: "photo_item")
+                = image_tag(image_preview4(current_user), class: "photo_item")
         .my_photo_pager
 
 

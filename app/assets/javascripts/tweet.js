@@ -12,7 +12,6 @@ $(document).on('turbolinks:load', function(){
                   <div class="user_tweet_edit__texterea">
                     <textarea class="user_tweet_edit__tweet" placeholder="今の気持ちをつぶやく" style="height:50px;" id="tweet"></textarea>
                     <div class="user_tweet_alertbox">
-                      <p class="user_tweet_note">あと全角24文字です</p>
                     </div>
                   <div class="user_tweet_buttonbox">
                     <button class="button_update">更新</button>
@@ -36,6 +35,7 @@ $(document).on('turbolinks:load', function(){
                 </div>`
     return html;
   }
+
 
 
   $(document).on('click', ".button_tweet" ,function(json) {

@@ -1,10 +1,10 @@
-class UserImageUploader < CarrierWave::Uploader::Base
+class SubImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-   # storage :file
+  # storage :file
   # storage :fog
   if Rails.env.development?# 開発環境だった場合
     storage :file# 開発が終わったらfileに戻す
@@ -37,7 +37,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-    process resize_to_limit: [50, 50]
+    process resize_to_fit: [50, 50]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.
