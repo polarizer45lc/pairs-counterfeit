@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.datetime :birthday,         null: false
       t.integer :hearts,            null: false, default: 30
       t.string :introduction
-      t.string :height
+      t.integer :height
       t.string :weight
       t.string :blood_type
       t.integer :residence_id
@@ -20,7 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :weight
       t.string :job_category
       t.string :educational
-      t.string :annual_income
+      t.integer :annual_income
       t.string :tobacco
       t.string :brother
       t.string :country

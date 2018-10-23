@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     member do
       get :follow, :follower
-      post :user_edit
+      post :user_edit, :continuous_user_edit, :character_update, :region_update
     end
     collection do
       get :search

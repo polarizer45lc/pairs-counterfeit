@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
 
   belongs_to :user
-  
+  Type = [{id:'kindness',name:'優しい'},{id:'honest',name:'素直'},{id:'determination',name:'決断力がある'},{id:'gentle',name:'穏やか'},{id:'familiar',name:'親しみやすい'},{id:'cheerful',name:'明るい'},{id:'indoor',name:'インドア'},{id:'outdoor',name:'アウトドア'},{id:'earnest',name:'真面目'},{id:'intellectual',name:'知的'},{id:'sincere',name:'誠実'},{id:'punctual',name:'几帳面'},{id:'optimistic',name:'楽観的'},{id:'shy',name:'照れ屋'},{id:'smily', name:'いつも笑顔'},{id:'elegance',name:'上品'},{id:'clamness',name:'落ち着いている'},{id:'humility',name:'謙虚'},{id:'strict',name:'厳格'},{id:'considerate',name:'思いやりがある'},{id:'lonely',name:'寂しがり'},{id:'sociable',name:'社交的'},{id:'cool',name:'冷静沈着'},{id:'curiosity',name:'好奇心旺盛'},{id:'homely',name:'家庭的'},{id:'workerholic',name:'仕事好き'},{id:'responsibility',name:'責任感がある'},{id:'intercourse',name:'面倒見が良い'},{id:'speaker',name:'話し上手'},{id:'listner',name:'聞き上手'},{id:'refreshing',name:'さわやか'},{id:'active',name:'行動的'},{id:'ratioanl',name:'合理的'},{id:'defeated',name:'負けず嫌い'},{id:'funny',name:'面白い'},{id:'hot',name:'熱い'},{id:'comfortable',name:'気が利く'},{id:'devoted',name:'マメ'},{id:'boldness',name:'大胆'},{id:'tolerance',name:'寛容'},{id:'generosity',name:'気前がいい'},{id:'naturally',name:'天然と言われる'},{id:'bcklashless',name:'裏表がない'},{id:'mypace',name:'マイペース'},{id:'latecrop',name:'奥手'},{id:'moody',name:'気分屋'}]
+
 end

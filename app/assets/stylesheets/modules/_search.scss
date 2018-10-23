@@ -204,6 +204,7 @@ input[type= checkbox]:not(.not_use_default) {
   opacity: 0;
 }
 
+
 input[type= checkbox]:not(.not_use_default)+label {
   cursor: pointer;
   &:before {
@@ -222,8 +223,11 @@ input[type= checkbox]:not(.not_use_default)+label {
 input[type= checkbox]:not(.not_use_default):checked+label {
   color: #00ABB3;
   &:before {
-    background-position: -27px -105px;
+    background-position: -27px -105px; 
   }
+}
+.popover{
+    max-width: 100%;
 }
 
 

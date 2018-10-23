@@ -1,3 +1,51 @@
+
+
+
+@mixin white_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $color_title;
+  background-color: $white;
+  border: 1px solid #cbced0;
+  box-shadow: 0 1px 0 #c9c9c9;
+}
+
+@mixin cyan_button($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  margin: 6px 8px;
+  text-align: center;
+  line-height: $height;
+  float: right;
+  border-radius: 25px;
+  font-size: 12px;
+  color: $white;
+  background-color: $cyan;
+  box-shadow: 0 2px 0 #00abb3;
+}
+
+// mixin -----------------------------------------------
+
+$color_border: #e1e3e5;
+$color_background: #f3f3f3;
+$color_title: #8d9399;
+$white: #FFFFFF;
+$black: #54595d;
+$cyan: #00b8c0;
+
+
+// color変数 --------------------------------------------
+
+
+
 .box_mypage_detail {
   width: calc(915px - 180px);
   float: right;
@@ -491,10 +539,55 @@ li.user_item:hover {
   margin: 0 10px 0 0;
   border-style: none;
 }
-
+// プロフィール小カラム更新ボタンたち
 .button_profile {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
+  border-style:none;
+  outline:none;
+}
+
+.button_profile2 {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
+
+
+.button_profile3 {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
+
+.button_profile_region {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
+
+.button_profile_character {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
+
+.button_remove {
+  width: 50px;
+    height: 28px;
+    display: inline-block;
+    margin: 6px 5px;
+    text-align: center;
+    line-height: 28px;
+    float: right;
+    border-radius: 25px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: #f06976;
+    box-shadow: 0 2px 0 #ed4655;
+    margin-bottom: 5px;
+    border-style: none;
+    outline: none;
 }
 
 
@@ -573,3 +666,49 @@ label {
 .select_select .custom_select_inner {
   width: auto!important;
 }
+
+
+input, textarea {
+  border: 1px solid $color_border;
+  border-radius: 3px;
+  width: 206px;
+  height: 57px;
+  padding: 6px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+input,textarea.for_hobby,.for_nickname{
+  border: 1px solid $color_border;
+  border-radius: 3px;
+  width: 206px;
+  height: 2.5em;
+  padding: 6px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+}
+
+.remove_form_btn3,.remove_form_btn2{
+    color:#fff;
+    padding-left: 3px;
+    font-weight: 700;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border-radius: 10px;
+    background-color: #f48d97;
+    box-shadow: 0 2px 0 #f06976;
+    margin-right: 3px;
+    cursor: pointer
+}
+
+
+
