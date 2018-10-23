@@ -64,6 +64,7 @@ input, select {
         background-color: $cyan;
         box-shadow: 0 1px 0 #008B8B;
         font-size: 16px;
+        line-height: 1.5;
         border: none;
         color: $white;
       }
@@ -313,6 +314,7 @@ input, select {
 
         #pairs_submit {
           @include white_button(400px, 50px);
+          line-height: 1.5;
           background-color: #f3f3f3;
           font-size: 17px;
 
