@@ -54,7 +54,7 @@ Region.create(name: 'アフリカ大陸', overseas: 1)
 Region.create(name: '南極大陸', overseas: 1)
 
 
-53.times do |n|
+52.times do |n|
   nickname = Faker::Pokemon.name
   email = "test-#{n+1}@gmail.com"
   password = "password"

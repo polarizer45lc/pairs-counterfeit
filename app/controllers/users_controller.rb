@@ -129,7 +129,7 @@ class UsersController < ApplicationController
     @users = current_user.followerds.stranger(current_user).page(params[:page]).per(10)
   end
 
-  
+
   def matches
     @groups = current_user.groups
   end

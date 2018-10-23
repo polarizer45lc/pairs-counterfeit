@@ -38,7 +38,6 @@ class User < ApplicationRecord
 
 
 
-
   # 足跡
   has_many :passive_footprints, class_name: "Footprint", foreign_key: "visitor_id"
   has_many :hosts, through: :passive_relationships
@@ -60,9 +59,13 @@ class User < ApplicationRecord
 
 
 
+  # def matchers
+  #   User.where(id: passive_relationships.select(:following_id))
+  #    .where(id: active_relationships.select(:followed_id))
+  # end
+
   def matchers
-    User.where(id: passive_relationships.select(:following_id))
-     .where(id: active_relationships.select(:followed_id))
+    followings & followerds
   end
 
 
@@ -82,9 +85,15 @@ class User < ApplicationRecord
 
 # マッチング済みのuserを除外する
   scope :matching, -> (user) {
-    matching = where(id: Relationship.select(:following_id)).where(id: Relationship.select(:followed_id))
-    where.not(id: matching)
+    fd_arry = []
+    followeds = Relationship.where(following_id: user.id)
+    followeds.each do |followed|
+      fd_arry << followed[:followed_id]
+    end
+    where.not(id: fd_arry)
   }
+
+
 
 
 # 検索フォーム用配列
