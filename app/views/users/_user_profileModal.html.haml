@@ -224,10 +224,10 @@
 
               %p.detail_sub_title 性格・趣味・生活
               %dl.detail_item_list
-                - if user.character.present?
-                  %dt.detail_item_title 性格・タイプ
-                  %dd.detail_item_value
-                    = user.character
+                -# - if user.character.present?
+                -#   %dt.detail_item_title 性格・タイプ
+                -#   %dd.detail_item_value
+                -#     = user.character
                 - if user.sociability.present?
                   %dt.detail_item_title 社交性
                   %dd.detail_item_value
