@@ -20,6 +20,6 @@
         .user_tweet_body
           = user.tweet
     .box_button_like
-      #like_button_zone{ id: user.id }
+      #like_button_zone
         = render partial: "relationships/relationships", locals: { user: user }
 
