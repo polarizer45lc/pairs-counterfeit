@@ -14,7 +14,7 @@ $(function(){
     }
   })
   var remove_btn = `
-                    <span><a class="remove_form_btn3">×</a>
+                    <span><p class="remove_form_btn3">ー</a>
                     <br/></span>`
 
   $(document).on('click', '.remove_form_btn3', function(e){

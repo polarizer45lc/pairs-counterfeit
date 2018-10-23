@@ -78,19 +78,23 @@ $(document).on('click','.button_profile_character',function(){
   $('.popover').popover('hide')
 })
 
+$(document).on('click','.button_remove',function(){
+  $('.popover').popover('hide')
+})
 
 
 //ポップオーバーが開いた時、既に表示されているものをセレクトに適用するやつ。これに連動させてselectを下のtextに適用しないとダメっぽい。
 //ポップオーバーはidが勝手につく、かつその画面においてはidが共通
 
 $(document).on('shown.bs.popover','.detail_item_value',function(){
-  var now_popover = $('.popover').find('.popup_title').attr('id')
-  var now_popover_id = $('.popup_title[id='+ now_popover +']').not().parents('.popover') //.popover('hide')
-  console.log($("[data-toggle=popover]"))
-  //console.log(now_popover)
-  //console.log(now_popover_id)
-  //!$('.popup_title[id='+ now_popover +']').parents('.popover')
-  // $('.popover[id= '+ now_popover +']').popover('hide')
+  // var now_popover = $('.popover').attr('id')
+  // console.log(now_popover)
+  // console.log($('.popover').length)
+  // var other_popover = $('.popover:eq(1)').attr('id')
+  // console.log(other_popover)
+  if ($('.popover').length == 2){
+    $('.popover:eq(0)').popover('hide')
+  }
   var objective_pop_id = $(this).data('content_div_id')
   console.log(objective_pop_id)
   var pre_selected_str = $(this).text()

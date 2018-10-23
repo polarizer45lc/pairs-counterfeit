@@ -43,6 +43,16 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json{
+          if params[:referense_column1] == 'language1'
+            @user[:language1] = nil
+            @user[:language2] = nil
+            @user[:language3] = nil
+          elsif params[:referense_column1] == 'hobby1'
+            @user[:hobby1] = nil
+            @user[:hobby2] = nil
+            @user[:hobby3] = nil
+          end
+
           if params[:referense_column3].present?
             referense_column3 = params[:referense_column3]
             referense_column2 = params[:referense_column2]
