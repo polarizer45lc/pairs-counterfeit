@@ -85,7 +85,7 @@
         %dt.detail_item_title
           %span.item_title 身長
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "height", "data-placement": "top", "data-toggle": "popover"}
-          = current_user.height.present? ? current_user.height : str
+          = current_user.height.present? ? current_user.height.to_s + 'cm' : str
 
 
         %dt.detail_item_title
@@ -101,13 +101,13 @@
 
         %dt.detail_item_title
           %span.item_title 居住地
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "residence", "data-placement": "top", "data-toggle": "popover"}
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "residence_id", "data-placement": "top", "data-toggle": "popover"}
           = current_user.residence.present? ? current_user.residence.name : str
 
 
         %dt.detail_item_title
           %span.item_title 出身地
-        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "birthplace", "data-placement": "top", "data-toggle": "popover"}
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "birthplace_id", "data-placement": "top", "data-toggle": "popover"}
           = current_user.birthplace.present? ? current_user.birthplace.name : str
 
 
@@ -125,7 +125,7 @@
         %dt.detail_item_title
           %span.item_title 年収
         %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "annual_income", "data-placement": "top", "data-toggle": "popover"}
-          = current_user.annual_income.present? ? current_user.annual_income : str
+          = current_user.annual_income.present? ? current_user.annual_income.to_s + '万円' : str
 
 
         %dt.detail_item_title
@@ -226,9 +226,12 @@
 
 
         %dt.detail_item_title
-          %span.item_title 性格・タイプ
-        %dd.detail_item_value{"data-id": "body", "data-content": "前世は革命家だから受け入れざるを得ない…んだ", "data-placement": "top", "data-toggle": "popover"}
-          (= current_user.characterをあるだけ表示)
+          %span.item_title  性格・タイプ
+        %dd.detail_item_value{"aria-hidden": "false", "data-content_div_id": "character", "data-placement": "top", "data-toggle": "popover"}
+          - @character_arry.each do |chara_str|
+            = chara_str
+          - if @character_arry.empty?
+            = str
 
 
         %dt.detail_item_title

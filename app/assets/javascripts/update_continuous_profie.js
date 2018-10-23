@@ -1,5 +1,5 @@
 $(function(){
-  $(document).on('click','.button_tweet2',function(e){
+  $(document).on('click','.button_profile2',function(e){
   var user_id = $('.title_a').data('user-id');
   console.log(user_id);
   var insertion_item = $(this).siblings('.popup_title').attr('id')

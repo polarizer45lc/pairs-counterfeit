@@ -7,7 +7,7 @@ class User < ApplicationRecord
   belongs_to :residence, class_name: "Region", optional: true, foreign_key: "residence_id"
   belongs_to :birthplace, class_name: "Region",optional: true, foreign_key: "birthplace_id"
 
-  has_one :characters
+  has_one :character
   has_many :images
 
   # フォロー
@@ -47,6 +47,7 @@ class User < ApplicationRecord
   has_many :user_communities
 
   mount_uploader :avatar, UserImageUploader
+
 
   def matchers
     User.where(id: passive_relationships.select(:following_id))

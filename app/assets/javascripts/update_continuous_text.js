@@ -1,13 +1,13 @@
 $(function(){
-  $(document).on('click','.button_tweet3',function(e){
+  $(document).on('click','.button_profile3',function(e){
   var user_id = $('.title_a').data('user-id');
   var insertion_item = $(this).siblings('.popup_title').attr('id')
   var selects_name = $(this).siblings('textarea').attr('class');
   var referense_column1 = $(this).siblings('textarea').attr('id')
   var pre_profvalue1 = $(this).siblings('textarea[id='+referense_column1+']').val()
   var profvalue1 = pre_profvalue1.replace(/\s+/g, "")
-  // console.log(referense_column1)
-  // console.log(profvalue1)
+   //console.log(referense_column1)
+   //console.log(profvalue1)
   if($('textarea[class=' + selects_name + ']').length == 2 ){
   $.ajax({
     url:'/users/' + user_id + '/continuous_user_edit',
@@ -20,6 +20,7 @@ $(function(){
     $('[data-content_div_id='+ insertion_item +']').text('選択してください')
     }
     else{
+    console.log(json.referense_column1)
     $('[data-content_div_id='+ insertion_item +']').text(json.referense_column1)
     }
   })

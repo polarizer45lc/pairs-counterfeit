@@ -11,7 +11,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :height, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-height'
+          = select_tag :height, options_for_select((135..200).map{|n| ["#{n}cm", n]}), class: 'hasCustomSelect select-height'
           %span.select_custom
             選択してください
   %br/
@@ -27,7 +27,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :weight, options_for_select('選択してください':0,'スリム':1,'やや細め':2,'普通':3,'グラマー':4,'筋肉質':5,'ややぽっちゃり':6,'ぽっちゃり':7), class: 'hasCustomSelect select-weight'
+          = select_tag :weight, options_for_select('選択してください':'選択してください','スリム':'スリム','やや細め':'やや細め','普通':'普通','グラマー':'グラマー','筋肉質':'筋肉質','ややぽっちゃり':'ややぽっちゃり','ぽっちゃり':'ぽっちゃり'), class: 'hasCustomSelect select-weight'
           %span.select_custom
             選択してください
   %br/
@@ -43,7 +43,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :blood_type, options_for_select('選択してください':0,'A型':1,'B型':2,'O型':3,'AB型':4,'わからない':5), class: 'hasCustomSelect select-blood_type'
+          = select_tag :blood_type, options_for_select('選択してください':'選択してください','A型':'A型','B型':'B型','O型':'O型','AB型':'AB型','わからない':'わからない'), class: 'hasCustomSelect select-blood_type'
           %span.select_custom
             選択してください
   %br/
@@ -51,8 +51,8 @@
 
 / 居住地
 
-#residence{style:"display:none;"}
-  %p.popup_title{id:'residence'}
+#residence_id{style:"display:none;"}
+  %p.popup_title{id:'residence_id'}
     居住地を選択してください
   %table{style:"width:100%;"}
     %tbody
@@ -62,12 +62,12 @@
           %span.select_custom
             選択してください
   %br/
-  %button.button_profile 更新
+  %button.button_profile_region 更新
 
 / 出身地
 
-#birthplace{style:"display:none;"}
-  %p.popup_title{id:'birthplace'}
+#birthplace_id{style:"display:none;"}
+  %p.popup_title{id:'birthplace_id'}
     出身地を選択してください
   %table{style:"width:100%;"}
     %tbody
@@ -77,7 +77,7 @@
           %span.select_custom
             選択してください
   %br/
-  %button.button_profile 更新
+  %button.button_profile_region 更新
 
 / 職種
 
@@ -89,7 +89,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :job_category, options_for_select('選択してください':0,'上場企業':1,'金融':2,'公務員':3,'コンサル':4,'経営者・役員':5,'大手企業':6,'大手外資':7,'大手商社':8,'外資金融':9,'医師':10,'看護師':11,'薬剤師':12,'弁護士':13,'公認会計士':14,'パイロット':15,'客室乗務員':16,'広告':17,'マスコミ':18,'教育関連':19,'IT関連':20,'食品関連':21,'旅行関連':22,'製薬':23,'保険':24,'不動産':25,'建設関連':26,'通信':27,'流通':28,'WEB関連':29,'ブライダル':30,'クリエーター':31,'接客業':32,'受付':33,'調理師・栄養士':34,'アパレルショップ':35,'美容関係':36,'エンターテイメント':37,'アナウンサー':38,'芸能・モデル':39,'イベントコンパニオン':40,'スポーツ選手':41,'秘書':42,'事務員':43,'福祉・介護':44,'保育士':45,'会社員':46,'学生':47,'自由業':48,'その他':49), class: 'hasCustomSelect select-job_category'
+          = select_tag :job_category, options_for_select('選択してください':'選択してください','上場企業':'上場企業','金融':'金融','公務員':'公務員','コンサル':'コンサル','経営者・役員':'経営者・役員','大手企業':'大手企業','大手外資':'大手外資','大手商社':'大手商社','外資金融':'外資金融','医師':'医師','看護師':'看護師','薬剤師':'薬剤師','弁護士':'弁護士','公認会計士':'公認会計士','パイロット':'パイロット','客室乗務員':'客室乗務員','広告':'広告','マスコミ':'マスコミ','教育関連':'教育関連','IT関連':'IT関連','食品関連':'食品関連','旅行関連':'旅行関連','製薬':'製薬','保険':'保険','不動産':'不動産','建設関連':'建設関連','通信':'通信','流通':'流通','WEB関連':'WEB関連','ブライダル':'ブライダル','クリエーター':'クリエーター','接客業':'接客業','受付':'受付','調理師・栄養士':'調理師・栄養士','アパレルショップ':'アパレルショップ','美容関係':'美容関係','エンターテイメント':'エンターテイメント','アナウンサー':'アナウンサー','芸能・モデル':'芸能・モデル','イベントコンパニオン':'イベントコンパニオン','スポーツ選手':'スポーツ選手','秘書':'秘書','事務員':'事務員','福祉・介護':'福祉・介護','保育士':'保育士','会社員':'会社員','学生':'学生','自由業':'自由業','その他':'その他'), class: 'hasCustomSelect select-job_category'
           %span.select_custom
             選択してください
   %br/
@@ -105,7 +105,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :educational, options_for_select('選択してください':0,'短大/専門学校卒':1,'高校卒':2,'大学卒':3,'大学院卒':4,'その他':5), class: 'hasCustomSelect select-educational'
+          = select_tag :educational, options_for_select('選択してください':'選択してください','短大/専門学校卒':'短大/専門学校卒','高校卒':'高校卒','大学卒':'大学卒','大学院卒':'大学院卒','その他':'その他'), class: 'hasCustomSelect select-educational'
           %span.select_custom
             選択してください
   %br/
@@ -121,7 +121,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :annual_income, options_for_select('選択してください':0,'表示しない':1,'200万円未満':2,'200万円以上〜400万円未満':3,'400万円以上〜600万円未満':4,'600万円以上〜800万円未満':5,'800万円以上〜1000万円未満':6,'1000万円以上〜1500万円未満':7,'1500万円以上〜2000万円未満':8,'2000万円以上〜3000万円未満':9,'3000万円以上':10), class: 'hasCustomSelect select-annual_income'
+          = select_tag :annual_income, options_for_select((200..3000).select{|i| i % 100 == 0}.map{|n| ["#{n}万円", n]}), class: 'hasCustomSelect select-annual_income'
           %span.select_custom
             選択してください
   %br/
@@ -137,7 +137,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :tobacco, options_for_select('選択してください':0,'吸わない':1,'吸う':2,'吸う(電子タバコ)':3,'非喫煙者の前では吸わない':4,'相手が嫌ならやめる':5,'ときどき吸う':6), class: 'hasCustomSelect select-tobacco'
+          = select_tag :tobacco, options_for_select('選択してください':'選択してください','吸わない':'吸わない','吸う':'吸う','吸う（電子タバコ）':'吸う（電子タバコ）','非喫煙者の前では吸わない':'非喫煙者の前では吸わない','相手が嫌ならやめる':'相手が嫌ならやめる','ときどき吸う':'ときどき吸う'), class: 'hasCustomSelect select-tobacco'
           %span.select_custom
             選択してください
   %br/
@@ -151,17 +151,13 @@
 / ニックネーム
 
 #nickname{style:"display:none;"}
-  %p.popup_title ニックネームを入力してください
+  %p.popup_title{id:'nickname'}
+    ニックネームを入力してください
   %br/
-  %table
-    %tbody
-      %tr
-        %td.select_box{style:"width:100%;"}
-
-          %span.select_custom
+  %textarea{class: 'for_nickname',placeholder: '入力してください',id: 'nickname'}
 
   %br/
-  %button.button_profile-btn-modal  更新
+  %button.button_profile3 更新
 
 / 兄弟姉妹
 
@@ -173,7 +169,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :brother, options_for_select('選択してください':0,'長男':1,'次男':2,'三男':3,'その他':4), class: 'hasCustomSelect select-brother'
+          = select_tag :brother, options_for_select('選択してください':'選択してください','長男':'長男','次男':'次男','三男':'三男','その他':'その他'), class: 'hasCustomSelect select-brother'
           %span.select_custom
             選択してください
   %br/
@@ -189,7 +185,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :country, options_for_select('選択してください':0,'日本':1,'アメリカ合衆国':2,'カナダ':3,'オーストラリア':4,'イギリス':5,'フランス':6,'ドイツ':7,'イタリア':8,'スペイン':9,'ブラジル':10,'ロシア連邦':11,'中華人民共和国':12,'大韓民国':13,'台湾':14,'インドネシア':15,'フィリピン':16,'インド':17,'メキシコ':18,'トルコ':19,'オランダ':20,'スイス':21,'ポーランド':22,'ベルギー':23,'スウェーデン':24,'ノルウェー':25,'オーストリア':26,'アルゼンチン':27,'南アフリカ':28,'サウジアラビア':29,'ニュージーランド':30,'タイ':31,'シンガポール':32,'マレーシア':33,'ベトナム':34,'アフガニスタン':35,'アルバニア':36,'アルジェリア':37,'アンギラ':38,'アンゴラ':39,'アンクチグア・バーブーダ':40,'アルメニア':41,'アゼルバイジャン':42,'バハマ':43,'バーレーン':44,'バングラデシュ':45,'バルバドス':46,'ベラルーシ':47,'ベリーズ':48,'ベナン':49,'バミューダ':50,'ブータン':51,'ボリビア':52,'ボスニア・ヘルツェゴビナ':53,'ボツワナ':54,'ブルネイ・ダルサラーム':55,'ブルガリア':56,'ブルキファナソ':57,'ブルンジ':58,'カンボジア':59,'カメルーン':60), class: 'hasCustomSelect select-country'
+          = select_tag :country, options_for_select('選択してください':'選択してください','日本':'日本','アメリカ合衆国':'アメリカ合衆国','カナダ':'カナダ','オーストラリア':'オーストラリア','イギリス':'イギリス','フランス':'フランス','ドイツ':'ドイツ','イタリア':'イタリア','スペイン':'スペイン','ブラジル':'ブラジル','ロシア連邦':'ロシア連邦','中華人民共和国':'中華人民共和国','大韓民国':'大韓民国','台湾':'台湾','インドネシア':'インドネシア','フィリピン':'フィリピン','インド':'インド','メキシコ':'メキシコ','トルコ':'トルコ','オランダ':'オランダ','スイス':'スイス','ポーランド':'ポーランド','ベルギー':'ベルギー','スウェーデン':'スウェーデン','ノルウェー':'ノルウェー','オーストリア':'オーストリア','アルゼンチン':'アルゼンチン','南アフリカ':'南アフリカ','サウジアラビア':'サウジアラビア','ニュージーランド':'ニュージーランド','タイ':'タイ','シンガポール':'シンガポール','マレーシア':'マレーシア','ベトナム':'ベトナム','アフガニスタン':'アフガニスタン','アルバニア':'アルバニア','アルジェリア':'アルジェリア','アンギラ':'アンギラ','アンゴラ':'アンゴラ','アンクチグア・バーブーダ':'アンクチグア・バーブーダ','アルメニア':'アルメニア','アゼルバイジャン':'アゼルバイジャン','バハマ':'バハマ','バーレーン':'バーレーン','バングラデシュ':'バングラデシュ','バルバドス':'バルバドス','ベラルーシ':'ベラルーシ','ベリーズ':'ベリーズ','ベナン':'ベナン','バミューダ':'バミューダ','ブータン':'ブータン','ボリビア':'ボリビア','ボスニア・ヘルツェゴビナ':'ボスニア・ヘルツェゴビナ','ボツワナ':'ボツワナ','ブルネイ・ダルサラーム':'ブルネイ・ダルサラーム','ブルガリア':'ブルガリア','ブルキファナソ':'ブルキファナソ','ブルンジ':'ブルンジ','カンボジア':'カンボジア','カメルーン':'カメルーン'), class: 'hasCustomSelect select-country'
           %span.select_custom
             選択してください
   %br/
@@ -220,12 +216,12 @@
     %tbody
       %tr
         %td.select_box{select_form_id: 'languages'}
-          = select_tag :language, options_for_select('日本語':'日本語', '英語':'英語','中国語':'中国','ヒンディー語':'ヒンディー語', 'スペイン語':'スペイン語', 'ロシア語':'ロシア語','フランス語':'フランス語','アラビア語':'アラビア語', 'ポルトガル語':'ポルトガル語','マレー語':'マレー語','ベンガル語':'ベンガル語','ドイツ語':'ドイツ語','ウルドゥー語':'ウルドゥー語', 'イタリア語':'イタリア語','韓国語':'韓国語','ベトナム語':'ベトナム語','ペルシア語':'ペルシア語','タガログ語':'タガログ語','タイ語':'タイ語','トルコ語':'トルコ語','その他':'その他')
+          = select_tag :language, options_for_select('日本語':'日本語', '英語':'英語','中国語':'中国','ヒンディー語':'ヒンディー語', 'スペイン語':'スペイン語', 'ロシア語':'ロシア語','フランス語':'フランス語','アラビア語':'アラビア語', 'ポルトガル語':'ポルトガル語','マレー語':'マレー語','ベンガル語':'ベンガル語','ドイツ語':'ドイツ語','ウルドゥー語':'ウルドゥー語', 'イタリア語':'イタリア語','韓国語':'韓国語','ベトナム語':'ベトナム語','ペルシア語':'ペルシア語','タガログ語':'タガログ語','タイ語':'タイ語','トルコ語':'トルコ語','その他':'その他'),class: 'hasCustomSelect select-language'
           %span.select_custom
-            誰でも大好き
+            選択してください
   %br/
   %a.btn_f.btn_white_a.add_form_btn2 追加
-  %button.button_tweet2 更新
+  %button.button_profile2 更新
 
 
 / 結婚歴
@@ -238,7 +234,7 @@
     %tbody{id:'marital'}
       %tr
         %td.select_box
-          = select_tag :marital, options_for_select('選択してください':0,'独身(未婚)':1,'独身(離婚)':2,'独身(死別)':3), class: 'hasCustomSelect select-marital'
+          = select_tag :marital, options_for_select('選択してください':'選択してください','独身（未婚）':'独身（未婚）','独身（離婚）':'独身（離婚）','独身（死別）':'独身（死別）'), class: 'hasCustomSelect select-marital'
           %span.select_custom
             選択してください
   %br/
@@ -254,7 +250,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :child, options_for_select('選択してください':0,'なし':1,'同居中':2,'別居中':3), class: 'hasCustomSelect select-child'
+          = select_tag :child, options_for_select('選択してください':'選択してください','なし':'なし','同居中':'同居中','別居中':'別居中'), class: 'hasCustomSelect select-child'
           %span.select_custom
             選択してください
   %br/
@@ -270,7 +266,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :mdesire, options_for_select('選択してください':0,'すぐにでもしたい':1,'2〜3年のうちに':2,'良い人がいればしたい':3,'今のところ結婚は考えていない':4,'わからない':5), class: 'hasCustomSelect select-mdesire'
+          = select_tag :mdesire, options_for_select('選択してください':'選択してください','すぐにでもしたい':'すぐにでもしたい','2〜3年のうちに':'2〜3年のうちに','良い人がいればしたい':'良い人がいればしたい','今のところ結婚は考えていない':'今のところ結婚は考えていない','わからない':'わからない'), class: 'hasCustomSelect select-mdesire'
           %span.select_custom
             選択してください
   %br/
@@ -286,7 +282,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :cdesire, options_for_select('選択してください':0,'いいえ':1,'はい':2,'相手と相談して決める':3,'わからない':4), class: 'hasCustomSelect select-cdesire'
+          = select_tag :cdesire, options_for_select('選択してください':'選択してください','いいえ':'いいえ','はい':'はい','相手と相談して決める':'相手と相談して決める','わからない':'わからない'), class: 'hasCustomSelect select-cdesire'
           %span.select_custom
             選択してください
   %br/
@@ -302,7 +298,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :hkeeping, options_for_select('選択してください':0,'積極的に参加したい':1,'できれば参加したい':2,'できれば参加したい':3,'できれば相手に任せたい':4,'相手に任せたい':5), class: 'hasCustomSelect select-hkeeping'
+          = select_tag :hkeeping, options_for_select('選択してください':'選択してください','積極的に参加したい':'積極的に参加したい','できれば参加したい':'できれば参加したい','できれば参加したい':'できれば参加したい','できれば相手に任せたい':'できれば相手に任せたい','相手に任せたい':'相手に任せたい'), class: 'hasCustomSelect select-hkeeping'
           %span.select_custom
             選択してください
   %br/
@@ -318,7 +314,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :encounter, options_for_select('選択してください':0,'マッチング後にまずは会いたい':1,'気が合えば会いたい':2,'メッセージを重ねてから会いたい':3), class: 'hasCustomSelect select-encounter'
+          = select_tag :encounter, options_for_select('選択してください':'選択してください','マッチング後にまずは会いたい':'マッチング後にまずは会いたい','気が合えば会いたい':'気が合えば会いたい','メッセージを重ねてから会いたい':'メッセージを重ねてから会いたい'), class: 'hasCustomSelect select-encounter'
           %span.select_custom
             選択してください
   %br/
@@ -334,7 +330,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :cost, options_for_select('選択してください':0,'男性が全て払う':1,'男性が多めに払う':2,'割り勘':3,'持っている方が払う':4,'相手と相談して払う':5), class: 'hasCustomSelect select-cost'
+          = select_tag :cost, options_for_select('選択してください':'選択してください','男性が全て払う':'男性が全て払う','男性が多めに払う':'男性が多めに払う','割り勘':'割り勘','持っている方が払う':'持っている方が払う','相手と相談して払う':'相手と相談して払う'), class: 'hasCustomSelect select-cost'
           %span.select_custom
             選択してください
   %br/
@@ -342,19 +338,19 @@
 
 / 性格・タイプ
 
-#sociability{style:"display:none;"}
-  %p.popup_title{id:'sociability'}
-    社交性を選択してください
+#character{style:"display:none;"}
+  %p.popup_title{id:'character'}
+    性格・タイプを選択してください
   %br/
-  %table{style:"width:100%;"}
-    %tbody
-      %tr
-        %td.select_box
-          = select_tag :sociability, options_for_select('選択してください':0,'大人数が好き':1,'少人数が好き':2,'一人が好き':3,'すぐに仲良くなる':4,'徐々に仲良くなる':5), class: 'hasCustomSelect select-sociability'
-          %span.select_custom
-            選択してください
+  %div.character_check_box
+    - Character::Type.each do |ele|
+      %p.form_item_character
+        = check_box_tag ele[:id], true, false,{class: 'character'}
+        %label.for_character
+          = ele[:name]
+
   %br/
-  %button.button_profile 更新
+  %button.button_profile_character 更新
 
 / 社交性
 
@@ -366,7 +362,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :sociability, options_for_select('選択してください':0,'大人数が好き':1,'少人数が好き':2,'一人が好き':3,'すぐに仲良くなる':4,'徐々に仲良くなる':5), class: 'hasCustomSelect select-sociability'
+          = select_tag :sociability, options_for_select('選択してください':'選択してください','大人数が好き':'大人数が好き','少人数が好き':'少人数が好き','一人が好き':'一人が好き','すぐに仲良くなる':'すぐに仲良くなる','徐々に仲良くなる':'徐々に仲良くなる'), class: 'hasCustomSelect select-sociability'
           %span.select_custom
             選択してください
   %br/
@@ -382,7 +378,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :housemate, options_for_select('選択してください':0,'一人暮らし':1,'友達と一緒':2,'ペットと一緒':3,'実家暮らし':4,'その他':5), class: 'hasCustomSelect select-housemate'
+          = select_tag :housemate, options_for_select('選択してください':'選択してください','一人暮らし':'一人暮らし','友達と一緒':'友達と一緒','ペットと一緒':'ペットと一緒','実家暮らし':'実家暮らし','その他':'その他'), class: 'hasCustomSelect select-housemate'
           %span.select_custom
             選択してください
   %br/
@@ -398,7 +394,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :holiday, options_for_select('選択してください':0,'土日':1,'平日':2,'不定期':3,'その他':4), class: 'hasCustomSelect select-holiday'
+          = select_tag :holiday, options_for_select('選択してください':'選択してください','土日':'土日','平日':'平日','不定期':'不定期','その他':'その他'), class: 'hasCustomSelect select-holiday'
           %span.select_custom
             選択してください
   %br/
@@ -414,7 +410,7 @@
     %tbody
       %tr
         %td.select_box
-          = select_tag :drink, options_for_select('選択してください':0,'飲まない':1,'飲む':2,'ときどき飲む':3), class: 'hasCustomSelect select-drink'
+          = select_tag :drink, options_for_select('選択してください':'選択してください','飲まない':'飲まない','飲む':'飲む','ときどき飲む':'ときどき飲む'), class: 'hasCustomSelect select-drink'
           %span.select_custom
             選択してください
   %br/
@@ -430,5 +426,5 @@
 
   %br/
   %a.btn_f.btn_white_a.add_form_btn3 追加
-  %button.button_tweet3 更新
+  %button.button_profile3 更新
 

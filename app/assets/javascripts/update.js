@@ -7,7 +7,9 @@ $(function(){
   	var user_id = $('.title_a').data('user-id');
     console.log(user_id)
     var elem = $('[data-content_div_id='+ referense_column +']')
-    console.log(elem.text())
+    if(referense_column == 'height' || referense_column == 'annual_income'){
+      profvalue = parseFloat(profvalue)
+    }
   	$.ajax({
   	  url:'/users/' + user_id + '/user_edit',
   	  type:'POST',
@@ -15,7 +17,15 @@ $(function(){
       dataType: 'json'
   	})
     .done(function(json){
-    $('[data-content_div_id='+ referense_column +']').text(json.referense_column)
+    if(referense_column == 'height'){
+      $('[data-content_div_id='+ referense_column +']').text(json.referense_column + 'cm')
+    }
+    else if(referense_column == 'annual_income'){
+      $('[data-content_div_id='+ referense_column +']').text(json.referense_column + '万円')
+    }
+    else{
+      $('[data-content_div_id='+ referense_column +']').text(json.referense_column)
+    }
     })
     .fail(function(json){
       alert('error')

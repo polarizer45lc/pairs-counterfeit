@@ -1,3 +1,5 @@
+
+
 @mixin white_button($width, $height) {
   width: $width;
   height: $height;
@@ -495,14 +497,37 @@ li.user_item:hover {
   font-size: 13px;
   margin: 0 10px 0 0;
 }
-
+// プロフィール小カラム更新ボタンたち
 .button_profile {
   @include cyan_button(50px, 28px);
   margin-bottom: 5px;
+  border-style:none;
+  outline:none;
 }
 
+.button_profile2 {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
 
+.button_profile3 {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
 
+.button_profile_region {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
+
+.button_profile_character {
+  @include cyan_button(50px, 28px);
+  margin-bottom: 5px;
+  border-style:none;
+}
 
 a:active {
   -ms-transform: translateY(4px);
@@ -603,5 +628,16 @@ input, textarea {
   box-sizing: border-box;
 }
 
-
+input,textarea.for_hobby,.for_nickname{
+  border: 1px solid $color_border;
+  border-radius: 3px;
+  width: 206px;
+  height: 2.5em;
+  padding: 6px;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 
