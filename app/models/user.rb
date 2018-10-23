@@ -40,10 +40,6 @@ class User < ApplicationRecord
     followings.include?(other_user)
   end
 
-
-
-
-
   # 足跡
   has_many :passive_footprints, class_name: "Footprint", foreign_key: "visitor_id"
   has_many :hosts, through: :passive_relationships
@@ -95,7 +91,6 @@ class User < ApplicationRecord
   Tobacco = ["吸わない", "吸う", "吸う（電子タバコ）", "非喫煙者の前では吸わない", "相手が嫌なら吸わない", "ときどき吸う"]
   Drink = ["飲まない", "飲む", "ときどき飲む"]
   Weight = ["スリム", "やや細め", "普通", "グラマー", "筋肉質", "ややぽっちゃり", "ぽっちゃり"]
-  Income = ["200万円": 1, "400万円": 2, "600万円": 3, "800万円": 4, "1000万円": 5, "1500万円": 6, "2000万円": 7, "3000万円": 8]
   Login = ["24時間以内", "3日以内", "1週間以内", "2週間以内", "1ヶ月以内", "3ヶ月以内", "3ヶ月以上"]
   Housemate = ["一人暮らし", "友達と一緒", "ペットと一緒", "実家暮らし", "その他"]
   Holiday = ["土日", "平日", "不定期", "その他"]
