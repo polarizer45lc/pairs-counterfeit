@@ -1,0 +1,279 @@
+.modal-dialog.modal-profile{"role": "document"}
+  #profile_content.modal-content
+    .box_modal_personal_view
+      = image_tag("button_close.png", class: "modal-close modal_close", "data-dismiss": "modal")
+      .box_personal_view
+        .box_personal_inner01
+          .personal_inner_left
+            %ul.user_status_list
+              %li.user_status_item
+                最終ログイン：
+                %span.user_login オンライン
+              %li.user_status_item.user_chemistry
+                %p.user_chemistry_b
+                  あなたとの相性
+                  %strong 0%
+              %li.user_status_item.user_like_count
+                %p.user_like_count_b
+                  %strong ？
+                  %strong いいね！
+                  %span 直近30日間
+            .box_user_custom_display
+              .box_custom_display_title
+                %p.title_a
+                  プロフィール
+              %dl.custom_display_list.inner_scroll
+                %dt.custom_display_title 年齢
+                %dd.custom_display_value #{age(user[:birthday])}歳
+                %dt.custom_display_title 居住地
+                %dd.custom_display_value
+                  = user.residence.name
+                %dt.custom_display_title 出身地
+                %dd.custom_display_value
+                  - if user.birthplace.present?
+                    = user.birthplace.name
+                  - else
+                    秘密
+                %dt.custom_display_title 身長
+                %dd.custom_display_value
+                  - if user.height.present?
+                    %span #{user.height}cm
+                  - else
+                    秘密
+                %dt.custom_display_title 体型
+                %dd.custom_display_value
+                  - if user.weight.present?
+                    = user.weight
+                  - else
+                    秘密
+                %dt.custom_display_title 学歴
+                %dd.custom_display_value
+                  - if user.educational.present?
+                    = user.educational
+                  - else
+                    秘密
+                %dt.custom_display_title 職種
+                %dd.custom_display_value
+                  - if user.job_category.present?
+                    = user.job_category
+                  - else
+                    秘密
+                %dt.custom_display_title 年収
+                %dd.custom_display_value
+                  - if user.annual_income.present?
+                    = user.annual_income
+                  - else
+                    秘密
+                %dt.custom_display_title 血液型
+                %dd.custom_display_value
+                  - if user.blood_type.present?
+                    = user.blood_type
+                  - else
+                    秘密
+                %dt.custom_display_title 同居人
+                %dd.custom_display_value
+                  - if user.housemate.present?
+                    = user.housemate
+                  - else
+                    秘密
+                %dt.custom_display_title お酒
+                %dd.custom_display_value
+                  - if user.drink.present?
+                    = user.drink
+                  - else
+                    秘密
+                %dt.custom_display_title タバコ
+                %dd.custom_display_value
+                  - if user.tobacco.present?
+                    = user.tobacco
+                  - else
+                    秘密
+          .personal_inner_right
+            .box_user_display_photo
+              .user_summary_info
+                %ul.user_display_photo_list
+                  %li.user_display_photo_item
+                    = image_tag("mewtwo.png", width: "390px", height: "390px")
+
+                .summary_info_inner
+                  .user_info_wrapper
+                    %p.user_info
+                      %span.user_name
+                        = user.nickname
+                      %span.user_age #{age(user[:birthday])}歳
+                    %p.user_tweet
+                      = user.tweet
+              .box_user_photo
+                .box_user_photo_inner
+                  %ul.user_photo_list.four_photos
+                    %li#photo_0.photo_item.is_current
+                      = image_tag("no-image__woman.png")
+                    %li.photo_item
+                      = image_tag("no-image__woman.png")
+                    %li.photo_item
+                      = image_tag("no-image__woman.png")
+                    %li.photo_item
+                      = image_tag("no-image__woman.png")
+        .box_user_action_a
+          %ul.box_user_action_list
+            %li.user_action_item.action_like
+              = render partial: "shared/follow", locals: { user: user }
+
+        .box_like_remaining.mb-30
+          %p.font14
+            あと
+            %em
+              %span#total_like_numbers_personal.like_balance
+                30人
+            に「いいね！」ができます
+
+        .box_personal_inner02
+          .personal_inner_left
+            .box_personal_detail.box_user_detail
+              %p.detail_sub_title 基本情報
+              %dl.detail_item_list
+                %dt.detail_item_title ニックネーム
+                %dd.detail_item_value
+                  = user.nickname
+                %dt.detail_item_title 年齢
+                %dd.detail_item_value
+                  #{age(user[:birthday])}歳
+                - if user.blood_type.present?
+                  %dt.detail_item_title 血液型
+                  %dd.detail_item_value
+                    = user.blood_type
+                - if user.brother.present?
+                  %dt.detail_item_title 兄弟姉妹
+                  %dd.detail_item_value
+                    = user.brother
+                - if user.blood_type.present?
+                  %dt.detail_item_title 血液型
+                  %dd.detail_item_value
+                    = user.blood_type
+                - if user.country.present?
+                  %dt.detail_item_title 国籍
+                  %dd.detail_item_value
+                    = user.country
+                - if user.language1.present?
+                  %dt.detail_item_title 話せる言語
+                  %dd.detail_item_value
+                    = user.language1
+                    = user.language2
+                    = user.language3
+                - if user.residence_id.present?
+                  %dt.detail_item_title 居住地
+                  %dd.detail_item_value
+                    = user.residence.name
+                - if user.birthplace_id.present?
+                  %dt.detail_item_title 出身地
+                  %dd.detail_item_value
+                    = user.birthplace.name
+
+              %p.detail_sub_title 学歴・職種・外見
+              %dl.detail_item_list
+                - if user.educational.present?
+                  %dt.detail_item_title 学歴
+                  %dd.detail_item_value
+                    = user.educational
+                - if user.job_category.present?
+                  %dt.detail_item_title 学歴
+                  %dd.detail_item_value
+                    = user.job_category
+                - if user.annual_income.present?
+                  %dt.detail_item_title 年収
+                  %dd.detail_item_value
+                    = user.annual_income
+                - if user.height.present?
+                  %dt.detail_item_title 身長
+                  %dd.detail_item_value
+                    #{user.height}cm
+                - if user.weight.present?
+                  %dt.detail_item_title 体型
+                  %dd.detail_item_value
+                    = user.weight
+
+              %p.detail_sub_title 恋愛・結婚について
+              %dl.detail_item_list
+                - if user.marital.present?
+                  %dt.detail_item_title 結婚歴
+                  %dd.detail_item_value
+                    = user.marital
+                - if user.child.present?
+                  %dt.detail_item_title 子どもの有無
+                  %dd.detail_item_value
+                    = user.child
+                - if user.mdesire.present?
+                  %dt.detail_item_title 結婚に対する意思
+                  %dd.detail_item_value
+                    = user.mdesire
+                - if user.cdesire.present?
+                  %dt.detail_item_title 子どもが欲しいか
+                  %dd.detail_item_value
+                    = user.cdesire
+                - if user.hkeeping.present?
+                  %dt.detail_item_title 家事・育児
+                  %dd.detail_item_value
+                    = user.hkeeping
+                - if user.encounter.present?
+                  %dt.detail_item_title 出会うまでの希望
+                  %dd.detail_item_value
+                    = user.encounter
+                - if user.cost.present?
+                  %dt.detail_item_title 初回デート費用
+                  %dd.detail_item_value
+                    = user.cost
+
+              %p.detail_sub_title 性格・趣味・生活
+              %dl.detail_item_list
+                - if user.character.present?
+                  %dt.detail_item_title 性格・タイプ
+                  %dd.detail_item_value
+                    = user.character
+                - if user.sociability.present?
+                  %dt.detail_item_title 社交性
+                  %dd.detail_item_value
+                    = user.sociability
+                - if user.housemate.present?
+                  %dt.detail_item_title 同居人
+                  %dd.detail_item_value
+                    = user.housemate
+                - if user.holiday.present?
+                  %dt.detail_item_title 休日
+                  %dd.detail_item_value
+                    = user.holiday
+                - if user.drink.present?
+                  %dt.detail_item_title お酒
+                  %dd.detail_item_value
+                    = user.drink
+                - if user.hobby1.present?
+                  %dt.detail_item_title 好きなこと・趣味
+                  %dd.detail_item_value
+                    = user.hobby1
+                    = user.hobby2
+                    = user.hobby3
+
+          .personal_inner_right
+            .box_join_community
+              .join_community_title_a
+                %p.title_a
+                  参加コミュニティ（0件）
+              %ul.join_community_list
+                %li.join_community_item
+                  %p.empty_item.pt15.pb15.pl15
+                    #{user.nickname}さんが参加しているコミュニティはありません。
+            .box_introduction
+              %p.introduction_title.title_a 自己紹介文
+              - if user.introduction.present?
+                %p.introduction_text
+                  = user.introduction
+              - else
+                %p.empty_item
+                  #{user.nickname}さんは自己紹介文を記入していません。
+      .box_user_action_b
+        .user_photo.not_display_photo_request
+          = image_tag("mewtwo.png", class: "image-circle")
+        .not_display_photo_request
+          .modal-like-button-zone
+            = render partial: "shared/follow", locals: { user: user }
+
+
