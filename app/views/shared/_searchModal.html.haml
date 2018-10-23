@@ -40,12 +40,12 @@
                   %td.search_educational
                     %ul
                       %li.form_item.do_not_care
-                        = check_box_tag "q[academic_background_in][]","", checked: true
+                        = check_box_tag "q[educational_in][]","", checked: true
                         %label.for_items.do_not_care
                           こだわらない
                       - User::AcademicBackground.each do |ele|
                         %li.form_item
-                          = check_box_tag "q[academic_background_in][]", ele
+                          = check_box_tag "q[educational_in][]", ele
                           %label.for_items
                             = ele
                 %tr
