@@ -49,15 +49,15 @@ set :default_env, {
 #本番環境DB操作
 namespace :deploy do
 
-  task :db_reset do
-    on roles(:app) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, "RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:migrate:reset"
-        end
-      end
-    end
-  end
+  # task :db_reset do
+  #   on roles(:app) do
+  #     within release_path do
+  #       with rails_env: fetch(:rails_env) do
+  #         execute :rake, "RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:migrate:reset"
+  #       end
+  #     end
+  #   end
+  # end
 
   task :db_seed do
     on roles(:db) do |host|
